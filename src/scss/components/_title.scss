@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
 //**************************************************************
 // TITLE
 //**************************************************************
@@ -94,7 +98,7 @@
 
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(sp) {
         margin-bottom: 2rem;
 
         &.story {
@@ -150,7 +154,7 @@
         letter-spacing: 3px;
     }
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(sp) {
         margin-bottom: 1.5rem;
     }
 }
@@ -183,7 +187,7 @@
     }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(sp) {
         margin-bottom: 1.5rem;
 
         h2 {

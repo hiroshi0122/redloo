@@ -10,7 +10,7 @@
     background-color: $bg-gray !important;
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(sp) {
         margin-bottom: 1rem;
     }
 }
@@ -50,7 +50,7 @@
     }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(sp) {
         padding: 1.5rem 2.5rem;
 
         .qa-num {
@@ -102,7 +102,7 @@
     }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {        
+    @include media-under(sp) {        
         /* ### ACC INNER
         -------------------------------------*/
         .acc-inner {

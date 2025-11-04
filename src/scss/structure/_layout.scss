@@ -1,3 +1,8 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+
 //**************************************************************
 // Structure
 //**************************************************************
@@ -13,6 +18,7 @@ html {
 *::after {
   box-sizing: border-box;
 }
+
 
 
 /* ## BODY
@@ -36,7 +42,7 @@ section {
 
 
 	/* ### MOBILE =====================================*/
-	@media #{$smallScreen} {
+	@include media-under(md) {
 		padding: 5rem 0rem;
 	}
 }
@@ -47,7 +53,7 @@ section {
 	padding-top: 106px;
 
 	/* ### MOBILE =====================================*/
-	@media #{$smallScreen} {
+	@include media-under(md) {
 		padding-top: 92px;
 	}
 }
@@ -63,7 +69,7 @@ section {
     // }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(md) {
         padding-top: 10rem;
     }
 }
@@ -101,7 +107,7 @@ section {
     }
    
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(md) {
         padding-top: 13rem;
         padding-left: 1rem;
         margin-bottom: 0;
@@ -163,7 +169,7 @@ section {
     }
    
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(md) {
 		.container-fluid {
 			padding-top: 4rem;
 			padding-bottom: 3rem;
@@ -182,7 +188,7 @@ section {
 	}
 
 	// ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(md) {
 		.btn-area {
 			a {
 				margin-bottom: 1rem;
@@ -201,47 +207,12 @@ section {
 /* ### CONTAINER
 =====================================*/
 .container, .container-fluid {
-    @media #{$smallScreen} {
+    @include media-under(md) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
 }
 
-/* ### SMALL CONTAINER
-=====================================*/
-.s-container {
-	@media #{$smallScreen} {
-        max-width: 540px;
-    }
-	@media (min-width: 768px) {
-        max-width: 720px;
-    }
-	@media (min-width: 992px) {
-    	max-width: 960px;
-	}
-}
-
-/* ### XS CONTAINER
-=====================================*/
-.xs-container {
-    @media (min-width: 768px) {
-        max-width: 760px;
-    }
-    @media (min-width: 992px) {
-        max-width: 760px;
-    }
-}
-
-/* ### XXS CONTAINER
-=====================================*/
-.xxs-container {
-    @media (min-width: 768px) {
-        max-width: 540px;
-    }
-    @media (min-width: 992px) {
-        max-width: 540px;
-    }
-}
 
 
 //**************************************************************

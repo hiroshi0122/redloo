@@ -1,7 +1,11 @@
 //**************************************************************
 // GSAP ANIMATION
 //**************************************************************
-// COMMON ANIMATION
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 // ==================================================
 // FADE IN UP ------------------------------//
 // gsap.utils.toArray(".fadeInUp").forEach((target) => {
@@ -117,7 +121,9 @@ gsap.utils.toArray(".fadeInUp-stagger").forEach((target) => {
   );
 });
 
-// 無限スクロール ------------------------------//
+//**********************************************************************
+// 無限スクロールアニメーション
+//**********************************************************************
 // document.addEventListener("DOMContentLoaded", function () {
 //   let marqueeInner = document.querySelector(".scrolling-msg-inner");
 
@@ -130,7 +136,10 @@ gsap.utils.toArray(".fadeInUp-stagger").forEach((target) => {
 // });
 
 
-// LENISを使った慣性スクロール ------------------------------//
+
+//**********************************************************************
+// LENIS 慣性スクロール
+//**********************************************************************
 import Lenis from 'lenis';
 
 const lenis = new Lenis({

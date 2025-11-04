@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
 //**************************************************************
 // #footer
 //**************************************************************
@@ -105,7 +109,7 @@ footer {
     }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(sp) {
         .footer-wrapper {
             padding: 5rem 0rem 1.5rem 0rem;
         }

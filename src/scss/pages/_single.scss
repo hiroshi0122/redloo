@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
 //**********************************************************************
 // # SINGLE
 //**********************************************************************
@@ -9,7 +13,7 @@
     margin: 0 auto;
     padding-top: 15rem;
 
-    @media #{$smallScreen-above} {
+    @include media-over(sp) {
        
     }
 }
@@ -33,7 +37,7 @@
     }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} {
+    @include media-under(sp) {
 
     }
 }
@@ -52,7 +56,7 @@
     }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} { 
+    @include media-under(sp) { 
         margin-bottom: 3rem;
     }
 }
@@ -162,7 +166,7 @@
     }
 
     // ## MOBILE // *************************************************>
-    @media #{$smallScreen} { 
+    @include media-under(sp) { 
 
         .wp-block-image {
             .wp-element-caption {
@@ -216,6 +220,8 @@
 
 
 
+
+
 // wordpressでイメージを挿入した場合
 figure {
     // キャプション
@@ -225,13 +231,12 @@ figure {
 
 // 引用
 blockquote {
-    background-color: $gray-7;
+    
     padding: 1rem;
 
     // 引用元
     cite {
         font-size: 14px;
-        color: $gray-7;
     }
 }
 
