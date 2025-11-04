@@ -1,0 +1,358 @@
+//*******************************************************************
+// # STORY
+//*******************************************************************
+/* ## FIRST SECTION（ファーストセクション）
+********************************************************************/
+.story-first-sec {
+    position: relative;
+    overflow: hidden;
+
+    .container-fluid {
+        padding: 0 2%;
+    }
+
+    .image-area {
+        aspect-ratio: 23/9;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 78%;
+            opacity: 0.9;
+        }
+    }
+
+    /* ### SLIDER CONTAINER
+    --------------------------------------*/
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        .image-area {
+            aspect-ratio: 17/10;
+            overflow: hidden;
+        }
+    }
+}
+
+/* ## STORY MESSAGE SECTION（ストーリーメッセージセクション）
+********************************************************************/
+.story-message-sec {
+    /* ### MOVIE
+    --------------------------------------*/
+    .movie {
+        max-width: 960px;
+        margin: 0 auto 5rem;
+
+        iframe {
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+
+        .ytp-show-cards-title {
+            display: none !important;
+        }
+    }
+
+    /* ### MESSAGE
+    --------------------------------------*/
+    .message {
+        text-align: center;
+        margin-bottom: 5rem;
+
+        h3 {
+            font-size: clamp(16px, 2vw, 28px);
+            letter-spacing: 5px;
+            margin-bottom: 3rem;
+        }
+        p {
+            margin-bottom: 3rem;
+            line-height: 2.2;
+            letter-spacing: 1px;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        .message {
+            text-align: left;
+        }
+    }
+}
+
+/* ## GOLDEN RATIO SECTION（黄金比率セクション）
+********************************************************************/
+.golden-ratio-sec {
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+        padding-right: 10%;
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        .text-side {
+            padding-right: 0;
+        }
+        .image-side {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+/* ## INTERACT SECTION（TANZOと対話する）
+********************************************************************/
+.interact-sec {
+
+    /* ### IMAGE SIDE
+    --------------------------------------*/
+    .image-side {
+        height: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: -28px;
+            writing-mode: sideways-rl;
+            color: $font-gray;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-family: $en-font;
+            letter-spacing: 5px;
+        }
+    }
+
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+        position: relative;
+        padding-left: 10%;
+
+        .tategaki {
+            display: flex;
+            justify-content: end;
+
+            h2 {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                font-size: clamp(16px, 2.4vw, 40px);
+                margin-right: 5%;
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+
+         /* ### IMAGE SIDE
+        --------------------------------------*/
+        .image-side {
+            .caption {
+                left: 0;
+                right: inherit;
+                white-space: nowrap;
+            }
+        }
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            .tategaki {
+                position: absolute;
+                top: -270px;
+                right: 0;
+                h2 {
+                    height: 260px;
+                }
+            }
+        }
+    }
+}
+
+/* ## MOVIE SECTION（空撮動画）
+********************************************************************/
+.movie-sec {
+    .movie {
+        height: clamp(450px,30vw,600px);
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 177.78%; /* 16/9 * 100 = 177.78% → cover相当に拡大 */
+            height: 210%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* クリック無効（背景用途なら便利） */
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        .container-fluid {
+            padding: 0;
+        }
+
+        .movie {
+            height: 40vw;
+
+            iframe {
+                width: 120%;
+                height: 150%;
+            }
+        }
+    }
+}
+
+/* ## COMPANY SECTION（会社概要）
+********************************************************************/
+.company-sec {
+    .company-info-table {
+        width: 100%;
+
+        tr {
+            border-bottom: solid 1px $border-gray;
+            padding: 2rem 1rem;
+            text-align: left;
+
+            th,td {
+                font-weight: 500;
+                padding: 2rem 1rem;
+            }
+
+            th {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        .btn-area {
+            margin-bottom: 3rem;
+        }
+
+        .company-info-table {
+            tr {
+                th {
+                    width: 25%;
+                }
+
+                th,
+                td {
+                    font-size: 12px;
+                    padding: 1.4rem .5rem;
+                }
+            }
+        }
+    }
+}
+
+/* ## PHILOSOPHY SECTION（企業理念）
+********************************************************************/
+.philosophy-sec {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    /* ### TEXT AREA
+    --------------------------------------*/
+    .text-area {
+        text-align: center;
+
+        .desicription {
+            p {
+                margin-bottom: 3rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* ### RADIUS BOX
+--------------------------------------*/
+.radius-box {
+    background-color: $bg-gray;
+    border: solid 1px $border-gray;
+    border-radius: 15px;
+    padding: 10% 3%;
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        padding: 10% 5%;
+    }
+}
+
+/* ## CEO MESSAGE SECTION（社長メッセージ）
+********************************************************************/
+.ceo-message-sec {
+    max-width: 940px;
+    margin: 0 auto;
+
+    /* ### IMAGE SIDE
+    --------------------------------------*/
+    .image-side {
+        height: 100%;
+        max-height: 420px;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: 39% 50%;
+        }
+    }
+
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+        padding-left: 10%;
+
+        .desicription {
+            p {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+
+        .col-md-4 {
+            margin-bottom: 3rem;
+        }
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            padding-left: 0;
+
+            .desicription {
+                p {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
+
+// ## MOBILE // *************************************************>
+/* ## コメント中
+***********************************************/
+
+/* ### SLIDER CONTAINER
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

@@ -1,0 +1,189 @@
+//**************************************************************
+// #footer
+//**************************************************************
+footer {
+    border-top: solid 1px $black;
+    width: 100%;
+    margin-top: 8rem;
+
+    .footer-wrapper {
+        padding: 10rem 3rem 3rem 3rem;
+        max-width: 1680px;
+        margin: 0 auto;
+    }
+
+    /* ### FOOTER LOGO
+    -------------------------------------*/
+    .footer-logo {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 3rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* ### SNS AREA
+    -------------------------------------*/
+    .sns-area {
+        text-align: center;
+
+        .sns-icons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                border-bottom: solid 1px $black;
+                margin-right: 10px;
+            }
+
+            .facebook {
+                width: 45px;
+            }
+            .instagram {
+                width: 50px;
+            }
+        }
+    }
+
+    /* ### FOOTER NAV
+    -------------------------------------*/
+    .footer-nav {
+        li {
+            text-align: center;
+            display: block;
+            border-right: solid 1px $black;
+            padding: 0 1rem;
+            margin-bottom: 1rem;
+
+            &:first-child {
+                border-left: solid 1px $black;
+            }
+        }
+
+        .menu-link {
+            p {
+                font-weight: bold;
+                letter-spacing: 2px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    /* ### SECOND NAV
+    -------------------------------------*/
+    .second-nav-area {
+        padding-top: 8rem;
+    }
+
+    .footer-second-nav {
+        .navigation {
+            justify-content: end;
+        }
+
+        li {
+            text-align: center;
+            display: block;
+            padding: 0 1rem;
+        }
+
+        .menu-link {
+            p {
+                color: $font-gray;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .copyright {
+        display: block;
+        font-size: 12px;
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        .footer-wrapper {
+            padding: 5rem 0rem 1.5rem 0rem;
+        }
+
+        /* ### FOOTER LOGO
+        -------------------------------------*/
+        .footer-logo {
+            width: 100%;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* ### SNS AREA
+        -------------------------------------*/
+        .sns-area {
+            margin-bottom: 4rem;
+        }
+
+        /* ### FOOTER NAV
+        -------------------------------------*/
+        .footer-nav {
+            li {
+                margin-bottom: 1.5rem;
+
+                &:nth-child(odd) {
+                    border-left: solid 1px $black;
+                }
+            }
+
+            .menu-link {
+                p {
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+        /* ### SECOND NAV
+        -------------------------------------*/
+        .second-nav-area {
+            padding-top: 4rem;
+        }
+
+        .footer-second-nav {
+            margin-bottom: 4rem;
+
+            .navigation {
+                justify-content: center;
+            }
+
+            li {
+                text-align: left;
+                margin-bottom: 0.5rem;
+            }
+
+            .menu-link {
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .copyright {
+            display: block;
+            font-size: 11px;
+            text-align: center;
+        }
+    }
+}
+
+// ## MOBILE // *************************************************>
+
+/* ## コメント中
+***********************************************/
+
+/* ### コメント下
+-------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Build directories
+dist/
+build/
+themes/redloo/assets/all.js
+themes/redloo/assets/all.css
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# WordPress core files (if not using composer)
+wp/
+wp-content/
+wp-includes/
+
+# Ignore all files except the theme files in wp-content/themes/redloo
+wp-content/*
+!wp-content/themes/
+!wp-content/themes/redloo/
+wp-content/themes/redloo/*
+!wp-content/themes/redloo/assets/
+
+# Ignore specific files in the theme directory
+wp-content/themes/redloo/assets/*.js
+wp-content/themes/redloo/assets/*.css
+
+# Ignore uploads
+wp-content/uploads/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

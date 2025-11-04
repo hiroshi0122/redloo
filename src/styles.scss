@@ -1,0 +1,38 @@
+// Bootstrapのスタイルをインポート
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/bootstrap-utilities";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+
+
+
+// /* import parts */
+@import "scss/variables.scss";
+@import "scss/mixins.scss";
+
+@import "scss/base/reset.scss";
+@import "scss/base/typography.scss";
+// //
+@import "scss/structure/layout.scss";
+@import "scss/structure/header.scss";
+@import "scss/structure/footer.scss";
+// //
+@import "scss/components/btn.scss";
+@import "scss/components/title.scss";
+@import "scss/components/animation.scss";
+@import "scss/components/post.scss";
+@import "scss/components/accordion.scss";
+//
+@import "scss/pages/home.scss";
+@import "scss/pages/story.scss";
+@import "scss/pages/maintenance.scss";
+@import "scss/pages/company.scss";
+@import "scss/pages/contact.scss";
+@import "scss/pages/single.scss";
+@import "scss/pages/simple.scss";
+@import "scss/pages/to-table.scss";
+@import "scss/pages/quality.scss";
+@import "scss/pages/error.scss";

@@ -1,0 +1,310 @@
+//*******************************************************************
+// # HOME
+//*******************************************************************
+/* ## FIRST SECTION（ファーストセクション）
+********************************************************************/
+#first-view-sec {
+    position: relative;
+    overflow: hidden;
+
+    .container-fluid {
+        padding: 0 2%;
+    }
+
+     /* ### MOVIE AREA
+    --------------------------------------*/
+    .movie-area {
+        height: clamp(640px, 40vw, 840px);
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        iframe {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            width: 100%;
+            height: 130%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* クリック無効（背景用途なら便利） */
+        }
+    }
+
+    /* ### CATCH
+    --------------------------------------*/
+    .catch {
+        position: absolute;
+        top: 15%;
+        right: 7%;
+        // transform: translateX(-50%);
+        width: clamp(120px, 25vw, 340px);
+        z-index: 4;
+        opacity: 0;
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+        .container-fluid {
+            padding: 0;
+        }
+
+        /* ### MOVIE AREA
+        --------------------------------------*/
+        .movie-area {
+            height: clamp(300px, 74vw, 480px);
+
+            iframe {
+                position: absolute;
+                width: 150%;
+                height: 130%;
+            }
+        }
+        
+
+        /* ### CATCH
+        --------------------------------------*/
+        .catch {
+            position: absolute;
+            top: 34%;
+            right: 0;
+            left: 0;
+            width: 56%;
+            margin: 0 auto;
+        }
+    }
+}
+
+/* ## DAILY LIFE SECTION（TANZOのある暮らし）
+******************************************************************/
+.daily-life-sec {
+    max-width: 1680px;
+    margin: 0 auto;
+
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+        padding: 0 5% 0 10%;
+
+        .description {
+            margin-bottom: 3rem;
+        }
+    }
+
+    /* ### SECOND PAGE MENU
+    --------------------------------------*/
+    .second-page-menu {
+        li {
+            padding-right: 2rem;
+            margin-bottom: 2rem;
+
+            span {
+                font-size: clamp(12px, 1.5vw, 18px);
+                font-family: $en-font;
+                color: $font-gray;
+            }
+
+            h5 {
+                font-weight: 500;
+                letter-spacing: 2px;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            padding: 0;
+        }
+
+        /* ### IMAGE SIDE
+        --------------------------------------*/
+        .image-side {
+            margin-bottom: 3rem;
+        }
+
+        /* ### SECOND PAGE MENU
+        --------------------------------------*/
+        .second-page-menu {
+            li {
+                padding-right: 1.5rem;
+            }
+        }
+    }
+}
+
+/* ## STORY SECTION（開発の物語）
+******************************************************************/
+.story-sec {
+    max-width: 1680px;
+    margin: 0 auto;
+
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+        padding: 0 10% 0 7%;
+
+        .description {
+            margin-bottom: 3rem;
+        }
+    }
+
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            padding: 0;
+        }
+
+        /* ### IMAGE SIDE
+        --------------------------------------*/
+        .image-side {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+/* ## LINUP SECTION（商品ラインナップ）
+******************************************************************/
+.lineup-sec {
+
+    .border-title {
+        margin-top: 10rem;
+    }
+
+    /* ### CONTENT
+    --------------------------------------*/
+    .product-content {
+        padding: 10%;
+
+        /**** #### NUMBER ****/
+        .number {
+            font-size: 18px;
+            font-family: $en-font;
+            color: $font-gray;
+        }
+
+        /**** #### PRODUCT IMAGE ****/
+        .product-image {
+            aspect-ratio: 5 / 3;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+
+            a {
+                overflow: hidden;
+                transition: 0.2s;
+
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                        transition: 0.2s;
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.2s;
+            }
+        }
+
+        /**** #### PRODUCT INFO ****/
+        .product-info {
+            h3 {
+                font-size: clamp(18px, 1.8vw, 22px);
+                margin-bottom: 1rem;
+                letter-spacing: 2px;
+            }
+
+            p {
+                margin-bottom: 1rem;
+            }
+
+            .price {
+                display: flex;
+                align-items: baseline;
+
+                span {
+                    font-family: $en-font;
+                    font-size: 13px;
+                    font-weight: bold;
+
+                    &:nth-child(2) {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @media #{$smallScreen} {
+
+        .border-title {
+            margin-top: 7rem;
+        }
+
+        /* ### CONTENT
+        --------------------------------------*/
+        .product-content {
+            padding: 5%;
+            margin-bottom: 2rem;
+
+            /**** #### PRODUCT INFO ****/
+            .product-info {
+                h3 {
+                    font-size: clamp(16px, 1.8vw, 22px);
+                    margin-bottom: 1rem;
+                }
+
+                .price {
+                    span {
+                        &:nth-child(2) {
+                            font-size: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ## MAINTENANCE SECTION（メンテナンス・Q&A）
+******************************************************************/
+.maintenance-sec {
+    /* ### WRAPPER
+    --------------------------------------*/
+    .maintenance-wrapper {
+        padding: 8% 0;
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+            url("#{$image-path}/maintenance/kv_maintenance.webp");
+        background-repeat: no-repeat;
+        background-position: 50% 55%;
+        background-size: cover;
+    }
+}
+
+/* ## NEWS SECTION（お知らせ）
+******************************************************************/
+.news-sec {
+}
+
+
+// ## MOBILE // *************************************************>
+/* ## コメント中
+***********************************************/
+
+/* ### SLIDER CONTAINER
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */
