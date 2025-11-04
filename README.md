@@ -6,6 +6,7 @@
 - docker-compose
 - git
 - VOLTA 
+- GSAP
 
 ### Docker環境
 - mariaDB latest
@@ -41,6 +42,8 @@ make up
 ```
 ⇨dockerを使用するので、コンテナを立ち上げる。  
 ⇨オプション「-d」を指定することで、バックグラウンドで動く。なので、ターミナルを占拠しない  
+⇨server.jsが起動。`http://localhost:3000/`でwatch状態の開発環境が起動  
+⇨scssの変更、jsの変更、画像の自動圧縮などの処理が変更の都度走る  
 
 ### npmのインストール（node modhuleなど）
 ```
@@ -49,14 +52,4 @@ npm install
 ⇨開発環境に必要なnode_modhulesをインストール（プロジェクトディレクトリにダウンロード）  
 ⇨package.jsonにVOLTAの記述もあるので、nodeも都度インストールされる  
 ⇨VOLTAのversionの記載は、latestのような漠然とした書き方は適応されないので、注意。  
-
-### 開発サーバーの起動
-```
-npm start
-```
-⇨server.jsが起動。`http://localhost:3000/`でwatch状態の開発環境が起動  
-⇨scssの変更、jsの変更、画像の自動圧縮などの処理が変更の都度走る  
-
-### Default Library
-- Bootstrap v5.0.0
 

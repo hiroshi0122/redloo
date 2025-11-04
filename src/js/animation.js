@@ -131,7 +131,7 @@ gsap.utils.toArray(".fadeInUp-stagger").forEach((target) => {
 
 
 // LENISを使った慣性スクロール ------------------------------//
-import Lenis from "@studio-freight/lenis";
+import Lenis from 'lenis';
 
 const lenis = new Lenis({
   duration: 2,
