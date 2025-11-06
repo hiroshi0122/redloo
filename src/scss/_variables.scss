@@ -7,13 +7,19 @@
 // 基本 カラーリング
 $main-bg-color: #ffffff;
 $text-base-color: #000000;
-$font-gray: #989898;
-$bg-gray: #F5F5F5;
+
+
+$blue: #264898;
+$bg-gray: #F7F7F7;
+$bg-deep-gray: #9B9B9B;
+$font-gray: #969696;
+$border-gray:#E2E2E2;
+
 $border-gray: #D8D8D8;
 $orange: #FCD25B;
 $light-blue: #5CFFFF;
 $yellow: #FFFF00;
-$blue: #0000FF;
+
 $pink: #FFAEAB;
 $white: #fff;
 $black: #000000;
@@ -48,5 +54,5 @@ $header-height-small: 90px;
 
 /* fonts
 ***********************************************/
-$base-font: "heisei-kaku-gothic-std", sans-serif;
-$en-font : "Noto Serif JP", serif;
+$base-font: "Zen Kaku Gothic New", sans-serif;
+$en-font : "Anton", sans-serif;

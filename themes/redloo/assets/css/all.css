@@ -24,7 +24,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "heisei-kaku-gothic-std", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   color: #000000;
   line-height: 1.6;
   background-color: #fff;
@@ -6896,7 +6896,6 @@ section {
 /* ##### コメント軽 */
 header {
   position: fixed;
-  padding: 3rem 2rem;
   left: 0px;
   top: 0px;
   z-index: 20;
@@ -6912,8 +6911,14 @@ header {
   /* ### LOGO SIDE
   =====================================*/
 }
+header .logo-side {
+  background-color: #264898;
+  display: block;
+  padding: 2rem 5rem 2rem 3rem;
+  border-radius: 0 0 50px 0;
+}
 header .logo-side img {
-  width: 150px;
+  width: 160px;
   height: auto;
 }
 header {
@@ -7113,7 +7118,7 @@ header .menu-contents .header-second-nav a {
   display: block;
   font-size: 13px;
   line-height: 1.5;
-  color: #989898;
+  color: #969696;
 }
 header {
   /* ### MOBILE =====================================*/
@@ -7218,7 +7223,7 @@ footer .footer-second-nav li {
   padding: 0 1rem;
 }
 footer .footer-second-nav .menu-link p {
-  color: #989898;
+  color: #969696;
   font-size: 14px;
 }
 footer .copyright {
@@ -7366,30 +7371,30 @@ footer .copyright {
   content: "";
   display: block;
   margin-right: 40px;
-  border-bottom: 1px solid #989898;
+  border-bottom: 1px solid #969696;
   width: 5%;
 }
 .main-title.story h1::after {
   content: "";
   display: block;
   margin-left: 40px;
-  border-bottom: 1px solid #989898;
+  border-bottom: 1px solid #969696;
   width: 5%;
 }
 .main-title span {
   display: flex;
   position: relative;
-  color: #989898;
+  color: #969696;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-bottom: 2rem;
-  font-family: "Noto Serif JP", serif;
+  font-family: "Anton", sans-serif;
   letter-spacing: 5px;
 }
 .main-title span::after {
   content: "";
   display: block;
   margin-left: 5px;
-  border-bottom: 1px solid #989898;
+  border-bottom: 1px solid #969696;
   width: 20px;
 }
 .main-title h1 {
@@ -7422,7 +7427,7 @@ footer .copyright {
   content: "";
   display: block;
   margin-right: 10px;
-  border-bottom: 1px solid #989898;
+  border-bottom: 1px solid #969696;
   width: 20px;
 }
 .main-title.center h2 {
@@ -7533,8 +7538,8 @@ footer .copyright {
 }
 .numbering-title .title span {
   font-size: clamp(20px, 2.5vw, 40px);
-  font-family: "Noto Serif JP", serif;
-  color: #989898;
+  font-family: "Anton", sans-serif;
+  color: #969696;
   margin-right: 10px;
 }
 .numbering-title {
@@ -7583,8 +7588,8 @@ footer .copyright {
 }
 .numbering-title.border-bt span {
   font-size: clamp(20px, 2.5vw, 40px);
-  font-family: "Noto Serif JP", serif;
-  color: #989898;
+  font-family: "Anton", sans-serif;
+  color: #969696;
   margin-right: 10px;
 }
 .numbering-title.border-bt.center {
@@ -7612,7 +7617,7 @@ footer .copyright {
   display: block;
   font-size: 12px;
   font-weight: 200;
-  color: #989898;
+  color: #969696;
 }
 .news-contents .text-area h4 {
   font-size: clamp(14px, 1.4vw, 20px);
@@ -7620,7 +7625,7 @@ footer .copyright {
 }
 .news-contents .text-area p {
   font-size: clamp(12px, 1.1vw, 14px);
-  color: #989898;
+  color: #969696;
   line-height: 1.5;
   font-weight: 200;
 }
@@ -7659,7 +7664,7 @@ footer .copyright {
 }
 
 .podcast-box {
-  background-color: #F5F5F5;
+  background-color: #F7F7F7;
   padding: 3%;
   border-radius: 5px;
   margin-bottom: 3rem;
@@ -7808,8 +7813,8 @@ footer .copyright {
 .title-area .day {
   display: block;
   font-size: 13px;
-  font-family: "Noto Serif JP", serif;
-  color: #989898;
+  font-family: "Anton", sans-serif;
+  color: #969696;
 }
 .title-area h1 {
   font-size: clamp(20px, 2.3vw, 28px);
@@ -7848,7 +7853,7 @@ footer .copyright {
 }
 .content .wp-block-image .wp-element-caption {
   font-size: 12px;
-  color: #989898;
+  color: #969696;
 }
 .content {
   /* ### WP BLOCK BUTTON
@@ -7907,7 +7912,7 @@ footer .copyright {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 2rem 2rem;
-  background-color: #F5F5F5;
+  background-color: #F7F7F7;
 }
 .content .wp-block-list li {
   line-height: 2;
@@ -8069,8 +8074,8 @@ blockquote cite {
 }
 .daily-life-sec .second-page-menu li span {
   font-size: clamp(12px, 1.5vw, 18px);
-  font-family: "Noto Serif JP", serif;
-  color: #989898;
+  font-family: "Anton", sans-serif;
+  color: #969696;
 }
 .daily-life-sec .second-page-menu li h5 {
   font-weight: 500;
@@ -8147,8 +8152,8 @@ blockquote cite {
 }
 .lineup-sec .product-content .number {
   font-size: 18px;
-  font-family: "Noto Serif JP", serif;
-  color: #989898;
+  font-family: "Anton", sans-serif;
+  color: #969696;
 }
 .lineup-sec .product-content {
   /**** #### PRODUCT IMAGE ****/
@@ -8188,7 +8193,7 @@ blockquote cite {
   align-items: baseline;
 }
 .lineup-sec .product-content .product-info .price span {
-  font-family: "Noto Serif JP", serif;
+  font-family: "Anton", sans-serif;
   font-size: 13px;
   font-weight: bold;
 }

@@ -5,7 +5,7 @@
  *
  * @link TANZO
  *
- * @package TANZO
+ * @package RedLoo
  * @since 2025.8.11
  * @version 1.0
  *

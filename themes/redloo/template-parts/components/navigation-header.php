@@ -3,8 +3,8 @@
 /**
  * Displays header navigation
  *
- * @package TANZO
- * @since 2025.8.19
+ * @package RedLoo
+ * @since 2025.11.4
  * @version 1.0
  */
 
@@ -12,14 +12,12 @@ include 'navigation.php';  // 配列を読み込み
 ?>
 
 <div class="container-fluid">
-    <div class="row align-items-center">
-        <div class="col-auto">
-            <a class="logo-side" href="/">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/tanzo_japan.svg" alt="tanzoロゴ">
-            </a>
-        </div>
+    <div class="d-flex flex-row justify-between align-center">
+        <a class="logo-side" href="/">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo_w.svg" alt="RedLooロゴ">
+        </a>
         <nav class="col d-none d-lg-block">
-            <ul class="navigation row justify-content-end">
+            <ul class="navigation d-flex flex-row align-center gap-3">
                 <?php foreach ($navigation as $key => $menu): ?>
                     <?php
                     $has_children = !empty($menu['children']);
@@ -55,9 +53,17 @@ include 'navigation.php';  // 配列を読み込み
                 <?php endforeach; ?>
             </ul>
         </nav>
+        <ul class="sns-nav d-flex flex-row justify-between align-center">
+            <?php foreach( $sns_nav as $key => $link ):?>
+                <li>
+                    <a href="<?php echo esc_url($link['link']); ?>" target="_blank" rel="noopener">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/common/<?php echo esc_html($link['image']); ?>.svg" alt="<?php echo esc_html($link['image']); ?>">
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
 
-        <?php // # MOBILE NAVIGATION =======================/
-        ?>
+        <?php // # MOBILE NAVIGATION =======================/?>
         <div class="hamburger d-lg-none">
             <span></span>
             <span></span>

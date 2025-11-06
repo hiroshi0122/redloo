@@ -7,7 +7,6 @@
 //**************************************************************
 header {
     position: fixed;
-    padding: 3rem 2rem;
     left: 0px;
     top: 0px;
     z-index: 20;
@@ -28,8 +27,12 @@ header {
     /* ### LOGO SIDE
     =====================================*/
     .logo-side {
+        background-color: $blue;
+        display: block;
+        padding: 2rem 5rem 2rem 3rem;
+        border-radius: 0 0 50px 0;
         img {
-            width: 150px;
+            width: 160px;
             height: auto;
         }
     }
@@ -48,7 +51,7 @@ header {
                 left: 0;
                 display: none;
                 background: #fff;
-                box-shadow: 0 8px 24px rgba(0,0,0,.12);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
                 padding: 2rem;
                 z-index: 1000;
                 border-radius: 5px;
@@ -60,7 +63,7 @@ header {
 
             &.has-children {
                 &:hover {
-                    .submenu{
+                    .submenu {
                         display: block;
                     }
                 }
@@ -77,7 +80,6 @@ header {
             }
         }
     }
-
 
     /* ### HAMBURGER
     =====================================*/
@@ -211,19 +213,19 @@ header {
                     font-size: 17px;
                     letter-spacing: 3px;
                     line-height: 1.5;
-                    padding-bottom: .5rem;
+                    padding-bottom: 0.5rem;
                 }
             }
 
             .submenu {
-                padding: .7rem 0 0 1.5rem;
-                margin-top: .5rem;
+                padding: 0.7rem 0 0 1.5rem;
+                margin-top: 0.5rem;
                 margin-left: 1rem;
                 margin-bottom: 3rem;
                 border-left: solid 1px $black;
 
                 li {
-                    margin-bottom: .5rem;
+                    margin-bottom: 0.5rem;
                 }
 
                 a {
@@ -254,8 +256,8 @@ header {
     }
 
     /* ### MOBILE =====================================*/
-    @include media-under(sp) {   
-        padding: 2rem 1rem; 
+    @include media-under(sp) {
+        padding: 2rem 1rem;
 
         .container-fluid {
             padding: 0 1rem;
