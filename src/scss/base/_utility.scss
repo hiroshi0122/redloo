@@ -107,6 +107,48 @@ $display-utils: (
 }
 
 
+/* ## COLUMN WIDTH
+***********************************************/
+$col-max: 12; // 12分割ベース
+$col-percentage: 100% / $col-max;
+
+// 共通：.col-1〜.col-12, .col-auto
+@for $i from 1 through $col-max {
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: $col-percentage * $i !important;
+  }
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto !important;
+}
+
+// レスポンシブ対応
+@each $label, $size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $col-max {
+      .col-#{$label}-#{$i} {
+        flex: 0 0 auto;
+        width: $col-percentage * $i !important;
+      }
+    }
+
+    .col-#{$label}-auto {
+      flex: 0 0 auto;
+      width: auto !important;
+    }
+  }
+}
+
+// オプション: 行ベース用（必要なら）
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 /* ## TEXT ALIGN
 ***********************************************/
 .text-left { text-align: left !important; }

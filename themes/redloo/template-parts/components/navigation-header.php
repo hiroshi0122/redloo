@@ -12,11 +12,11 @@ include 'navigation.php';  // 配列を読み込み
 ?>
 
 <div class="container-fluid">
-    <div class="d-flex flex-row justify-between align-center">
-        <a class="logo-side" href="/">
+    <div class="row justify-between align-center">
+        <a class="col-auto logo-side" href="/">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo_w.svg" alt="RedLooロゴ">
         </a>
-        <nav class="col d-none d-lg-block">
+        <nav class="col d-none d-xl-flex gap-5">
             <ul class="navigation d-flex flex-row align-center gap-3">
                 <?php foreach ($navigation as $key => $menu): ?>
                     <?php
@@ -52,19 +52,21 @@ include 'navigation.php';  // 配列を読み込み
                     </li>
                 <?php endforeach; ?>
             </ul>
+            <ul class="sns-nav d-flex justify-between align-center col">
+                <?php foreach( $sns_nav as $key => $link ):?>
+                    <li class="col-4">
+                        <a href="<?php echo esc_url($link['link']); ?>" target="_blank" rel="noopener">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/images/common/<?php echo esc_html($link['image']); ?>.svg" alt="<?php echo esc_html($link['image']); ?>">
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <a class="btn-contact" href="/contact">ご予約・注文・お問合わせ</a>
         </nav>
-        <ul class="sns-nav d-flex flex-row justify-between align-center">
-            <?php foreach( $sns_nav as $key => $link ):?>
-                <li>
-                    <a href="<?php echo esc_url($link['link']); ?>" target="_blank" rel="noopener">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/common/<?php echo esc_html($link['image']); ?>.svg" alt="<?php echo esc_html($link['image']); ?>">
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+       
 
         <?php // # MOBILE NAVIGATION =======================/?>
-        <div class="hamburger d-lg-none">
+        <div class="hamburger d-xl-none">
             <span></span>
             <span></span>
             <span></span>
