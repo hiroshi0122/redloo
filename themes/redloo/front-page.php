@@ -3,7 +3,7 @@
 /**
  * Home template file
  *
- * @link TANZO
+ * @link RedLoo
  *
  * @package RedLoo
  * @since 2025.8.11
@@ -12,6 +12,15 @@
  * Template Name: HOME
  **/
 
+// お客様の声を取得
+$args = array(
+  'post_type'      => 'voice',   // カスタム投稿タイプ slug
+  'posts_per_page' => 3,         // 表示件数（必要に応じて調整）
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+);
+
+$voice_query = new WP_Query($args);
 
 /* NEWSの投稿取得 */
 $args = array(
@@ -23,227 +32,331 @@ $args = array(
 );
 $posts = new WP_Query($args);
 
+// スライダーの配列処理
+$slides = [
+    [
+        'img' => get_template_directory_uri() . '/assets/images/home/slide_1.webp',
+        'alt' => 'スライダー1',
+    ],
+    [
+        'img' => get_template_directory_uri() . '/assets/images/home/slide_2.webp',
+        'alt' => 'スライダー2',
+    ],
+    [
+        'img' => get_template_directory_uri() . '/assets/images/home/slide_3.webp',
+        'alt' => 'スライダー3',
+    ], 
+];
+
+
 
 get_header();
 ?>
 
-<?php // FIRST SECTION // *********************************************************** // 
-?>
-<section class="first-sec" id="first-view-sec">
+<?php // FIRST SECTION // *********************************************************** // ?>
+<section class="first-sec pb-0" id="first-view-sec">
     <div class="container-fluid">
-        <div class="movie-area">
-            <iframe
-                src="https://www.youtube.com/embed/pzHDbVPkHv0?autoplay=1&mute=1&loop=1&playlist=pzHDbVPkHv0&controls=0&modestbranding=1&rel=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
-            <img class="catch" src="<?php bloginfo('template_url'); ?>/assets/images/home/kc_catch.webp" alt="いつもの料理をもっと美味しく">
-        </div>
-    </div>
-</section>
-
-
-<?php // DAILY LIFE SECTION // *********************************************************** // 
-?>
-<section class="daily-life-sec" id="daily-life">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="text-side">
-                    <div class="main-title blur">
-                        <span>Life with TANZO</span>
-                        <h2 class="daily-title">TANZOのある暮らし</h2>
-                    </div>
-
-                    <div class="image-side blur d-md-none">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/life_image.webp" alt="TANZOのある暮らし">
-                    </div>
-
-                    <p class="description">エアースタンプハンマーが生み出す2,000トンの力で、鉄は生まれ変わります。長年培った独自の鍛造技術が、調理する食材一つひとつの隠された旨味を解き放ち、あなたの食卓に感動をお届けします。</p>
-
-                    <ul class="second-page-menu row">
-                        <li class="col-auto">
-                            <span>01.</span>
-                            <h5>手間なし・かんたん</h5>
-                            <div class="text-end">
-                                <a href="/simple" class="btn-more">More >>></a>
-                            </div>
-                        </li>
-                        <li class="col-auto">
-                            <span>02.</span>
-                            <h5>TANZOのこだわり</h5>
-                            <div class="text-end">
-                                <a href="/quality" class="btn-more">More >>></a>
-                            </div>
-                        </li>
-                        <li class="col-auto">
-                            <span>03.</span>
-                            <h5>調理からテーブルへ</h5>
-                            <div class="text-end">
-                                <a href="/to-table" class="btn-more">More >>></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <div class="row gap-1">
+            <div class="col-md-5 text-side">
+                <h1>WETSUITS<br>FACTORY<br>IN TOKYO</h1>
+                <h3 class="catch">フルオーダー・ウェットスーツを<br>工場直販で</h3>
+                <p>RedLooは、一人一人の体型に合わせた<br>フルオーダー・ウェットスーツを工場直販でお届けします。<br>素材・カラー・ロゴまで自由に選べる、あなただけの一着を。</p>
             </div>
-            <div class="col-md-6 p-0 d-none d-md-block">
-                <div class="image-side blur">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/life_image.webp" alt="TANZOのある暮らし">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<?php // STORY SECTION // *********************************************************** // 
-?>
-<section class="story-sec">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-6 p-0 d-none d-md-block">
-                <div class="image-side blur">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/story_image.webp" alt="開発の物語">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="text-side">
-                    <div class="main-title blur">
-                        <span>The Making of TANZO</span>
-                        <h2 class="daily-title">開発の物語</h2>
-                        <h3 class="sub-catch">ヤマコーがつくる<br>「美味しい道具」</h3>
-                    </div>
-                    <div class="image-side blur d-md-none">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/story_image.webp" alt="開発の物語">
-                    </div>
-                    <p class="description">1,250℃の炎、2,000トンの圧力、そして熟練「ハンマーマン」の勘。鉄はただの素材から、料理を変える道具へと姿を変えます。その誕生の物語へ。</p>
-                    <div class="btn-area">
-                        <a class="btn-view-more" href="/story">VIEW MORE >>></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<?php // LINUP SECTION // *********************************************************** // 
-?>
-<section class="lineup-sec" id="lineup">
-    <div class="container">
-        <div class="main-title center blur">
-            <span>PRODUCT</span>
-            <h2 class="daily-title">商品ラインアップ</h2>
-        </div>
-        <div class="row fadeInUp-stagger">
-            <?php
-            $args = [
-                'post_type'      => 'products',
-                'posts_per_page' => -1,
-                'orderby'        => 'menu_order date',
-                'order'          => 'DESK',
-            ];
-            $q = new WP_Query($args);
-            $i = 1;
-            ?>
-
-            <?php if ($q->have_posts()) : ?>
-                <?php while ($q->have_posts()) : $q->the_post(); ?>
-                    <?php
-                    $num     = str_pad($i, 2, '0', STR_PAD_LEFT);
-                    $price   = get_post_meta(get_the_ID(), 'price', true);
-                    $title   = get_the_title();
-                    $link    = get_field('ec_url');
-                    $excerpt = get_the_excerpt();
-                    ?>
-
-                    <?php if ($i === 5): // ★ 5番目の前で見出しを挿入 
-                    ?>
-                        <div class="border-title center blur">
-                            <h3 class="products-heading">TANZO×SKYWOOD<br>吉野杉ラウンドプレート</h3>
+            <div class="col-md-7 slider-side">
+                <div class="slider-container">
+                    <?php foreach ($slides as $index => $slide) : ?>
+                        <div class="slide <?php echo ($index === 0) ? 'active' : ''; ?>">
+                            <img src="<?php echo esc_url($slide['img']); ?>" alt="<?php echo esc_attr($slide['alt']); ?>">
                         </div>
-                        <p class="text-center">TANZO製品専用の木製プレートを<br class="d-sm-none">ご用意いたしました。<br>サイズはS・M・Lと、使用するシーンにあわせて３種類からお選びいただけます</p>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
 
-                    <div class="col-md-6">
-                        <div class="product-content stagger">
-                            <span class="number"><?php echo esc_html($num); ?>.</span>
-
-                            <div class="product-image">
-                                <a href="<?php echo esc_url($link); ?>" rel="noopener noreferrer" target="_blank">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('large', [
-                                            'alt' => esc_attr($title),
-                                            'loading' => 'lazy',
-                                            'decoding' => 'async'
-                                        ]); ?>
-                                    <?php else: ?>
-                                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/noimage.webp'); ?>"
-                                            alt="<?php echo esc_attr($title); ?>" loading="lazy" decoding="async">
-                                    <?php endif; ?>
-                                </a>
-                            </div>
-
-                            <div class="product-info">
-                                <h3><?php echo esc_html($title); ?></h3>
-                                <a class="title-link" href="<?php echo esc_url($link); ?>" rel="noopener noreferrer" target="_blank">
-                                    <?php echo wp_kses_post(wpautop($excerpt)); ?>
-                                </a>
-                                <div class="d-flex justify-content-between align-items-baseline">
-                                    <div class="price">
-                                        <span class="me-1">¥</span>
-                                        <span>
-                                            <?php
-                                            echo is_numeric($price)
-                                                ? esc_html(number_format_i18n((float) $price))
-                                                : esc_html((string) $price);
-                                            ?>
-                                        </span>
-                                        <span>（税込）</span>
-                                    </div>
-                                    <a class="btn-more" href="<?php echo esc_url($link); ?>" rel="noopener noreferrer" target="_blank">
-                                        More &gt;&gt;
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
                     </div>
-
-                    <?php $i++; ?>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <p>商品がありません。</p>
-            <?php endif; ?>
+                </div>
+                <div class="dots">
+                    <?php foreach ($slides as $index => $slide) : ?>
+                        <div class="dot <?php echo ($index === 0) ? 'active' : ''; ?>"></div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
     </div>
+    <?php
+        get_template_part('template-parts/components/marquee', null, [
+        'text' => 'ORIGINAL FIT! GET YOUR CUSTOM WETSUIT',
+        'modifier' => ''
+        ]);
+    ?>
 </section>
 
 
-<?php // MAINTENAINCE SECTION // *********************************************************** // 
-?>
-<section class="maintenance-sec blur">
+<?php // ABOUT SECTION // *********************************************************** // ?>
+<section class="about-sec p-0" id="about-sec">
+    <div class="contaienr-fluid">
+        <div class="row gap-0">
+            <div class="col-md-6 image-side">
+                <img class="h-100" src="<?php bloginfo('template_url'); ?>/assets/images/home/about_1.webp" alt="aboutのイメージ">
+            </div>
+            <div class="col-md-6 text-side bg-blue">
+                <div class="title-template white text-center">
+                    <div class="title">
+                        <span>ご予約・注文・お問合せ</span>
+                        <h2>ABOUT</h2>
+                    </div>
+                    <h4 class="catch">工場直販で届ける<br>フルオーダー・ウェットスーツ</h4>
+                    <p>RedLooは、製造業のまち・東京都足立区の工場で生まれました。<br>積み重ねてきた製造の経験と、 受け継いだ仕立ての技術・姿勢をもとに、<br>直販だからこそ実現できる品質と価格でお届けしています。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+        get_template_part('template-parts/components/marquee', null, [
+        'text' => 'FULL ORDER WETSUITS',
+        'modifier' => 'reverse'
+        ]);
+    ?>
+</section>
+
+
+<?php // PRODUCTS SECTION // *********************************************************** // ?>
+<section class="products-sec" id="productsSec">
     <div class="container">
-        <div class="maintenance-wrapper">
-            <div class="main-title center blur">
-                <span>Maintenance/Q&A</span>
-                <h2 class="daily-title">育てる道具・Q&A</h2>
+        <div class="row gap-y-10 gap-md-10 align-center">
+            <div class="col-12 col-md-6 text-side">
+                <div class="title-template mb-10">
+                    <div class="title">
+                        <span>製品紹介</span>
+                        <h2>PRODUCTS</h2>
+                    </div>
+                    <h4 class="catch">4つのエントリースタイルから広がる<br>自分だけのオーダー</h4>
+                    <p>ネックエントリー、ロングチェストジップ、バックジップ、ノンジップ。<br>開口部の構造に加えて、シーガルやロンスプなどのタイプ（形）、 さらに素材や厚みの組み合わせを選ぶことができます。</p>
+                </div>
+
+                <div class="other-item">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/other_product.webp" alt="その他の商品イメージ">
+                    <div class="title-template">
+                        <h4 class="catch">そのほかのタイプ・アイテム</h4>
+                        <p>季節や用途に合わせたモデルも展開しています。 ドライスーツ、タッパー、ベスト、パンツなど、スタイルに合わせて組み合わせが可能です。</p>
+                    </div>
+                </div>
             </div>
-            <div class="text-center mb-5">
-                <p>TANZOはシーズニング済み。<br>簡単・楽しくお使いいただけます。</p>
+            <div class="col-12 col-md-6 image-side">
+                <div class="product-images row gap-y-6">
+                    <div class="col-6 col-md-6 p-1">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <span>ネックエントリー</span>
+                    </div>
+                    <div class="col-6 col-md-6 p-1">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <span>ロングチェストジップ</span>
+                    </div>
+                    <div class="col-6 col-md-6 p-1">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <span>バックジップ</span>
+                    </div>
+                    <div class="col-6 col-md-6 p-1">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <span>ノンジップ</span>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="products-link">
+            <p class="text-center">スタイルや用途に合わせて、最適な仕様を仕立てられます。</p>
             <div class="btn-area center">
-                <a class="btn-view-more" href="/maintenance">VIEW MORE >>></a>
+                <a class="btn btn-blue" href="/products">製品紹介</a>
+            </div>
+        </div>
+    </div>
+</section>
+<?php
+    get_template_part('template-parts/components/marquee', null, [
+    'text' => 'PROUDLY MADE IN OUR FACTORY.',
+    'modifier' => ''
+    ]);
+?>
+
+
+<?php // CUSTOM SECTION // *********************************************************** // ?>
+<section class="custom-sec" id="customSec">
+    <div class="container">
+        <div class="title-template text-center mb-md-10">
+            <div class="title">
+                <span>カスタム・オプション</span>
+                <h2>CUSTOM & OPTIONS</h2>
+            </div>
+            <p>基本仕様をもとに、色・素材・仕上げを自由に選べます。<br>自分のスタイルに合わせた一着をつくる楽しさを、ここから。</p>
+        </div>
+        <div class="custom-images">
+            <div class="row gap-y-10 gap-md-6">
+                <div class="col-6 col-md-4">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/custom_1.webp" alt="color & logo">
+                    <dl>
+                        <dt>COLOR & LOGO</dt>
+                        <dd>生地、ステッチも、ロゴも。 仕上げの印象に合わせてカラーを選べます。</dd>
+                    </dl>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/custom_2.webp" alt="FIT & FORM">
+                    <dl>
+                        <dt>FIT & FORM</dt>
+                        <dd>動きに寄り添う、細部の調整。 手首や足首の仕上げで、着心地が変わります。</dd>
+                    </dl>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/custom_3.webp" alt="DETAIL & CRAFT">
+                    <dl>
+                        <dt>DETAIL & CRAFT</dt>
+                        <dd>補強、裏テープ、縫いの仕上げ。 見えない部分まで、自分仕様に。</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="custom-link pt-md-10">
+            <div class="btn-area center">
+                <a class="btn btn-black" href="/custom">カスタム・オプション</a>
+            </div>
+        </div>
+    </div>
+</section>
+<?php
+    get_template_part('template-parts/components/marquee', null, [
+    'text' => 'CUSTOM & GET YOUR ONLY 1 !',
+    'modifier' => 'reverse'
+    ]);
+?>
+
+
+<?php // ORDER SECTION // *********************************************************** // ?>
+<section class="order-sec" id="orderSec">
+    <div class="container">
+        <img class="check" src="<?php bloginfo('template_url'); ?>/assets/images/home/check.svg" alt="CHECK!">
+        <div class="radius-box blue">
+            <div class="title-template text-center mb-md-10 white">
+                <div class="title">
+                    <span>ご利用ガイド</span>
+                    <h2>ORDER GUID</h2>
+                </div>
+                <h4 class="catch">波に集中できる一着は、体に合う一着から。</h4>
+                <p>RedLooでは、スタイル・タイプ・素材・厚みを選び、<br>36箇所の採寸をもとに仕立てるフルオーダーを行なっています。<br>体に合わせた仕立てだからこそ、動きやすさや着心地が変わります。</p>
+            </div>
+            <div class="measuring-method">
+                <div class="radius-title text-center">
+                     <h3>2つの採寸方法</h3>
+                </div>
+                <div class="row gap-md-10">
+                    <div class="col-12 col-md-6 measuring-card yellow">
+                        <div class="title text-center">
+                            <h4>FACTORY FITTING</h4>
+                            <p>工場での採寸（無料）</p>
+                        </div>
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="工場での採寸">
+                        <p>スタッフが36か所を丁寧に計測。費用はかかりません。 工場に来ていただければ、実際の素材を手に取り、サンプルを試着しながら、仕上がりをイメージできます。 その場で相談できる安心感と、完成度の高さにつながります。</p>
+                    </div>
+                    <div class="col-12 col-md-6 measuring-card">
+                        <div class="title text-center">
+                            <h4>SELF FITTING</h4>
+                            <p>ご自身での採寸</p>
+                        </div>
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_2.webp" alt="工場での採寸">
+                        <p>遠方の方や都合が合わない方には、採寸ガイドをご用意しています。ご自身で計測してオーダーを進めることも可能です。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="three-types">
+                <div class="radius-title text-center">
+                     <h3>フルオーダーの基本を作る <br class="d-md-none">３つの仕様</h3>
+                </div>
+                <div class="row gap-md-8">
+                    <div class="col-4 col-md-4 three-types-card">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="スタイル">
+                        <div class="title text-center">
+                            <h5>スタイル</h5>
+                            <p>開口部の着脱構造</p>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-4 three-types-card">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="スタイル">
+                        <div class="title text-center">
+                            <h5>タイプ</h5>
+                            <p>形・丈感</p>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-4 three-types-card">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="スタイル">
+                        <div class="title text-center">
+                            <h5>素材・厚み</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-links-area text-center">
+                <p>基本的な選び方や採寸、オーダーの流れについては、下記よりご覧いただけます。</p>
+                <div class="btn-area center gap-md-20">
+                    <a class="btn btn-black" href="/select-type">基本仕様の選び方</a>
+                    <a class="btn btn-black" href="/flow">ご注文の流れ</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 
-<?php // NEWS SECTION // *********************************************************** // 
-?>
+<?php // VOICE SECTION // *********************************************************** // ?>
+<section class="voice-sec" id="voiceSec">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="title-template mb-md-10">
+                    <div class="title">
+                        <span>お客様の声</span>
+                        <h2>VOICE</h2>
+                    </div>
+                    <div class="btn-area">
+                        <a class="btn-black" href="/voice">お客様の声一覧</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <?php if ($voice_query->have_posts()) :?>
+                    <div class="voice-list">
+                        <?php while ($voice_query->have_posts()) : $voice_query->the_post(); ?>
+                        <article class="voice-item">
+                            <div class="voice-thumb">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('medium'); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.webp" alt="no image">
+                            <?php endif; ?>
+                            </div>
+
+                            <div class="voice-content">
+                                <div class="voice-meta">
+                                    <span class="voice-label">お客様の声</span>
+                                    <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                                </div>
+                                <h4 class="voice-title"><?php the_title(); ?></h4>
+                                <p class="voice-excerpt">
+                                    <?php echo wp_trim_words(get_the_excerpt(), 100, '...'); ?>
+                                </p>
+                            </div>
+                        </article>
+                        <?php endwhile; ?>
+                    </div>
+
+                <?php wp_reset_postdata(); ?>
+                <?php else : ?>
+                    <p>まだ投稿がありません。</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<?php // NEWS SECTION // *********************************************************** // ?>
 <section class="news-sec">
     <div class="container">
         <div class="row">
@@ -271,8 +384,7 @@ get_header();
 </section>
 
 
-<?php // CONTACT SECTION // *********************************************************** // 
-?>
+<?php // CONTACT SECTION // *********************************************************** // ?>
 <!-- <section class="contact-sec" id="contact">
     <div class="container xs-container">
         <div class="main-title blur">

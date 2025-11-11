@@ -20,7 +20,7 @@ $navigation = [
         'menu' => 'ご利用ガイド',
         'link' => '/guide',
         'children' => [
-            ['menu' => '基本仕様の選び方', 'link' => 'selection'],
+            ['menu' => '基本仕様の選び方', 'link' => 'select-type'],
             ['menu' => 'ご利用の流れ', 'link' => 'flow'],
             ['menu' => 'リペア・修理', 'link' => 'repair'],
             ['menu' => 'よくあるご質問', 'link' => 'qa'],

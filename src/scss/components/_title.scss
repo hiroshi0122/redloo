@@ -5,293 +5,67 @@
 //**************************************************************
 // TITLE
 //**************************************************************
-.main-title {
-    margin-bottom: 4rem;
-
-    &.story {
-        h1 {
-            letter-spacing: 5px;
-            font-size: clamp(2.5rem, 3vw, 4.6rem);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            &::before {
-                content:"";
-                display: block;
-                margin-right: 40px;
-                border-bottom: 1px solid $font-gray;
-                width: 5%;
-            }
-
-            &::after {
-                content:"";
-                display: block;
-                margin-left: 40px;
-                border-bottom: 1px solid $font-gray;
-                width: 5%;
-            }
-        }
-    }
-    
-    span {
-        display: flex;
-        position: relative;
-        color: $font-gray;
-        font-size: clamp(1.2rem, 2vw, 1.5rem);
-        margin-bottom: 2rem;
-        font-family: $en-font;
-        letter-spacing: 5px;
-
-        &::after {
-            content:"";
-            display: block;
-            margin-left: 5px;
-            border-bottom: 1px solid $font-gray;
-            width: 20px;
-        }
-    }
-
-    h1 {
-        letter-spacing: 5px;
-        font-size: clamp(2.5rem, 3vw, 4.6rem);
-    }
-
-    h2 {
-        letter-spacing: 5px;
-        font-size: clamp(2rem, 2.5vw, 3.5rem);
-        padding-left: 2rem;
-        border-left: solid 2px $black;
-    }
-
-    h3 {
-        margin-top: 2rem;
-        letter-spacing: 5px;
-        font-size: clamp(16px, 1.8vw, 24px);
-    }
-
-    /* ### 中央揃えタイトル
-    --------------------------------------*/
-    &.center {
-        text-align: center;
-
-        span {
-            justify-content: center;
-            text-align: center;
-            
-            &::before {
-                content:"";
-                display: block;
-                margin-right: 10px;
-                border-bottom: 1px solid $font-gray;
-                width: 20px;
-            }
-        }
-
-        h2 {
-            display: inline-block;
-            margin: 0 auto;
-            padding-right: 2rem;
-            border-right: solid 2px $black;
-        }
-    }
-
-
-    // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-        margin-bottom: 2rem;
-
-        &.story {
-            h1 {
-                &::before {
-                    margin-right: 20px;
-                }
-
-                &::after {
-                    margin-left: 20px;
-                }
-            }
-        }
-
-        h2 {
-            padding-left: 1.5rem;
-        }
-        h3 {
-            margin-top: 1.5rem;
-        }
-    
-        span {
-            font-size: 10px;
-            margin-bottom: 1.5rem;
-
-            &::after {
-                width: 13px;
-            }
-        }
-
-        /* ### 中央揃えタイトル
-        --------------------------------------*/
-        &.center {
-            h2 {
-                padding-right: 1.5rem;
-            }
-        }
-    }
-}
-
-
-/* ## SUB TITLE
+/* ## TITLE TEMPLATE
 ***********************************************/
-.sub-title {
-    margin-bottom: 2.5rem;
+.title-template {
+    color: $blue;
 
-    h2 {
-        letter-spacing: 5px;
-        font-size: clamp(16px, 1.8vw, 24px);
-    }
-
-    h4 {
-        letter-spacing: 3px;
-    }
-    // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-        margin-bottom: 1.5rem;
-    }
-}
-
-
-/* ## BORDER TITLE
-***********************************************/
-.border-title {
-    margin-bottom: 3rem;
-
-    h2 {
-        font-size: clamp(18px, 2.8vw, 36px);
-        display: inline-block;
-        border-bottom: solid 1px $black;
-        letter-spacing: 5px;
-    }
-
-    h3 {
-        font-size: clamp(16px, 2.4vw, 28px);
-        display: inline-block;
-        border-bottom: solid 1px $black;
-        letter-spacing: 5px;
-    }
-
-    h4 {
-        font-size: clamp(16px, 2vw, 22px);
-        display: inline-block;
-        border-bottom: solid 1px $black;
-        letter-spacing: 5px;
-    }
-
-    // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-        margin-bottom: 1.5rem;
-
-        h2 {
-            letter-spacing: 3px;
-        }
-    }
-
-    &.center {
-        text-align: center;
-    }
-}
-
-
-/* ## NUMBERING TITLE
-***********************************************/
-.numbering-title {
-     margin-bottom: 2.5rem;
-
-     /* ### TITLE
+    /* ### TITLE
     --------------------------------------*/
     .title {
-        display: flex;
-        align-items: baseline;
-
-        h2 {
-            letter-spacing: 5px;
-            font-size: clamp(16px, 1.8vw, 24px);
-        }
-
         span {
-            font-size: clamp(20px, 2.5vw, 40px);
+            font-size: 13px;
+        }
+        h2 {
+            font-size: clamp(42px, 6.5vw, 120px);
             font-family: $en-font;
-            color: $font-gray;
-            margin-right: 10px
+            font-weight: 400;
+            margin-bottom: 1rem;
         }
     }
 
-     /* ### SUB TITLE
+    /* ### CATCH
     --------------------------------------*/
-    .sub-title {
-        letter-spacing: 4px;
-        display: flex;
-        align-items: center;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 15px;
-            border-bottom: solid 1px $black;
-            margin-right: 10px;
-        }
-
-        &::after {
-            content: '';
-            display: block;
-            width: 15px;
-            border-bottom: solid 1px $black;
-            margin-left: 10px;
-        }
-    }
-
-    &.center {
-        .title {
-            justify-content: center;
-        }
-        .sub-title {
-            justify-content: center;
-        }
-    }
-
-     /* ### & BORDER
-    --------------------------------------*/
-    &.border-bt {
-        display: flex;
-        align-items: center;
-        border-bottom: solid 1px $black;
+    .catch {
+        font-size: clamp(18px, 2vw, 24px);
         margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
- 
-        h2 {
-            letter-spacing: 5px;
-            font-size: clamp(20px, 2.4vw, 28px);
+        color: $black;
+    }
+    p {
+        color: $black;
+    }
+
+    &.white {
+        .title {
+            span {
+                color: $white;
+            }
+            h2 {
+                color: $white;
+            }
         }
 
-        span {
-            font-size: clamp(20px, 2.5vw, 40px);
-            font-family: $en-font;
-            color: $font-gray;
-            margin-right: 10px
+        /* ### CATCH
+        --------------------------------------*/
+        .catch {
+            color: $white;
         }
-
-        &.center {
-            display: inline-flex;
-            justify-content: center;
-            border-bottom: solid 1px $black;
+        p {
+            color: $white;
         }
 
     }
 }
 
 
-
-
-
+/* ## RAdIUS TITLE
+***********************************************/
+.radius-title {
+    background-color: $black;
+    border-radius: 40px;
+    padding: 2rem 0;
+    margin-bottom: 10rem;
+} 
 
 /* ## コメント中
 ***********************************************/

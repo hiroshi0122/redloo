@@ -9,298 +9,359 @@
 ********************************************************************/
 #first-view-sec {
     position: relative;
-    overflow: hidden;
-
-    .container-fluid {
-        padding: 0 2%;
-    }
-
-     /* ### MOVIE AREA
-    --------------------------------------*/
-    .movie-area {
-        height: clamp(640px, 40vw, 840px);
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-
-        iframe {
-            position: absolute;
-            top: 48%;
-            left: 50%;
-            width: 100%;
-            height: 130%;
-            transform: translate(-50%, -50%);
-            pointer-events: none; /* クリック無効（背景用途なら便利） */
-        }
-    }
-
-    /* ### CATCH
-    --------------------------------------*/
-    .catch {
-        position: absolute;
-        top: 15%;
-        right: 7%;
-        // transform: translateX(-50%);
-        width: clamp(120px, 25vw, 340px);
-        z-index: 4;
-        opacity: 0;
-    }
-
-    // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-        .container-fluid {
-            padding: 0;
-        }
-
-        /* ### MOVIE AREA
-        --------------------------------------*/
-        .movie-area {
-            height: clamp(300px, 74vw, 480px);
-
-            iframe {
-                position: absolute;
-                width: 150%;
-                height: 130%;
-            }
-        }
-        
-
-        /* ### CATCH
-        --------------------------------------*/
-        .catch {
-            position: absolute;
-            top: 34%;
-            right: 0;
-            left: 0;
-            width: 56%;
-            margin: 0 auto;
-        }
-    }
-}
-
-/* ## DAILY LIFE SECTION（TANZOのある暮らし）
-******************************************************************/
-.daily-life-sec {
-    max-width: 1680px;
-    margin: 0 auto;
 
     /* ### TEXT SIDE
     --------------------------------------*/
     .text-side {
-        padding: 0 5% 0 10%;
-
-        .description {
-            margin-bottom: 3rem;
-        }
-    }
-
-    /* ### SECOND PAGE MENU
-    --------------------------------------*/
-    .second-page-menu {
-        li {
-            padding-right: 2rem;
-            margin-bottom: 2rem;
-
-            span {
-                font-size: clamp(12px, 1.5vw, 18px);
-                font-family: $en-font;
-                color: $font-gray;
-            }
-
-            h5 {
-                font-weight: 500;
-                letter-spacing: 2px;
-                margin-bottom: 1.5rem;
-            }
-        }
-    }
-
-    // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-
-        /* ### TEXT SIDE
-        --------------------------------------*/
-        .text-side {
-            padding: 0;
-        }
-
-        /* ### IMAGE SIDE
-        --------------------------------------*/
-        .image-side {
-            margin-bottom: 3rem;
-        }
-
-        /* ### SECOND PAGE MENU
-        --------------------------------------*/
-        .second-page-menu {
-            li {
-                padding-right: 1.5rem;
-            }
-        }
-    }
-}
-
-/* ## STORY SECTION（開発の物語）
-******************************************************************/
-.story-sec {
-    max-width: 1680px;
-    margin: 0 auto;
-
-    /* ### TEXT SIDE
-    --------------------------------------*/
-    .text-side {
-        padding: 0 10% 0 7%;
-
-        .description {
-            margin-bottom: 3rem;
-        }
-    }
-
-
-    // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-
-        /* ### TEXT SIDE
-        --------------------------------------*/
-        .text-side {
-            padding: 0;
-        }
-
-        /* ### IMAGE SIDE
-        --------------------------------------*/
-        .image-side {
-            margin-bottom: 3rem;
-        }
-    }
-}
-
-/* ## LINUP SECTION（商品ラインナップ）
-******************************************************************/
-.lineup-sec {
-
-    .border-title {
-        margin-top: 10rem;
-    }
-
-    /* ### CONTENT
-    --------------------------------------*/
-    .product-content {
-        padding: 10%;
-
-        /**** #### NUMBER ****/
-        .number {
-            font-size: 18px;
+        padding-left: 10%;
+        h1 {
             font-family: $en-font;
-            color: $font-gray;
+            color: $blue;
+            font-weight: 400;
+            line-height: 1;
+            font-size: clamp(3.6rem, 9vw, 14rem);
+            padding-top: 5rem;
+            margin-bottom: 4rem;
         }
+        .catch {
+            margin-bottom: 3rem;
+        }
+    }
 
-        /**** #### PRODUCT IMAGE ****/
-        .product-image {
-            aspect-ratio: 5 / 3;
-            overflow: hidden;
-            margin-bottom: 2.5rem;
+    /* ### SLIDER CONTAINER
+    --------------------------------------*/
+    .slider-container {
+        position: relative;
+        border-radius: 80px 0 0 0;
+        overflow: hidden;
+        height: clamp(430px, 90vw, 950px);
 
-            a {
-                overflow: hidden;
-                transition: 0.2s;
-
-                &:hover {
-                    img {
-                        transform: scale(1.1);
-                        transition: 0.2s;
-                    }
-                }
-            }
+        /* #### SLIDE --------------------*/
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: scale(1);
+            transition: transform 5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 0;
 
             img {
-                width: 100%;
                 height: 100%;
+                width: 100%;
                 object-fit: cover;
-                transition: 0.2s;
+                object-position: 50% 33%;
+            }
+
+            &.active {
+                z-index: 1;
             }
         }
 
-        /**** #### PRODUCT INFO ****/
-        .product-info {
-            h3 {
-                font-size: clamp(18px, 1.8vw, 22px);
-                margin-bottom: 1rem;
-                letter-spacing: 2px;
-            }
+        /* #### PROGRESS BAR --------------------*/
+        .progress-bar {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            z-index: 2;
 
-            p {
-                margin-bottom: 1rem;
-            }
-
-            .price {
-                display: flex;
-                align-items: baseline;
-
-                span {
-                    font-family: $en-font;
-                    font-size: 13px;
-                    font-weight: bold;
-
-                    &:nth-child(2) {
-                        font-size: 30px;
-                    }
-                }
+            .progress {
+                height: 100%;
+                width: 0;
+                background: $white;
             }
         }
     }
 
     // ## MOBILE // *************************************************>
     @include media-under(sp) {
+    }
+}
 
-        .border-title {
-            margin-top: 7rem;
+
+/* ## ABOUT SECTION（ABOUTセクション）
+********************************************************************/
+.about-sec {
+    .image-side {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            object-position: 50% 40%;
+        }
+    }
+    .text-side {
+        place-content: center;
+    }
+}
+
+
+
+/* ## PRODUCTS SECTION（製品紹介）
+********************************************************************/
+.products-sec {
+    background: linear-gradient(to left, $bg-gray 50%, $white 50%);
+
+    /* ## ROW
+    ***********************************************/
+    .row {
+        margin-bottom: 6rem;
+    }
+
+    /* ## OTHER ITEM
+    ***********************************************/
+    .other-item {
+        img {
+            border-radius: 20px;
+            aspect-ratio: 20/9;
+        }
+    }
+
+    /* ## PRODUCTS IMAGES
+    ***********************************************/
+    .product-images {
+        img {
+            border-radius: 10px;
+            aspect-ratio: 3/4;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    /* ## PRODUCTS LINK
+    ***********************************************/
+    .products-link {
+        p {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+
+
+/* ## CUSTOM SECTION（カスタム・オプション）
+********************************************************************/
+.custom-sec {
+    background: linear-gradient(to bottom, $white 65%, $blue 35%);
+
+    .custom-images {
+        img {
+            aspect-ratio: 4/5;
+            border-radius: 10px;
         }
 
-        /* ### CONTENT
-        --------------------------------------*/
-        .product-content {
-            padding: 5%;
-            margin-bottom: 2rem;
-
-            /**** #### PRODUCT INFO ****/
-            .product-info {
-                h3 {
-                    font-size: clamp(16px, 1.8vw, 22px);
-                    margin-bottom: 1rem;
-                }
-
-                .price {
-                    span {
-                        &:nth-child(2) {
-                            font-size: 26px;
-                        }
-                    }
-                }
+        dl {
+            dt {
+                font-family: $en-font;
+                font-size: clamp(18px, 2vw, 34px);
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
+            dt,dd {
+                color: $white;
             }
         }
     }
 }
 
-/* ## MAINTENANCE SECTION（メンテナンス・Q&A）
-******************************************************************/
-.maintenance-sec {
-    /* ### WRAPPER
+
+/* ## ORDER SECTION（カスタム・オプション）
+********************************************************************/
+.order-sec {
+
+    .check {
+        width: 90%;
+        margin: 0 auto 2rem;
+    }
+    /* ### MEASURIG METHOD
     --------------------------------------*/
-    .maintenance-wrapper {
-        padding: 8% 0;
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-            url("#{$image-path}/maintenance/kv_maintenance.webp");
-        background-repeat: no-repeat;
-        background-position: 50% 55%;
-        background-size: cover;
+    .measuring-method {
+        margin-bottom: 6rem;
+    }
+
+    /* ### MEASURIG CARD
+    --------------------------------------*/
+    .measuring-card {
+        border: solid 1px $white;
+        padding: 6%;
+        position: relative;
+
+        /**** #### TITLE ****/
+        .title {
+            margin-bottom: 2rem;
+
+            h4 {
+                font-size: clamp(2.8rem, 4vw, 6.8rem);
+                line-height: 1.5;
+                font-weight: 400;
+                border-bottom: solid 1px $white;
+                font-family: $en-font;
+                margin-bottom: 1rem;
+            }
+        }
+
+        img {
+            margin-bottom: 1.5rem;
+            aspect-ratio: 16/9;
+        }
+        p {
+            font-size: clamp(13px, 1vw, 17px);
+        }
+
+        /**** #### YELLOW ****/
+        &.yellow {
+            border: solid 1px $yellow;
+            &::before {
+                position: absolute;
+                top: -44px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                display: inline-block;
+                content: 'おすすめ！';
+                font-size: 16px;
+                font-weight: 700;
+                text-align: center;
+                max-width: 140px;
+                letter-spacing: 1px;
+                border-radius: 30px;
+                background-color: $white;
+                padding: .5rem 1rem;
+                color: $blue;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: -9px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 14px solid $white;
+            }
+
+            .title {
+                color: $yellow;
+                h4 {
+                    border-bottom: solid 1px $yellow;
+                }
+            }
+        }
+    }
+
+    /* ### THREE TYPES
+    --------------------------------------*/
+    .three-types {
+        margin-bottom: 6rem;
+
+        .radius-title {
+            margin-bottom: 4rem;
+        }
+    }
+
+    /* ### THREE TYPES CARD
+    --------------------------------------*/
+    .three-types-card {
+
+        img {
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            h5 {
+                font-size: clamp(1.6rem, 1.2vw, 2rem);
+                font-weight: 700;
+            }
+            p {
+                font-size: clamp(13px, 1vw, 17px);
+            }
+        }
+    }
+
+    .order-links-area  {
+        p {
+            margin-bottom: 4rem;
+        }
     }
 }
 
-/* ## NEWS SECTION（お知らせ）
-******************************************************************/
-.news-sec {
-}
 
+/* ## VOICE SECTION（お客様の声）
+********************************************************************/
+.voice-sec {
+
+    /* ### VOICE LIST
+    --------------------------------------*/
+    .voice-list {
+
+    }
+
+    /* ### VOICE ITEM
+    --------------------------------------*/
+    .voice-item {
+        background-color: $bg-gray;
+        padding: 3%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .voice-thumb {
+            width: auto;
+            max-width: 100px;
+            border-radius: 50%;
+            border: solid 1px $black;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        /**** #### VOICE CONTENT ****/
+        .voice-content {
+            width: auto;
+            padding-left: 1.5rem;
+
+            .voice-meta {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                span {
+                    background-color: $black;
+                    padding: 0px 10px;
+                    color: $white;
+                    font-weight: 400;
+                    border-radius: 5px;
+                }
+
+                time {
+                    font-size: 13px;
+                    color: $font-gray;
+                }
+            }
+
+            .voice-title {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
 
 // ## MOBILE // *************************************************>
 /* ## コメント中

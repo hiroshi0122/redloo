@@ -2,14 +2,19 @@
 //**************************************************************
 // wp head cleaner
 //**************************************************************
-/* DNS prefetch ※外部ドメインの名前解決を事前に行い、表示速度を上げます。 */
-function remove_dns_prefetch( $hints, $relation_type ) {
-	if ( 'dns-prefetch' === $relation_type ) {
-		return array_diff( wp_dependencies_unique_hosts(), $hints );
-	}
-	return $hints;
+
+
+//**************************************************************
+// Gutenbergのフロントエンド用スタイルを無効化
+//**************************************************************
+function remove_gutenberg_css_conditionally() {
+  if ( !is_single() ) { // single以外は削除
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('global-styles');
+  }
 }
-add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
+add_action('wp_enqueue_scripts', 'remove_gutenberg_css_conditionally', 100);
 
 
 //**************************************************************

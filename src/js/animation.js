@@ -81,12 +81,12 @@ gsap.utils.toArray(".blur").forEach((target) => {
 
 
 // FVキャッチコピー ------------------------------//
-window.addEventListener("load", function() {
-  gsap.fromTo(".movie-area .catch",
-    { opacity: 0, filter: "blur(20px)", },                 // 初期状態
-    { opacity: 1, duration: 2,  filter: "blur(0px)", delay: 3.5, ease: "power2.out" } 
-  );
-});
+// window.addEventListener("load", function() {
+//   gsap.fromTo(".movie-area .catch",
+//     { opacity: 0, filter: "blur(20px)", },                 // 初期状態
+//     { opacity: 1, duration: 2,  filter: "blur(0px)", delay: 3.5, ease: "power2.out" } 
+//   );
+// });
 
 
 // FADE IN UP STAGGER（順番に表示させる） ------------------------------//
@@ -196,5 +196,20 @@ document.addEventListener('DOMContentLoaded', () => {
       li.classList.remove('open');
       if (link) link.setAttribute('aria-expanded', 'false');
     });
+  });
+});
+
+
+//**********************************************************************
+// 無限スクロール
+//**********************************************************************
+document.querySelectorAll(".marquee").forEach(marquee => {
+  const isReverse = marquee.classList.contains("marquee--reverse");
+
+  gsap.to(marquee.querySelector(".marquee__inner"), {
+    xPercent: isReverse ? 100 : -100, // ← 向きを条件で切り替え
+    repeat: -1,
+    duration: 10,
+    ease: "none"
   });
 });

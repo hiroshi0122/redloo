@@ -13,10 +13,10 @@ include 'navigation.php';  // 配列を読み込み
 
 <div class="container-fluid">
     <div class="row justify-between align-center">
-        <a class="col-auto logo-side" href="/">
+        <a class="col-md-2 logo-side" href="/">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo_w.svg" alt="RedLooロゴ">
         </a>
-        <nav class="col d-none d-xl-flex gap-5">
+        <nav class="col-md-10 d-none d-xl-flex justify-end gap-5">
             <ul class="navigation d-flex flex-row align-center gap-3">
                 <?php foreach ($navigation as $key => $menu): ?>
                     <?php

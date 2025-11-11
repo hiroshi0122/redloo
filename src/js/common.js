@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 //**************************************************************
 // 2. Scroll ※topを離れたらclass付与
 //**************************************************************
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //**********************************************************************
 // 7. SLIDER
 //**********************************************************************
+
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const progress = document.getElementById('progress');
