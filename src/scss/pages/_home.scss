@@ -363,6 +363,207 @@
     }
 }
 
+
+/* ## BLOG SECTION（お客様の声）
+********************************************************************/
+.blog-sec {
+    .bg-gray {
+        background-color: $bg-gray;
+        padding: 7% 10%;
+    }
+}
+
+/* ## NEWS ITEM
+***********************************************/
+.news-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    /* ### NEWS THUMB
+    --------------------------------------*/
+    .news-thumb {
+        width: 20%;
+        aspect-ratio: 8/5;
+        display: block;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    /* ### NEWS BODY
+    --------------------------------------*/
+    .news-body {
+        width: 80%;
+        padding-left: 2rem;
+    }
+
+    /* ### NEWS META
+    --------------------------------------*/
+    .news-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* ### NEWS TITLE
+    --------------------------------------*/
+    .news-title {
+        letter-spacing: 0;
+        font-size: clamp(15px, 2vw, 2rem);
+        margin-bottom: .5rem;
+    }
+
+    /* ### NEWS EXCERPT
+    --------------------------------------*/
+    .news-excerpt {
+        color: $font-gray;
+        font-size: clamp(11px, 1.2vw, 15px);
+        line-height: 1.7;
+    }
+}
+
+.news-cat {
+    background-color: $black;
+    border-radius: 5px;
+    color: $white;
+    padding: 5px 10px;
+    font-size: clamp(12px, 1vw, 14px);
+    display: block;
+    line-height: 1;
+}
+.news-date {
+    color: $font-gray;
+    font-size: clamp(12px, 1vw, 14px);
+}
+
+
+/* ## ACCESS SECTION（アクセス）
+********************************************************************/
+.access-sec {
+
+    /* ### ABOUT VISIT
+    --------------------------------------*/
+    .about-visit {
+        margin-bottom: 10rem;
+    }
+
+    /* ### ACCESS INFO
+    --------------------------------------*/
+    .access-info {
+
+        /**** #### LABELS ****/
+        .labels {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            span {
+                display: inline-block;
+                background-color: $black;
+                border-radius: 40px;
+                color: $white;
+                font-weight: 400;
+                padding: 0 15px;
+                line-height: 1.7;
+            }
+        }
+
+        /**** #### LOGO ****/
+        .logo {
+            max-width: 240px;
+            width: 80%;
+
+            &.redloo {
+                max-width: 100px;
+            }
+        }
+
+        /**** #### ACCESS INFO DEATIL ****/
+        .access-info-detail {
+            margin-top: 2rem;
+            margin-bottom: 6rem;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                &::before {
+                    content: '';
+                    width: 25px;
+                    height: 25px;
+                    background-size: auto;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+
+            .address {
+                font-weight: 700;
+                &::before {
+                    background-image: url('#{$image-path}/common/map_blue.svg');
+                }
+            }
+            .train {
+                font-weight: 700;
+                &::before {
+                    background-image: url('#{$image-path}/common/train_blue.svg');
+                }
+            }
+            .car {
+                font-weight: 700;
+                &::before {
+                    background-image: url('#{$image-path}/common/car_blue.svg');
+                }
+            }
+        }
+
+        /**** #### ACCESS INFO DEATIL ****/
+        .google-map {
+            position: relative;
+
+            iframe {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+
+            .btn-map {
+                position: absolute;
+                right: 6%;
+                top: 92%;
+                z-index: 2;
+            }
+        }
+    }
+
+    .tel-info {
+        .tel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: $en-font;
+            font-size: 34px;
+
+            &::before {
+                content: '';
+                width: 30px;
+                height: 30px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url('#{$image-path}/common/tel_blue.svg');
+            }
+        }
+    }
+}
+
+
+
+
 // ## MOBILE // *************************************************>
 /* ## コメント中
 ***********************************************/

@@ -123,6 +123,39 @@
     }
 }
 
+/* ### BTN MAP（詳しく見る）
+--------------------------------------------*/
+.btn-map {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: $blue;
+    color: $white;
+    border-radius: 50px;
+    position: relative;
+    padding: .5rem 3rem .5rem 2rem;
+    text-align: left;
+    border: solid 2px $white;
+
+    &::before {
+        display: block;
+        right: 0;
+        top: 0;
+        content: '';
+        background-image: url('#{$image-path}/common/map_white.svg');
+        background-size: auto;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 20px;
+    }
+
+    &:hover {
+        background-color: $black;
+        transition: 0.2s;
+    }
+}
+
 /* ### BTN AREA
 --------------------------------------------*/
 .btn-area {

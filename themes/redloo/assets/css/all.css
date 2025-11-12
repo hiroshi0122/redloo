@@ -8804,6 +8804,14 @@ button {
   color: #000000 !important;
 }
 
+.blue {
+  color: #264898 !important;
+}
+
+.pink {
+  color: #EB42B2 !important;
+}
+
 /* ## BG COLOR
 ***********************************************/
 .bg-blue {
@@ -8851,6 +8859,12 @@ h5 {
 }
 
 p, a {
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 2;
+  font-weight: 500;
+}
+
+li {
   font-size: clamp(14px, 1.2vw, 18px);
   line-height: 2;
   font-weight: 500;
@@ -8997,6 +9011,7 @@ header {
   width: 100%;
   transition: 0.2s;
   background-color: rgba(255, 255, 255, 0.85);
+  height: 110px;
 }
 header.hide {
   top: -200px;
@@ -9007,10 +9022,12 @@ header {
   =====================================*/
 }
 header .logo-side {
+  width: 230px;
+  height: 110px;
   background-color: #264898;
   display: block;
-  padding: 2rem 5rem 2rem 3rem;
   border-radius: 0 0 50px 0;
+  padding: 2rem 0 0 2.5rem;
 }
 header .logo-side img {
   width: 160px;
@@ -9535,6 +9552,37 @@ footer .copyright {
   transition: 0.2s;
 }
 
+/* ### BTN MAP（詳しく見る）
+--------------------------------------------*/
+.btn-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #264898;
+  color: #fff;
+  border-radius: 50px;
+  position: relative;
+  padding: 0.5rem 3rem 0.5rem 2rem;
+  text-align: left;
+  border: solid 2px #fff;
+}
+.btn-map::before {
+  display: block;
+  right: 0;
+  top: 0;
+  content: "";
+  background-image: url("/wp-content/themes/redloo/assets/images/common/map_white.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 20px;
+}
+.btn-map:hover {
+  background-color: #000000;
+  transition: 0.2s;
+}
+
 /* ### BTN AREA
 --------------------------------------------*/
 .btn-area {
@@ -9563,7 +9611,7 @@ footer .copyright {
   font-size: 13px;
 }
 .title-template .title h2 {
-  font-size: clamp(42px, 6.5vw, 120px);
+  font-size: clamp(42px, 7vw, 120px);
   font-family: "Anton", sans-serif;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -9604,6 +9652,48 @@ footer .copyright {
   border-radius: 40px;
   padding: 2rem 0;
   margin-bottom: 10rem;
+  color: #fff;
+}
+
+/* ## BORDER TITLE
+***********************************************/
+.border-title {
+  color: #264898;
+  margin-bottom: 1.5rem;
+}
+.border-title h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.border-title h3::after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  border-bottom: solid 1px #264898;
+}
+.border-title h5 {
+  font-size: clamp(16px, 2vw, 22px);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 700;
+}
+.border-title h5::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  border-bottom: solid 1px #264898;
+}
+.border-title.center h3 {
+  justify-content: center;
+}
+.border-title.center h3::before {
+  content: "";
+  width: 90px;
+  height: 1px;
+  border-bottom: solid 1px #264898;
 }
 
 /* ## コメント中
@@ -10342,6 +10432,196 @@ blockquote cite {
 }
 .voice-sec .voice-item .voice-content .voice-title {
   margin-bottom: 5px;
+}
+
+/* ## BLOG SECTION（お客様の声）
+********************************************************************/
+.blog-sec .bg-gray {
+  background-color: #F7F7F7;
+  padding: 7% 10%;
+}
+
+/* ## NEWS ITEM
+***********************************************/
+.news-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+  /* ### NEWS THUMB
+  --------------------------------------*/
+}
+.news-item .news-thumb {
+  width: 20%;
+  aspect-ratio: 8/5;
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.news-item .news-thumb img {
+  height: 100%;
+}
+.news-item {
+  /* ### NEWS BODY
+  --------------------------------------*/
+}
+.news-item .news-body {
+  width: 80%;
+  padding-left: 2rem;
+}
+.news-item {
+  /* ### NEWS META
+  --------------------------------------*/
+}
+.news-item .news-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.news-item {
+  /* ### NEWS TITLE
+  --------------------------------------*/
+}
+.news-item .news-title {
+  letter-spacing: 0;
+  font-size: clamp(15px, 2vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+.news-item {
+  /* ### NEWS EXCERPT
+  --------------------------------------*/
+}
+.news-item .news-excerpt {
+  color: #969696;
+  font-size: clamp(11px, 1.2vw, 15px);
+  line-height: 1.7;
+}
+
+.news-cat {
+  background-color: #000000;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: clamp(12px, 1vw, 14px);
+  display: block;
+  line-height: 1;
+}
+
+.news-date {
+  color: #969696;
+  font-size: clamp(12px, 1vw, 14px);
+}
+
+/* ## ACCESS SECTION（アクセス）
+********************************************************************/
+.access-sec {
+  /* ### ABOUT VISIT
+  --------------------------------------*/
+}
+.access-sec .about-visit {
+  margin-bottom: 10rem;
+}
+.access-sec {
+  /* ### ACCESS INFO
+  --------------------------------------*/
+}
+.access-sec .access-info {
+  /**** #### LABELS ****/
+}
+.access-sec .access-info .labels {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.access-sec .access-info .labels span {
+  display: inline-block;
+  background-color: #000000;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 400;
+  padding: 0 15px;
+  line-height: 1.7;
+}
+.access-sec .access-info {
+  /**** #### LOGO ****/
+}
+.access-sec .access-info .logo {
+  max-width: 240px;
+  width: 80%;
+}
+.access-sec .access-info .logo.redloo {
+  max-width: 100px;
+}
+.access-sec .access-info {
+  /**** #### ACCESS INFO DEATIL ****/
+}
+.access-sec .access-info .access-info-detail {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}
+.access-sec .access-info .access-info-detail li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.access-sec .access-info .access-info-detail li::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.access-sec .access-info .access-info-detail .address {
+  font-weight: 700;
+}
+.access-sec .access-info .access-info-detail .address::before {
+  background-image: url("/wp-content/themes/redloo/assets/images/common/map_blue.svg");
+}
+.access-sec .access-info .access-info-detail .train {
+  font-weight: 700;
+}
+.access-sec .access-info .access-info-detail .train::before {
+  background-image: url("/wp-content/themes/redloo/assets/images/common/train_blue.svg");
+}
+.access-sec .access-info .access-info-detail .car {
+  font-weight: 700;
+}
+.access-sec .access-info .access-info-detail .car::before {
+  background-image: url("/wp-content/themes/redloo/assets/images/common/car_blue.svg");
+}
+.access-sec .access-info {
+  /**** #### ACCESS INFO DEATIL ****/
+}
+.access-sec .access-info .google-map {
+  position: relative;
+}
+.access-sec .access-info .google-map iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.access-sec .access-info .google-map .btn-map {
+  position: absolute;
+  right: 6%;
+  top: 92%;
+  z-index: 2;
+}
+.access-sec .tel-info .tel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Anton", sans-serif;
+  font-size: 34px;
+}
+.access-sec .tel-info .tel::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/wp-content/themes/redloo/assets/images/common/tel_blue.svg");
 }
 
 /* ## コメント中
