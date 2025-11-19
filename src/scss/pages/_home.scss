@@ -25,6 +25,7 @@
         }
         .catch {
             margin-bottom: 3rem;
+            font-size: clamp(1.9rem, 3vw, 3.2rem);
         }
     }
 
@@ -81,14 +82,52 @@
     }
 
     // ## MOBILE // *************************************************>
-    @include media-under(sp) {
+    @include media-under(md) {
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            padding: 0 5%;
+            // position: absolute;
+            // z-index: 30;
+            // left: 0;
+            h1 {
+                font-size: clamp(42px, 16vw, 64px);
+                padding-top: 7rem;
+                margin-bottom: 2rem;
+            }
+            .catch {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* ### SLIDER SIDE
+        --------------------------------------*/
+        .slider-side {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            padding-left: 30%;
+            opacity: .5;
+        }
+
+        /* ### SLIDER CONTAINER
+        --------------------------------------*/
+        .slider-container {
+            height: clamp(440px, 90vw, 950px);
+
+            /* #### SLIDE --------------------*/
+            .slide {
+            }
+        }
     }
 }
 
 
 /* ## ABOUT SECTION（ABOUTセクション）
 ********************************************************************/
-.about-sec {
+.about-sec {    
     .image-side {
         aspect-ratio: 1/1;
         overflow: hidden;
@@ -100,6 +139,33 @@
     }
     .text-side {
         place-content: center;
+    }
+
+    @include media-over(xxl) {
+        .image-side {
+            aspect-ratio: 5/4;
+
+            img {
+                object-position: 50% 30%;
+            }
+        }
+        .text-side {
+            padding: 0;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        .image-side {
+            aspect-ratio: 2/1;
+
+            img {
+                object-position: 50% 30%;
+            }
+        }
+        .text-side {
+            padding: 10% 5%;
+        }
     }
 }
 
@@ -145,6 +211,45 @@
             margin-bottom: 3rem;
         }
     }
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ## ROW
+        ***********************************************/
+        .row {
+            margin-bottom: 1rem;
+        }
+
+        /* ## OTHER ITEM
+        ***********************************************/
+        .other-item {
+            img {
+                border-radius: 20px;
+                aspect-ratio: 20/9;
+            }
+        }
+
+        /* ## PRODUCTS IMAGES
+        ***********************************************/
+        .product-images {
+            img {
+                border-radius: 10px;
+                aspect-ratio: 3/4;
+            }
+            span {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /* ## PRODUCTS LINK
+        ***********************************************/
+        .products-link {
+            p {
+                margin-bottom: 3rem;
+            }
+        }
+    }
 }
 
 
@@ -170,6 +275,14 @@
             dt,dd {
                 color: $white;
             }
+        }
+    }
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        background: linear-gradient(to bottom, $white 38%, $blue 35%);
+
+        .custom-images {
+            margin-bottom: 2rem;
         }
     }
 }
@@ -201,7 +314,7 @@
             margin-bottom: 2rem;
 
             h4 {
-                font-size: clamp(2.8rem, 4vw, 6.8rem);
+                font-size: clamp(3.2rem, 4vw, 6.8rem);
                 line-height: 1.5;
                 font-weight: 400;
                 border-bottom: solid 1px $white;
@@ -296,18 +409,95 @@
             margin-bottom: 4rem;
         }
     }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        .check {
+            width: 90%;
+            margin: 0 auto .5rem;
+        }
+
+        /* ### MEASURIG CARD
+        --------------------------------------*/
+        .measuring-card {
+
+            /**** #### TITLE ****/
+            .title {
+                margin-bottom: 1.5rem;
+
+                h4 {
+                    line-height: 1.5;
+                    font-weight: 400;
+                    border-bottom: solid 1px $white;
+                    font-family: $en-font;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            img {
+                margin-bottom: 1.5rem;
+                aspect-ratio: 16/9;
+            }
+            p {
+                font-size: clamp(13px, 1vw, 17px);
+            }
+
+            /**** #### YELLOW ****/
+            &.yellow {
+                &::before {
+                    top: -30px;
+                }
+                &::after {
+                    top: 5px;
+                }
+
+                .title {
+                    color: $yellow;
+                    h4 {
+                        border-bottom: solid 1px $yellow;
+                    }
+                }
+            }
+        }
+
+        /* ### THREE TYPES
+        --------------------------------------*/
+        .three-types {
+            margin-bottom: 4rem;
+
+            .radius-title {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* ### THREE TYPES CARD
+        --------------------------------------*/
+        .three-types-card {
+
+            img {
+                border-radius: 5px;
+            }
+
+            .title {
+                p {
+                    font-size: clamp(11px, 1vw, 17px);
+                }
+            }
+        }
+
+        .order-links-area  {
+            p {
+                margin-bottom: 2rem;
+            }
+        }
+    }
 }
 
 
 /* ## VOICE SECTION（お客様の声）
 ********************************************************************/
 .voice-sec {
-
-    /* ### VOICE LIST
-    --------------------------------------*/
-    .voice-list {
-
-    }
 
     /* ### VOICE ITEM
     --------------------------------------*/
@@ -361,6 +551,43 @@
             }
         }
     }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### VOICE ITEM
+        --------------------------------------*/
+        .voice-item {
+            position: relative;
+            padding: 27px 5% 5% 5%;
+
+            .voice-thumb {
+                width: 55px;
+                position: absolute;
+                top:20px;
+                left: 5%;
+            }
+
+            /**** #### VOICE CONTENT ****/
+            .voice-content {
+                padding-left: 0;
+
+                .voice-meta {
+                    padding-left: 70px;
+                }
+
+                .voice-title {
+                    padding-left: 70px;
+                    font-size: 15px;
+                    margin-bottom: 1rem;
+                }
+                .voice-excerpt {
+                    font-size: 12px;
+                    line-height: 1.8;
+                }
+            }
+        }
+    }
 }
 
 
@@ -370,6 +597,13 @@
     .bg-gray {
         background-color: $bg-gray;
         padding: 7% 10%;
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        .bg-gray {
+            padding: 13% 5%;
+        }
     }
 }
 
@@ -426,6 +660,39 @@
         font-size: clamp(11px, 1.2vw, 15px);
         line-height: 1.7;
     }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        margin-bottom: 1.5rem;
+
+        /* ### NEWS THUMB
+        --------------------------------------*/
+        .news-thumb {
+            width: 20%;
+            aspect-ratio: 1/1;
+        }
+
+        /* ### NEWS BODY
+        --------------------------------------*/
+        .news-body {
+            padding-left: 1.5rem;
+        }
+
+        /* ### NEWS META
+        --------------------------------------*/
+        .news-meta {
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* ### NEWS TITLE
+        --------------------------------------*/
+        .news-title {
+            letter-spacing: 0;
+            font-size: clamp(13px, 1.5vw, 16px);
+            margin-bottom: 0;
+        }
+    }
 }
 
 .news-cat {
@@ -433,10 +700,17 @@
     border-radius: 5px;
     color: $white;
     padding: 5px 10px;
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(10px, 1vw, 14px);
     display: block;
     line-height: 1;
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        border-radius: 2px;
+        padding: 3px 7px;
+    }
 }
+
 .news-date {
     color: $font-gray;
     font-size: clamp(12px, 1vw, 14px);
@@ -460,6 +734,7 @@
         /**** #### LABELS ****/
         .labels {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             align-items: center;
             span {
@@ -556,6 +831,46 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 background-image: url('#{$image-path}/common/tel_blue.svg');
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### ABOUT VISIT
+        --------------------------------------*/
+        .about-visit {
+            margin-bottom: 5rem;
+        }
+
+        /* ### ACCESS INFO
+        --------------------------------------*/
+        .access-info {
+            /**** #### LOGO ****/
+            .logo {
+                &.redloo {
+                    max-width: 80px;
+                }
+            }
+
+            /**** #### ACCESS INFO DEATIL ****/
+            .access-info-detail {
+                margin-bottom: 2rem;
+            }
+
+            /**** #### ACCESS INFO DEATIL ****/
+            .google-map {
+                .btn-map {
+                    right: 3%;
+                    top: 87%;
+                }
+            }
+        }
+
+        .tel-info {
+            .tel {
+                font-size: 28px;
             }
         }
     }

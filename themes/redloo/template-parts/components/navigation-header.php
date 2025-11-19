@@ -11,10 +11,10 @@
 include 'navigation.php';  // 配列を読み込み
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
     <div class="row justify-between align-center">
         <a class="col-md-2 logo-side" href="/">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo_w.svg" alt="RedLooロゴ">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/common/logo_w.svg" alt="RedLooロゴ">
         </a>
         <nav class="col-md-10 d-none d-xl-flex justify-end gap-5">
             <ul class="navigation d-flex flex-row align-center gap-3">
@@ -75,7 +75,7 @@ include 'navigation.php';  // 配列を読み込み
         <div class="menu-contents d-lg-none">
             <ul class="menu-list">
                 <a class="logo" href="/">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/tanzo_logo_2.svg" alt="TANZOロゴ">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/common/logo_w.svg" alt="RedLooロゴ">
                 </a>
                 <?php foreach ($navigation as $key => $menu): ?>
                     <?php

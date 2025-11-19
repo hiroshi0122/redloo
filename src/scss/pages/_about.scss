@@ -1,0 +1,149 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+//*******************************************************************
+// # ABOUT
+//*******************************************************************
+/* ## LOWER FIRST SECTION（ファーストセクション）
+********************************************************************/
+
+/* ## ABOUT MSG SECTION（メッセージ）
+********************************************************************/
+.about-msg-sec {
+    position: relative;
+
+    &::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		opacity: .13;
+		mix-blend-mode: multiply;
+		pointer-events: none;
+		background-position: 50% 67%;
+		background-size: cover;
+		background-repeat: no-repeat;
+        background-image: url('#{$image-path}/about/msg_bg.webp')
+	}
+}
+
+
+/* ## PHILOSOPHY SECTION（メッセージ）
+********************************************************************/
+.philosophy-sec {
+    position: relative;
+    background-color: $blue;
+
+    > div {
+		position: relative;
+		z-index: 5;
+	}
+
+    &::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		opacity: .1;
+		pointer-events: none;
+		background-position: 50% 67%;
+		background-size: cover;
+		background-repeat: no-repeat;
+        background-image: url('#{$image-path}/about/philosophy_bg.webp')
+	}
+
+    .text-side {
+        padding-left: 3%;
+    }
+
+    /* ### IMAGE SIDE
+    --------------------------------------*/
+    .image-side {
+
+    }
+
+    /* ### PHILOSOPHY CONTENT
+    --------------------------------------*/
+    .philosophy-content {
+        color: $white;
+        position: relative;
+        padding: 6% 10%;
+		background-size: cover;
+		background-repeat: no-repeat;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+
+        > div {
+            position: relative;
+            z-index: 5;
+
+            span {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 2rem;
+            }
+
+            h3 {
+                font-family: $en-font;
+                font-size: clamp(34px, 6vw, 74px);
+                line-height: 1;
+                font-weight: 400;
+                margin-bottom: 1.5rem;
+            }
+
+            p {
+                font-size: clamp(13px, 1.5vw, 20px);
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .4;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+            background-color: $black;
+        }
+
+        &.vision {
+            border-radius: 100px 0 0 0;
+            background-position: 50% 29%;
+            background-image: url('#{$image-path}/about/vision.webp')
+        }
+        &.mission {
+            background-position: 50% 29%;
+            background-image: url('#{$image-path}/about/mission.webp')
+        }
+        &.concept {
+            border-radius: 0 0 0 100px;
+            background-position: 50% 29%;
+            background-image: url('#{$image-path}/about/concept.webp')
+        }
+    }
+}
+
+
+/* ## LOGO CONCEPT SECTION（ロゴコンセプト）
+********************************************************************/
+.logo-concept-sec {
+    margin-top: -8rem;
+
+    > .container {
+        max-width: 1280px;
+        padding: 6%;
+        background-color: $bg-gray;
+    }
+}
+
+
+
+// ## MOBILE // *************************************************>
+/* ## コメント中
+***********************************************/
+
+/* ### SLIDER CONTAINER
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

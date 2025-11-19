@@ -140,41 +140,41 @@ gsap.utils.toArray(".fadeInUp-stagger").forEach((target) => {
 //**********************************************************************
 // LENIS 慣性スクロール
 //**********************************************************************
-import Lenis from 'lenis';
+// import Lenis from 'lenis';
 
-const lenis = new Lenis({
-  duration: 2,
-  smooth: true,
-  lerp: 0.2, // 慣性の強さ
-});
+// const lenis = new Lenis({
+//   duration: 2,
+//   smooth: true,
+//   lerp: 0.2, // 慣性の強さ
+// });
 
-window.lenis = lenis;
+// window.lenis = lenis;
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);
 
-// すべてのアンカーリンクを取得
-const anchors = document.querySelectorAll(".js-anchor");
+// // すべてのアンカーリンクを取得
+// const anchors = document.querySelectorAll(".js-anchor");
 
-anchors.forEach(anchor => {
-  anchor.addEventListener("click", (e) => {
-    e.preventDefault();
+// anchors.forEach(anchor => {
+//   anchor.addEventListener("click", (e) => {
+//     e.preventDefault();
     
-    // クリックされたaタグの href を取得（`/` を削除）
-    const targetId = anchor.getAttribute("href").replace("/", ""); 
+//     // クリックされたaタグの href を取得（`/` を削除）
+//     const targetId = anchor.getAttribute("href").replace("/", ""); 
     
-    // IDがある場合のみスクロール実行
-    if (targetId && document.querySelector(targetId)) {
-      lenis.scrollTo(targetId, {
-        offset: -50, // 必要ならオフセットを調整（例: 固定ヘッダー対策）
-        duration: 1.5
-      });
-    }
-  });
-});
+//     // IDがある場合のみスクロール実行
+//     if (targetId && document.querySelector(targetId)) {
+//       lenis.scrollTo(targetId, {
+//         offset: -50, // 必要ならオフセットを調整（例: 固定ヘッダー対策）
+//         duration: 1.5
+//       });
+//     }
+//   });
+// });
 
 //**********************************************************************
 // 8. MENU OPEN

@@ -58,21 +58,65 @@ section {
 	}
 }
 
-/* ## TEXT PAGE FIRST SECTION（テキストページ）
+
+/* ## LOWER FIRST SECTION（仮想ページのファーストセクション）
 ***********************************************/
-.text-page-first-sec{
-    padding-top: 16rem;
-    padding-bottom: 0;
+.lower-first-sec {
+	position: relative;
+	padding-top: 109px;
+	background-color: $blue;
+	color: $white;
 
-    // .description {
-    //     padding-left: 5%;
-    // }
+	> div {
+		position: relative;
+		z-index: 5;
+	}
 
-    // ## MOBILE // *************************************************>
-    @include media-under(md) {
-        padding-top: 10rem;
-    }
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		opacity: .1;
+		mix-blend-mode: multiply;
+		pointer-events: none;
+		background-position: 50% 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	// aboutページ
+	&.about {
+		&::before {
+			background-image: url('#{$image-path}/about/fv_about.webp')
+		}
+	}
+
+	/* ### TEXT SIDE
+	--------------------------------*/
+	.text-side {
+		padding-left: 10%;
+	}
+	/* ### IMAGE SIDE
+	--------------------------------*/
+	.image-side {
+		// max-height: 500px;
+		margin-top: 6rem;
+		border-radius: clamp(64px, 8vw, 120px) 0 0 0;
+		overflow: hidden;
+
+		img {
+			height: 100%;
+			object-position: 50% 50%;
+		}
+	}
+
+	/* ### MOBILE =====================================*/
+	@include media-under(md) {
+		padding-top: 92px;
+	}
 }
+
+
+
 
 
 /* ## BTN SECTION（ボタン用セクション）
@@ -112,8 +156,8 @@ section {
 
 .container, .container-fluid {
     @include media-under(md) {
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 

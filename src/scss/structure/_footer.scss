@@ -6,15 +6,11 @@
 // #footer
 //**************************************************************
 footer {
-    border-top: solid 1px $black;
     width: 100%;
-    margin-top: 8rem;
-
-    .footer-wrapper {
-        padding: 10rem 3rem 3rem 3rem;
-        max-width: 1680px;
-        margin: 0 auto;
-    }
+    background-color: $blue;
+    border-radius: 100px 100px 0 0;
+    padding: 10rem 3rem 0 3rem;
+    color: $white;
 
     /* ### FOOTER LOGO
     -------------------------------------*/
@@ -22,160 +18,158 @@ footer {
         display: block;
         width: 100%;
         max-width: 200px;
-        margin: 0 auto 3rem;
-
-        img {
-            width: 100%;
-        }
     }
 
-    /* ### SNS AREA
+    /* ### FOOTER CATCH AREA
     -------------------------------------*/
-    .sns-area {
-        text-align: center;
+    .footer-catch-area {
+        position: relative;
+
+        .copyright-sns {
+            position: absolute;
+            left: 77%;
+            top: 10%;
+        }
 
         .sns-icons {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
+            gap: 15px;
 
             span {
-                border-bottom: solid 1px $black;
-                margin-right: 10px;
+                display: block;
+                border-top: solid 1px $white;
+                border-bottom: solid 1px $white;
+                font-family: $en-font;
+                font-weight: 400;
+                font-size: 14px;
+                padding: 5px 7px;
+                line-height: 1;
             }
+        }
+        
+        .sns-nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
 
-            .facebook {
-                width: 45px;
-            }
-            .instagram {
-                width: 50px;
-            }
+        .copyright {
+            font-size: clamp(13px, 1vw, 20px);
+            font-family: $en-font;
+            font-weight: 400;
         }
     }
 
     /* ### FOOTER NAV
     -------------------------------------*/
     .footer-nav {
-        li {
-            text-align: center;
+        color: $white;
+        .footer-menu-title {
             display: block;
-            border-right: solid 1px $black;
-            padding: 0 1rem;
-            margin-bottom: 1rem;
-
-            &:first-child {
-                border-left: solid 1px $black;
-            }
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 0.5rem;
         }
 
-        .menu-link {
-            p {
-                font-weight: bold;
-                letter-spacing: 2px;
-                line-height: 1.5;
-            }
+        .left-side {
+        }
+        .right-side {
+            display: flex;
+            flex-direction: column;
         }
     }
 
-    /* ### SECOND NAV
+    /* ### FOOTER SUBMENU
     -------------------------------------*/
-    .second-nav-area {
-        padding-top: 8rem;
-    }
-
-    .footer-second-nav {
-        .navigation {
-            justify-content: end;
-        }
-
-        li {
-            text-align: center;
+    .footer-submenu {
+        padding-left: 1rem;
+        margin-left: 1rem;
+        border-left: solid 1px $white;
+        a {
             display: block;
-            padding: 0 1rem;
-        }
-
-        .menu-link {
-            p {
-                color: $font-gray;
-                font-size: 14px;
-            }
+            font-size: 13px;
         }
     }
 
-    .copyright {
-        display: block;
-        font-size: 12px;
-    }
 
     // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-        .footer-wrapper {
-            padding: 5rem 0rem 1.5rem 0rem;
-        }
+    @include media-under(md) {
+        border-radius: 80px 80px 0 0;
+        padding: 3rem 2rem 0 2rem;
 
         /* ### FOOTER LOGO
         -------------------------------------*/
         .footer-logo {
-            width: 100%;
-            margin-bottom: 3rem;
-            text-align: center;
+            margin: 0 auto 2rem;
+            max-width: 140px;
         }
 
-        /* ### SNS AREA
+        /* ### FOOTER CATCH AREA
         -------------------------------------*/
-        .sns-area {
-            margin-bottom: 4rem;
+        .footer-catch-area {
+            position: relative;
+
+            /**** #### COPYLIGHT SNS ****/
+            .copyright-sns {
+                position: inherit;
+                left: inherit;
+                top: inherit;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .sns-icons {
+                justify-content: center;
+
+                span {
+                    display: block;
+                    border-top: solid 1px $white;
+                    border-bottom: solid 1px $white;
+                    font-family: $en-font;
+                    font-weight: 400;
+                    font-size: 14px;
+                    padding: 5px 7px;
+                    line-height: 1;
+                }
+            }
+            
+            .sns-nav {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .copyright {
+                font-size: clamp(13px, 1vw, 20px);
+                font-family: $en-font;
+                font-weight: 400;
+            }
         }
 
         /* ### FOOTER NAV
         -------------------------------------*/
         .footer-nav {
-            li {
+            margin-bottom: 1rem;
+            .footer-menu {
                 margin-bottom: 1.5rem;
-
-                &:nth-child(odd) {
-                    border-left: solid 1px $black;
-                }
             }
-
-            .menu-link {
-                p {
-                    font-size: 14px;
-                    letter-spacing: 1px;
-                }
-            }
-        }
-
-        /* ### SECOND NAV
-        -------------------------------------*/
-        .second-nav-area {
-            padding-top: 4rem;
-        }
-
-        .footer-second-nav {
-            margin-bottom: 4rem;
-
-            .navigation {
-                justify-content: center;
-            }
-
-            li {
-                text-align: left;
+            .footer-menu-title {
+                font-size: 14px;
                 margin-bottom: 0.5rem;
             }
-
-            .menu-link {
-                p {
-                    font-size: 12px;
-                }
+            .right-side {
+                display: flex;
+                flex-direction: column;
             }
         }
 
-        .copyright {
-            display: block;
-            font-size: 11px;
-            text-align: center;
+        .footer-submenu {
+            padding-left: .8rem;
+            margin-left: 1rem;
+            a {
+                font-size: 12px;
+            }
         }
     }
 }

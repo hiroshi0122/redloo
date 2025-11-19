@@ -55,14 +55,14 @@ get_header();
 
 <?php // FIRST SECTION // *********************************************************** // ?>
 <section class="first-sec pb-0" id="first-view-sec">
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row gap-1">
-            <div class="col-md-5 text-side">
+            <div class="col-12 col-md-5 text-side">
                 <h1>WETSUITS<br>FACTORY<br>IN TOKYO</h1>
                 <h3 class="catch">フルオーダー・ウェットスーツを<br>工場直販で</h3>
-                <p>RedLooは、一人一人の体型に合わせた<br>フルオーダー・ウェットスーツを工場直販でお届けします。<br>素材・カラー・ロゴまで自由に選べる、あなただけの一着を。</p>
+                <p>RedLooは、一人一人の体型に合わせた<br class="d-none d-md-block">フルオーダー・ウェットスーツを工場直販でお届けします。<br>素材・カラー・ロゴまで自由に選べる、あなただけの一着を。</p>
             </div>
-            <div class="col-md-7 slider-side">
+            <div class="col-12 col-md-7 slider-side">
                 <div class="slider-container">
                     <?php foreach ($slides as $index => $slide) : ?>
                         <div class="slide <?php echo ($index === 0) ? 'active' : ''; ?>">
@@ -95,17 +95,17 @@ get_header();
 <section class="about-sec p-0" id="about-sec">
     <div class="contaienr-fluid">
         <div class="row gap-0">
-            <div class="col-md-6 image-side">
+            <div class="col-12 col-md-6 image-side">
                 <img class="h-100" src="<?php bloginfo('template_url'); ?>/assets/images/home/about_1.webp" alt="aboutのイメージ">
             </div>
-            <div class="col-md-6 text-side bg-blue">
-                <div class="title-template white text-center">
+            <div class="col-12 col-md-6 text-side bg-blue">
+                <div class="title-template white text-md-center">
                     <div class="title">
                         <span>ご予約・注文・お問合せ</span>
                         <h2>ABOUT</h2>
                     </div>
                     <h4 class="catch">工場直販で届ける<br>フルオーダー・ウェットスーツ</h4>
-                    <p>RedLooは、製造業のまち・東京都足立区の工場で生まれました。<br>積み重ねてきた製造の経験と、 受け継いだ仕立ての技術・姿勢をもとに、<br>直販だからこそ実現できる品質と価格でお届けしています。</p>
+                    <p>RedLooは、製造業のまち・東京都足立区の工場で生まれました。<br>積み重ねてきた製造の経験と、 受け継いだ仕立ての技術・姿勢をもとに、<br class="d-none d-md-block">直販だからこそ実現できる品質と価格でお届けしています。</p>
                 </div>
             </div>
         </div>
@@ -122,9 +122,9 @@ get_header();
 <?php // PRODUCTS SECTION // *********************************************************** // ?>
 <section class="products-sec" id="productsSec">
     <div class="container">
-        <div class="row gap-y-10 gap-md-10 align-center">
+        <div class="row gap-y-3 gap-md-10 align-center">
             <div class="col-12 col-md-6 text-side">
-                <div class="title-template mb-10">
+                <div class="title-template mb-md-10">
                     <div class="title">
                         <span>製品紹介</span>
                         <h2>PRODUCTS</h2>
@@ -133,7 +133,7 @@ get_header();
                     <p>ネックエントリー、ロングチェストジップ、バックジップ、ノンジップ。<br>開口部の構造に加えて、シーガルやロンスプなどのタイプ（形）、 さらに素材や厚みの組み合わせを選ぶことができます。</p>
                 </div>
 
-                <div class="other-item">
+                <div class="other-item d-none d-md-block">
                     <img src="<?php bloginfo('template_url'); ?>/assets/images/home/other_product.webp" alt="その他の商品イメージ">
                     <div class="title-template">
                         <h4 class="catch">そのほかのタイプ・アイテム</h4>
@@ -142,7 +142,7 @@ get_header();
                 </div>
             </div>
             <div class="col-12 col-md-6 image-side">
-                <div class="product-images row gap-y-6">
+                <div class="product-images row gap-y-md-6">
                     <div class="col-6 col-md-6 p-1">
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
                         <span>ネックエントリー</span>
@@ -159,6 +159,13 @@ get_header();
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
                         <span>ノンジップ</span>
                     </div>
+                </div>
+            </div>
+            <div class="other-item d-md-none col-12">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/home/other_product.webp" alt="その他の商品イメージ">
+                <div class="title-template">
+                    <h4 class="catch">そのほかのタイプ・アイテム</h4>
+                    <p>季節や用途に合わせたモデルも展開しています。 ドライスーツ、タッパー、ベスト、パンツなど、スタイルに合わせて組み合わせが可能です。</p>
                 </div>
             </div>
         </div>
@@ -181,15 +188,15 @@ get_header();
 <?php // CUSTOM SECTION // *********************************************************** // ?>
 <section class="custom-sec" id="customSec">
     <div class="container">
-        <div class="title-template text-center mb-md-10">
+        <div class="title-template text-center mb-5 mb-md-10">
             <div class="title">
                 <span>カスタム・オプション</span>
                 <h2>CUSTOM & OPTIONS</h2>
             </div>
-            <p>基本仕様をもとに、色・素材・仕上げを自由に選べます。<br>自分のスタイルに合わせた一着をつくる楽しさを、ここから。</p>
+            <p>基本仕様をもとに、<br class="d-md-none">色・素材・仕上げを自由に選べます。<br>自分のスタイルに合わせた一着を<br class="d-md-none">つくる楽しさを、ここから。</p>
         </div>
         <div class="custom-images">
-            <div class="row gap-y-10 gap-md-6">
+            <div class="row gap-y-5 gap-y-md-10 gap-md-6">
                 <div class="col-6 col-md-4">
                     <img src="<?php bloginfo('template_url'); ?>/assets/images/home/custom_1.webp" alt="color & logo">
                     <dl>
@@ -232,20 +239,20 @@ get_header();
 <section class="order-sec" id="orderSec">
     <div class="container">
         <img class="check" src="<?php bloginfo('template_url'); ?>/assets/images/home/check.svg" alt="CHECK!">
-        <div class="radius-box blue">
-            <div class="title-template text-center mb-md-10 white">
+        <div class="radius-box bg-blue">
+            <div class="title-template text-center mb-5 mb-md-10 white">
                 <div class="title">
                     <span>ご利用ガイド</span>
                     <h2>ORDER GUID</h2>
                 </div>
-                <h4 class="catch">波に集中できる一着は、体に合う一着から。</h4>
-                <p>RedLooでは、スタイル・タイプ・素材・厚みを選び、<br>36箇所の採寸をもとに仕立てるフルオーダーを行なっています。<br>体に合わせた仕立てだからこそ、動きやすさや着心地が変わります。</p>
+                <h4 class="catch">波に集中できる一着は、<br class="d-sm-none">体に合う一着から。</h4>
+                <p>RedLooでは、<br class="d-sm-none">スタイル・タイプ・素材・厚みを選び、<br>36箇所の採寸をもとに<br class="d-sm-none">仕立てるフルオーダーを行なっています。<br>体に合わせた仕立てだからこそ、<br class="d-sm-none">動きやすさや着心地が変わります。</p>
             </div>
             <div class="measuring-method">
                 <div class="radius-title text-center">
                      <h3>2つの採寸方法</h3>
                 </div>
-                <div class="row gap-md-10">
+                <div class="row gap-5 gap-md-10">
                     <div class="col-12 col-md-6 measuring-card yellow">
                         <div class="title text-center">
                             <h4>FACTORY FITTING</h4>
@@ -294,7 +301,7 @@ get_header();
             
             <div class="order-links-area text-center">
                 <p>基本的な選び方や採寸、オーダーの流れについては、下記よりご覧いただけます。</p>
-                <div class="btn-area center gap-md-20">
+                <div class="btn-area center gap-y-2 gap-md-20">
                     <a class="btn btn-black" href="/select-type">基本仕様の選び方</a>
                     <a class="btn btn-black" href="/flow">ご注文の流れ</a>
                 </div>
@@ -314,7 +321,7 @@ get_header();
                         <span>お客様の声</span>
                         <h2>VOICE</h2>
                     </div>
-                    <div class="btn-area">
+                    <div class="btn-area d-none d-md-block">
                         <a class="btn-black" href="/voice">お客様の声一覧</a>
                     </div>
                 </div>
@@ -351,6 +358,9 @@ get_header();
                     <p>まだ投稿がありません。</p>
                 <?php endif; ?>
             </div>
+        </div>
+        <div class="btn-area d-md-none justify-center">
+            <a class="btn-black" href="/voice">お客様の声一覧</a>
         </div>
     </div>
 </section>
@@ -393,11 +403,11 @@ get_header();
 <?php // ACCESS SECTION // *********************************************************** // ?>
 <section class="access-sec" id="accessSec">
     <div class="container">
-        <div class="title-template mb-md-10 text-center">
+        <div class="title-template mb-5 mb-md-10 text-center">
             <div class="title">
                 <span>アクセス</span>
                 <h2>ACCESS</h2>
-                <h4 class="catch blue">スタッフの準備等ございますため、<br>ご来訪の際は、事前にご予約をお願いいたします。</h4>
+                <h4 class="catch blue">スタッフの準備等ございますため、<br>ご来訪の際は、<br class="d-dm-none">事前にご予約をお願いいたします。</h4>
                 <span class="pink">※対応スタッフが不在の場合があります。</span>
             </div>
         </div>
@@ -406,13 +416,13 @@ get_header();
             <div class="border-title center">
                 <h3>訪問・採寸について</h3>
             </div>
-            <p>無料採寸やオーダーのご相談は、下記の2拠点にて対応しています。 <br>最寄駅は、つくばエクスプレス「六町駅」（北千住から2駅）です。<br>採寸のみをご希望の方は、株式会社トミテック本社でも承ります。</p>
+            <p>無料採寸やオーダーのご相談は、<br class="d-sm-none">下記の2拠点にて対応しています。<br class="d-none d-sm-block">最寄駅は、つくばエクスプレス「六町駅」（北千住から2駅）です。<br>採寸のみをご希望の方は、株式会社トミテック本社でも承ります。</p>
         </div>
 
         <div class="access-info">
-            <div class="row gap-y-10 gap-md-10 mb-md-15">
+            <div class="row gap-y-10 gap-md-10 mb-10 mb-md-15">
                 <div class="col-12 col-md-6">
-                    <ul class="labels mb-5">
+                    <ul class="labels mb-3 mb-md-5">
                         <li><span class="label">採寸のみ</span></li>
                     </ul>
                     <div class="logo">

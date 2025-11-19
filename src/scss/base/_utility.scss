@@ -263,13 +263,13 @@ $gap-max: 20;
 
 @each $label, $size in $breakpoints {
     @media (min-width: #{$size}) {
-        .#{$label}-text-left {
+        .text-#{$label}-left {
             text-align: left !important;
         }
-        .#{$label}-text-center {
+        .text-#{$label}-center {
             text-align: center !important;
         }
-        .#{$label}-text-right {
+        .text-#{$label}-right {
             text-align: right !important;
         }
     }
