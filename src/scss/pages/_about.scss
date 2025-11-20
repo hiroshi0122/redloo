@@ -136,6 +136,70 @@
 }
 
 
+/* ## GREETING SECTION（ごあいさつ）
+********************************************************************/
+.greeting-sec {
+
+    >.container {
+        max-width: 1280px;
+    }
+
+    /* ### IMAGE SIDE
+    --------------------------------------*/
+    .image-side {
+        position: absolute;
+        width: clamp(120px, 20%, 260px);
+        margin-top: 5rem;
+
+        .ogashira {
+            aspect-ratio: 9/18;
+            overflow: hidden;
+            img {
+                height: 100%;
+            }
+        }
+        .caption {
+            span {
+                font-weight: 500;
+            }
+            h5 {
+                font-weight: 500;
+            }
+        }
+    }
+
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+        border: solid 1px $blue;
+        padding: 8%;
+        margin-left: 20%;
+    }
+}
+
+
+/* ## STAFF SECTION（スタッフ紹介）
+********************************************************************/
+.staff-sec {
+    .staff-contents{
+
+    }
+    .staff-card {
+        background-color: $bg-gray;
+        padding: 5%;
+
+        .name {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+        }
+
+        .description {
+            font-size: clamp(12px, 1.4vw, 15px);
+        }
+    }
+}
+
 
 // ## MOBILE // *************************************************>
 /* ## コメント中

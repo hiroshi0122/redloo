@@ -11172,6 +11172,58 @@ blockquote cite {
   background-color: #F7F7F7;
 }
 
+/* ## GREETING SECTION（ごあいさつ）
+********************************************************************/
+.greeting-sec > .container {
+  max-width: 1280px;
+}
+.greeting-sec {
+  /* ### IMAGE SIDE
+  --------------------------------------*/
+}
+.greeting-sec .image-side {
+  position: absolute;
+  width: clamp(120px, 20%, 260px);
+  margin-top: 5rem;
+}
+.greeting-sec .image-side .ogashira {
+  aspect-ratio: 9/18;
+  overflow: hidden;
+}
+.greeting-sec .image-side .ogashira img {
+  height: 100%;
+}
+.greeting-sec .image-side .caption span {
+  font-weight: 500;
+}
+.greeting-sec .image-side .caption h5 {
+  font-weight: 500;
+}
+.greeting-sec {
+  /* ### TEXT SIDE
+  --------------------------------------*/
+}
+.greeting-sec .text-side {
+  border: solid 1px #264898;
+  padding: 8%;
+  margin-left: 20%;
+}
+
+/* ## STAFF SECTION（スタッフ紹介）
+********************************************************************/
+.staff-sec .staff-card {
+  background-color: #F7F7F7;
+  padding: 5%;
+}
+.staff-sec .staff-card .name {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+.staff-sec .staff-card .description {
+  font-size: clamp(12px, 1.4vw, 15px);
+}
+
 /* ## コメント中
 ***********************************************/
 /* ### SLIDER CONTAINER
