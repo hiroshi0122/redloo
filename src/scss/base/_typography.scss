@@ -26,7 +26,6 @@ h2 {
 h3 {
     font-size: clamp(2.1rem, 3vw, 3.2rem);
     line-height: 1.5;
-    letter-spacing: 2px;
     font-weight: 700;
 }
 h4 {
@@ -66,6 +65,22 @@ dl {
         font-size: clamp(12px, 1vw, 18px);
         margin-inline-start: 0;
         line-height: 1.8;
+    }
+}
+
+table {
+    th, td {
+        font-size: clamp(14px, 1.2vw, 18px);
+        line-height: 2;
+        font-weight: 500;
+    }
+
+    th {
+        font-weight: 600;
+        color: $blue;
+    }
+    td {
+        font-weight: 400;
     }
 }
 

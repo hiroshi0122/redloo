@@ -8843,7 +8843,6 @@ h2 {
 h3 {
   font-size: clamp(2.1rem, 3vw, 3.2rem);
   line-height: 1.5;
-  letter-spacing: 2px;
   font-weight: 700;
 }
 
@@ -8884,6 +8883,19 @@ dl dd {
   font-size: clamp(12px, 1vw, 18px);
   margin-inline-start: 0;
   line-height: 1.8;
+}
+
+table th, table td {
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 2;
+  font-weight: 500;
+}
+table th {
+  font-weight: 600;
+  color: #264898;
+}
+table td {
+  font-weight: 400;
 }
 
 /* ## コメント中
@@ -8990,7 +9002,19 @@ section {
 }
 @media (max-width: 768px) {
   .lower-first-sec {
-    padding-top: 92px;
+    padding-top: 128px;
+    /* ### TEXT SIDE
+    --------------------------------*/
+  }
+  .lower-first-sec .text-side {
+    padding-left: 7%;
+  }
+  .lower-first-sec {
+    /* ### IMAGE SIDE
+    --------------------------------*/
+  }
+  .lower-first-sec .image-side {
+    margin-top: 2.5rem;
   }
 }
 
@@ -9316,9 +9340,9 @@ header .menu-contents .header-second-nav a {
 header {
   /* ### MOBILE =====================================*/
 }
-@media (max-width: ) {
+@media (max-width: 768px) {
   header {
-    padding: 2rem 1rem;
+    height: auto;
   }
   header .container-fluid {
     padding: 0 1rem;
@@ -9329,9 +9353,12 @@ header {
   }
   header .logo-side {
     display: block;
+    width: 147px;
+    height: 90px;
+    padding: 2rem 0 0 1.6rem;
   }
   header .logo-side img {
-    width: 130px;
+    width: 100px;
   }
 }
 
@@ -9724,8 +9751,17 @@ footer .footer-submenu a {
   --------------------------------------*/
 }
 .title-template.tategaki .title h2 {
-  writing-mode: vertical-lr;
+  writing-mode: vertical-rl;
   margin-left: -9px;
+}
+@media (max-width: 768px) {
+  .title-template.tategaki {
+    /* ### TITLE
+    --------------------------------------*/
+  }
+  .title-template.tategaki .title h2 {
+    margin-left: -4px;
+  }
 }
 
 /* ## LOWER TITLE TEMPLATE
@@ -9755,6 +9791,15 @@ footer .footer-submenu a {
 .lower-title-template .catch {
   font-size: clamp(16px, 2vw, 24px);
   margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+  .lower-title-template {
+    /* ### TITLE
+    --------------------------------------*/
+  }
+  .lower-title-template .title {
+    margin-bottom: 2rem;
+  }
 }
 
 /* ## RAdIUS TITLE
@@ -9923,6 +9968,229 @@ footer .footer-submenu a {
 }
 .radius-box.bg-blue {
   background-color: #264898 !important;
+}
+
+/* ## コメント中
+***********************************************/
+/* ### コメント下
+--------------------------------------*/
+/**** #### コメント下の下 ****/
+/* ##### コメント軽 */
+.attention-sec {
+  /* ### TILE TEMPLATE
+  --------------------------------------*/
+}
+.attention-sec .title-template .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.attention-sec .title-template .title::before, .attention-sec .title-template .title::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-size: 100%;
+  background-image: url("/wp-content/themes/redloo/assets/images/common/attention.svg");
+}
+.attention-sec .title-template span {
+  font-size: clamp(18px, 2.5vw, 34px);
+  font-weight: 700;
+}
+.attention-sec {
+  /* ### BTN BANNER AREA
+  --------------------------------------*/
+}
+.attention-sec .btn-banner-area {
+  justify-content: center;
+  gap: 4rem;
+  /**** #### BTN BANNER ****/
+}
+.attention-sec .btn-banner-area .btn-banner {
+  position: relative;
+  padding: 5%;
+  color: #fff;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+  height: 100%;
+}
+.attention-sec .btn-banner-area .btn-banner a {
+  position: relative;
+  display: block;
+  z-index: 1;
+}
+.attention-sec .btn-banner-area .btn-banner a h3 {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: clamp(24px, 5vw, 78px);
+  line-height: 1;
+}
+.attention-sec .btn-banner-area .btn-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-color: #000000;
+  z-index: 0;
+}
+.attention-sec .btn-banner-area .btn-banner.products {
+  background-image: url("/wp-content/themes/redloo/assets/images/common/products.webp");
+}
+.attention-sec .btn-banner-area .btn-banner.order-guide {
+  background-image: url("/wp-content/themes/redloo/assets/images/common/order_guide.webp");
+}
+@media (max-width: 768px) {
+  .attention-sec {
+    /* ### TILE TEMPLATE
+    --------------------------------------*/
+  }
+  .attention-sec .title-template .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .attention-sec .title-template .title::before, .attention-sec .title-template .title::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+    background-image: url("/wp-content/themes/redloo/assets/images/common/attention.svg");
+  }
+  .attention-sec .title-template span {
+    font-size: clamp(18px, 2.5vw, 34px);
+    font-weight: 700;
+  }
+  .attention-sec {
+    /* ### BTN BANNER AREA
+    --------------------------------------*/
+  }
+  .attention-sec .btn-banner-area {
+    gap: 2rem 0;
+    /**** #### BTN BANNER ****/
+  }
+  .attention-sec .btn-banner-area .btn-banner a h3 {
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: clamp(34px, 5vw, 78px);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .attention-sec .btn-banner-area .btn-banner a p {
+    line-height: 1.7;
+    font-size: clamp(12px, 1.2vw, 18px);
+  }
+  .attention-sec .btn-banner-area .btn-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    background-color: #000000;
+    z-index: 0;
+  }
+  .attention-sec .btn-banner-area .btn-banner.products {
+    background-image: url("/wp-content/themes/redloo/assets/images/common/products.webp");
+  }
+  .attention-sec .btn-banner-area .btn-banner.order-guide {
+    background-image: url("/wp-content/themes/redloo/assets/images/common/order_guide.webp");
+  }
+}
+
+/* ## コメント中
+***********************************************/
+/* ### コメント下
+--------------------------------------*/
+/**** #### コメント下の下 ****/
+/* ##### コメント軽 */
+.factory-fitting-sec {
+  /* ### FACTORY CONTENTS
+  --------------------------------------*/
+}
+.factory-fitting-sec .factory-fitting-contents .title-template span {
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: 500;
+}
+.factory-fitting-sec .factory-fitting-contents {
+  /* ### TEXT SIDE
+  --------------------------------------*/
+}
+.factory-fitting-sec .factory-fitting-contents .text-side {
+  padding: 10% 5% 10% 8%;
+  color: #fff;
+}
+.factory-fitting-sec .factory-fitting-contents {
+  /* ### SELF FITTING
+  --------------------------------------*/
+}
+.factory-fitting-sec .factory-fitting-contents .self-fitting h5 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.factory-fitting-sec .factory-fitting-contents .self-fitting p {
+  margin-bottom: 2rem;
+}
+.factory-fitting-sec .factory-fitting-contents {
+  /* ### IMAGE SIDE
+  --------------------------------------*/
+}
+.factory-fitting-sec .factory-fitting-contents .image-side {
+  position: relative;
+}
+.factory-fitting-sec .factory-fitting-contents .image-side img {
+  height: 100%;
+}
+.factory-fitting-sec .factory-fitting-contents .image-side::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-color: #264898;
+  z-index: 0;
+}
+.factory-fitting-sec .access-contents {
+  /**** #### IMAGE SIDE ****/
+}
+.factory-fitting-sec .access-contents .image-side img {
+  height: 100%;
+}
+.factory-fitting-sec .access-contents {
+  /**** #### TEXT SIDE ****/
+}
+.factory-fitting-sec .access-contents .text-side {
+  background-color: #F7F7F7;
+  padding: 5%;
+}
+.factory-fitting-sec {
+  /* ### TEL INFO
+  --------------------------------------*/
+}
+.factory-fitting-sec .tel-info {
+  margin-bottom: 5rem;
+}
+.factory-fitting-sec {
+  /* ### ACCESS INFO
+  --------------------------------------*/
+}
+.factory-fitting-sec .access-info {
+  /**** #### ACCESS INFO DETAIL ****/
+}
+.factory-fitting-sec .access-info .access-info-detail {
+  margin-bottom: 2rem;
+}
+.factory-fitting-sec .access-info .access-info-detail span {
+  font-weight: 500;
 }
 
 /* ## コメント中
@@ -10913,20 +11181,28 @@ blockquote cite {
 .access-sec .about-visit {
   margin-bottom: 10rem;
 }
-.access-sec {
-  /* ### ACCESS INFO
-  --------------------------------------*/
+@media (max-width: 768px) {
+  .access-sec {
+    /* ### ABOUT VISIT
+    --------------------------------------*/
+  }
+  .access-sec .about-visit {
+    margin-bottom: 5rem;
+  }
 }
-.access-sec .access-info {
+
+/* ### ACCESS INFO
+--------------------------------------*/
+.access-info {
   /**** #### LABELS ****/
 }
-.access-sec .access-info .labels {
+.access-info .labels {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
 }
-.access-sec .access-info .labels span {
+.access-info .labels span {
   display: inline-block;
   background-color: #000000;
   border-radius: 40px;
@@ -10935,78 +11211,100 @@ blockquote cite {
   padding: 0 15px;
   line-height: 1.7;
 }
-.access-sec .access-info {
+.access-info {
   /**** #### LOGO ****/
 }
-.access-sec .access-info .logo {
+.access-info .logo {
   max-width: 240px;
   width: 80%;
 }
-.access-sec .access-info .logo.redloo {
+.access-info .logo.redloo {
   max-width: 100px;
 }
-.access-sec .access-info {
+.access-info {
   /**** #### ACCESS INFO DEATIL ****/
 }
-.access-sec .access-info .access-info-detail {
+.access-info .access-info-detail {
   margin-top: 2rem;
   margin-bottom: 6rem;
 }
-.access-sec .access-info .access-info-detail li {
+.access-info .access-info-detail li {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: clamp(12px, 1vw, 16px);
 }
-.access-sec .access-info .access-info-detail li::before {
+.access-info .access-info-detail li::before {
   content: "";
-  width: 25px;
-  height: 25px;
-  background-size: auto;
+  width: 17px;
+  height: 20px;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.access-sec .access-info .access-info-detail .address {
+.access-info .access-info-detail .address {
   font-weight: 700;
 }
-.access-sec .access-info .access-info-detail .address::before {
+.access-info .access-info-detail .address::before {
   background-image: url("/wp-content/themes/redloo/assets/images/common/map_blue.svg");
 }
-.access-sec .access-info .access-info-detail .train {
+.access-info .access-info-detail .train {
   font-weight: 700;
 }
-.access-sec .access-info .access-info-detail .train::before {
+.access-info .access-info-detail .train::before {
   background-image: url("/wp-content/themes/redloo/assets/images/common/train_blue.svg");
 }
-.access-sec .access-info .access-info-detail .car {
+.access-info .access-info-detail .car {
   font-weight: 700;
 }
-.access-sec .access-info .access-info-detail .car::before {
+.access-info .access-info-detail .car::before {
   background-image: url("/wp-content/themes/redloo/assets/images/common/car_blue.svg");
 }
-.access-sec .access-info {
+.access-info {
   /**** #### ACCESS INFO DEATIL ****/
 }
-.access-sec .access-info .google-map {
+.access-info .google-map {
   position: relative;
 }
-.access-sec .access-info .google-map iframe {
+.access-info .google-map iframe {
   width: 100%;
   aspect-ratio: 16/9;
 }
-.access-sec .access-info .google-map .btn-map {
+.access-info .google-map .btn-map {
   position: absolute;
   right: 6%;
   top: 92%;
   z-index: 2;
 }
-.access-sec .tel-info .tel {
+@media (max-width: 768px) {
+  .access-info .logo.redloo {
+    max-width: 80px;
+  }
+  .access-info {
+    /**** #### ACCESS INFO DEATIL ****/
+  }
+  .access-info .access-info-detail {
+    margin-bottom: 2rem;
+  }
+  .access-info {
+    /**** #### ACCESS INFO DEATIL ****/
+  }
+  .access-info .google-map .btn-map {
+    right: 3%;
+    top: 87%;
+  }
+}
+
+/* ### TEL INFO
+--------------------------------------*/
+.tel-info .tel {
   display: flex;
   align-items: center;
   gap: 10px;
   font-family: "Anton", sans-serif;
   font-size: 34px;
 }
-.access-sec .tel-info .tel::before {
+.tel-info .tel::before {
   content: "";
   width: 30px;
   height: 30px;
@@ -11016,37 +11314,7 @@ blockquote cite {
   background-image: url("/wp-content/themes/redloo/assets/images/common/tel_blue.svg");
 }
 @media (max-width: 768px) {
-  .access-sec {
-    /* ### ABOUT VISIT
-    --------------------------------------*/
-  }
-  .access-sec .about-visit {
-    margin-bottom: 5rem;
-  }
-  .access-sec {
-    /* ### ACCESS INFO
-    --------------------------------------*/
-  }
-  .access-sec .access-info {
-    /**** #### LOGO ****/
-  }
-  .access-sec .access-info .logo.redloo {
-    max-width: 80px;
-  }
-  .access-sec .access-info {
-    /**** #### ACCESS INFO DEATIL ****/
-  }
-  .access-sec .access-info .access-info-detail {
-    margin-bottom: 2rem;
-  }
-  .access-sec .access-info {
-    /**** #### ACCESS INFO DEATIL ****/
-  }
-  .access-sec .access-info .google-map .btn-map {
-    right: 3%;
-    top: 87%;
-  }
-  .access-sec .tel-info .tel {
+  .tel-info .tel {
     font-size: 28px;
   }
 }
@@ -11160,6 +11428,31 @@ blockquote cite {
   background-position: 50% 29%;
   background-image: url("/wp-content/themes/redloo/assets/images/about/concept.webp");
 }
+@media (max-width: 768px) {
+  .philosophy-sec > div {
+    padding-right: 0;
+  }
+  .philosophy-sec {
+    /* ### PHILOSOPHY CONTENT
+    --------------------------------------*/
+  }
+  .philosophy-sec .philosophy-content {
+    margin-bottom: 1rem;
+  }
+  .philosophy-sec .philosophy-content > div span {
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+  }
+  .philosophy-sec .philosophy-content > div h3 {
+    margin-bottom: 1rem;
+  }
+  .philosophy-sec .philosophy-content.vision {
+    border-radius: 50px 0 0 0;
+  }
+  .philosophy-sec .philosophy-content.concept {
+    border-radius: 0 0 0 50px;
+  }
+}
 
 /* ## LOGO CONCEPT SECTION（ロゴコンセプト）
 ********************************************************************/
@@ -11170,6 +11463,22 @@ blockquote cite {
   max-width: 1280px;
   padding: 6%;
   background-color: #F7F7F7;
+}
+@media (max-width: 768px) {
+  .logo-concept-sec {
+    margin-top: 0;
+  }
+  .logo-concept-sec > .container {
+    padding: 10% 6%;
+  }
+  .logo-concept-sec .title-template {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .logo-concept-sec .logo {
+    max-width: 210px;
+    margin: 0 auto 5rem;
+  }
 }
 
 /* ## GREETING SECTION（ごあいさつ）
@@ -11208,20 +11517,200 @@ blockquote cite {
   padding: 8%;
   margin-left: 20%;
 }
+@media (max-width: 768px) {
+  .greeting-sec {
+    /* ### IMAGE SIDE
+    --------------------------------------*/
+  }
+  .greeting-sec .image-side {
+    position: absolute;
+    width: 120px;
+    top: -60px;
+    right: 11%;
+  }
+  .greeting-sec .image-side .ogashira {
+    aspect-ratio: 1/1;
+  }
+  .greeting-sec {
+    /* ### TEXT SIDE
+    --------------------------------------*/
+  }
+  .greeting-sec .text-side {
+    border: solid 1px #264898;
+    padding: 8%;
+    margin-left: 0;
+  }
+}
 
 /* ## STAFF SECTION（スタッフ紹介）
 ********************************************************************/
+.staff-sec {
+  /* ### STAFF CARD
+  --------------------------------------*/
+}
 .staff-sec .staff-card {
+  position: relative;
   background-color: #F7F7F7;
-  padding: 5%;
+  padding: 5% 5% 5% 9%;
+  height: 100%;
+  /**** #### NAME ****/
 }
 .staff-sec .staff-card .name {
   display: flex;
   align-items: baseline;
   gap: 20px;
+  font-weight: 600;
+}
+.staff-sec .staff-card {
+  /**** #### DESCRIPTION ****/
 }
 .staff-sec .staff-card .description {
   font-size: clamp(12px, 1.4vw, 15px);
+}
+.staff-sec .staff-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 5%;
+  height: 100%;
+}
+.staff-sec .staff-card::after {
+  position: absolute;
+  left: -3px;
+  top: 10px;
+  font-family: "Anton", sans-serif;
+  color: #fff;
+  font-size: 2vw;
+  writing-mode: sideways-rl;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+.staff-sec .staff-card {
+  /**** #### MEN ****/
+}
+.staff-sec .staff-card.men::before {
+  background-color: #264898;
+}
+.staff-sec .staff-card.men::after {
+  content: "MEN";
+}
+.staff-sec .staff-card.men .name h5 {
+  color: #264898;
+}
+.staff-sec .staff-card.woman::before {
+  background-color: #EB42B2;
+}
+.staff-sec .staff-card.woman::after {
+  content: "WOMAN";
+}
+.staff-sec .staff-card.woman .name h5 {
+  color: #EB42B2;
+}
+@media (max-width: 768px) {
+  .staff-sec {
+    /* ### STAFF CARD
+    --------------------------------------*/
+  }
+  .staff-sec .staff-card {
+    padding: 5% 5% 5% 11%;
+    /**** #### NAME ****/
+  }
+  .staff-sec .staff-card .name {
+    gap: 10px;
+  }
+  .staff-sec .staff-card::before {
+    width: 7%;
+  }
+  .staff-sec .staff-card::after {
+    position: absolute;
+    left: -2px;
+    top: 10px;
+    font-size: clamp(13px, 5vw, 20px);
+  }
+}
+
+/* ## FACTORY & ACCESS SECTION（工場紹介・アクセス）
+********************************************************************/
+.factory-access-sec > .container {
+  padding: 10rem 5% 10rem 10%;
+  position: relative;
+  background-color: #F7F7F7;
+}
+.factory-access-sec {
+  /* ### TITLE TEMPLATE
+  --------------------------------------*/
+}
+.factory-access-sec .title-template {
+  position: absolute;
+  left: 0;
+  top: 8rem;
+}
+.factory-access-sec .comment {
+  max-width: 840px;
+  margin: 7rem auto 0;
+}
+.factory-access-sec .comment .image-side {
+  max-width: 150px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.factory-access-sec .comment .image-side img {
+  width: 140%;
+  height: 140%;
+  object-position: 50% 60%;
+}
+@media (max-width: 768px) {
+  .factory-access-sec {
+    padding-bottom: 0;
+  }
+  .factory-access-sec > .container {
+    padding: 10rem 5% 6rem 14%;
+  }
+  .factory-access-sec {
+    /* ### TITLE TEMPLATE
+    --------------------------------------*/
+  }
+  .factory-access-sec .title-template {
+    top: 5rem;
+  }
+  .factory-access-sec .comment {
+    margin: 5rem auto 0;
+  }
+  .factory-access-sec .comment .image-side {
+    max-width: 80px;
+  }
+}
+
+/* ## COMPANY SECTION（運営会社）
+********************************************************************/
+.company-sec .text-side .company-logo {
+  max-width: 270px;
+  margin-bottom: 2rem;
+}
+.company-sec .text-side .company-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+.company-sec .text-side .company-info-table tr {
+  border-bottom: solid 1px #D8D8D8;
+}
+.company-sec .text-side .company-info-table tr:first-child {
+  border-top: solid 1px #D8D8D8;
+}
+.company-sec .text-side .company-info-table th {
+  padding: 1.5rem 1rem;
+  background-color: #F7F7F7;
+}
+.company-sec .text-side .company-info-table td {
+  padding: 1.5rem 1rem;
+}
+.company-sec .image-side img {
+  height: 100%;
 }
 
 /* ## コメント中

@@ -292,8 +292,8 @@ header {
     }
 
     /* ### MOBILE =====================================*/
-    @include media-under(sp) {
-        padding: 2rem 1rem;
+    @include media-under(md) {
+        height: auto;
 
         .container-fluid {
             padding: 0 1rem;
@@ -303,8 +303,12 @@ header {
         =====================================*/
         .logo-side {
             display: block;
+            width: 147px;
+            height: 90px;
+            padding: 2rem 0 0 1.6rem;
+
             img {
-                width: 130px;
+                width: 100px;
             }
         }
     }

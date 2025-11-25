@@ -1,0 +1,168 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+//**************************************************************
+// ATTENTION SEC
+//**************************************************************
+.attention-sec {
+    /* ### TILE TEMPLATE
+    --------------------------------------*/
+    .title-template {
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+
+            &::before,
+            &::after {
+                content: "";
+                width: 40px;
+                height: 40px;
+                background-size: 100%;
+                background-image: url("#{$image-path}/common/attention.svg");
+            }
+        }
+
+        span {
+            font-size: clamp(18px, 2.5vw, 34px);
+            font-weight: 700;
+        }
+    }
+
+    /* ### BTN BANNER AREA
+    --------------------------------------*/
+    .btn-banner-area {
+        justify-content: center;
+        gap: 4rem;
+
+        /**** #### BTN BANNER ****/
+        .btn-banner {
+            position: relative;
+            padding: 5%;
+            color: $white;
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index: 1;
+            height: 100%;
+
+            a {
+                position: relative;
+                display: block;
+                z-index: 1;
+
+                h3 {
+                    font-family: $en-font;
+                    letter-spacing: 0;
+                    font-weight: 400;
+                    font-size: clamp(24px, 5vw, 78px);
+                    line-height: 1;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                opacity: 0.4;
+                pointer-events: none;
+                mix-blend-mode: multiply;
+                background-color: $black;
+                z-index: 0;
+            }
+
+            &.products {
+                background-image: url("#{$image-path}/common/products.webp");
+            }
+            &.order-guide {
+                background-image: url("#{$image-path}/common/order_guide.webp");
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### TILE TEMPLATE
+        --------------------------------------*/
+        .title-template {
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1.5rem;
+                margin-bottom: 1rem;
+
+                &::before,
+                &::after {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    background-size: 100%;
+                    background-image: url("#{$image-path}/common/attention.svg");
+                }
+            }
+
+            span {
+                font-size: clamp(18px, 2.5vw, 34px);
+                font-weight: 700;
+            }
+        }
+
+        /* ### BTN BANNER AREA
+        --------------------------------------*/
+        .btn-banner-area {
+            gap: 2rem 0;
+
+            /**** #### BTN BANNER ****/
+            .btn-banner {
+            
+                a {
+                    h3 {
+                        font-family: $en-font;
+                        letter-spacing: 0;
+                        font-weight: 400;
+                        font-size: clamp(34px, 5vw, 78px);
+                        line-height: 1;
+                        margin-bottom: 1rem;
+                    }
+
+                    p {
+                        line-height: 1.7;
+                        font-size: clamp(12px, 1.2vw,18px);
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    opacity: 0.4;
+                    pointer-events: none;
+                    mix-blend-mode: multiply;
+                    background-color: $black;
+                    z-index: 0;
+                }
+
+                &.products {
+                    background-image: url("#{$image-path}/common/products.webp");
+                }
+                &.order-guide {
+                    background-image: url("#{$image-path}/common/order_guide.webp");
+                }
+            }
+        }
+    }
+}
+
+/* ## コメント中
+***********************************************/
+
+/* ### コメント下
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <?php get_template_part('template-parts/structure/meta'); ?>
+  <?php get_template_part('template-parts/components/meta'); ?>
   <?php wp_head(); ?>
 </head>
 

@@ -72,8 +72,22 @@
         --------------------------------------*/
         .title {
             h2 {
-                writing-mode: vertical-lr;
+                writing-mode: vertical-rl;
                 margin-left: -9px;
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        &.tategaki {
+
+            /* ### TITLE
+            --------------------------------------*/
+            .title {
+                h2 {
+                    margin-left: -4px;
+                }
             }
         }
     }
@@ -106,6 +120,15 @@
     .catch {
         font-size: clamp(16px, 2vw, 24px);
         margin-bottom: 1.5rem;
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        /* ### TITLE
+        --------------------------------------*/
+        .title {
+            margin-bottom: 2rem;
+        }
     }
 }
 

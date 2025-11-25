@@ -727,114 +727,6 @@
         margin-bottom: 10rem;
     }
 
-    /* ### ACCESS INFO
-    --------------------------------------*/
-    .access-info {
-
-        /**** #### LABELS ****/
-        .labels {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            span {
-                display: inline-block;
-                background-color: $black;
-                border-radius: 40px;
-                color: $white;
-                font-weight: 400;
-                padding: 0 15px;
-                line-height: 1.7;
-            }
-        }
-
-        /**** #### LOGO ****/
-        .logo {
-            max-width: 240px;
-            width: 80%;
-
-            &.redloo {
-                max-width: 100px;
-            }
-        }
-
-        /**** #### ACCESS INFO DEATIL ****/
-        .access-info-detail {
-            margin-top: 2rem;
-            margin-bottom: 6rem;
-
-            li {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                &::before {
-                    content: '';
-                    width: 25px;
-                    height: 25px;
-                    background-size: auto;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                }
-            }
-
-            .address {
-                font-weight: 700;
-                &::before {
-                    background-image: url('#{$image-path}/common/map_blue.svg');
-                }
-            }
-            .train {
-                font-weight: 700;
-                &::before {
-                    background-image: url('#{$image-path}/common/train_blue.svg');
-                }
-            }
-            .car {
-                font-weight: 700;
-                &::before {
-                    background-image: url('#{$image-path}/common/car_blue.svg');
-                }
-            }
-        }
-
-        /**** #### ACCESS INFO DEATIL ****/
-        .google-map {
-            position: relative;
-
-            iframe {
-                width: 100%;
-                aspect-ratio: 16/9;
-            }
-
-            .btn-map {
-                position: absolute;
-                right: 6%;
-                top: 92%;
-                z-index: 2;
-            }
-        }
-    }
-
-    .tel-info {
-        .tel {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: $en-font;
-            font-size: 34px;
-
-            &::before {
-                content: '';
-                width: 30px;
-                height: 30px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-image: url('#{$image-path}/common/tel_blue.svg');
-            }
-        }
-    }
-
     // ## MOBILE // *************************************************>
     @include media-under(md) {
 
@@ -843,35 +735,145 @@
         .about-visit {
             margin-bottom: 5rem;
         }
+    }
+}
 
-        /* ### ACCESS INFO
-        --------------------------------------*/
-        .access-info {
-            /**** #### LOGO ****/
-            .logo {
-                &.redloo {
-                    max-width: 80px;
-                }
-            }
+/* ### ACCESS INFO
+--------------------------------------*/
+.access-info {
 
-            /**** #### ACCESS INFO DEATIL ****/
-            .access-info-detail {
-                margin-bottom: 2rem;
-            }
+    /**** #### LABELS ****/
+    .labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        span {
+            display: inline-block;
+            background-color: $black;
+            border-radius: 40px;
+            color: $white;
+            font-weight: 400;
+            padding: 0 15px;
+            line-height: 1.7;
+        }
+    }
 
-            /**** #### ACCESS INFO DEATIL ****/
-            .google-map {
-                .btn-map {
-                    right: 3%;
-                    top: 87%;
-                }
+    /**** #### LOGO ****/
+    .logo {
+        max-width: 240px;
+        width: 80%;
+
+        &.redloo {
+            max-width: 100px;
+        }
+    }
+
+    /**** #### ACCESS INFO DEATIL ****/
+    .access-info-detail {
+        margin-top: 2rem;
+        margin-bottom: 6rem;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: clamp(12px, 1vw, 16px);
+            &::before {
+                content: '';
+                width: 17px;
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
 
-        .tel-info {
-            .tel {
-                font-size: 28px;
+        .address {
+            font-weight: 700;
+            &::before {
+                background-image: url('#{$image-path}/common/map_blue.svg');
             }
+        }
+        .train {
+            font-weight: 700;
+            &::before {
+                background-image: url('#{$image-path}/common/train_blue.svg');
+            }
+        }
+        .car {
+            font-weight: 700;
+            &::before {
+                background-image: url('#{$image-path}/common/car_blue.svg');
+            }
+        }
+    }
+
+    /**** #### ACCESS INFO DEATIL ****/
+    .google-map {
+        position: relative;
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+
+        .btn-map {
+            position: absolute;
+            right: 6%;
+            top: 92%;
+            z-index: 2;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        .logo {
+            &.redloo {
+                max-width: 80px;
+            }
+        }
+
+        /**** #### ACCESS INFO DEATIL ****/
+        .access-info-detail {
+            margin-bottom: 2rem;
+        }
+
+        /**** #### ACCESS INFO DEATIL ****/
+        .google-map {
+            .btn-map {
+                right: 3%;
+                top: 87%;
+            }
+        }
+    }
+}
+
+/* ### TEL INFO
+--------------------------------------*/
+.tel-info {
+    .tel {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: $en-font;
+        font-size: 34px;
+
+        &::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('#{$image-path}/common/tel_blue.svg');
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        .tel {
+            font-size: 28px;
         }
     }
 }

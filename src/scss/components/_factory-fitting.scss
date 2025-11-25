@@ -1,0 +1,108 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+//**************************************************************
+// FACTORY FITTING
+//**************************************************************
+.factory-fitting-sec {
+
+    /* ### FACTORY CONTENTS
+    --------------------------------------*/
+    .factory-fitting-contents {
+
+        .title-template {
+            span {
+                font-size: clamp(16px, 3vw, 24px);
+                font-weight: 500;
+            }
+        }
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            padding: 10% 5% 10% 8%;
+            color: $white;
+        }
+
+        /* ### SELF FITTING
+        --------------------------------------*/
+        .self-fitting {
+            h5 {
+                font-family: $en-font;
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
+            p {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* ### IMAGE SIDE
+        --------------------------------------*/
+        .image-side {
+            position: relative;
+
+            img {
+                height: 100%;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                inset: 0;
+                opacity: 0.4;
+                pointer-events: none;
+                mix-blend-mode: multiply;
+                background-color: $blue;
+                z-index: 0;
+            }
+        }
+    }
+
+    .access-contents {
+        /**** #### IMAGE SIDE ****/
+        .image-side {
+            img {
+                height: 100%;
+            }
+        }
+
+        /**** #### TEXT SIDE ****/
+        .text-side {
+            background-color: $bg-gray;
+            padding: 5%;
+        }
+    }
+    
+
+    /* ### TEL INFO
+    --------------------------------------*/
+    .tel-info {
+        margin-bottom: 5rem;
+    }
+
+    /* ### ACCESS INFO
+    --------------------------------------*/
+    .access-info {
+
+        /**** #### ACCESS INFO DETAIL ****/
+        .access-info-detail {
+            margin-bottom: 2rem;
+
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+/* ## コメント中
+***********************************************/
+
+/* ### コメント下
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

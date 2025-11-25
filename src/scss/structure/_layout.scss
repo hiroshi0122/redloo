@@ -111,7 +111,19 @@ section {
 
 	/* ### MOBILE =====================================*/
 	@include media-under(md) {
-		padding-top: 92px;
+		padding-top: 128px;
+
+		/* ### TEXT SIDE
+		--------------------------------*/
+		.text-side {
+			padding-left: 7%;
+		}
+		/* ### IMAGE SIDE
+		--------------------------------*/
+		.image-side {
+			// max-height: 500px;
+			margin-top: 2.5rem;
+		}
 	}
 }
 

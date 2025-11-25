@@ -120,6 +120,38 @@
             background-image: url('#{$image-path}/about/concept.webp')
         }
     }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        > div {
+            padding-right: 0;
+        }
+
+        /* ### PHILOSOPHY CONTENT
+        --------------------------------------*/
+        .philosophy-content {
+            margin-bottom: 1rem;
+
+            > div {
+                span {
+                    font-size: 15px;
+                    margin-bottom: 1.5rem;
+                }
+
+                h3 {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            &.vision {
+                border-radius: 50px 0 0 0;
+            }
+            &.concept {
+                border-radius: 0 0 0 50px;
+            }
+        }
+    }
 }
 
 
@@ -132,6 +164,25 @@
         max-width: 1280px;
         padding: 6%;
         background-color: $bg-gray;
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        margin-top: 0;
+
+        > .container {
+            padding: 10% 6%;
+        }
+
+        .title-template {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .logo {
+            max-width: 210px;
+            margin: 0 auto 5rem;
+        }
     }
 }
 
@@ -175,27 +226,236 @@
         padding: 8%;
         margin-left: 20%;
     }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### IMAGE SIDE
+        --------------------------------------*/
+        .image-side {
+            position: absolute;
+            width: 120px;
+            top: -60px;
+            right: 11%;
+
+            .ogashira {
+                aspect-ratio: 1/1;
+            }
+        }
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            border: solid 1px $blue;
+            padding: 8%;
+            margin-left: 0;
+        }
+    }
 }
 
 
 /* ## STAFF SECTION（スタッフ紹介）
 ********************************************************************/
 .staff-sec {
-    .staff-contents{
 
-    }
+    /* ### STAFF CARD
+    --------------------------------------*/
     .staff-card {
+        position: relative;
         background-color: $bg-gray;
-        padding: 5%;
+        padding: 5% 5% 5% 9%;
+        height: 100%;
 
+        /**** #### NAME ****/
         .name {
             display: flex;
             align-items: baseline;
             gap: 20px;
+            font-weight: 600;
         }
 
+        /**** #### DESCRIPTION ****/
         .description {
             font-size: clamp(12px, 1.4vw, 15px);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            top: 0;
+            left: 0;
+            width: 5%;
+            height: 100%;
+        }
+
+        &::after {
+            position: absolute;
+            left: -3px;
+            top: 10px;
+            font-family: $en-font;
+            color: $white;
+            font-size: 2vw;
+            writing-mode: sideways-rl;
+            line-height: 1;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        /**** #### MEN ****/
+        &.men {
+            &::before {
+                background-color: $blue;
+            }
+            &::after {
+                content: 'MEN';
+            }
+            .name {
+                h5 {
+                    color: $blue;
+                }
+            }
+        }
+        &.woman {
+            &::before {
+                background-color: $pink;
+            }
+            &::after {
+                content: 'WOMAN';
+            }
+
+            .name {
+                h5 {
+                    color: $pink;
+                }
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### STAFF CARD
+        --------------------------------------*/
+        .staff-card {
+            padding: 5% 5% 5% 11%;
+
+            /**** #### NAME ****/
+            .name {
+                gap: 10px;
+            }
+
+            &::before {
+                width: 7%;
+            }
+
+            &::after {
+                position: absolute;
+                left: -2px;
+                top: 10px;
+                font-size: clamp(13px, 5vw, 20px);
+            }
+        }
+    }
+}
+
+
+/* ## FACTORY & ACCESS SECTION（工場紹介・アクセス）
+********************************************************************/
+.factory-access-sec {
+    > .container {
+        padding: 10rem 5% 10rem 10%;
+        position: relative;
+        background-color: $bg-gray;
+    }
+    /* ### TITLE TEMPLATE
+    --------------------------------------*/
+    .title-template {
+        position: absolute;
+        left: 0;
+        top: 8rem;
+    }
+
+    .comment {
+        max-width: 840px;
+        margin: 7rem auto 0;
+
+        .image-side {
+            max-width: 150px;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 50%;
+
+            img {
+                width: 140%;
+                height: 140%;
+                object-position: 50% 60%;
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        padding-bottom: 0;
+
+        > .container {
+            padding: 10rem 5% 6rem 14%;
+        }
+
+        /* ### TITLE TEMPLATE
+        --------------------------------------*/
+        .title-template {
+            top: 5rem;
+        }
+
+        .comment {
+            margin: 5rem auto 0;
+
+            .image-side {
+                max-width: 80px;
+            }
+        }   
+    }
+}
+
+
+
+/* ## COMPANY SECTION（運営会社）
+********************************************************************/
+.company-sec {
+
+    .text-side {
+
+        .company-logo {
+            max-width: 270px;
+            margin-bottom: 2rem;
+        }
+
+        .company-info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+
+            tr {
+                border-bottom: solid 1px $border-gray;
+                &:first-child {
+                    border-top: solid 1px $border-gray;
+                }
+            }
+
+            th {
+                padding: 1.5rem 1rem;
+                background-color: $bg-gray;
+            }
+            td {
+                padding: 1.5rem 1rem;
+            }
+        }
+    }
+
+    .image-side {
+        img {
+            height: 100%;
         }
     }
 }
