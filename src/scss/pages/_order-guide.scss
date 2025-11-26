@@ -1,0 +1,458 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+//*******************************************************************
+// # ORDER GUIDE
+//*******************************************************************
+/* ## SELECTION SECTION（仕様・選び方）
+********************************************************************/
+.selection-sec {
+
+    > .container {
+       max-width: 1280px;
+    }
+
+    .radius-box {
+         border-radius: 100px;
+        padding: 5%;
+    }
+
+    /* ### SELECTION LIST
+    --------------------------------------*/
+    .selection-list {
+        
+    }
+
+    /* ### SELECTION ITEM
+    --------------------------------------*/
+    .selection-item {
+        position: relative;
+        padding: 10%;
+
+        &::after {
+            content: "+";
+            position: absolute;
+            font-size: 3vw;
+            font-weight: 700;
+            color: $white;
+            right: -8.3%;
+            top: 28%;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        } 
+
+         .selection-num {
+            position: absolute;
+            top: -10px;
+            left: 0px;
+            font-size: clamp(30px, 4vw, 64px);
+            color: $white;
+            font-weight: 400;
+            z-index: 5;
+            font-family: $en-font;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $blue;
+        }
+    }
+
+    /* ### SELECTION IMG
+    --------------------------------------*/
+    .selection-img {
+        aspect-ratio: 1/1;
+        position: relative;
+        border-radius: 50%;
+        border: solid 1px $white;
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .selection-text {
+        text-align: center;
+        margin-bottom: 1rem;
+        h3 {
+            font-family: $en-font;
+            font-weight: 400;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        .radius-box {
+            padding: 10% 5%;
+            border-radius: 40px;
+        }
+
+        /* ### SELECTION ITEM
+        --------------------------------------*/
+        .selection-item {
+            padding: 1% 5%;
+
+            &::after {
+                display: none;
+            }
+
+            .selection-num {
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        /* ### SELECTION IMG
+        --------------------------------------*/
+        .selection-img {
+            margin-bottom: .5rem;
+        }
+
+        .selection-text {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+/* ## STYLE SECTION（スタイル）
+********************************************************************/
+.style-sec {
+    
+    /* ### 背景画像
+    --------------------------------------*/
+    &::before {
+        content: "";
+        position: absolute;
+        height: 50%;
+        inset: 0;
+        background-image: url('#{$image-path}/order-guide/style.webp');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.1;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    /* ### STYLE LIST
+    --------------------------------------*/
+    .style-list {
+        img {
+            aspect-ratio: 3/4;
+            margin-bottom: 1rem;
+        }
+    }
+
+    /* ### STYLE TEXT
+    --------------------------------------*/
+    .style-text {
+        text-align: center;
+
+        p {
+            font-weight: 600;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### STYLE LIST
+        --------------------------------------*/
+        .style-list {
+            img {
+                margin-bottom: .5rem;
+            }
+        }
+    }
+}
+
+
+/* ## TYPE SECTION（タイプ）
+********************************************************************/
+.type-sec {
+    
+    /* ### 背景画像
+    --------------------------------------*/
+    &::before {
+        content: "";
+        position: absolute;
+        height: 30%;
+        inset: 0;
+        background-image: url('#{$image-path}/order-guide/type.webp');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.1;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    /* ### TYPE ITEM
+    --------------------------------------*/
+    .type-item {
+        margin-bottom: 2rem;
+    }
+
+    /* ### TYPE LIST
+    --------------------------------------*/
+    .type-list {
+        img {
+            aspect-ratio: 3/4;
+            margin-bottom: 1rem;
+
+            &.other {
+                aspect-ratio: 28/18;
+            }
+        }
+    }
+
+    /* ### TYPE TEXT
+    --------------------------------------*/
+    .type-text {
+        text-align: center;
+
+        p {
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        &.other {
+            text-align: left;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### TYPE ITEM
+        --------------------------------------*/
+        .type-item {
+            margin-bottom: 0rem;
+        }
+
+        /* ### TYPE LIST
+        --------------------------------------*/
+        .type-list {
+            img {
+                margin-bottom: .5rem;
+            }
+        }
+
+        /* ### TYPE TEXT
+        --------------------------------------*/
+        .type-text {
+            text-align: left;
+
+            &.other {
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+/* ## MATERIAL SECTION（生地の種類）
+********************************************************************/
+.material-sec {
+    
+    /* ### 背景画像
+    --------------------------------------*/
+    &::before {
+        content: "";
+        position: absolute;
+        height: 60%;
+        inset: 0;
+        background-image: url('#{$image-path}/order-guide/material.webp');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.1;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    /* ### MATERIAL CONTENTS
+    --------------------------------------*/
+    .material-contents {
+        
+        /**** #### TITLE ****/
+        .title {
+            text-align: center;
+            margin-bottom: 3rem;
+
+            h5 {
+                color: $blue;
+                margin: 0 auto;
+                border-bottom: solid 1px $blue;
+                display: inline-block;
+                font-weight: 600;
+                margin-bottom: 2rem;
+            }
+        }
+
+        /**** #### IMG ****/
+        img {
+            width: 75%;
+            margin: 0 auto 3rem;
+        }
+
+        .text {
+            p {
+                font-size: clamp(11px, 1vw, 15px);
+                margin-bottom: 2rem;
+            }
+        }
+
+        ul {
+            background-color: $white;
+            padding: 3%;
+            border-radius: 10px;
+
+            li {
+                font-size: clamp(11px, 1vw, 15px);
+            }
+        }
+    }
+
+    /* ### MATERIAL CONTENT
+    --------------------------------------*/
+    .material-content {
+        border-radius: 15px;
+        padding: 8% 5% 5%;
+
+        &.winter {
+            background-color: $winter;
+        }
+
+        &.summer {
+            background-color: $summer;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+    }
+}
+
+
+
+/* ## THICKNESS SECTION（生地の種類）
+********************************************************************/
+.thickness-sec {
+    
+    /* ### 背景画像
+    --------------------------------------*/
+    &::before {
+        content: "";
+        position: absolute;
+        height: 40%;
+        inset: 0;
+        background-image: url('#{$image-path}/order-guide/thickness.webp');
+        background-size: cover;
+        background-position: 50% 65%;
+        opacity: 0.1;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .image-side {
+        border: solid 1px $black;
+    }
+
+    /* ### THICKNESS LIST
+    --------------------------------------*/
+    .thickness-list {
+        div {
+            margin-bottom: 1.5rem;
+        }
+        dt {
+            font-family: $en-font;
+            color: $blue;
+            font-weight: 400;
+            font-size: clamp(20px, 2vw, 34px);
+        }
+    }
+
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        .image-side {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+/* ## THICKNESS SECTION（生地の種類）
+********************************************************************/
+.custom-option-sec {
+    overflow: hidden;
+
+    .bg-slider {
+        position: absolute;
+        top: 0;
+        height: 77%;
+        opacity: 0.18;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        .bg-track {
+            display: flex;
+            width: max-content;
+            height: 100%;
+            gap: 40px;
+        }
+
+        img {
+            aspect-ratio: 5/9;
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        .bg-slider {
+            top: 7%;
+
+            .bg-track {
+                gap: 20px;
+            }
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+}
+
+
+
+// ## MOBILE // *************************************************>
+@include media-under(md) {
+    
+}
+
+/* ## コメント中
+***********************************************/
+
+/* ### SLIDER CONTAINER
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

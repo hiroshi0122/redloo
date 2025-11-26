@@ -62,8 +62,9 @@ dl {
         line-height: 1.5;
     }
     dd {
-        font-size: clamp(12px, 1vw, 18px);
+        font-size: clamp(13px, 1vw, 18px);
         margin-inline-start: 0;
+        font-weight: 500;
         line-height: 1.8;
     }
 }

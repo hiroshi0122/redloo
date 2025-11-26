@@ -63,7 +63,7 @@ section {
 ***********************************************/
 .lower-first-sec {
 	position: relative;
-	padding-top: 109px;
+	padding-top: 180px;
 	background-color: $blue;
 	color: $white;
 
@@ -94,14 +94,14 @@ section {
 	--------------------------------*/
 	.text-side {
 		padding-left: 10%;
+		margin-bottom: 6rem;
 	}
 	/* ### IMAGE SIDE
 	--------------------------------*/
 	.image-side {
-		// max-height: 500px;
-		margin-top: 6rem;
 		border-radius: clamp(64px, 8vw, 120px) 0 0 0;
 		overflow: hidden;
+		height: 100%;
 
 		img {
 			height: 100%;
@@ -117,11 +117,12 @@ section {
 		--------------------------------*/
 		.text-side {
 			padding-left: 7%;
+			margin-bottom: 0;
 		}
 		/* ### IMAGE SIDE
 		--------------------------------*/
 		.image-side {
-			// max-height: 500px;
+			height: auto;
 			margin-top: 2.5rem;
 		}
 	}

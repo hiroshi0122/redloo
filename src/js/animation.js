@@ -213,3 +213,45 @@ document.querySelectorAll(".marquee").forEach(marquee => {
     ease: "none"
   });
 });
+
+
+//**********************************************************************
+// 無限スクロール｜カスタムオプション部分
+//**********************************************************************
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".bg-track");
+  const width = track.scrollWidth / 2; // 6枚ぶん
+
+  // 初期位置をズラしておく
+  gsap.set(track, { x: -width });
+
+  // 無限ループ
+  gsap.to(track, {
+    x: 0,
+    duration: 23,
+    ease: "none",
+    repeat: -1,
+  });
+});
+
+
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const track = document.querySelector(".bg-track");
+//   const width = track.scrollWidth / 2; // 6枚ぶん
+
+//   // 初期位置を「0」にしておく
+//   gsap.set(track, { x: 0 });
+
+//   // 無限に左に流す
+//   gsap.to(track, {
+//     x: -width,       // 半分左へ
+//     duration: 10,
+//     ease: "none",
+//     repeat: -1,
+//     modifiers: {
+//       x: gsap.utils.wrap(-width, 0)   // ← これが無限ループのカギ
+//     }
+//   });
+// });

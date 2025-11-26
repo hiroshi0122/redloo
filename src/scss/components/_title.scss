@@ -32,6 +32,12 @@
             font-weight: 400;
             margin-bottom: 1rem;
         }
+        h4 {
+            font-size: clamp(24px, 4vw, 48px);
+            line-height: 1;
+            font-family: $en-font;
+            font-weight: 400;
+        }
     }
 
     /* ### CATCH

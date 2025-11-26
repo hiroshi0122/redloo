@@ -8880,8 +8880,9 @@ dl dt {
   line-height: 1.5;
 }
 dl dd {
-  font-size: clamp(12px, 1vw, 18px);
+  font-size: clamp(13px, 1vw, 18px);
   margin-inline-start: 0;
+  font-weight: 500;
   line-height: 1.8;
 }
 
@@ -8955,7 +8956,7 @@ section {
 ***********************************************/
 .lower-first-sec {
   position: relative;
-  padding-top: 109px;
+  padding-top: 180px;
   background-color: #264898;
   color: #fff;
 }
@@ -8983,15 +8984,16 @@ section {
 }
 .lower-first-sec .text-side {
   padding-left: 10%;
+  margin-bottom: 6rem;
 }
 .lower-first-sec {
   /* ### IMAGE SIDE
   --------------------------------*/
 }
 .lower-first-sec .image-side {
-  margin-top: 6rem;
   border-radius: clamp(64px, 8vw, 120px) 0 0 0;
   overflow: hidden;
+  height: 100%;
 }
 .lower-first-sec .image-side img {
   height: 100%;
@@ -9008,12 +9010,14 @@ section {
   }
   .lower-first-sec .text-side {
     padding-left: 7%;
+    margin-bottom: 0;
   }
   .lower-first-sec {
     /* ### IMAGE SIDE
     --------------------------------*/
   }
   .lower-first-sec .image-side {
+    height: auto;
     margin-top: 2.5rem;
   }
 }
@@ -9717,6 +9721,12 @@ footer .footer-submenu a {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   margin-bottom: 1rem;
+}
+.title-template .title h4 {
+  font-size: clamp(24px, 4vw, 48px);
+  line-height: 1;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
 }
 .title-template {
   /* ### CATCH
@@ -11711,6 +11721,389 @@ blockquote cite {
 }
 .company-sec .image-side img {
   height: 100%;
+}
+
+/* ## コメント中
+***********************************************/
+/* ### SLIDER CONTAINER
+--------------------------------------*/
+/**** #### コメント下の下 ****/
+/* ##### コメント軽 */
+/* ## SELECTION SECTION（仕様・選び方）
+********************************************************************/
+.selection-sec > .container {
+  max-width: 1280px;
+}
+.selection-sec .radius-box {
+  border-radius: 100px;
+  padding: 5%;
+}
+.selection-sec {
+  /* ### SELECTION LIST
+  --------------------------------------*/
+}
+.selection-sec {
+  /* ### SELECTION ITEM
+  --------------------------------------*/
+}
+.selection-sec .selection-item {
+  position: relative;
+  padding: 10%;
+}
+.selection-sec .selection-item::after {
+  content: "+";
+  position: absolute;
+  font-size: 3vw;
+  font-weight: 700;
+  color: #fff;
+  right: -8.3%;
+  top: 28%;
+}
+.selection-sec .selection-item:last-child::after {
+  display: none;
+}
+.selection-sec .selection-item .selection-num {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  font-size: clamp(30px, 4vw, 64px);
+  color: #fff;
+  font-weight: 400;
+  z-index: 5;
+  font-family: "Anton", sans-serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #264898;
+}
+.selection-sec {
+  /* ### SELECTION IMG
+  --------------------------------------*/
+}
+.selection-sec .selection-img {
+  aspect-ratio: 1/1;
+  position: relative;
+  border-radius: 50%;
+  border: solid 1px #fff;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.selection-sec .selection-img img {
+  height: 100%;
+}
+.selection-sec .selection-text {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.selection-sec .selection-text h3 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .selection-sec .radius-box {
+    padding: 10% 5%;
+    border-radius: 40px;
+  }
+  .selection-sec {
+    /* ### SELECTION ITEM
+    --------------------------------------*/
+  }
+  .selection-sec .selection-item {
+    padding: 1% 5%;
+  }
+  .selection-sec .selection-item::after {
+    display: none;
+  }
+  .selection-sec .selection-item .selection-num {
+    top: 0px;
+    left: 0px;
+  }
+  .selection-sec {
+    /* ### SELECTION IMG
+    --------------------------------------*/
+  }
+  .selection-sec .selection-img {
+    margin-bottom: 0.5rem;
+  }
+  .selection-sec .selection-text {
+    margin-bottom: 0;
+  }
+}
+
+/* ## STYLE SECTION（スタイル）
+********************************************************************/
+.style-sec {
+  /* ### 背景画像
+  --------------------------------------*/
+}
+.style-sec::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  inset: 0;
+  background-image: url("/wp-content/themes/redloo/assets/images/order-guide/style.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: -1;
+}
+.style-sec {
+  /* ### STYLE LIST
+  --------------------------------------*/
+}
+.style-sec .style-list img {
+  aspect-ratio: 3/4;
+  margin-bottom: 1rem;
+}
+.style-sec {
+  /* ### STYLE TEXT
+  --------------------------------------*/
+}
+.style-sec .style-text {
+  text-align: center;
+}
+.style-sec .style-text p {
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .style-sec {
+    /* ### STYLE LIST
+    --------------------------------------*/
+  }
+  .style-sec .style-list img {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ## TYPE SECTION（タイプ）
+********************************************************************/
+.type-sec {
+  /* ### 背景画像
+  --------------------------------------*/
+}
+.type-sec::before {
+  content: "";
+  position: absolute;
+  height: 30%;
+  inset: 0;
+  background-image: url("/wp-content/themes/redloo/assets/images/order-guide/type.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: -1;
+}
+.type-sec {
+  /* ### TYPE ITEM
+  --------------------------------------*/
+}
+.type-sec .type-item {
+  margin-bottom: 2rem;
+}
+.type-sec {
+  /* ### TYPE LIST
+  --------------------------------------*/
+}
+.type-sec .type-list img {
+  aspect-ratio: 3/4;
+  margin-bottom: 1rem;
+}
+.type-sec .type-list img.other {
+  aspect-ratio: 28/18;
+}
+.type-sec {
+  /* ### TYPE TEXT
+  --------------------------------------*/
+}
+.type-sec .type-text {
+  text-align: center;
+}
+.type-sec .type-text p {
+  font-weight: 600;
+  line-height: 1.5;
+}
+.type-sec .type-text.other {
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .type-sec {
+    /* ### TYPE ITEM
+    --------------------------------------*/
+  }
+  .type-sec .type-item {
+    margin-bottom: 0rem;
+  }
+  .type-sec {
+    /* ### TYPE LIST
+    --------------------------------------*/
+  }
+  .type-sec .type-list img {
+    margin-bottom: 0.5rem;
+  }
+  .type-sec {
+    /* ### TYPE TEXT
+    --------------------------------------*/
+  }
+  .type-sec .type-text {
+    text-align: left;
+  }
+  .type-sec .type-text.other {
+    text-align: left;
+  }
+}
+
+/* ## MATERIAL SECTION（生地の種類）
+********************************************************************/
+.material-sec {
+  /* ### 背景画像
+  --------------------------------------*/
+}
+.material-sec::before {
+  content: "";
+  position: absolute;
+  height: 60%;
+  inset: 0;
+  background-image: url("/wp-content/themes/redloo/assets/images/order-guide/material.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: -1;
+}
+.material-sec {
+  /* ### MATERIAL CONTENTS
+  --------------------------------------*/
+}
+.material-sec .material-contents {
+  /**** #### TITLE ****/
+}
+.material-sec .material-contents .title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.material-sec .material-contents .title h5 {
+  color: #264898;
+  margin: 0 auto;
+  border-bottom: solid 1px #264898;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.material-sec .material-contents {
+  /**** #### IMG ****/
+}
+.material-sec .material-contents img {
+  width: 75%;
+  margin: 0 auto 3rem;
+}
+.material-sec .material-contents .text p {
+  font-size: clamp(11px, 1vw, 15px);
+  margin-bottom: 2rem;
+}
+.material-sec .material-contents ul {
+  background-color: #fff;
+  padding: 3%;
+  border-radius: 10px;
+}
+.material-sec .material-contents ul li {
+  font-size: clamp(11px, 1vw, 15px);
+}
+.material-sec {
+  /* ### MATERIAL CONTENT
+  --------------------------------------*/
+}
+.material-sec .material-content {
+  border-radius: 15px;
+  padding: 8% 5% 5%;
+}
+.material-sec .material-content.winter {
+  background-color: #EAEEFF;
+}
+.material-sec .material-content.summer {
+  background-color: #FFF4E6;
+}
+/* ## THICKNESS SECTION（生地の種類）
+********************************************************************/
+.thickness-sec {
+  /* ### 背景画像
+  --------------------------------------*/
+}
+.thickness-sec::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  inset: 0;
+  background-image: url("/wp-content/themes/redloo/assets/images/order-guide/thickness.webp");
+  background-size: cover;
+  background-position: 50% 65%;
+  opacity: 0.1;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: -1;
+}
+.thickness-sec .image-side {
+  border: solid 1px #000000;
+}
+.thickness-sec {
+  /* ### THICKNESS LIST
+  --------------------------------------*/
+}
+.thickness-sec .thickness-list div {
+  margin-bottom: 1.5rem;
+}
+.thickness-sec .thickness-list dt {
+  font-family: "Anton", sans-serif;
+  color: #264898;
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 34px);
+}
+@media (max-width: 768px) {
+  .thickness-sec .image-side {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+/* ## THICKNESS SECTION（生地の種類）
+********************************************************************/
+.custom-option-sec {
+  overflow: hidden;
+}
+.custom-option-sec .bg-slider {
+  position: absolute;
+  top: 0;
+  height: 77%;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.custom-option-sec .bg-slider .bg-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  gap: 40px;
+}
+.custom-option-sec .bg-slider img {
+  aspect-ratio: 5/9;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .custom-option-sec .bg-slider {
+    top: 7%;
+  }
+  .custom-option-sec .bg-slider .bg-track {
+    gap: 20px;
+  }
+  .custom-option-sec p {
+    font-size: 12px;
+  }
 }
 
 /* ## コメント中

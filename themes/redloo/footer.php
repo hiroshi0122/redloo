@@ -92,7 +92,7 @@ include 'template-parts/components/navigation.php';  // 配列を読み込み
 </footer>
 
 <?php wp_footer(); ?>
-
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/assets/js/animation.js"></script>
 </body>
 </html>

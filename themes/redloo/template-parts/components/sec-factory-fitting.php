@@ -35,14 +35,14 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/company_exterior.webp" alt="外観写真">
                 </div>
                 <div class="col-12 col-md-8 text-side">
-                    <div class="d-flex flex-wrap align-center gap-x-md-5">
+                    <div class="d-flex flex-wrap align-end gap-x-5 gap-x-md-5 mb-5">
                         <div class="title-template">
                             <div class="title">
                                 <span>工場アクセス</span>
-                                <h3>ACCESS</h3>
+                                <h3 class="mb-0">ACCESS</h3>
                             </div>
                         </div>
-                        <p class="mb-5">都心からもアクセスしやすく、バスや車でもお越しいただけます。<br class="d-none d-sm-block">敷地内に駐車スペースもございますので、安心してお立ち寄りください。</p>
+                        <p>都心からもアクセスしやすく、バスや車でもお越しいただけます。<br class="d-none d-sm-block">敷地内に駐車スペースもございますので、安心してお立ち寄りください。</p>
                     </div>
                     <div class="tel-info">
                         <div class="border-title">
