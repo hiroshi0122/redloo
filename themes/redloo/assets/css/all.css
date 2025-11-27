@@ -12112,3 +12112,27 @@ blockquote cite {
 --------------------------------------*/
 /**** #### コメント下の下 ****/
 /* ##### コメント軽 */
+/* ## FLOW SECTION（注文までのフロー）
+********************************************************************/
+.order-step-sec .order-steps {
+  background-color: #F7F7F7;
+  padding: 8% 5%;
+}
+.order-step-sec .order-step {
+  margin-bottom: 5%;
+}
+.order-step-sec .order-step:last-child {
+  margin-bottom: 0;
+}
+.order-step-sec .image-side {
+  height: 100%;
+}
+.order-step-sec .image-side img {
+  height: 100%;
+}
+/* ## コメント中
+***********************************************/
+/* ### SLIDER CONTAINER
+--------------------------------------*/
+/**** #### コメント下の下 ****/
+/* ##### コメント軽 */

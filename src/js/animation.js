@@ -80,14 +80,6 @@ gsap.utils.toArray(".blur").forEach((target) => {
 });
 
 
-// FVキャッチコピー ------------------------------//
-// window.addEventListener("load", function() {
-//   gsap.fromTo(".movie-area .catch",
-//     { opacity: 0, filter: "blur(20px)", },                 // 初期状態
-//     { opacity: 1, duration: 2,  filter: "blur(0px)", delay: 3.5, ease: "power2.out" } 
-//   );
-// });
-
 
 // FADE IN UP STAGGER（順番に表示させる） ------------------------------//
 //トリガーはfadeInUp-stagger
@@ -120,20 +112,6 @@ gsap.utils.toArray(".fadeInUp-stagger").forEach((target) => {
     }
   );
 });
-
-//**********************************************************************
-// 無限スクロールアニメーション
-//**********************************************************************
-// document.addEventListener("DOMContentLoaded", function () {
-//   let marqueeInner = document.querySelector(".scrolling-msg-inner");
-
-//   gsap.to(marqueeInner, {
-//     x: "-50%", // 50%ずらす
-//     duration: 40,
-//     ease: "linear",
-//     repeat: -1
-//   });
-// });
 
 
 
@@ -237,21 +215,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const track = document.querySelector(".bg-track");
-//   const width = track.scrollWidth / 2; // 6枚ぶん
+//**********************************************************************
+// じんわり
+//**********************************************************************
+gsap.utils.toArray('.fade-up').forEach(el => {
+  gsap.from(el, {
+    opacity: 0,
+    y: 40,
+    scrollTrigger: {
+      trigger: el,
+      start: 'top 85%',
+      end: 'top 40%',
+      scrub: 0.6,
+    }
+  });
+});
 
-//   // 初期位置を「0」にしておく
-//   gsap.set(track, { x: 0 });
 
-//   // 無限に左に流す
-//   gsap.to(track, {
-//     x: -width,       // 半分左へ
-//     duration: 10,
-//     ease: "none",
-//     repeat: -1,
-//     modifiers: {
-//       x: gsap.utils.wrap(-width, 0)   // ← これが無限ループのカギ
-//     }
-//   });
-// });
+//**********************************************************************
+// パララックス効果（スライダー部分）
+//**********************************************************************
+gsap.to('.bg-slider img', {
+  yPercent: -50,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.custom-option-sec',
+    start: 'top bottom',
+    end: 'bottom top',
+    scrub: 0.8,
+  }
+});

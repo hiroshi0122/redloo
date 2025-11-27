@@ -132,7 +132,7 @@ get_header();
 
 
 <?php // SELECTION SECTION（仕様・選び方） // *********************************************************** // ?>
-<section class="selection-sec">
+<section class="selection-sec blur">
     <div class="container">
         <div class="title-template text-center mb-5 mb-md-10">
             <div class="title">
@@ -162,7 +162,7 @@ get_header();
 
 
 <?php // STYLE SECTION（スタイル） // *********************************************************** // ?>
-<section class="style-sec">
+<section class="style-sec fade-up">
     <div class="container">
         <div class="title-template mb-5 mb-md-10">
             <div class="title">
@@ -187,7 +187,7 @@ get_header();
 
 
 <?php // TYPE SECTION（タイプ） // *********************************************************** // ?>
-<section class="type-sec">
+<section class="type-sec fade-up">
     <div class="container">
         <div class="title-template mb-5 mb-md-10">
             <div class="title">
@@ -247,7 +247,7 @@ get_header();
 
 
 <?php // MATERIAL SECTION（生地の種類） // *********************************************************** // ?>
-<section class="material-sec">
+<section class="material-sec fade-up">
     <div class="container">
         <div class="title-template mb-5 mb-md-10 text-center">
             <div class="title mb-8">
@@ -314,7 +314,7 @@ get_header();
 
 
 <?php // THICKNESS SECTION（生地の厚み） // *********************************************************** // ?>
-<section class="thickness-sec">
+<section class="thickness-sec fade-up">
     <div class="container">
         <div class="title-template mb-5 mb-md-10 text-center">
             <div class="title">
@@ -396,7 +396,7 @@ get_header();
         <div class="btn-area justify-center mb-5 mb-md-10">
             <a class="btn-black" href="/custom">カスタム・オプション</a>
         </div>
-        <img src="<?php bloginfo('template_url'); ?>/assets/images/order-guide/build_your_own.svg" alt="BUILD YOUR OWN!">
+        <img class="blur" src="<?php bloginfo('template_url'); ?>/assets/images/order-guide/build_your_own.svg" alt="BUILD YOUR OWN!">
     </div>
 </section>
 
