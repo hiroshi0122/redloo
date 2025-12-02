@@ -34,7 +34,7 @@
     position: relative;
     padding: 1rem 2rem 1rem 3rem;
     width: 100%;
-    max-width: 260px;
+    max-width: 240px;
     text-align: left;
     border: solid 2px $white;
 
@@ -73,7 +73,7 @@
     border-radius: 50px;
     padding: 1rem 2rem 1rem 3rem;
     width: 100%;
-    max-width: 260px;
+    max-width: 240px;
     text-align: left;
     border: solid 2px $white;
 
@@ -97,6 +97,7 @@
     @include media-under(md) {
         border: solid 1px $white;
         padding: .5rem 2rem .5rem 2rem;
+        max-width: 200px;
     }
 }
 

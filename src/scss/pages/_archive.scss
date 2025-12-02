@@ -6,20 +6,55 @@
 // # ARCHIVE
 //**********************************************************************
 .pagenation-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     text-align: center;
 
     .page-numbers {
         display: inline-block;
         font-size: 16px;
-        padding-top: 8px;
-        border-radius: 50%;
+        padding-top: 6px;
+        border: solid 1px $black;
         width: 40px;
-        height: 40px;
+        height: 50px;
 
         &.current {
-            background-color: $black;
+            display: inline-block;
+            background-color: $blue;
             color: $white;
             font-weight: bold;
+            font-size: 18px;
+            padding-top: 4px;
+            border: solid 1px $black;
+            width: 40px;
+            height: 50px;
+            line-height: 2;
+        }
+
+        &.next, &.prev {
+            padding: 0;
+            border: none;
+            border-bottom: solid 1px $black;
+            line-height: 1;
+            height: inherit;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        .page-numbers {
+            padding-top: 2px;
+            width: 35px;
+            height: 40px;
+
+            &.current {
+                padding-top: 0px;
+                width: 35px;
+                height: 40px;
+            }
         }
     }
 }

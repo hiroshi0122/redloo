@@ -1,0 +1,123 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+//**********************************************************************
+// # ARCHIVE PRODUCTS
+//**********************************************************************
+
+
+//**********************************************************************
+// # ARCHIVE PRODUCTS SECTION
+//**********************************************************************
+.archive-products-sec {
+    background-color: $bg-gray;
+    margin-bottom: 10rem;
+
+    /* ### PRODUCT CONTENT
+    --------------------------------------*/
+    .product-content {
+        padding: 10%;
+    }
+    
+    /* ### IMAGE AREA
+    --------------------------------------*/
+    .image-area {
+        aspect-ratio: 3/4;
+        margin-bottom: 1.5rem;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    /* ### TEXT AREA
+    --------------------------------------*/
+    .text-area {
+        .title {
+            color: $blue;
+            font-size: clamp(12px, 2vw ,20px);
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        .product-content {
+            padding: 5%;
+        }
+    }
+}
+
+
+
+
+/* ## PRODUCTS TAX NAVIGATION
+***********************************************************/
+.products-tax-nav {
+    background-color: $white;
+    max-width: 1080px;
+    margin: 0 auto 7rem;
+    padding: 2rem;
+
+    p {
+        color: $blue;
+        font-weight: 500;
+    }
+
+    ul {
+        a {
+            display: block;
+            font-size: clamp(11px, 1vw, 16px);
+            padding: 0px 10px;
+            background-color: $black;
+            border-radius: 30px;
+            color: $white;
+
+            &.is-current {
+                background-color: $blue;
+            }
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        margin: 0 auto 2rem;
+        padding: 2rem 1rem;
+    }
+}
+
+
+/* ## GENRE TAGS
+***********************************************************/
+.genre-tags {
+    margin-bottom: 1rem;
+
+    .genre-tag {
+        display: inline-block;
+        font-size: clamp(11px, .8vw, 14px);
+        padding: 0px 10px;
+        background-color: $black;
+        border-radius: 30px;
+        color: $white;
+    }
+}
+
+
+
+
+
+//**********************************************************************
+// # h1
+//**********************************************************************
+
+/* ## h2
+***********************************************************/
+
+/* ### h3
+--------------------------------------*/
+
+/**** #### h4 ****/
+
+/* ##### h5 */
+

@@ -235,13 +235,17 @@ gsap.utils.toArray('.fade-up').forEach(el => {
 //**********************************************************************
 // パララックス効果（スライダー部分）
 //**********************************************************************
-gsap.to('.bg-slider img', {
-  yPercent: -50,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '.custom-option-sec',
-    start: 'top bottom',
-    end: 'bottom top',
-    scrub: 0.8,
-  }
-});
+const bgImages = document.querySelectorAll('.bg-slider img');
+
+if (bgImages.length > 0) {
+  gsap.to(bgImages, {
+    yPercent: -50,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.custom-option-sec',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: 0.8,
+    }
+  });
+}

@@ -59,36 +59,6 @@ add_action('admin_head', function () {
   </style>';
 });
 
-//**************************************************************
-// 管理画面：ユーザーのカスタマイズ
-//**************************************************************
-// 役職の入力欄を追加
-function add_user_meta_fields($user) {
-    ?>
-    <h3>役職情報</h3>
-    <table class="form-table">
-        <tr>
-            <th><label for="position">役職</label></th>
-            <td>
-                <input type="text" name="position" id="position" value="<?php echo esc_attr(get_the_author_meta('position', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description">役職を入力してください。</span>
-            </td>
-        </tr>
-    </table>
-    <?php
-}
-add_action('show_user_profile', 'add_user_meta_fields');
-add_action('edit_user_profile', 'add_user_meta_fields');
-
-function save_user_meta_fields($user_id) {
-    if (!current_user_can('edit_user', $user_id)) {
-        return false;
-    }
-    update_user_meta($user_id, 'position', $_POST['position']);
-}
-add_action('personal_options_update', 'save_user_meta_fields');
-add_action('edit_user_profile_update', 'save_user_meta_fields');
-
 
 
 
@@ -235,76 +205,6 @@ function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
 add_filter( 'wp_unique_post_slug', 'auto_post_slug', 10, 4  );
 
 
-//**************************************************************
-// パンくずリスト
-//**************************************************************
-function output_breadcrumb(){
-	$home = '<li><a href="'.get_bloginfo('url').'">トップ</a></li>';
-	echo '<ul class="breadcrumb">';
-
-	// トップページの場合
-	if ( is_front_page() ) {
-
-		// カテゴリーページの場合
-	} else if ( is_category() ) {
-		$cat = get_queried_object();
-		$cat_id = $cat->parent;
-		$cat_list = array();
-		while($cat_id != 0) {
-			$cat = get_category( $cat_id );
-			$cat_link = get_category_link( $cat_id );
-			array_unshift( $cat_list, '<li><a href="'.$cat_link.'">'.$cat->name.'</a></li>' );
-			$cat_id = $cat->parent;
-		}
-		echo $home;
-		foreach ($cat_list as $value) {
-			echo $value;
-		}
-		the_archive_title('<li>', '</li>');
-
-		// アーカイブページの場合
-	} else if ( is_archive() ) {
-		echo $home;
-		the_archive_title('<li>', '</li>');
-
-		// 投稿ページの場合
-	} else if ( is_single() ) {
-		$cat = get_the_category();
-
-		if( isset( $cat[0]->cat_ID ) ) $cat_id = $cat[0]->cat_ID;
-		$cat_list = array();
-
-		while( $cat_id != 0 ) {
-			$cat = get_category( $cat_id );
-			$cat_link = get_category_link( $cat_id );
-			array_unshift( $cat_list, '<li><a href="'.$cat_link.'">'.$cat->name.'>></a></li>' );
-			$cat_id = $cat->parent;
-		}
-		echo $home;
-		foreach($cat_list as $value) {
-			echo $value;
-		}
-		// the_title('<li>', '</li>');
-
-		// 固定ページの場合
-	} else if ( is_page() ) {
-		echo $home;
-		the_title('<li>', '</li>');
-
-		// 検索結果の場合
-	} else if ( is_search() ) {
-		echo $home;
-		echo '<li>「'.get_search_query().'」の検索結果</li>';
-
-		// 404ページの場合
-	} else if ( is_404() ) {
-		echo $home;
-		echo '<li>ページが見つかりません</li>';
-	}
-	echo '</ul>';
-}
-
-
 
 //**************************************************************
 // 管理画面 投稿一覧　カラムのカスタマイズ
@@ -362,92 +262,46 @@ add_action('admin_head','colwidth_css');
 
 
 
-//**************************************************************
-// 閲覧数でランキング順番 記事
-//**************************************************************
-
-// 投稿一覧に[閲覧数]列を追加する
-add_filter( 'manage_posts_columns', function( $columns ) {
-	$columns['views'] = '閲覧数';
-	return $columns;
-} );
-// カスタムフィールドの値(集計した閲覧数)を表示
-add_action( 'manage_posts_custom_column', function( $column_name, $post_id ) {
-	if ( $column_name == 'views' ) {
-		$views = intval( get_post_meta( $post_id, 'custom_views', true ) );
-		echo $views;
-	}
-}, 10, 2 );
-
-
-//**************************************************************
-// 閲覧数でランキング順番 記事
-//**************************************************************
-// 記事のPVを取得
-function getPostViews($postID) {
-	$count_key = 'post_views_count';
-	$count = get_post_meta($postID, $count_key, true);
-	if ($count=='') {
-		delete_post_meta($postID, $count_key);
-		add_post_meta($postID, $count_key, '0');
-		return "0 View";
-	}
-	return $count.' Views';
-}
-
-// 記事のPVをカウントする
-function setPostViews($postID) {
-	$count_key = 'post_views_count';
-	$count = get_post_meta($postID, $count_key, true);
-	if ($count=='') {
-		$count = 0;
-		delete_post_meta($postID, $count_key);
-		add_post_meta($postID, $count_key, '0');
-	} else {
-		$count++;
-		update_post_meta($postID, $count_key, $count);
-	}
-
-	// デバッグ start
-	// echo '';
-	// echo 'console.log("postID: ' . $postID .'");';
-	// echo 'console.log("カウント: ' . $count .'");';
-	// echo '';
-	// デバッグ end
-}
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
-
-// タイトルにHTMLを許可するフィルターフック
-function allow_br_in_title($title) {
-    if (is_singular() && in_the_loop() && is_main_query()) {
-        $title = str_replace('.', '<br>', $title);
-    }
-    return $title;
-}
-add_filter('the_title', 'allow_br_in_title', 10, 2);
-
 
 //**************************************************************
 // 投稿に紐づくタグ一覧を取得する
 //**************************************************************
-function display_post_tags($post_id) {
-    $post_tags = get_the_tags($post_id);
-    if ($post_tags) {
-        foreach ($post_tags as $tag) {
-            $tag_link = get_tag_link($tag->term_id);
-            echo '<a href="' . esc_url($tag_link) . '" class="tag col-auto">' . '#' . esc_html($tag->name) . '</a> ';
+function display_post_terms($post_id, $taxonomy) {
+    $terms = get_the_terms($post_id, $taxonomy);
+
+    if (!empty($terms) && !is_wp_error($terms)) {
+        foreach ($terms as $term) {
+            $term_link = get_term_link($term->term_id, $taxonomy);
+            echo '<a href="' . esc_url($term_link) . '" class="genre-tag">' . esc_html($term->name) . '</a>';
         }
     }
 }
 
+
 //**************************************************************
-// カスタム投稿もタグ一覧のクエリー内に含む
+// オリジナルブロックの登録
 //**************************************************************
-function include_custom_post_types_in_tag( $query ) {
-    if ( $query->is_tag() && $query->is_main_query() && !is_admin() ) {
-        // カスタム投稿タイプを追加
-        $query->set( 'post_type', array( 'post', 'feature', 'columns', 'review' ) );
-    }
-}
-add_action( 'pre_get_posts', 'include_custom_post_types_in_tag' );
+add_action('init', function () {
+    register_block_pattern(
+        'redloo/notice-box',
+        [
+            'title'       => '注意書きボックス',
+            'description' => 'ボックス形式の注意文',
+            'content'     => '
+<!-- wp:group {"className":"notice-box","layout":{"type":"constrained"}} -->
+<div class="wp-block-group notice-box">
+    <!-- wp:heading {"level":4} -->
+    <h4>タイトルを入力</h4>
+    <!-- /wp:heading -->
+
+    <!-- wp:paragraph -->
+    <p>ここに注意書きを入力してください。</p>
+    <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+            ',
+        ]
+    );
+});
+
+

@@ -17,6 +17,7 @@
 @use "./scss/components/radius-box" as *;
 @use "./scss/components/attention" as *;
 @use "./scss/components/factory-fitting" as *;
+@use "./scss/components/light-box" as *;
 
 @use "./scss/pages/archive" as *;
 @use "./scss/pages/single" as *;
@@ -24,4 +25,5 @@
 @use "./scss/pages/about" as *;
 @use "./scss/pages/order-guide" as *;
 @use "./scss/pages/order-flow" as *;
+@use "./scss/pages/archive-products" as *;
 

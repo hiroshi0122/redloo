@@ -86,37 +86,35 @@ $display-utils: (
 
 /* ## DISPLAY FLEX
 ***********************************************/
-.flex-row {
-    flex-direction: row !important;
-}
-.flex-column {
-    flex-direction: column !important;
-}
-.flex-wrap {
-    flex-wrap: wrap !important;
-}
+.flex-row    { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.flex-wrap   { flex-wrap: wrap !important; }
 
-.justify-start {
-    justify-content: flex-start !important;
-}
-.justify-center {
-    justify-content: center !important;
-}
-.justify-end {
-    justify-content: flex-end !important;
-}
-.justify-between {
-    justify-content: space-between !important;
-}
+/* Justify */
+.justify-start    { justify-content: flex-start !important; }
+.justify-center   { justify-content: center !important; }
+.justify-end      { justify-content: flex-end !important; }
+.justify-between  { justify-content: space-between !important; }
 
-.align-start {
-    align-items: flex-start !important;
-}
-.align-center {
-    align-items: center !important;
-}
-.align-end {
-    align-items: flex-end !important;
+/* Align */
+.align-start   { align-items: flex-start !important; }
+.align-center  { align-items: center !important; }
+.align-end     { align-items: flex-end !important; }
+
+@each $label, $size in $breakpoints {
+  @media (min-width: #{$size}) {
+
+    // Justify
+    .justify-#{$label}-start   { justify-content: flex-start !important; }
+    .justify-#{$label}-center  { justify-content: center !important; }
+    .justify-#{$label}-end     { justify-content: flex-end !important; }
+    .justify-#{$label}-between { justify-content: space-between !important; }
+
+    // Align Items
+    .align-#{$label}-start   { align-items: flex-start !important; }
+    .align-#{$label}-center  { align-items: center !important; }
+    .align-#{$label}-end     { align-items: flex-end !important; }
+  }
 }
 
 /* ## GRID SYSTEM (Bootstrap風)

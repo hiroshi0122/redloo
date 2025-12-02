@@ -7,7 +7,7 @@ $navigation = [
     ],
     [
         'menu' => '製品紹介',
-        'link' => '/prooduct',
+        'link' => '/products',
         'children' => [
             ['menu' => 'ネックエントリー', 'link' => 'neck-entry'],
             ['menu' => 'ロングチェストジップ', 'link' => 'long-zip'],
