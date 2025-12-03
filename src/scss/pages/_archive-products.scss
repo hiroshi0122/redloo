@@ -5,12 +5,89 @@
 //**********************************************************************
 // # ARCHIVE PRODUCTS
 //**********************************************************************
-
-
-//**********************************************************************
-// # ARCHIVE PRODUCTS SECTION
-//**********************************************************************
 .archive-products-sec {
+    position: relative;
+	padding-top: 180px;
+	background-color: $blue;
+	color: $white;
+
+	> div {
+		position: relative;
+		z-index: 5;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		opacity: .1;
+		mix-blend-mode: normal;
+		pointer-events: none;
+		background-position: 50% 30%;
+		background-size: cover;
+		background-repeat: no-repeat;
+        background-image: var(--genre-img);
+	}
+
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+        padding-left: 10%;
+        padding-right: 10%;
+		margin-bottom: 6rem;
+
+        /**** #### GENRE FEATURES ****/
+        .genre-features {
+            padding: 2rem;
+            background-color: rgb(20 44 98 / 60%);
+            border-radius: 10px;
+        }
+    }
+
+    /* ### IMAGE SIDE
+	--------------------------------*/
+	.image-side {
+		border-radius: clamp(64px, 8vw, 120px) 0 0 0;
+		overflow: hidden;
+		height: 100%;
+        max-height: 780px;
+
+		img {
+			height: 100%;
+			object-position: 50% 50%;
+		}
+	}
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        padding-top: 128px;
+
+        /* ### TEXT SIDE
+        --------------------------------------*/
+        .text-side {
+            padding-left: 7%;
+			padding-right: 5%;
+			margin-bottom: 0;
+
+            /**** #### GENRE FEATURES ****/
+            .genre-features {
+                padding: 2rem;
+                background-color: rgb(20 44 98 / 60%);
+                border-radius: 10px;
+            }
+        }
+
+        /* ### IMAGE SIDE
+        --------------------------------*/
+        .image-side {
+            max-height: 360px;
+        }
+    }
+}
+
+//**********************************************************************
+// # INDEX PRODUCTS SECTION
+//**********************************************************************
+.index-products-sec {
     background-color: $bg-gray;
     margin-bottom: 10rem;
 

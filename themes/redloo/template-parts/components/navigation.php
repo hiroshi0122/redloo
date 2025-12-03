@@ -9,16 +9,16 @@ $navigation = [
         'menu' => '製品紹介',
         'link' => '/products',
         'children' => [
-            ['menu' => 'ネックエントリー', 'link' => 'neck-entry'],
-            ['menu' => 'ロングチェストジップ', 'link' => 'long-zip'],
-            ['menu' => 'バックジップ', 'link' => 'back-zip'],
-            ['menu' => 'ノンジップ', 'link' => 'non-zip'],
-            ['menu' => 'その他', 'link' => 'other'],
+            ['menu' => 'ネックエントリー', 'link' => '/genre/neck-entry'],
+            ['menu' => 'ロングチェストジップ', 'link' => '/genre/long-chest-zip'],
+            ['menu' => 'バックジップ', 'link' => '/genre/back-zip'],
+            ['menu' => 'ノンジップ', 'link' => '/genre/non-zip'],
+            ['menu' => 'その他', 'link' => '/genre/others'],
         ],
     ],
     [
         'menu' => 'ご利用ガイド',
-        'link' => '/guide',
+        'link' => '/order-flow',
         'children' => [
             ['menu' => '基本仕様の選び方', 'link' => 'order-guide'],
             ['menu' => 'ご利用の流れ', 'link' => 'order-flow'],

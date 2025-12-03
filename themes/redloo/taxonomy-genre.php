@@ -9,17 +9,34 @@
  * @since 2025.12.2
  * @version 1.0
  *
- * Template Name: PRODUCTS ARCHIVE
+ * 
  **/
 
+$term = get_queried_object();
 
+// ▼ デフォルト値
+$name        = $term->name;
+$slug        = $term->slug;
+$description = term_description($term->term_id, 'genre');
+
+// ▼ ACF（タームの追加フィールド）
+$genre_en = get_field('genre_en', 'genre_' . $term->term_id);
+$genre_img = get_field('genre_img', 'genre_' . $term->term_id);
+$features = get_field('features', 'genre_' . $term->term_id); 
+
+
+
+// カテゴリー一覧用
 $tax_slug = 'genre'; 
 $terms = get_terms([
     'taxonomy'   => $tax_slug,
     'hide_empty' => true,
 ]);
 
-// var_dump($terms);
+// // 現在のタクソノミーの取得
+// $now_term = get_queried_object();
+
+// var_dump($now_term);
 // var_dump($categories);
 
 get_header(); ?>
@@ -27,25 +44,34 @@ get_header(); ?>
 
 
 <?php // LOWER FIRST SECTION // *********************************************************** // ?>
-<section class="lower-first-sec pb-0 products" id="lowerFirstSec">
+<section class="pb-0 archive-products-sec" style="--genre-img: url('<?php echo wp_kses_post($genre_img); ?>');">
     <div class="container-fluid p-0">
-        <div class="row gap-1 align-center">
+        <div class="row align-center">
             <div class="col-12 col-md-7 text-side">
-                <div class="lower-title-template mb-5">
+                <div class="lower-title-template mb-2">
                     <div class="title">
-                        <h1 class="split">PRODUCTS</h1>
-                        <span class="blur">商品一覧</span>
+                        <h1 class="split"><?php echo esc_html($genre_en); ?></h1>
+                        <span class="blur">商品一覧｜<?php echo esc_html($name); ?></span>
                     </div>
-                    <p class="mb-3">ウェットスーツは、「スタイル」「タイプ」「生地」「厚み」の<br class="d-none d-sm-block">4つを基本に、カラーやロゴなどのカスタマイズも選べます。</p>
-					<p>基本使用の選び方や採寸、オーダー流れについては、<br>下記よりご覧いただけます。</p>
+                    <p class="mb-3"><?php echo wp_kses_post($description); ?></p>
                 </div>
+				<?php if (array_filter($features)) : ?>
+					<ul class="genre-features mb-3">
+						<?php foreach ($features as $feature) : ?>
+							<?php if (!empty($feature)) : ?>
+								<li><?= esc_html($feature); ?></li>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+				<p class="mb-3">ウェットスーツは、「スタイル」「タイプ」「生地」「厚み」の4つを基本に、<br class="d-none d-sm-block">カラーやロゴなどのカスタマイズも選べます。</p>
 				<div class="btn-area gap-y-2 gap-x-4">
 					<a class="btn-black" href="/order-guide">基本仕様の選び方</a>
 					<a class="btn-black" href="/order-guide">ご注文の流れ</a>
 				</div>
             </div>
             <div class="col-12 col-md-5 image-side">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/products/products.webp" alt="製品一覧イメージ">
+                <img src="<?php echo wp_kses_post($genre_img); ?>" alt="製品一覧イメージ">
             </div>
         </div>
     </div>
@@ -59,7 +85,7 @@ get_header(); ?>
 
 
 
-<?php // PRODUCTS SECTION // *********************************************************** // ?>
+<?php // INDEX PRODUCTS SECTION // *********************************************************** // ?>
 <section class="index-products-sec">
 	<div class="container">
 		<?php if ( $terms && ! is_wp_error( $terms ) ) : ?>

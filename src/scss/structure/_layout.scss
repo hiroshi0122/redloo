@@ -89,8 +89,8 @@ section {
 			background-image: url('#{$image-path}/about/fv_about.webp');
 		}
 	}
+	// 商品一覧
 	&.products {
-		
 		&::before {
 			background-image: url('#{$image-path}/products/products.webp');
 			background-position: center;

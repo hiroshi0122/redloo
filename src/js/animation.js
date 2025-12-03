@@ -249,3 +249,38 @@ if (bgImages.length > 0) {
     }
   });
 }
+
+//**********************************************************************
+// スライダー量に合わせてズレる
+//**********************************************************************
+gsap.utils.toArray('.move-x').forEach((el) => {
+  gsap.to(el, {
+    x: 80,
+    ease: "none",
+    scrollTrigger: {
+      trigger: el,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    }
+  });
+});
+
+
+//**********************************************************************
+// 一文字ずつ出る
+//**********************************************************************
+import SplitType from "split-type";
+const split = new SplitType('.split', { types: 'chars' });
+
+gsap.from(split.chars, {
+  opacity: 0,
+  y: 20,
+  duration: 0.6,
+  stagger: 0.1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".split",
+    start: "top 85%",
+  }
+});
