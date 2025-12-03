@@ -80,7 +80,7 @@
                     content: "";
                     width: 30px;
                     height: 30px;
-                    background-image: url("#{$image-path}/common/transport.svg");
+                    background-image: url("../images/common/transport.svg");
                     background-position: center;
                     background-size: contain;
                     background-repeat: no-repeat;
@@ -97,7 +97,7 @@
                 content: "";
                 width: 15px;
                 height: 15px;
-                background-image: url("#{$image-path}/common/check.svg");
+                background-image: url("../images/common/check.svg");
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -137,7 +137,7 @@
         position: absolute;
         height: 100%;
         inset: 0;
-        background-image: url("#{$image-path}/order-flow/bg_36_points.webp");
+        background-image: url("../images/order-flow/bg_36_points.webp");
         background-size: cover;
         background-position: 50% 65%;
         opacity: 0.1;
@@ -155,7 +155,7 @@
         top: 0;
         inset: 0;
         width: clamp(20px, 10%, 100px);
-        background-image: url("#{$image-path}/order-flow/every_fit.svg");
+        background-image: url("../images/order-flow/every_fit.svg");
         background-size: 100%;
         background-position: top;
         background-repeat: no-repeat;
@@ -242,7 +242,7 @@
                     content: "";
                     width: 15px;
                     height: 15px;
-                    background-image: url("#{$image-path}/common/check_yellow.svg");
+                    background-image: url("../images/common/check_yellow.svg");
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;

@@ -23,7 +23,7 @@
 		background-position: 50% 67%;
 		background-size: cover;
 		background-repeat: no-repeat;
-        background-image: url('#{$image-path}/about/msg_bg.webp')
+        background-image: url('../images/about/msg_bg.webp')
 	}
 }
 
@@ -48,7 +48,7 @@
 		background-position: 50% 67%;
 		background-size: cover;
 		background-repeat: no-repeat;
-        background-image: url('#{$image-path}/about/philosophy_bg.webp')
+        background-image: url('../images/about/philosophy_bg.webp')
 	}
 
     .text-side {
@@ -108,16 +108,16 @@
         &.vision {
             border-radius: 100px 0 0 0;
             background-position: 50% 29%;
-            background-image: url('#{$image-path}/about/vision.webp')
+            background-image: url('../images/about/vision.webp')
         }
         &.mission {
             background-position: 50% 29%;
-            background-image: url('#{$image-path}/about/mission.webp')
+            background-image: url('../images/about/mission.webp')
         }
         &.concept {
             border-radius: 0 0 0 100px;
             background-position: 50% 29%;
-            background-image: url('#{$image-path}/about/concept.webp')
+            background-image: url('../images/about/concept.webp')
         }
     }
 

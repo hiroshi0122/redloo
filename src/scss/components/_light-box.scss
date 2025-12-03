@@ -72,12 +72,12 @@
 
 
         &.prev {
-            background-image: url("#{$image-path}/common/arrow_left_white.svg");
+            background-image: url("../images/common/arrow_left_white.svg");
             left: -10%;
             background-position: 46% 50%;
         }
         &.next {
-            background-image: url("#{$image-path}/common/arrow_right_white.svg");
+            background-image: url("../images/common/arrow_right_white.svg");
             right: -10%;
             background-position: 54% 53%;
         }

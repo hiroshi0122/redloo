@@ -792,19 +792,19 @@
         .address {
             font-weight: 700;
             &::before {
-                background-image: url('#{$image-path}/common/map_blue.svg');
+                background-image: url('../images/common/map_blue.svg');
             }
         }
         .train {
             font-weight: 700;
             &::before {
-                background-image: url('#{$image-path}/common/train_blue.svg');
+                background-image: url('../images/common/train_blue.svg');
             }
         }
         .car {
             font-weight: 700;
             &::before {
-                background-image: url('#{$image-path}/common/car_blue.svg');
+                background-image: url('../images/common/car_blue.svg');
             }
         }
     }
@@ -866,7 +866,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url('#{$image-path}/common/tel_blue.svg');
+            background-image: url('../images/common/tel_blue.svg');
         }
     }
 

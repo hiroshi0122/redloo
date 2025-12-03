@@ -109,7 +109,7 @@ header {
         &::before {
             display: block;
             content: '';
-            background-image: url('#{$image-path}/common/plane_w.svg');
+            background-image: url('../images/common/plane_w.svg');
             background-size: contain;
             width: 25px;
             height: 25px;
