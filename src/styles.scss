@@ -19,6 +19,7 @@
 @use "./scss/components/factory-fitting" as *;
 @use "./scss/components/light-box" as *;
 @use "./scss/components/animation" as *;
+@use "./scss/components/content" as *;
 
 @use "./scss/pages/archive" as *;
 @use "./scss/pages/single" as *;
@@ -27,4 +28,5 @@
 @use "./scss/pages/order-guide" as *;
 @use "./scss/pages/order-flow" as *;
 @use "./scss/pages/archive-products" as *;
+@use "./scss/pages/page" as *;
 

@@ -10449,6 +10449,156 @@ footer .footer-submenu a {
 --------------------------------------*/
 /**** #### コメント下の下 ****/
 /* ##### コメント軽 */
+.content {
+  margin-bottom: 10rem;
+  /* ### WP BLOCK IMAGE
+  --------------------------------------*/
+}
+.content .wp-block-image {
+  margin: 4rem 0 3rem 0;
+  width: 100%;
+}
+.content .wp-block-image img {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.content .wp-block-image .wp-element-caption {
+  font-size: 12px;
+  color: #969696;
+}
+.content {
+  /* ### WP BLOCK BUTTON
+  --------------------------------------*/
+}
+.content .wp-block-button .wp-block-button__link {
+  font-weight: bold;
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+  background-color: #000000;
+}
+.content {
+  /* ### TEXT
+  --------------------------------------*/
+}
+.content p {
+  margin-bottom: 3rem;
+  line-height: 2.5;
+}
+.content p a {
+  border-bottom: solid 1px #000000;
+  font-weight: 600;
+}
+.content p strong {
+  margin-bottom: 2rem;
+  line-height: 2.5;
+}
+.content h2 {
+  border-bottom: solid 1px #264898;
+  border-left: solid 5px #264898;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+  font-size: 22px;
+  padding: 17px 16px 17px;
+  color: #264898;
+  background-color: #F7F7F7;
+  border-radius: 0 100px 0 0;
+}
+.content h3 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  font-size: 20px;
+  padding: 5px 8px;
+  border-bottom: solid 1px #264898;
+  color: #264898;
+}
+.content h4 {
+  display: inline-block;
+  font-size: 17px;
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+  border-bottom: solid 1px #264898;
+  color: #264898;
+  border-bottom: solid 1px #264898;
+  padding-bottom: 0.5rem;
+}
+.content .wp-block-list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem 2rem 2rem 3rem;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+}
+.content .wp-block-list li {
+  display: flex;
+  align-items: center;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+.content .wp-block-list li:last-child {
+  margin-bottom: 0;
+}
+.content .wp-block-list li:before {
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  background-color: #264898;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+@media (max-width: ) {
+  .content .wp-block-image .wp-element-caption {
+    font-size: 10px;
+  }
+  .content p {
+    line-height: 2;
+    font-size: 13px;
+  }
+  .content p strong {
+    line-height: 2;
+    font-size: 13px;
+  }
+  .content h2 {
+    border-left: solid 4px #000000;
+    margin-top: 6rem;
+    font-size: 20px;
+    padding: 0 5px 2px;
+  }
+  .content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    padding: 3px 0;
+  }
+  .content .wp-block-list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+  }
+  .content .wp-block-list li {
+    line-height: 1.7;
+    margin-bottom: 5px;
+  }
+  .content .wp-block-list li:before {
+    font-size: 11px;
+    margin-right: 5px;
+  }
+}
+
+blockquote {
+  padding: 1rem;
+}
+blockquote cite {
+  font-size: 14px;
+}
+
+/* ## コメント中
+***********************************************/
+/* ### コメント下
+--------------------------------------*/
+/**** #### コメント下の下 ****/
+/* ##### コメント軽 */
 .pagenation-nav {
   display: flex;
   align-items: center;
@@ -10540,142 +10690,6 @@ footer .footer-submenu a {
   .thumbnail {
     margin-bottom: 3rem;
   }
-}
-
-/* ## Wordpress エディター編集部分
-***********************************************/
-.content {
-  margin-bottom: 10rem;
-  /* ### WP BLOCK IMAGE
-  --------------------------------------*/
-}
-.content .wp-block-image {
-  margin-bottom: 3rem;
-}
-.content .wp-block-image img {
-  overflow: hidden;
-}
-.content .wp-block-image .wp-element-caption {
-  font-size: 12px;
-  color: #969696;
-}
-.content {
-  /* ### WP BLOCK BUTTON
-  --------------------------------------*/
-}
-.content .wp-block-button .wp-block-button__link {
-  font-weight: bold;
-  padding: 1rem 2rem;
-  margin-bottom: 3rem;
-  background-color: #000000;
-}
-.content .wp-block-button .wp-block-button__link:after {
-  content: "\f054";
-  font-family: "Font Awesome 6 Free";
-  margin-left: 1rem;
-}
-.content {
-  /* ### TEXT
-  --------------------------------------*/
-}
-.content p {
-  margin-bottom: 3rem;
-  line-height: 2.5;
-}
-.content p a {
-  border-bottom: solid 1px #000000;
-  font-weight: 600;
-}
-.content p strong {
-  margin-bottom: 2rem;
-  line-height: 2.5;
-}
-.content h2 {
-  border-bottom: solid 1px #000000;
-  border-left: solid 2px #000000;
-  margin-top: 10rem;
-  margin-bottom: 2rem;
-  font-size: 22px;
-  padding: 0 10px 5px;
-}
-.content h3 {
-  position: relative;
-  margin-top: 8rem;
-  margin-bottom: 1rem;
-  font-size: 20px;
-  padding: 5px 8px;
-  border-bottom: solid 1px #000000;
-}
-.content h4 {
-  font-size: 18px;
-  margin-top: 6rem;
-  margin-bottom: 1rem;
-}
-.content .wp-block-list {
-  list-style-position: inside;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 2rem 2rem;
-  background-color: #F7F7F7;
-}
-.content .wp-block-list li {
-  line-height: 2;
-  margin-bottom: 10px;
-}
-.content .wp-block-list li:last-child {
-  margin-bottom: 0;
-}
-.content .wp-block-list li:before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 600;
-  content: "\f0da";
-  font-size: 13px;
-  margin-right: 5px;
-}
-@media (max-width: ) {
-  .content .wp-block-image .wp-element-caption {
-    font-size: 10px;
-  }
-  .content p {
-    line-height: 2;
-    font-size: 13px;
-  }
-  .content p strong {
-    line-height: 2;
-    font-size: 13px;
-  }
-  .content h2 {
-    border-left: solid 4px #000000;
-    margin-top: 6rem;
-    font-size: 20px;
-    padding: 0 5px 2px;
-  }
-  .content h3 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 18px;
-    padding: 3px 0;
-  }
-  .content .wp-block-list {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem 2rem;
-  }
-  .content .wp-block-list li {
-    line-height: 1.7;
-    margin-bottom: 5px;
-  }
-  .content .wp-block-list li:before {
-    font-size: 11px;
-    margin-right: 5px;
-  }
-}
-
-blockquote {
-  padding: 1rem;
-}
-blockquote cite {
-  font-size: 14px;
 }
 
 /* ## コメント中
@@ -12716,6 +12730,33 @@ blockquote cite {
   background-color: #000000;
   border-radius: 30px;
   color: #fff;
+}
+
+/* ## h2
+***********************************************************/
+/* ### h3
+--------------------------------------*/
+/**** #### h4 ****/
+/* ##### h5 */
+.page-first-sec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  background-position: 50% 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: var(--page-img);
+}
+
+.page-content-sec {
+  padding-top: 5rem;
+}
+.page-content-sec > .container {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 /* ## h2
