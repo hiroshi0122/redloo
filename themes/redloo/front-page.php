@@ -407,7 +407,7 @@ get_header();
             <div class="title">
                 <span>アクセス</span>
                 <h2>ACCESS</h2>
-                <h4 class="catch blue">スタッフの準備等ございますため、<br>ご来訪の際は、<br class="d-dm-none">事前にご予約をお願いいたします。</h4>
+                <h5 class="catch blue">スタッフの準備等ございますため、<br>ご来訪の際は、<br class="d-dm-none">事前にご予約をお願いいたします。</h5>
                 <span class="pink">※対応スタッフが不在の場合があります。</span>
             </div>
         </div>

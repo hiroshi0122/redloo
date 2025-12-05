@@ -9715,7 +9715,7 @@ footer .footer-submenu a {
   border-radius: 50px;
   padding: 1rem 2rem 1rem 3rem;
   width: 100%;
-  max-width: 240px;
+  max-width: 270px;
   text-align: left;
   border: solid 2px #fff;
 }
@@ -9850,6 +9850,9 @@ footer .footer-submenu a {
   line-height: 1;
   font-family: "Anton", sans-serif;
   font-weight: 400;
+}
+.title-template .title h5 {
+  font-weight: 500;
 }
 .title-template {
   /* ### CATCH
@@ -12749,6 +12752,9 @@ blockquote cite {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: var(--page-img);
+}
+.page-first-sec .image-side {
+  max-height: 480px;
 }
 
 .page-content-sec {

@@ -18,6 +18,18 @@ add_action('wp_enqueue_scripts', 'remove_gutenberg_css_conditionally', 100);
 
 
 //**************************************************************
+// Gutenberg編集画面のUI設定（余白・外観ツールなど）　渋井追加
+//**************************************************************
+add_action('after_setup_theme', function () {
+	add_theme_support('wp-block-styles');
+	add_theme_support('appearance-tools');
+	add_theme_support('spacing'); 
+	add_theme_support('layout');
+});
+
+
+
+//**************************************************************
 // admin screen setup
 //**************************************************************
 // 投稿の管理画面から、アイキャッチ画像を登録する場所を作る
