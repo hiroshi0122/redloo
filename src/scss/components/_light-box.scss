@@ -34,7 +34,15 @@
     .lightbox-inner {
         position: relative;
         width: clamp(200px, 70%, 760px);
-        height: auto;
+        height: 100%;
+        padding: 5%;
+    }
+
+    .lightbox-img-wrapper {
+        display: grid;
+        place-content: center;
+        place-items: center;
+        height: 100%;
     }
 
     .lightbox-img {

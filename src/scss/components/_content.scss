@@ -5,7 +5,7 @@
 //**********************************************************************
 // # CONTENT
 //**********************************************************************
-.content {
+.content, .single-product-content {
     margin-bottom: 10rem;
 
     /* ### WP BLOCK IMAGE
@@ -32,6 +32,22 @@
             padding: 1rem 2rem;
             margin-bottom: 3rem;
             background-color: $black;
+        }
+    }
+
+    /* ### WP BLOCK TABLE
+    --------------------------------------*/
+    .wp-block-table {
+        td {
+            border: none;
+            border-bottom: solid 1px $border-gray;
+            font-size: clamp(12px, 1.4vw, 16px);
+            font-weight: 500;
+
+            &:first-child {
+                width: 20%;
+                color: $blue;
+            }
         }
     }
 

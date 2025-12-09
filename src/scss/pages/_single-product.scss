@@ -1,0 +1,228 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+//**********************************************************************
+// # SINGLE PRODUCT
+//**********************************************************************
+/* ## SINGLE PRODUCT SECTION
+***********************************************/
+.single-product-sec {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 15rem;
+
+    /* ### IMAGE SIDE
+    --------------------------------------*/
+    .image-side {
+        .title {
+            span {
+                writing-mode: tb;
+                margin: 3rem auto 0;
+                letter-spacing: 3px;
+            }
+        }
+    }
+
+    /* ### TEXT SIDE
+    --------------------------------------*/
+    .text-side {
+
+        /* #### GENRE TAGS
+        -----------------------*/
+        .genre-tags {
+            margin-bottom: 0;
+        }
+
+        /* #### PRIDUCT NUMBER
+        -----------------------*/
+        .product-num {
+            color: $font-gray;
+        }
+
+        /* #### MAIN TITLE
+        -----------------------*/
+        .main-title {
+            font-size: clamp(16px, 2vw, 30px);
+            color: $blue;
+        }
+
+        /* #### PRICE AREA
+        -----------------------*/
+        .price-area {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 5px;
+
+            .price {
+                font-size: clamp(28px, 3vw ,54px);
+                font-family: $en-font;
+                color: $blue;
+                font-weight: 500;
+            }
+        }
+
+        /* #### POSTAGE AREA
+        -----------------------*/
+        .postage-area {
+            display: inline-block;
+            background-color: $bg-gray;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+
+            dt {
+                color: $blue;
+            }
+        }
+
+        /* #### EXCERPT
+        -----------------------*/
+        .excerpt {
+            margin-bottom: 4rem;
+        }
+
+        /* #### ORDER ATTENTION
+        -----------------------*/
+        .order-attention {
+            background-color: $bg-gray;
+            padding: 3rem 2.5rem;
+
+            .btn-black {
+                max-width: 240px;
+            }
+
+            .first-order .border-title {
+                display: flex;
+                align-items: center;
+                &::before {
+                    content: '';
+                    display: block;
+                    background-image: url('../images/common/first.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            .second-order .border-title {
+                display: flex;
+                align-items: center;
+                &::before {
+                    content: '';
+                    display: block;
+                    background-image: url('../images/common/check.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    .single-product-content {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+
+    // ## MOBILE // *************************************************>
+    @include media-over(sp) {
+       
+    }
+}
+
+
+/* ## OTHER ATTENTION SECTION
+***********************************************/
+.other-attention-sec {
+
+    /* ### CONTAINER
+    --------------------------------------*/
+    >.container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    /* ### REFOUND POLICY
+    --------------------------------------*/
+    .refound-policy {
+        margin-bottom: 8rem;
+        background-color: $bg-gray;
+        padding: 3rem;
+
+        dt {
+            color: $blue;
+            margin-bottom: 1rem;
+        }
+    }
+
+    /* ### PAGE ATTENTION
+    --------------------------------------*/
+    .page-attention {
+        max-width: 840px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: $bg-gray;
+        border: solid 3px $blue;
+        padding: 6% 4%;
+
+        h4 {
+            color: $blue;
+            margin-bottom: 2rem;
+        }
+        p {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+
+/* ## STYLE VARIATION SECTION
+***********************************************/
+.style-variation-sec {
+
+    .variation-photos {
+        position: relative;
+        background-color: $bg-gray;
+        border-radius: 30px;
+        padding: 5%;
+    }
+
+    .title-template {
+        position: absolute;
+        left: -3%;
+        top: 0;
+        z-index: 10;
+    }
+
+    .title {
+        span {
+            writing-mode: tb;
+            letter-spacing: 3px;
+        }
+    }
+
+    .light-box-gallery {
+        img {
+            aspect-ratio: 1/1;
+            border: solid 1px $black;
+        }
+    }
+}
+
+
+
+
+// ## MOBILE // *************************************************>
+
+/* ## コメント中
+***********************************************/
+
+/* ### コメント下
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

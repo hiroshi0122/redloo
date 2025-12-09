@@ -9651,21 +9651,6 @@ footer .footer-submenu a {
 -------------------------------------*/
 /**** #### コメント下の下 ****/
 /* ##### コメント軽 */
-/* ## ボタン共通の css
-***********************************************/
-.btn {
-  font-size: 18px;
-  font-weight: bold;
-  display: inline-block;
-  text-decoration: none;
-  transition: 0.2s;
-}
-@media (max-width: ) {
-  .btn {
-    font-size: 14px;
-  }
-}
-
 /* ### BTN BLUE（デフォルトの青いボタン）
 --------------------------------------------*/
 .btn-blue {
@@ -9677,6 +9662,7 @@ footer .footer-submenu a {
   border-radius: 50px;
   position: relative;
   padding: 1rem 2rem 1rem 3rem;
+  font-size: clamp(13px, 1vw, 18px);
   width: 100%;
   max-width: 240px;
   text-align: left;
@@ -9708,13 +9694,14 @@ footer .footer-submenu a {
 --------------------------------------------*/
 .btn-black {
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
   background-color: #000000;
   color: #fff;
+  font-size: clamp(13px, 1vw, 17px);
   border-radius: 50px;
   padding: 1rem 2rem 1rem 3rem;
-  width: 100%;
   max-width: 270px;
   text-align: left;
   border: solid 2px #fff;
@@ -9889,6 +9876,10 @@ footer .footer-submenu a {
 .title-template.tategaki .title h2 {
   writing-mode: vertical-rl;
   margin-left: -9px;
+}
+.title-template.tategaki .title h3 {
+  writing-mode: vertical-rl;
+  margin-left: -6px;
 }
 @media (max-width: 768px) {
   .title-template.tategaki {
@@ -10374,7 +10365,14 @@ footer .footer-submenu a {
 .lightbox .lightbox-inner {
   position: relative;
   width: clamp(200px, 70%, 760px);
-  height: auto;
+  height: 100%;
+  padding: 5%;
+}
+.lightbox .lightbox-img-wrapper {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  height: 100%;
 }
 .lightbox .lightbox-img {
   width: 100%;
@@ -10452,50 +10450,64 @@ footer .footer-submenu a {
 --------------------------------------*/
 /**** #### コメント下の下 ****/
 /* ##### コメント軽 */
-.content {
+.content, .single-product-content {
   margin-bottom: 10rem;
   /* ### WP BLOCK IMAGE
   --------------------------------------*/
 }
-.content .wp-block-image {
+.content .wp-block-image, .single-product-content .wp-block-image {
   margin: 4rem 0 3rem 0;
   width: 100%;
 }
-.content .wp-block-image img {
+.content .wp-block-image img, .single-product-content .wp-block-image img {
   border-radius: 5px;
   overflow: hidden;
 }
-.content .wp-block-image .wp-element-caption {
+.content .wp-block-image .wp-element-caption, .single-product-content .wp-block-image .wp-element-caption {
   font-size: 12px;
   color: #969696;
 }
-.content {
+.content, .single-product-content {
   /* ### WP BLOCK BUTTON
   --------------------------------------*/
 }
-.content .wp-block-button .wp-block-button__link {
+.content .wp-block-button .wp-block-button__link, .single-product-content .wp-block-button .wp-block-button__link {
   font-weight: bold;
   padding: 1rem 2rem;
   margin-bottom: 3rem;
   background-color: #000000;
 }
-.content {
+.content, .single-product-content {
+  /* ### WP BLOCK TABLE
+  --------------------------------------*/
+}
+.content .wp-block-table td, .single-product-content .wp-block-table td {
+  border: none;
+  border-bottom: solid 1px #D8D8D8;
+  font-size: clamp(12px, 1.4vw, 16px);
+  font-weight: 500;
+}
+.content .wp-block-table td:first-child, .single-product-content .wp-block-table td:first-child {
+  width: 20%;
+  color: #264898;
+}
+.content, .single-product-content {
   /* ### TEXT
   --------------------------------------*/
 }
-.content p {
+.content p, .single-product-content p {
   margin-bottom: 3rem;
   line-height: 2.5;
 }
-.content p a {
+.content p a, .single-product-content p a {
   border-bottom: solid 1px #000000;
   font-weight: 600;
 }
-.content p strong {
+.content p strong, .single-product-content p strong {
   margin-bottom: 2rem;
   line-height: 2.5;
 }
-.content h2 {
+.content h2, .single-product-content h2 {
   border-bottom: solid 1px #264898;
   border-left: solid 5px #264898;
   margin-top: 10rem;
@@ -10506,7 +10518,7 @@ footer .footer-submenu a {
   background-color: #F7F7F7;
   border-radius: 0 100px 0 0;
 }
-.content h3 {
+.content h3, .single-product-content h3 {
   margin-top: 6rem;
   margin-bottom: 2rem;
   font-size: 20px;
@@ -10514,7 +10526,7 @@ footer .footer-submenu a {
   border-bottom: solid 1px #264898;
   color: #264898;
 }
-.content h4 {
+.content h4, .single-product-content h4 {
   display: inline-block;
   font-size: 17px;
   margin-top: 6rem;
@@ -10524,23 +10536,23 @@ footer .footer-submenu a {
   border-bottom: solid 1px #264898;
   padding-bottom: 0.5rem;
 }
-.content .wp-block-list {
+.content .wp-block-list, .single-product-content .wp-block-list {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 2rem 2rem 2rem 3rem;
   background-color: #F7F7F7;
   border-radius: 10px;
 }
-.content .wp-block-list li {
+.content .wp-block-list li, .single-product-content .wp-block-list li {
   display: flex;
   align-items: center;
   line-height: 1.7;
   margin-bottom: 15px;
 }
-.content .wp-block-list li:last-child {
+.content .wp-block-list li:last-child, .single-product-content .wp-block-list li:last-child {
   margin-bottom: 0;
 }
-.content .wp-block-list li:before {
+.content .wp-block-list li:before, .single-product-content .wp-block-list li:before {
   display: block;
   content: "";
   width: 7px;
@@ -10551,39 +10563,39 @@ footer .footer-submenu a {
   flex-shrink: 0;
 }
 @media (max-width: ) {
-  .content .wp-block-image .wp-element-caption {
+  .content .wp-block-image .wp-element-caption, .single-product-content .wp-block-image .wp-element-caption {
     font-size: 10px;
   }
-  .content p {
+  .content p, .single-product-content p {
     line-height: 2;
     font-size: 13px;
   }
-  .content p strong {
+  .content p strong, .single-product-content p strong {
     line-height: 2;
     font-size: 13px;
   }
-  .content h2 {
+  .content h2, .single-product-content h2 {
     border-left: solid 4px #000000;
     margin-top: 6rem;
     font-size: 20px;
     padding: 0 5px 2px;
   }
-  .content h3 {
+  .content h3, .single-product-content h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-size: 18px;
     padding: 3px 0;
   }
-  .content .wp-block-list {
+  .content .wp-block-list, .single-product-content .wp-block-list {
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem 2rem;
   }
-  .content .wp-block-list li {
+  .content .wp-block-list li, .single-product-content .wp-block-list li {
     line-height: 1.7;
     margin-bottom: 5px;
   }
-  .content .wp-block-list li:before {
+  .content .wp-block-list li:before, .single-product-content .wp-block-list li:before {
     font-size: 11px;
     margin-right: 5px;
   }
@@ -10602,6 +10614,71 @@ blockquote cite {
 --------------------------------------*/
 /**** #### コメント下の下 ****/
 /* ##### コメント軽 */
+.archive-first-sec {
+  padding-top: 18rem;
+}
+
+/* ## POST CONTENT
+***********************************************/
+.post-content-sec > .container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.post-content-sec .post-content {
+  background-color: #F7F7F7;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.post-content-sec .image-side {
+  border-radius: 5px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.post-content-sec .image-side img {
+  transition: 0.2s;
+}
+.post-content-sec .image-side:hover img {
+  transition: 0.2s;
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+.post-content-sec .text-side .post-title {
+  color: #264898;
+  display: block;
+  font-weight: 600;
+}
+.post-content-sec .text-side p {
+  font-size: clamp(12px, 1vw, 15px);
+}
+.post-content-sec {
+  /* ## お客様の声アーカイブのみ
+  ***********************************************/
+}
+.post-content-sec.voice > .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.post-content-sec.voice .image-side {
+  aspect-ratio: 1/1;
+}
+.post-content-sec.voice .image-side img {
+  height: 100%;
+}
+
+/* ## POST CATEGORIES
+***********************************************/
+.post-categories .cat {
+  display: inline-block;
+  font-size: clamp(10px, 1vw, 12px);
+  padding: 0px 10px;
+  background-color: #000000;
+  border-radius: 30px;
+  color: #fff;
+}
+
+/* ## PAGE NAVIGATION
+***********************************************/
 .pagenation-nav {
   display: flex;
   align-items: center;
@@ -10658,19 +10735,26 @@ blockquote cite {
 /* ## SINGLE SECTION
 ***********************************************/
 .single-sec {
-  max-width: 840px;
+  max-width: 1080px;
   margin: 0 auto;
   padding-top: 15rem;
 }
+.single-sec .container.small {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 /* ### TITLE AREA
 --------------------------------------*/
 .title-area {
-  margin-bottom: 3rem;
+  background-color: #F7F7F7;
+  margin-bottom: 5rem;
+  border-left: solid 8px #264898;
+  padding: 3rem;
 }
 .title-area .day {
   display: block;
   font-size: 13px;
-  font-family: "Anton", sans-serif;
   color: #969696;
 }
 .title-area h1 {
@@ -12771,3 +12855,192 @@ blockquote cite {
 --------------------------------------*/
 /**** #### h4 ****/
 /* ##### h5 */
+/* ## SINGLE PRODUCT SECTION
+***********************************************/
+.single-product-sec {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 15rem;
+  /* ### IMAGE SIDE
+  --------------------------------------*/
+}
+.single-product-sec .image-side .title span {
+  writing-mode: tb;
+  margin: 3rem auto 0;
+  letter-spacing: 3px;
+}
+.single-product-sec {
+  /* ### TEXT SIDE
+  --------------------------------------*/
+}
+.single-product-sec .text-side {
+  /* #### GENRE TAGS
+  -----------------------*/
+}
+.single-product-sec .text-side .genre-tags {
+  margin-bottom: 0;
+}
+.single-product-sec .text-side {
+  /* #### PRIDUCT NUMBER
+  -----------------------*/
+}
+.single-product-sec .text-side .product-num {
+  color: #969696;
+}
+.single-product-sec .text-side {
+  /* #### MAIN TITLE
+  -----------------------*/
+}
+.single-product-sec .text-side .main-title {
+  font-size: clamp(16px, 2vw, 30px);
+  color: #264898;
+}
+.single-product-sec .text-side {
+  /* #### PRICE AREA
+  -----------------------*/
+}
+.single-product-sec .text-side .price-area {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+}
+.single-product-sec .text-side .price-area .price {
+  font-size: clamp(28px, 3vw, 54px);
+  font-family: "Anton", sans-serif;
+  color: #264898;
+  font-weight: 500;
+}
+.single-product-sec .text-side {
+  /* #### POSTAGE AREA
+  -----------------------*/
+}
+.single-product-sec .text-side .postage-area {
+  display: inline-block;
+  background-color: #F7F7F7;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.single-product-sec .text-side .postage-area dt {
+  color: #264898;
+}
+.single-product-sec .text-side {
+  /* #### EXCERPT
+  -----------------------*/
+}
+.single-product-sec .text-side .excerpt {
+  margin-bottom: 4rem;
+}
+.single-product-sec .text-side {
+  /* #### ORDER ATTENTION
+  -----------------------*/
+}
+.single-product-sec .text-side .order-attention {
+  background-color: #F7F7F7;
+  padding: 3rem 2.5rem;
+}
+.single-product-sec .text-side .order-attention .btn-black {
+  max-width: 240px;
+}
+.single-product-sec .text-side .order-attention .first-order .border-title {
+  display: flex;
+  align-items: center;
+}
+.single-product-sec .text-side .order-attention .first-order .border-title::before {
+  content: "";
+  display: block;
+  background-image: url("../images/common/first.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.single-product-sec .text-side .order-attention .second-order .border-title {
+  display: flex;
+  align-items: center;
+}
+.single-product-sec .text-side .order-attention .second-order .border-title::before {
+  content: "";
+  display: block;
+  background-image: url("../images/common/check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+}
+.single-product-sec .single-product-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* ## OTHER ATTENTION SECTION
+***********************************************/
+.other-attention-sec {
+  /* ### CONTAINER
+  --------------------------------------*/
+}
+.other-attention-sec > .container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.other-attention-sec {
+  /* ### REFOUND POLICY
+  --------------------------------------*/
+}
+.other-attention-sec .refound-policy {
+  margin-bottom: 8rem;
+  background-color: #F7F7F7;
+  padding: 3rem;
+}
+.other-attention-sec .refound-policy dt {
+  color: #264898;
+  margin-bottom: 1rem;
+}
+.other-attention-sec {
+  /* ### PAGE ATTENTION
+  --------------------------------------*/
+}
+.other-attention-sec .page-attention {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #F7F7F7;
+  border: solid 3px #264898;
+  padding: 6% 4%;
+}
+.other-attention-sec .page-attention h4 {
+  color: #264898;
+  margin-bottom: 2rem;
+}
+.other-attention-sec .page-attention p {
+  margin-bottom: 3rem;
+}
+
+/* ## STYLE VARIATION SECTION
+***********************************************/
+.style-variation-sec .variation-photos {
+  position: relative;
+  background-color: #F7F7F7;
+  border-radius: 30px;
+  padding: 5%;
+}
+.style-variation-sec .title-template {
+  position: absolute;
+  left: -3%;
+  top: 0;
+  z-index: 10;
+}
+.style-variation-sec .title span {
+  writing-mode: tb;
+  letter-spacing: 3px;
+}
+.style-variation-sec .light-box-gallery img {
+  aspect-ratio: 1/1;
+  border: solid 1px #000000;
+}
+
+/* ## コメント中
+***********************************************/
+/* ### コメント下
+--------------------------------------*/
+/**** #### コメント下の下 ****/
+/* ##### コメント軽 */

@@ -5,11 +5,11 @@
  *
  * @link https:/xxxxx/{id}
  *
- * @package kuraft
- * @since 2024.9.11
+ * @package RedLoo
+ * @since 2025.12.8
  * @version 1.0
  *
- * Template Name: ARCHIVE
+ * 
  **/
 
 
@@ -27,62 +27,46 @@ $cat = get_category($cat_id);
 get_header(); ?>
 
 
-<section class="archive first-sec">
-	<div class="kuraft-container">
-		<div class="row">
-			<div class="col-auto">
-				<div class="main-title-template">
-					<?php if ($post_type) :
-						// カスタムポストタイプの名称を取得
-						$post_type_obj = get_post_type_object($post_type);
-					?>
-						<h2 class="d-flex align-items-center"><?php echo esc_html($post_type_obj->labels->name) ?><span class="sub-title"> 一覧<span></h2>
-						<span>Archive</span>
-					<?php endif; ?>
+<section class="archive-first-sec pb-0">
+	<div class="container">
+		<div class="text-side">
+			<div class="lower-title-template blue">
+				<div class="title">
+					<h1>BLOG</h1>
+					<span>お知らせ・コラム</span>
 				</div>
-			</div>
-			<div class="col">
-				<?php
-				// 現在のURLのパス部分を取得
-				$request_uri = $_SERVER['REQUEST_URI'];
-
-				// `/recipe` または `/interview` の場合に "Coming Soon" を表示
-				if (preg_match('#^/recipe(/|$)#', $request_uri) || preg_match('#^/interview(/|$)#', $request_uri)) : ?>
-					<div class="coming-soon-msg">
-						<h2>Coming Soon..</h2>
-						<p>総意制作中です。今しばらくお待ちください。</p>
-					</div>
-				<?php else:?>
-					
-					<div class="post-contents row">
-						<?php if (have_posts()) : ?>
-							<?php while (have_posts()) : the_post(); ?>
-								<div class="medium-box col-lg-6 col-xl-6 col-xxl-4">
-									<div class="d-flex h-100">
-										<div class="text-area col-md-auto">
-											<span class="date"><?php echo get_the_date('Y.n.j'); ?></span>
-											<a class="post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-										</div>
-										<div class="image-area col">
-											<a class="parmalink" href="<?php the_permalink(); ?>">
-												<?php if (has_post_thumbnail()) : ?>
-													<?php the_post_thumbnail('small'); ?>
-												<?php endif; ?>
-											</a>
-											<div class="tags row">
-												<?php display_post_tags(get_the_ID()); ?>
-											</div>
-										</div>
-									</div>
-								</div>
-							<?php endwhile; ?>
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
 			</div>
 		</div>
 	</div>
 </section>
+
+
+<section class="post-content-sec">
+	<div class="container">		
+		<?php if (have_posts()) : ?>
+			<?php while (have_posts()) : the_post(); ?>
+				<div class="post-content row gap-5 align-center">
+					<div class="image-side col-12 col-md-3">
+						<a class="parmalink" href="<?php the_permalink(); ?>">
+							<?php if (has_post_thumbnail()) : ?>
+								<?php the_post_thumbnail('small'); ?>
+							<?php endif; ?>
+						</a>
+					</div>
+					<div class="text-side col-12 col-md-9">
+						<a class="post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						<span class="date"><?php echo get_the_date('Y.n.j'); ?></span>
+						<p><?php the_excerpt(); ?></p>
+					</div>
+				</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
+	</div>
+</section>
+
+
+
+
 
 <?php //** PAGINATION ****************************//
 ?>

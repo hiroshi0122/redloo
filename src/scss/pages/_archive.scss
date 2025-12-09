@@ -5,6 +5,88 @@
 //**********************************************************************
 // # ARCHIVE
 //**********************************************************************
+.archive-first-sec {
+    padding-top: 18rem;
+}
+
+/* ## POST CONTENT
+***********************************************/
+.post-content-sec {
+    >.container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .post-content {
+        background-color: $bg-gray;
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .image-side {
+        border-radius: 5px;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        
+        img {
+            transition: .2s;
+        }
+
+        &:hover {
+            img {
+                transition: .2s;
+                transform: scale(1.1);
+                filter: brightness(1.2);
+            }
+        }
+    }
+
+    .text-side {
+        .post-title {
+            color: $blue;
+            display: block;
+            font-weight: 600;
+        }
+        p {
+            font-size: clamp(12px, 1vw, 15px);
+        }
+    }
+
+    /* ## お客様の声アーカイブのみ
+    ***********************************************/
+    &.voice {
+         >.container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+         .image-side {
+            aspect-ratio: 1/1;
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+/* ## POST CATEGORIES
+***********************************************/
+.post-categories {
+    .cat {
+        display: inline-block;
+        font-size: clamp(10px, 1vw, 12px);
+        padding: 0px 10px;
+        background-color: $black;
+        border-radius: 30px;
+        color: $white;
+    }
+}
+
+
+
+/* ## PAGE NAVIGATION
+***********************************************/
 .pagenation-nav {
     display: flex;
     align-items: center;

@@ -281,7 +281,9 @@ get_header();
     <div class="lightbox-bg"></div>
     <div class="lightbox-inner">
         <button class="arrow prev"></button>
-        <img class="lightbox-img">
+        <div class="lightbox-img-wrapper">
+            <img class="lightbox-img">
+        </div>
         <button class="arrow next"></button>
         <p class="caption"></p>
     </div>

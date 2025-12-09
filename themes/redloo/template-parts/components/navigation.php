@@ -36,7 +36,7 @@ $navigation = [
     ],
     [
         'menu' => 'お知らせ・コラム',
-        'link' => '/news',
+        'link' => '/all-post',
     ],
 ];
 

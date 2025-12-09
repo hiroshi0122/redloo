@@ -9,12 +9,19 @@
 /* ## SINGLE SECTION
 ***********************************************/
 .single-sec {
-    max-width: 840px;
+    max-width: 1080px;
     margin: 0 auto;
     padding-top: 15rem;
 
     @include media-over(sp) {
        
+    }
+
+    .container {
+        &.small {
+            max-width: 960px;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -22,12 +29,14 @@
 /* ### TITLE AREA
 --------------------------------------*/
 .title-area {
-    margin-bottom: 3rem;
+    background-color: $bg-gray;
+    margin-bottom: 5rem;
+    border-left: solid 8px $blue;
+    padding: 3rem;
 
     .day {
         display: block;
         font-size: 13px;
-        font-family: $en-font;
         color: $font-gray;
     }
 

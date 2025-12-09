@@ -6,22 +6,6 @@
 // # button
 //**************************************************************
 
-/* ## ボタン共通の css
-***********************************************/
-.btn {
-    font-size: 18px;
-    font-weight: bold;
-    display: inline-block;
-    text-decoration: none;
-    transition: 0.2s;
-
-    // ## MOBILE // *************************************************>
-    @include media-under(sp) {
-        font-size: 14px;
-    }
-}
-
-
 /* ### BTN BLUE（デフォルトの青いボタン）
 --------------------------------------------*/
 .btn-blue {
@@ -33,6 +17,7 @@
     border-radius: 50px;
     position: relative;
     padding: 1rem 2rem 1rem 3rem;
+    font-size: clamp(13px, 1vw, 18px);
     width: 100%;
     max-width: 240px;
     text-align: left;
@@ -66,13 +51,14 @@
 --------------------------------------------*/
 .btn-black {
     display: flex;
+    gap: 20px;
     align-items: center;
     justify-content: space-between;
     background-color: $black;
     color: $white;
+    font-size: clamp(13px, 1vw, 17px);
     border-radius: 50px;
     padding: 1rem 2rem 1rem 3rem;
-    width: 100%;
     max-width: 270px;
     text-align: left;
     border: solid 2px $white;
