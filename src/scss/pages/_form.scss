@@ -2,6 +2,60 @@
 @use "../mixins" as *;
 @use "sass:map";
 
+
+//*******************************************************************
+// # FORM CONTACT
+//*******************************************************************
+.contact-first-sec {
+    padding-top: 17rem;
+
+    /* ### CONTACT ATTENTION
+    --------------------------------------*/
+    .contact-attention {
+        padding-top: 2.5rem;
+        color: $font-gray;
+        margin-bottom: 1rem;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    /* ### TEL NUMBER
+    --------------------------------------*/
+    .tel-number {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-family: $en-font;
+        font-size: clamp(24px, 3vw, 34px);
+        &::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(../images/common/tel_blue.svg);
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+
+        /* ### TEL NUMBER
+        --------------------------------------*/
+        .tel-number {
+            &::before {
+                content: "";
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+
+
 //*******************************************************************
 // # FORM（お問合せ系共通）
 //*******************************************************************

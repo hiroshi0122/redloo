@@ -18,8 +18,8 @@
 get_header(); ?>
 
 
-<?php // ARCHIVE FIRST SECTION // *********************************************************** // ?>
-<section class="archive-first-sec pb-0">
+<?php // CONTACT FIRST SECTION // *********************************************************** // ?>
+<section class="contact-first-sec pb-0">
 	<div class="container">
 		<div class="text-side">
 			<div class="lower-title-template blue">
@@ -32,6 +32,7 @@ get_header(); ?>
 			<div class="contact-attention">
 				<span>受付時間：9:00 - 20:00 （12:00-13:00除く） 休業日：日曜・祝日、夏期休暇・冬期休暇</span>
 			</div>
+			<h5 class="tel-number">03-5686-1300</h5>
 		</div>
 	</div>
 </section>
