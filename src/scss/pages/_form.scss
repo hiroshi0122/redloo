@@ -1,0 +1,165 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:map";
+
+//*******************************************************************
+// # FORM（お問合せ系共通）
+//*******************************************************************
+.contact-fomr-sec {
+    >.container {
+        max-width: 960px;
+    }
+}
+
+/* ## CONTACT FORM BODY
+***********************************************/
+.contact-form-body {
+    background-color: $bg-gray;
+    padding: 5rem;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+
+    .row {
+        margin-bottom: 3rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .form-row {
+        margin-bottom: 4rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .required {
+        color: $blue;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+
+        span {
+            color: $white;
+            background-color: $blue;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: block;
+            line-height: 1;
+        }
+    }
+
+    .confirm-mail-label {
+        display: block;
+        font-size: 14px;
+        color: $blue;
+        font-weight: 500;
+        padding-left: 50px;
+        padding-top: 17px;
+    }
+
+    .wpcf7-form-control-wrap {
+        display: block;
+
+        &[data-name="email"] {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .wpcf7-text {
+        width: 100px;
+    }
+
+    .wpcf7-email {
+        width: clamp(120px, 80%, 340px);
+    }
+
+    .wpcf7-textarea {
+        width: 100%;
+    }
+
+    .name-fields, .tel-fields {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .tel-fields {
+        .wpcf7-form-control {
+            width: 80px;
+        }
+    }
+
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        padding: 4rem 2.5rem;
+
+        .confirm-mail-label {
+            text-align: end;
+            padding-left: 0;
+            padding-top: 5px;
+        }
+
+        .wpcf7-form-control-wrap {
+            &[data-name="email"] {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .wpcf7-email {
+            width: 100%;
+        }
+
+        .tel-fields {
+            .wpcf7-form-control {
+                width: 60px;
+            }
+        }
+    }
+}
+
+
+.privacy {
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 4rem;
+    a {
+        color: $blue;
+        border-bottom: solid 1px $blue;
+    }
+    // ## MOBILE // *************************************************>
+    @include media-under(md) {
+        font-size: 10px;
+        a {
+            font-size: 10px;
+        }
+    }
+}
+
+.form-submit {
+        .btn-blue {
+        margin: 0 auto;
+    }
+}
+
+
+
+// ## MOBILE // *************************************************>
+@include media-under(md) {
+}
+
+//*******************************************************************
+// # h1（h1）
+//*******************************************************************
+
+/* ## h2
+***********************************************/
+
+/* ### h3
+--------------------------------------*/
+
+/**** #### コメント下の下 ****/
+
+/* ##### コメント軽 */

@@ -13044,3 +13044,122 @@ blockquote cite {
 --------------------------------------*/
 /**** #### コメント下の下 ****/
 /* ##### コメント軽 */
+.contact-fomr-sec > .container {
+  max-width: 960px;
+}
+
+/* ## CONTACT FORM BODY
+***********************************************/
+.contact-form-body {
+  background-color: #F7F7F7;
+  padding: 5rem;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+}
+.contact-form-body .row {
+  margin-bottom: 3rem;
+}
+.contact-form-body .row:last-child {
+  margin-bottom: 0;
+}
+.contact-form-body .form-row {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.contact-form-body .required {
+  color: #264898;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+.contact-form-body .required span {
+  color: #fff;
+  background-color: #264898;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block;
+  line-height: 1;
+}
+.contact-form-body .confirm-mail-label {
+  display: block;
+  font-size: 14px;
+  color: #264898;
+  font-weight: 500;
+  padding-left: 50px;
+  padding-top: 17px;
+}
+.contact-form-body .wpcf7-form-control-wrap {
+  display: block;
+}
+.contact-form-body .wpcf7-form-control-wrap[data-name=email] {
+  margin-bottom: 1.5rem;
+}
+.contact-form-body .wpcf7-text {
+  width: 100px;
+}
+.contact-form-body .wpcf7-email {
+  width: clamp(120px, 80%, 340px);
+}
+.contact-form-body .wpcf7-textarea {
+  width: 100%;
+}
+.contact-form-body .name-fields, .contact-form-body .tel-fields {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.contact-form-body .tel-fields .wpcf7-form-control {
+  width: 80px;
+}
+@media (max-width: 768px) {
+  .contact-form-body {
+    padding: 4rem 2.5rem;
+  }
+  .contact-form-body .confirm-mail-label {
+    text-align: end;
+    padding-left: 0;
+    padding-top: 5px;
+  }
+  .contact-form-body .wpcf7-form-control-wrap[data-name=email] {
+    margin-bottom: 1rem;
+  }
+  .contact-form-body .wpcf7-email {
+    width: 100%;
+  }
+  .contact-form-body .tel-fields .wpcf7-form-control {
+    width: 60px;
+  }
+}
+
+.privacy {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 4rem;
+}
+.privacy a {
+  color: #264898;
+  border-bottom: solid 1px #264898;
+}
+@media (max-width: 768px) {
+  .privacy {
+    font-size: 10px;
+  }
+  .privacy a {
+    font-size: 10px;
+  }
+}
+
+.form-submit .btn-blue {
+  margin: 0 auto;
+}
+
+/* ## h2
+***********************************************/
+/* ### h3
+--------------------------------------*/
+/**** #### コメント下の下 ****/
+/* ##### コメント軽 */

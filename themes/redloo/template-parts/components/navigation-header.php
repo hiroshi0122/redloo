@@ -61,7 +61,7 @@ include 'navigation.php';  // 配列を読み込み
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <a class="btn-contact" href="/contact">ご予約・注文・お問合わせ</a>
+            <a class="btn-contact" href="/form-contact">ご予約・注文・お問合わせ</a>
         </nav>
        
 

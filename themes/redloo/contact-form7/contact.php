@@ -1,56 +1,70 @@
-<div class="form-group">
-  <label for="inquiry-type">お問い合わせ内容 <span class="required">※必須</span></label>
-  [select* inquiry-type id:inquiry-type include_blank "お問い合わせ" "リペアのお申込み"]
+<div class="contact-form-body">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <label class="required"><span>必須</span>お名前</label>
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="name-fields">
+                <span>姓：</span> [text* last-name class:input]
+                <span>名：</span> [text* first-name class:input]
+            </div>            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <label class="required"><span>必須</span>電話番号</label>
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="tel-fields">
+                [tel* tel-1 class:input class:tel] -
+                [tel* tel-2 class:input class:tel] -
+                [tel* tel-3 class:input class:tel]
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <label class="required"><span>必須</span>メールアドレス</label>
+            <label class="confirm-mail-label d-none d-md-block">確認用</label>
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="mail-adress">
+                [email* email class:input class:full]
+                [email* email-confirm class:input class:full]<label class="confirm-mail-label d-md-none">確認用</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <label class="required"><span>必須</span>項目</label>
+        </div>
+        <div class="col-12 col-md-8">
+            <span class="checkbox-group">
+            [checkbox* inquiry-items use_label_element
+            "ウェットスーツの購入について"
+            "リペア（修理）について"
+            "その他ご相談"]
+        </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <label class="required"><span>必須</span>お問い合わせ内容</label>
+        </div>
+        <div class="col-12 col-md-8">
+            [textarea* message class:textarea class:full]
+        </div>
+    </div>
 </div>
 
-<div class="form-group">
-  <label for="your-name">氏名 <span class="required">※必須</span></label>
-  [text* your-name id:your-name placeholder "佐藤 大輔"]
+<div class="privacy">
+    個人情報の取り扱いについては<a href="/privacy-policy/">プライバシーポリシー</a>を<br class="d-sm-none">ご確認いただき、同意の上送信してください。
 </div>
 
-<div class="form-group">
-  <label for="your-name-kana">氏名（フリガナ） <span class="required">※必須</span></label>
-  [text* your-name-kana id:your-name-kana class:kana placeholder "サトウ ダイスケ"]
-</div>
-
-<div class="form-group">
-  <label for="your-email">メールアドレス <span class="required">※必須</span></label>
-  [email* your-email id:your-email placeholder "daisuke_sato@example.com"]
-</div>
-
-<div class="form-group">
-  <label for="your-tel">電話番号</label>
-  [tel your-tel id:your-tel placeholder "09012345678"]
-</div>
-
-<!-- 条件表示：リペアのお申込みのときに見せるブロック -->
-<div class="cond-block" data-show-when="リペアのお申込み" aria-hidden="true">
-  <p class="attention">※添付の画像はJPEG、PNG等の一般的なフォーマットでお願いいたします。</p>
-  <div class="form-group">
-    <label for="your-image1">不具合箇所の画像1（任意 / 3MBまで）</label>
-    [file your-image1 id:your-image1 filetypes:jpg|jpeg|png|gif limit:3mb]
-  </div>
-  <div class="form-group">
-    <label for="your-image2">不具合箇所の画像2（任意 / 3MBまで）</label>
-    [file your-image2 id:your-image2 filetypes:jpg|jpeg|png|gif limit:3mb]
-  </div>
-  <div class="form-group">
-    <label for="your-image3">不具合箇所の画像3（任意 / 3MBまで）</label>
-    [file your-image3 id:your-image3 filetypes:jpg|jpeg|png|gif limit:3mb]
-  </div>
-</div>
-
-<div class="form-group">
-  <label for="your-message">メッセージ <span class="required">※必須</span></label>
-  [textarea* your-message id:your-message rows:6 placeholder "お問い合わせ内容をご記入ください"]
-</div>
-
-<div class="form-group agree">
-  [acceptance agree optional]
-    <a href="https://tanzo.stores.jp/privacy_policy/" target="_blank">プライバシーポリシー</a>に同意します
-  [/acceptance]
-</div>
-
-<div class="form-group submit-area">
-  [submit class:btn "送信する"]
+<div class="form-submit">
+    [submit class:btn-blue "送信する"]
 </div>

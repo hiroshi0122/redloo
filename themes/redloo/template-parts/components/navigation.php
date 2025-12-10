@@ -87,22 +87,22 @@ $sns_nav = [
 //     ],
 // ];
 
-$second_navigation = [
-    [
-        'menu' => '企業情報',
-        'link' => '/company',
-    ],
-    [
-        'menu' => '特定商取引法に基づく表記',
-        'link' => 'https://tanzo.stores.jp/tokushoho',
-    ],
-    [
-        'menu' => '利用規約',
-        'link' => 'https://tanzo.stores.jp/terms',
-    ],
-    [
-        'menu' => 'プライバシーポリシー',
-        'link' => 'https://tanzo.stores.jp/privacy_policy/',
-    ],
-];
+// $second_navigation = [
+//     [
+//         'menu' => '企業情報',
+//         'link' => '/company',
+//     ],
+//     [
+//         'menu' => '特定商取引法に基づく表記',
+//         'link' => 'https://tanzo.stores.jp/tokushoho',
+//     ],
+//     [
+//         'menu' => '利用規約',
+//         'link' => 'https://tanzo.stores.jp/terms',
+//     ],
+//     [
+//         'menu' => 'プライバシーポリシー',
+//         'link' => 'https://tanzo.stores.jp/privacy_policy/',
+//     ],
+// ];
 ?>
