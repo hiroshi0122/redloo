@@ -13089,17 +13089,52 @@ blockquote cite {
   }
 }
 
-.contact-fomr-sec > .container {
-  max-width: 960px;
+.contact-form-sec {
+  color: #264898;
+}
+.contact-form-sec > .container {
+  max-width: 1080px;
 }
 
-/* ## CONTACT FORM BODY
-***********************************************/
 .contact-form-body {
   background-color: #F7F7F7;
   padding: 5rem;
   border-radius: 5px;
   margin-bottom: 3rem;
+  /**** #### 長いフォームにおいてのセクション ****/
+}
+.contact-form-body .form-section {
+  border-bottom: solid 1px #264898;
+  margin-bottom: 6rem;
+  padding-bottom: 6rem;
+}
+.contact-form-body .form-section.form-type .wpcf7-form-control-wrap {
+  text-align: center;
+}
+.contact-form-body {
+  /**** #### フォームのタイトルテンプレート ****/
+}
+.contact-form-body .form-title-template {
+  margin-bottom: 3rem;
+}
+.contact-form-body .form-title-template h3 {
+  font-family: "Anton", sans-serif;
+  font-weight: 500;
+  font-size: clamp(30px, 4vw, 54px);
+}
+.contact-form-body {
+  /**** #### ボーダー付きタイトル ****/
+}
+.contact-form-body .border-bottom-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact-form-body .border-bottom-title h4 {
+  display: inline-block;
+  border-bottom: solid 1px #264898;
+}
+.contact-form-body {
+  /**** #### 通常項目 ****/
 }
 .contact-form-body .row {
   margin-bottom: 3rem;
@@ -13107,27 +13142,50 @@ blockquote cite {
 .contact-form-body .row:last-child {
   margin-bottom: 0;
 }
-.contact-form-body .form-row {
-  margin-bottom: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+.contact-form-body {
+  /**** #### オーダー内容の各種項目 ****/
 }
-.contact-form-body .required {
+.contact-form-body .spec-row {
+  border-top: solid 1px #D8D8D8;
+  padding-top: 3rem;
+}
+.contact-form-body {
+  /**** #### 項目の見出し ****/
+}
+.contact-form-body label.title {
+  color: #264898;
+  font-size: 15px;
+  font-weight: 500;
+}
+.contact-form-body label.required {
   color: #264898;
   display: flex;
   gap: 5px;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
 }
-.contact-form-body .required span {
+.contact-form-body label.required span {
   color: #fff;
   background-color: #264898;
   padding: 5px 10px;
   border-radius: 5px;
   display: block;
   line-height: 1;
+}
+.contact-form-body input[type=radio] {
+  transform: scale(1.4); /* ←好きな倍率に */
+  margin-right: 6px;
+}
+.contact-form-body {
+  /**** #### ラベルのフォント ****/
+}
+.contact-form-body .wpcf7-list-item-label {
+  line-height: 1;
+  font-size: 14px;
+}
+.contact-form-body {
+  /**** #### メール確認 ****/
 }
 .contact-form-body .confirm-mail-label {
   display: block;
@@ -13137,28 +13195,105 @@ blockquote cite {
   padding-left: 50px;
   padding-top: 17px;
 }
+.contact-form-body {
+  /**** #### inputの上のdiv要素（エラー文章が差し込まれる） ****/
+}
 .contact-form-body .wpcf7-form-control-wrap {
   display: block;
+}
+.contact-form-body .wpcf7-form-control-wrap input {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: solid 1px #D8D8D8;
 }
 .contact-form-body .wpcf7-form-control-wrap[data-name=email] {
   margin-bottom: 1.5rem;
 }
+.contact-form-body {
+  /**** #### テキスト ****/
+}
 .contact-form-body .wpcf7-text {
   width: 100px;
+}
+.contact-form-body {
+  /**** #### メール ****/
 }
 .contact-form-body .wpcf7-email {
   width: clamp(120px, 80%, 340px);
 }
+.contact-form-body {
+  /**** #### テキストエリア ****/
+}
 .contact-form-body .wpcf7-textarea {
   width: 100%;
+}
+.contact-form-body {
+  /**** #### 指名と電話番号 ****/
 }
 .contact-form-body .name-fields, .contact-form-body .tel-fields {
   display: flex;
   align-items: center;
   gap: 5px;
 }
+.contact-form-body {
+  /**** #### 電話番号 ****/
+}
 .contact-form-body .tel-fields .wpcf7-form-control {
   width: 80px;
+}
+.contact-form-body {
+  /**** #### 住所 ****/
+}
+.contact-form-body .address-fields .zip-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 1.5rem;
+}
+.contact-form-body .address-fields .address-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.contact-form-body .address-fields .address-row label {
+  font-size: 14px;
+  width: 100px;
+}
+.contact-form-body .address-fields .address-row input {
+  width: 100%;
+}
+.contact-form-body .address-fields .zip-search-btn {
+  background-color: #264898;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+  border: solid 1px #fff;
+}
+.contact-form-body {
+  /**** #### ご希望日時 ****/
+}
+.contact-form-body .preferred-date-fields .date-field {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-form-body .notes {
+  font-size: clamp(10px, 1vw, 12px);
+  color: #EB42B2;
+  line-height: 1.7;
+}
+.contact-form-body .selected-product-box {
+  background-color: #fff;
+  padding: 3rem;
+  border: solid 1px #D8D8D8;
+  margin-bottom: 3rem;
+}
+.contact-form-body .selected-product-box .plain-input {
+  width: 100%;
 }
 @media (max-width: 768px) {
   .contact-form-body {

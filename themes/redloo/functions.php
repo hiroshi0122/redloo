@@ -293,8 +293,32 @@ function display_post_terms($post_id, $taxonomy) {
 //**************************************************************
 // CONTACT FORM 7 設定
 //**************************************************************
+// 改行やスペースなどで勝手にbrなどを入れない
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 add_filter( 'wpcf7_use_dirhtml', '__return_true' );
+
+
+
+add_filter('wpcf7_validate_text', 'validate_split_tel', 10, 2);
+add_filter('wpcf7_validate_text*', 'validate_split_tel', 10, 2);
+
+function validate_split_tel($result, $tag) {
+
+    // tel-1 の時だけチェックを実行
+    if ($tag->name !== 'tel-1') return $result;
+
+    $tel1 = sanitize_text_field($_POST['tel-1'] ?? '');
+    $tel2 = sanitize_text_field($_POST['tel-2'] ?? '');
+    $tel3 = sanitize_text_field($_POST['tel-3'] ?? '');
+
+    $phone = $tel1 . $tel2 . $tel3;
+
+    if (!preg_match('/^\d{10,11}$/', $phone)) {
+        $result->invalidate($tag, '正しい電話番号を入力してください。');
+    }
+
+    return $result;
+}
 
 
 //**************************************************************

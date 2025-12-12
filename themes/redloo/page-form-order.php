@@ -24,15 +24,11 @@ get_header(); ?>
 		<div class="text-side">
 			<div class="lower-title-template blue">
 				<div class="title">
-					<h1>CONTACT</h1>
-					<span>お問合せ</span>
+					<h1>ORDER</h1>
+					<span>採寸・再オーダーのご相談・ご予約</span>
 				</div>
 			</div>
-			<p>当店へのお問い合わせお電話または以下のフォームにてお問い合わせください。<br>フォームでのお問い合わせは、原則翌営業日以内にご返信させていただいております。<br> 年末年始・夏期休業・日曜・祝日などお休みを頂いている場合は、ご返信までにお時間を頂戴する場合がございます。 <br>ご了承のほどよろしくお願いいたします。</p>
-			<div class="contact-attention">
-				<span>受付時間：9:00 - 20:00 （12:00-13:00除く） 休業日：日曜・祝日、夏期休暇・冬期休暇</span>
-			</div>
-			<h5 class="tel-number">03-5686-1300</h5>
+			<p>下記フォームより、①お客様情報、②採寸予約日（無料採寸ご希望の方のみ） ③オーダー内容をご記入ください。</p>
 		</div>
 	</div>
 </section>
@@ -41,7 +37,7 @@ get_header(); ?>
 <?php // CONTACTR FORM SECTION // *********************************************************** // ?>
 <section class="contact-form-sec">
 	<div class="container">
-		<?php echo do_shortcode('[contact-form-7 id="a04842f" title="お問合せ"]'); ?>
+		<?php echo do_shortcode('[contact-form-7 id="6883bdd" title="オーダーフォーム"]'); ?>
 	</div>
 </section>
 

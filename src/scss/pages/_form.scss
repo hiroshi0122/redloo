@@ -59,52 +59,109 @@
 //*******************************************************************
 // # FORM（お問合せ系共通）
 //*******************************************************************
-.contact-fomr-sec {
+.contact-form-sec {
+    color: $blue;
+
     >.container {
-        max-width: 960px;
+        max-width: 1080px;
     }
 }
 
-/* ## CONTACT FORM BODY
-***********************************************/
+//*******************************************************************
+// # CONTACT FORM BODY（お問合せ系共通）
+//*******************************************************************
 .contact-form-body {
     background-color: $bg-gray;
     padding: 5rem;
     border-radius: 5px;
     margin-bottom: 3rem;
 
+    /**** #### 長いフォームにおいてのセクション ****/
+    .form-section {
+        border-bottom: solid 1px $blue;
+        margin-bottom: 6rem;
+        padding-bottom: 6rem;
+
+        &.form-type {
+            .wpcf7-form-control-wrap {
+                text-align: center;
+            }
+        }
+    }
+
+    /**** #### フォームのタイトルテンプレート ****/
+    .form-title-template {
+        margin-bottom: 3rem;
+        h3 {
+            font-family: $en-font;
+            font-weight: 500;
+            font-size: clamp(30px, 4vw, 54px);
+        }
+    }
+    /**** #### ボーダー付きタイトル ****/
+    .border-bottom-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        h4 {
+            display: inline-block;
+            border-bottom: solid 1px $blue;
+        }
+    }
+
+    /**** #### 通常項目 ****/
     .row {
         margin-bottom: 3rem;
         &:last-child {
             margin-bottom: 0;
         }
     }
-
-    .form-row {
-        margin-bottom: 4rem;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
+    /**** #### オーダー内容の各種項目 ****/
+    .spec-row {
+        border-top: solid 1px $border-gray;
+        padding-top: 3rem;
     }
 
-    .required {
-        color: $blue;
-        display: flex;
-        gap: 5px;
-        align-items: center;
-        font-size: 14px;
-        font-weight: 500;
+    /**** #### 項目の見出し ****/
+    label {
+        &.title {
+            color: $blue;
+            font-size: 15px;
+            font-weight: 500;
+        }
 
-        span {
-            color: $white;
-            background-color: $blue;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: block;
-            line-height: 1;
+        &.required {
+            color: $blue;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 500;
+
+            span {
+                color: $white;
+                background-color: $blue;
+                padding: 5px 10px;
+                border-radius: 5px;
+                display: block;
+                line-height: 1;
+            }
         }
     }
 
+    
+
+    input[type="radio"] {
+        transform: scale(1.4); /* ←好きな倍率に */
+        margin-right: 6px;
+    }
+
+    /**** #### ラベルのフォント ****/
+    .wpcf7-list-item-label {
+        line-height: 1;
+        font-size: 14px;
+    }
+
+    /**** #### メール確認 ****/
     .confirm-mail-label {
         display: block;
         font-size: 14px;
@@ -114,35 +171,104 @@
         padding-top: 17px;
     }
 
+    /**** #### inputの上のdiv要素（エラー文章が差し込まれる） ****/
     .wpcf7-form-control-wrap {
         display: block;
+
+        input {
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: solid 1px $border-gray;
+        }
 
         &[data-name="email"] {
             margin-bottom: 1.5rem;
         }
     }
 
+    /**** #### テキスト ****/
     .wpcf7-text {
         width: 100px;
     }
 
+    /**** #### メール ****/
     .wpcf7-email {
         width: clamp(120px, 80%, 340px);
     }
-
+    /**** #### テキストエリア ****/
     .wpcf7-textarea {
         width: 100%;
     }
 
+    /**** #### 指名と電話番号 ****/
     .name-fields, .tel-fields {
         display: flex;
         align-items: center;
         gap: 5px;
     }
-
+    /**** #### 電話番号 ****/
     .tel-fields {
         .wpcf7-form-control {
             width: 80px;
+        }
+    }
+    /**** #### 住所 ****/
+    .address-fields {
+        .zip-row {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 1.5rem;
+        }
+        .address-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+
+            label {
+                font-size: 14px;
+                width: 100px;
+            }
+            input {
+                width: 100%;
+            }
+        }
+        .zip-search-btn {
+            background-color: $blue;
+            border-radius: 30px;
+            color: $white;
+            font-size: 13px;
+            padding: 5px 10px;
+            border: solid 1px $white;
+        }
+    }
+
+    /**** #### ご希望日時 ****/
+    .preferred-date-fields {
+        .date-field {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .notes{
+        font-size: clamp(10px, 1vw, 12px);
+        color: $pink;
+        line-height: 1.7;
+    }
+
+    .selected-product-box {
+        background-color: $white;
+        padding: 3rem;
+        border: solid 1px $border-gray;
+        margin-bottom: 3rem;
+
+        .plain-input {
+            width: 100%;
         }
     }
 

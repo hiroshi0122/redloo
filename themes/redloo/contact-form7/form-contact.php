@@ -17,9 +17,9 @@
         </div>
         <div class="col-12 col-md-8">
             <div class="tel-fields">
-                [tel* tel-1 class:input class:tel] -
-                [tel* tel-2 class:input class:tel] -
-                [tel* tel-3 class:input class:tel]
+                [text tel-1 class:input class:tel] <span>-</span>
+                [text tel-2 class:input class:tel] <span>-</span>
+                [text tel-3 class:input class:tel]
             </div>
         </div>
     </div>
