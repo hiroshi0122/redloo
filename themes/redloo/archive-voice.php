@@ -21,7 +21,7 @@ get_header(); ?>
 		<div class="text-side">
 			<div class="lower-title-template blue text-center">
 				<div class="title">
-					<h1>VOICE</h1>
+					<h1 class="split">VOICE</h1>
 					<span>お客様の声</span>
 				</div>
 			</div>
@@ -34,15 +34,15 @@ get_header(); ?>
 	<div class="container">		
 		<?php if (have_posts()) : ?>
 			<?php while (have_posts()) : the_post(); ?>
-				<div class="post-content row gap-5 align-center">
-					<div class="image-side col-12 col-md-3">
+				<div class="post-content row gap-md-5 align-md-center fadeInUp">
+					<div class="image-side col-4 col-md-3">
 						<a class="parmalink" href="<?php the_permalink(); ?>">
 							<?php if (has_post_thumbnail()) : ?>
 								<?php the_post_thumbnail('small'); ?>
 							<?php endif; ?>
 						</a>
 					</div>
-					<div class="text-side col-12 col-md-9">
+					<div class="text-side col-8 col-md-9">
 						<a class="post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						<span class="date"><?php echo get_the_date('Y.n.j'); ?></span>
 						<p><?php the_excerpt(); ?></p>

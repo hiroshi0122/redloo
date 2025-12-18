@@ -1,70 +1,213 @@
-<h3>① お客様情報</h3>
+<div class="contact-form-body measurements">
 
-<div class="form-row">
-  <label>お名前（必須）</label>
-  <span>姓 [text* last-name placeholder "山田"]　名 [text* first-name placeholder "太郎"]</span>
-</div>
+    <div class="form-section customer-info">
 
-<div class="form-row">
-  <label>メールアドレス（必須）</label>
-  [email* your-email placeholder "example@mail.com"]
-</div>
+        <div class="form-title-template">
+            <span>お客様情報</span>
+            <h3>YOUR INFORMATION</h3>
+        </div>
 
-<div class="form-row">
-  <label>メールアドレス（確認用）</label>
-  [email* your-email-confirm placeholder "example@mail.com"]
-</div>
+        <!-- お名前 -->
+        <div class="row form-block">
+            <div class="col-12 col-md-4">
+                <label class="required"><span>必須</span> お名前</label>
+            </div>
+            <div class="col-12 col-md-8 name-fields">
+                <span>姓：</span> [text* last-name class:input]
+                <span>名：</span> [text* first-name class:input]
+            </div>
+        </div>
 
-<hr>
+        <!-- メールアドレス -->
+        <div class="row form-block">
+            <div class="col-12 col-md-4">
+                <label class="required"><span>必須</span> メールアドレス</label>
+                <label class="confirm-mail-label d-none d-md-block">確認用</label>
+            </div>
+            <div class="col-12 col-md-8 mail-fields">
+                [email* email class:input class:full]
+                [email* email-confirm class:input class:full]
+                <label class="confirm-mail-label d-md-none">確認用</label>
+            </div>
+        </div>
 
-<h3>② 採寸項目</h3>
+    </div>
 
-<div class="form-row"><label>① 身長（cm）</label>[number* height placeholder "170"]</div>
-<div class="form-row"><label>② 体重（kg）</label>[number* weight placeholder "65"]</div>
-<div class="form-row"><label>③ 総丈（cm）</label>[number* total-length placeholder "150"]</div>
-<div class="form-row"><label>④ 首囲（cm）</label>[number* neck placeholder "35"]</div>
-<div class="form-row"><label>⑤ 新背丈（cm）</label>[number* back-length placeholder "60"]</div>
-<div class="form-row"><label>⑥ 上胸囲（cm）</label>[number* upper-bust placeholder "88"]</div>
-<div class="form-row"><label>⑦ 胸囲（cm）</label>[number* bust placeholder "90"]</div>
-<div class="form-row"><label>⑧ 腹囲（cm）</label>[number* waist placeholder "78"]</div>
-<div class="form-row"><label>⑨ 下腹囲（cm）</label>[number* lower-abdomen placeholder "80"]</div>
-<div class="form-row"><label>⑩ 尻囲（cm）</label>[number* hip placeholder "92"]</div>
-<div class="form-row"><label>⑪ 肩幅（cm）</label>[number* shoulder placeholder "45"]</div>
-<div class="form-row"><label>⑫ ゆき丈（cm）</label>[number* yuki placeholder "75"]</div>
-<div class="form-row"><label>⑬ 袖丈（cm）</label>[number* sleeve placeholder "58"]</div>
-<div class="form-row"><label>⑭ 腕付根囲（cm）</label>[number* arm-base placeholder "42"]</div>
-<div class="form-row"><label>⑮ 上大腕囲（cm）</label>[number* upper-arm placeholder "36"]</div>
-<div class="form-row"><label>⑯ 大腕囲（cm）</label>[number* big-arm placeholder "34"]</div>
-<div class="form-row"><label>⑰ 肘囲（cm）</label>[number* elbow placeholder "27"]</div>
-<div class="form-row"><label>⑱ 肘下囲（cm）</label>[number* under-elbow placeholder "25"]</div>
-<div class="form-row"><label>⑲ 手首囲（cm）</label>[number* wrist placeholder "18"]</div>
-<div class="form-row"><label>⑳ 股下（cm）</label>[number* inseam placeholder "70"]</div>
-<div class="form-row"><label>㉑ 太腿最大囲（cm）</label>[number* thigh-max placeholder "55"]</div>
-<div class="form-row"><label>㉒ 太腿中間囲（cm）</label>[number* thigh-mid placeholder "50"]</div>
-<div class="form-row"><label>㉓ 膝上囲（cm）</label>[number* knee-upper placeholder "40"]</div>
-<div class="form-row"><label>㉔ 膝下囲（cm）</label>[number* knee-lower placeholder "38"]</div>
-<div class="form-row"><label>㉕ ふくらはぎ囲（cm）</label>[number* calf placeholder "36"]</div>
-<div class="form-row"><label>㉖ 足首囲（cm）</label>[number* ankle placeholder "23"]</div>
-<div class="form-row"><label>㉗ すね長（cm）</label>[number* shin-length placeholder "40"]</div>
-<div class="form-row"><label>㉘ アンダーバスト（cm）（女性のみ）</label>[number under-bust placeholder "75"]</div>
-<div class="form-row"><label>㉙ 乳下がり（cm）（女性のみ）</label>[number bust-drop placeholder "25"]</div>
-<div class="form-row"><label>㉚ 乳頭間（cm）（女性のみ）</label>[number bust-gap placeholder "18"]</div>
-<div class="form-row"><label>㉛ のど〜へそ（cm）</label>[number* neck-to-navel placeholder "45"]</div>
-<div class="form-row"><label>㉜ 股付根〜膝中心（cm）</label>[number* crotch-to-knee placeholder "40"]</div>
-<div class="form-row"><label>㉝ 膝中心〜くるぶし（cm）</label>[number* knee-to-ankle placeholder "35"]</div>
-<div class="form-row"><label>㉞ 頭丈（cm）</label>[number* head-length placeholder "25"]</div>
-<div class="form-row"><label>㉟ A〜肘（cm）</label>[number* a-to-elbow placeholder "30"]</div>
-<div class="form-row"><label>㊱ 外果高（cm）</label>[number* outer-ankle-height placeholder "5"]</div>
+    <div class="form-title-template">
+        <span>34箇所の採寸情報</span>
+        <h3>34 MEASUREMENTS POINTS</h3>
+    </div>
 
-<hr>
+    <!-- 1〜21 -->
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 1. 身長（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m01-height class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 2. 体重（kg）</label></div>
+        <div class="col-12 col-md-8">[text* m02-weight class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 3. 首回り（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m03-neck class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 4. A〜肩（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m04-shoulder class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 5. A〜肘（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m05-elbow class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 6. A〜手首（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m06-wrist class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 7. 手首（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m07-wrist-circ class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 8. 肘下囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m08-forearm class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 9. 肘囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m09-elbow-circ class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 10. 大腕囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m10-upperarm class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 11. 上大腕囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m11-upperarm-top class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 12. 腕付け根囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m12-arm-root class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 13. A〜へそ（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m13-navel class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 14. A〜尻（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m14-hip-pos class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 15. 総丈（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m15-total-length class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 16. 上胸囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m16-upper-chest class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 17. 胸囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m17-chest class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 18. 腹囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m18-waist class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 19. 下腹囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m19-lower-waist class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 20. 尻囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m20-hip class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 21. 太もも最大囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m21-thigh-max class:input]</div>
+    </div>
 
-<h3>③ メッセージ</h3>
+    <!-- 22〜31 -->
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 22. 太もも中間囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m22-thigh-mid class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 23. ヒザ上囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m23-knee-upper class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 24. ヒザ下囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m24-knee-lower class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 25. ふくらはぎ囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m25-calf class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 26. 足首囲（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m26-ankle class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 27. 外乗高（cm）内／外</label></div>
+        <div class="col-12 col-md-8">[text* m27-outside-height class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 28. すね長い（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m28-shin class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 29. 股付根〜ヒザ中心（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m29-crotch-knee class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4">
+            <label class="required"><span>必須</span> 30. 股下（cm）内／外</label>
+        </div>
+        <div class="col-12 col-md-8">[text* m30-inseam class:input]</div>
+    </div>
+    <div class="row form-block">
+        <div class="col-12 col-md-4"><label class="required"><span>必須</span> 31. 頭丈（cm）</label></div>
+        <div class="col-12 col-md-8">[text* m31-head-height class:input]</div>
+    </div>
 
-<div class="form-row">
-  <label>メッセージ</label>
-  [textarea your-message placeholder "ご希望・補足などがあればご記入ください"]
-</div>
+    <!-- 女性のみ -->
+    <div class="row form-block">
+        <div class="col-12 col-md-4">
+            <label class="title">32. 乳下がり（cm）<span class="notes">※女性のみ</span></label>
+        </div>
+        <div class="col-12 col-md-8">[text m32-bust-drop class:input]</div>
+    </div>
 
-<div class="form-row">
-  [submit "送信する"]
+    <div class="row form-block">
+        <div class="col-12 col-md-4">
+            <label class="title">33. 乳頭間（cm）<span class="notes">※女性のみ</span></label>
+        </div>
+        <div class="col-12 col-md-8">[text m33-bust-width class:input]</div>
+    </div>
+
+    <div class="row form-block">
+        <div class="col-12 col-md-4">
+            <label class="title">34. アンダーバスト（cm）<span class="notes">※女性のみ</span></label>
+        </div>
+        <div class="col-12 col-md-8">[text m34-underbust class:input]</div>
+    </div>
+
+    <!-- メッセージ -->
+    <div class="row form-block">
+        <div class="col-12 col-md-4">
+            <label class="title">メッセージ</label>
+        </div>
+        <div class="col-12 col-md-8">
+            [textarea measurement-message class:textarea class:full]
+        </div>
+    </div>
+
+    <div class="privacy">
+        個人情報の取り扱いについては
+        <a href="/privacy-policy/">プライバシーポリシー</a>
+        をご確認の上、同意いただける場合のみ送信してください。
+    </div>
+
+    <div class="form-submit">
+        [submit class:btn-blue "採寸内容を送信する"]
+    </div>
+
 </div>

@@ -15,11 +15,67 @@
     /* ### IMAGE SIDE
     --------------------------------------*/
     .image-side {
+        position: relative;
+        padding-left: 20%;
+
+        .title-template {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
         .title {
             span {
                 writing-mode: tb;
                 margin: 3rem auto 0;
                 letter-spacing: 3px;
+            }
+        }
+
+        /* ### PRODUCT SLIDER
+        --------------------------------------*/
+        .product-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+
+            .slide {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &.is-active {
+                    opacity: 1;
+                }
+            }
+        }
+
+        /* ### THUMBNAILS
+        --------------------------------------*/
+        .thumbnails {
+            margin-top: 16px;
+
+            .thumb {
+                aspect-ratio: 1/1;
+                opacity: 0.4;
+                overflow: hidden;
+                transition: opacity 0.2s ease;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &.is-active {
+                    opacity: 1;
+                }
             }
         }
     }

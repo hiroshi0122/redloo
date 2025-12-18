@@ -20,15 +20,58 @@ $term = get_queried_object();
 // ▼ ACF（タームの追加フィールド）
 $product_num = get_field('product_num', $term->term_id);
 $price = get_field('price', $term->term_id);
-var_dump($price);
 $photo = get_field('style_variation', $term->term_id);
 $photo_ids = array();
-	if(!empty($photo)){
-		preg_match_all( '/wp-image-([0-9]+)/', $photo, $matches );
-		if($matches) {
-			$photo_ids = $matches[1];
-		}
-	}
+if(!empty($photo)){
+    preg_match_all( '/wp-image-([0-9]+)/', $photo, $matches );
+    if($matches) {
+        $photo_ids = $matches[1];
+    }
+}
+
+
+// 商品画像スライダー
+$product_detail = get_field('product_detail'); // WYSIWYG
+$images = [];
+
+// 1枚目：アイキャッチ（full）
+if (has_post_thumbnail()) {
+    $images[] = get_the_post_thumbnail_url(get_the_ID(), 'full');
+}
+
+// 2枚目以降：WYSIWYG内の画像（full化）
+if ($product_detail) {
+    libxml_use_internal_errors(true);
+
+    $dom = new DOMDocument();
+    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $product_detail);
+
+    $img_tags = $dom->getElementsByTagName('img');
+
+    foreach ($img_tags as $img) {
+
+        // wp-image-◯◯ を取得
+        if (preg_match('/wp-image-(\d+)/', $img->getAttribute('class'), $matches)) {
+            $img_id = $matches[1];
+
+            // フルサイズ取得
+            $full = wp_get_attachment_image_src($img_id, 'full');
+
+            if ($full && isset($full[0])) {
+                $images[] = $full[0];
+            }
+        } else {
+            // 念のため src フォールバック
+            $src = $img->getAttribute('src');
+            if ($src) {
+                $images[] = $src;
+            }
+        }
+    }
+
+    libxml_clear_errors();
+}
+
 
 get_header();
 ?>
@@ -39,22 +82,33 @@ get_header();
         <?php while (have_posts()) : the_post();?>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-5 image-side">
-                    <div class="d-flex gap-5">
-                        <div class="title-template tategaki">
-                            <div class="title">
-                                <h2>PRODUCT DETAIL</h2>
-                                <span>製品詳細</span>
-                            </div>
+                <div class="col-12 col-md-6 image-side">
+                    <div class="title-template tategaki">
+                        <div class="title">
+                            <h2 class="split">PRODUCT DETAIL</h2>
+                            <span>製品詳細</span>
                         </div>
-                        <?php if ( get_the_post_thumbnail() ) : ?>
-                            <div class="thumbnail">
-                                <img src="<?php echo esc_url(get_the_post_thumbnail_url('', 'full')); ?>">
-                            </div>
-                        <?php endif; ?>
+                    </div>    
+                    <div class="product-slider">
+                        <div class="slides">
+                            <?php foreach ($images as $i => $img) : ?>
+                                <div class="slide <?php echo $i === 0 ? 'is-active' : ''; ?>">
+                                    <img src="<?php echo esc_url($img); ?>">
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div class="thumbnails">
+                        <div class="row">
+                            <?php foreach ($images as $i => $img) : ?>
+                                <button class="thumb <?php echo $i === 0 ? 'is-active' : ''; ?> col-2 col-md-3" data-index="<?php echo $i; ?>">
+                                    <img src="<?php echo esc_url($img); ?>">
+                                </button>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-7 text-side pl-md-6">
+                <div class="col-12 col-md-6 text-side pl-md-6">
                     <div class="d-flex align-center gap-2 mb-3">
                         <ul class="genre-tags">
                             <?php foreach ($genres as $term) : ?>
@@ -90,8 +144,8 @@ get_header();
                             </div>
                             <p>初めての方は採寸が必要です。<br>工場での無料採寸またはセルフ採寸フォームからお選びください。</p>
                             <div class="btn-area gap-x-2">
-                                <a class="btn-black" href="contact/factory-fitting">無料採寸のご予約</a>
-                                <a class="btn-black" href="contact/factory-fitting">セルフ採寸フォーム</a>
+                                <a class="btn-black" href="/form-order/?product_title=<?php echo urlencode(get_the_title()); ?>&product_url=<?php echo urlencode(get_permalink()); ?>">無料採寸のご予約</a>
+                                <a class="btn-black" href="/form-measure">セルフ採寸フォーム</a>
                             </div>
                         </div>
                         <div class="second-order">
@@ -100,13 +154,13 @@ get_header();
                             </div>
                             <p>2着目以降の方は、前回の型紙をもとに再オーダーいただけます。 体型に変化がある場合は、再採寸が必要になります。 サイズが合わないことで、着心地や動きやすさに違いが出ることがあります。 再採寸が必要な箇所をご案内いたしますので、その際はお知らせください。</p>
                             <div class="btn-area">
-                                <a class="btn-black" href="contact/factory-fitting">再オーダーフォーム</a>
+                                <a class="btn-black" href="/form-order/?product_title=<?php echo urlencode(get_the_title()); ?>&product_url=<?php echo urlencode(get_permalink()); ?>">再オーダーフォーム</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="single-product-content">
+            <div class="single-product-content fade-up">
                 <?php the_content(); ?>
             </div>
         </div>
@@ -136,7 +190,7 @@ get_header();
 
 <?php if (!empty($photo_ids)) : ?>
 <?php // STYLE VARIATION SECTION（スタイルバリエーション） // *********************************************************** // ?>
-<section class="style-variation-sec">
+<section class="style-variation-sec fade-up">
     <div class="container">
         <div class="variation-photos">
             <div class="title-template tategaki">

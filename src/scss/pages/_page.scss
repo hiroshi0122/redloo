@@ -6,17 +6,17 @@
 // # PAGE
 //**********************************************************************
 .page-first-sec {
-    &::before {
+	&::before {
 		content: "";
 		position: absolute;
 		inset: 0;
-		opacity: .1;
+		opacity: 0.1;
 		mix-blend-mode: normal;
 		pointer-events: none;
 		background-position: 50% 30%;
 		background-size: cover;
 		background-repeat: no-repeat;
-        background-image: var(--page-img);
+		background-image: var(--page-img);
 	}
 
 	.image-side {
@@ -24,22 +24,54 @@
 	}
 }
 
-
+//**********************************************************************
+// # PAGE CONTENT SECTION
+//**********************************************************************
 .page-content-sec {
-    padding-top: 5rem;
-    
-    > .container {
-        max-width: 1080px;
-        margin: 0 auto;
-    }
+	padding-top: 5rem;
+
+	> .container {
+		max-width: 1080px;
+		margin: 0 auto;
+	}
+
+	/* ## PAGE CONTENT
+	***********************************************************/
+	.page-content {
+
+		h2 {
+			border-bottom: solid 1px $blue;
+			border-left: solid 5px $blue;
+			margin-top: 10rem;
+			margin-bottom: 3rem;
+			font-size: 22px;
+			padding: 17px 16px 17px;
+			color: $blue;
+			background-color: $bg-gray;
+			border-radius: 0 100px 0 0;
+		}
+
+		h3 {
+			margin-top: 6rem;
+			margin-bottom: 2rem;
+			font-size: 20px;
+			padding: 5px 8px;
+			border-bottom: solid 1px $blue;
+			color: $blue;
+		}
+
+		h4 {
+			display: inline-block;
+			font-size: 17px;
+			margin-top: 6rem;
+			margin-bottom: 1rem;
+			border-bottom: solid 1px $blue;
+			color: $blue;
+			border-bottom: solid 1px $blue;
+			padding-bottom: 0.5rem;
+		}
+	}
 }
-
-//**********************************************************************
-// # INDEX PRODUCTS SECTION
-//**********************************************************************
-
-
-
 
 //**********************************************************************
 // # h1
@@ -54,4 +86,3 @@
 /**** #### h4 ****/
 
 /* ##### h5 */
-

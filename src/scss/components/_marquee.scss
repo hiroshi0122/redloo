@@ -5,34 +5,33 @@
 //**************************************************************
 // marquee
 //**************************************************************
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 2px solid $black;
-  border-bottom: 2px solid $black;
-  background: $white;
 
-  &__inner {
-    display: flex;
-    align-items: center;
-  }
-  &__text {
-    font-weight: 900;
-    font-size: clamp(2rem, 4vw, 10rem);
-    letter-spacing: 0.05em;
-    padding-right: 2rem; // テキストの間隔
-    font-family: $marquee-font;
-    line-height: 1.5;
-  }
-  &--reverse {
-    .marquee__inner {
-      flex-direction: row-reverse;
-      text-align: end;
+    .marquee {
+        overflow: hidden;
+        white-space: nowrap;
+        border-top: 2px solid $black;
+        border-bottom: 2px solid $black;
+        background: $white;
+
+        &__inner {
+            display: flex;
+            align-items: center;
+        }
+        &__text {
+            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 10rem);
+            letter-spacing: 0.05em;
+            padding-right: 2rem; // テキストの間隔
+            font-family: $marquee-font;
+            line-height: 1.5;
+        }
+        &--reverse {
+            .marquee__inner {
+                flex-direction: row-reverse;
+                text-align: end;
+            }
+        }
     }
-  }
-}
-
-
 
 
 /* ## コメント中

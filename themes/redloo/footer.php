@@ -39,9 +39,11 @@ include 'template-parts/components/navigation.php';  // 配列を読み込み
 										<?php if (!empty($item['children'])) : ?>
 											<ul class="footer-submenu">
 												<?php foreach ($item['children'] as $child) : ?>
-													<li><a href="<?php echo esc_url($item['link'] . '/' . $child['link']); ?>">
+													<li>
+														<a href="<?php echo esc_url($child['link']); ?>">
 															<?php echo esc_html($child['menu']); ?>
-														</a></li>
+														</a>
+													</li>
 												<?php endforeach; ?>
 											</ul>
 										<?php endif; ?>
@@ -55,9 +57,11 @@ include 'template-parts/components/navigation.php';  // 配列を読み込み
 										<?php if (!empty($item['children'])) : ?>
 											<ul class="footer-submenu">
 												<?php foreach ($item['children'] as $child) : ?>
-													<li><a href="<?php echo esc_url($item['link'] . '/' . $child['link']); ?>">
+													<li>
+														<a href="<?php echo esc_url($child['link']); ?>">
 															<?php echo esc_html($child['menu']); ?>
-														</a></li>
+														</a>
+													</li>
 												<?php endforeach; ?>
 											</ul>
 										<?php endif; ?>

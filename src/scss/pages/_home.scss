@@ -88,9 +88,8 @@
         --------------------------------------*/
         .text-side {
             padding: 0 5%;
-            // position: absolute;
-            // z-index: 30;
-            // left: 0;
+            padding-bottom: 4rem;
+            
             h1 {
                 font-size: clamp(42px, 16vw, 64px);
                 padding-top: 7rem;
@@ -104,18 +103,18 @@
         /* ### SLIDER SIDE
         --------------------------------------*/
         .slider-side {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 1;
-            padding-left: 30%;
-            opacity: .5;
         }
 
         /* ### SLIDER CONTAINER
         --------------------------------------*/
         .slider-container {
-            height: clamp(440px, 90vw, 950px);
+            position: absolute;
+            width: 70%;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: .3;
+            height: 82%;
 
             /* #### SLIDE --------------------*/
             .slide {

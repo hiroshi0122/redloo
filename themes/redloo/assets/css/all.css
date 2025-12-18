@@ -9016,6 +9016,32 @@ table td {
   font-weight: 400;
 }
 
+.page-content-main h1, .page-content-main h2, .page-content-main h3, .page-content-main h4, .page-content-main h5 {
+  font-size: revert;
+  line-height: revert;
+  font-weight: revert;
+}
+.page-content-main p, .page-content-main a, .page-content-main li, .page-content-main span {
+  font-size: revert;
+  line-height: revert;
+  font-weight: revert;
+}
+.page-content-main dl dt, .page-content-main dl dd {
+  font-size: revert;
+  line-height: revert;
+  font-weight: revert;
+}
+.page-content-main table th, .page-content-main table td {
+  font-size: revert;
+  line-height: revert;
+  font-weight: revert;
+  color: revert;
+}
+.page-content-main img {
+  width: revert;
+  height: auto;
+}
+
 /* ## コメント中
 ***********************************************/
 /* ### コメント下
@@ -9353,6 +9379,9 @@ header .hamburger::after {
 header .hamburger {
   /* #### activeクラスが付加した時 ****/
 }
+header .hamburger.active span {
+  background: #fff;
+}
 header .hamburger.active span:nth-child(1) {
   top: 28px;
   width: 30px;
@@ -9373,6 +9402,7 @@ header .hamburger.active span:nth-child(3) {
   transform: rotate(30deg);
 }
 header .hamburger.active::after {
+  color: #fff;
   content: "CLOSE";
 }
 header {
@@ -9389,8 +9419,8 @@ header .menu-contents {
   transition: 0.2s;
   opacity: 0;
   visibility: hidden;
-  padding: 72px 9% 6%;
-  background: rgba(255, 255, 255, 0.95);
+  padding: 52px 9% 6%;
+  background: rgba(50, 79, 195, 0.95);
   /* #### ACTIVE
   --------------------------------*/
 }
@@ -9418,32 +9448,40 @@ header .menu-contents {
 }
 header .menu-contents .menu-list {
   width: 100%;
-  /* ##### MENU ****/
+  /* ##### MOBILE NAV PRIMARY ****/
 }
-header .menu-contents .menu-list .menu {
+header .menu-contents .menu-list .mobile-nav-primary {
   margin-bottom: 1.5rem;
 }
-header .menu-contents .menu-list .menu a {
+header .menu-contents .menu-list .mobile-nav-primary a {
   display: block;
   font-weight: bold;
   font-size: 17px;
-  letter-spacing: 3px;
   line-height: 1.5;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  color: #fff;
 }
-header .menu-contents .menu-list .submenu {
-  padding: 0.7rem 0 0 1.5rem;
+header .menu-contents .menu-list {
+  /* ##### MOBILE NAV COLUMNS ****/
+}
+header .menu-contents .menu-list .mobile-nav-columns {
+  color: #fff;
+}
+header .menu-contents .menu-list .mobile-nav-columns .nav-heading a {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 1.5;
+  padding-bottom: 1rem;
+}
+header .menu-contents .menu-list {
+  /* ##### SUB MENU ****/
+}
+header .menu-contents .menu-list .sub-menu {
+  padding: 0.7rem 0 0 1rem;
   margin-top: 0.5rem;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   margin-bottom: 3rem;
-  border-left: solid 1px #000000;
-}
-header .menu-contents .menu-list .submenu li {
-  margin-bottom: 0.5rem;
-}
-header .menu-contents .menu-list .submenu a {
-  font-size: 15px;
-  font-weight: 500;
+  border-left: solid 1px #fff;
 }
 header .menu-contents {
   /* #### HEADER SECOND NAV
@@ -9462,6 +9500,33 @@ header .menu-contents .header-second-nav a {
   font-size: 13px;
   line-height: 1.5;
   color: #969696;
+}
+header .menu-contents {
+  /* #### SNS ICONS
+  --------------------------------*/
+}
+header .menu-contents .sns-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #fff;
+}
+header .menu-contents .sns-icons span {
+  display: block;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px 7px;
+  line-height: 1;
+}
+header .menu-contents .sns-nav {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  padding-right: 0;
 }
 header {
   /* ### MOBILE =====================================*/
@@ -9725,7 +9790,7 @@ footer .footer-submenu a {
   .btn-black {
     border: solid 1px #fff;
     padding: 0.5rem 2rem 0.5rem 2rem;
-    max-width: 200px;
+    max-width: 240px;
   }
 }
 
@@ -10562,7 +10627,10 @@ footer .footer-submenu a {
   border-radius: 50%;
   flex-shrink: 0;
 }
-@media (max-width: ) {
+@media (max-width: 768px) {
+  .content, .single-product-content {
+    margin-bottom: 3rem;
+  }
   .content .wp-block-image .wp-element-caption, .single-product-content .wp-block-image .wp-element-caption {
     font-size: 10px;
   }
@@ -10865,6 +10933,7 @@ blockquote cite {
   }
   #first-view-sec .text-side {
     padding: 0 5%;
+    padding-bottom: 4rem;
   }
   #first-view-sec .text-side h1 {
     font-size: clamp(42px, 16vw, 64px);
@@ -10878,20 +10947,18 @@ blockquote cite {
     /* ### SLIDER SIDE
     --------------------------------------*/
   }
-  #first-view-sec .slider-side {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    padding-left: 30%;
-    opacity: 0.5;
-  }
   #first-view-sec {
     /* ### SLIDER CONTAINER
     --------------------------------------*/
   }
   #first-view-sec .slider-container {
-    height: clamp(440px, 90vw, 950px);
+    position: absolute;
+    width: 70%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.3;
+    height: 82%;
     /* #### SLIDE --------------------*/
   }
 }
@@ -12848,6 +12915,39 @@ blockquote cite {
   max-width: 1080px;
   margin: 0 auto;
 }
+.page-content-sec {
+  /* ## PAGE CONTENT
+  ***********************************************************/
+}
+.page-content-sec .page-content h2 {
+  border-bottom: solid 1px #264898;
+  border-left: solid 5px #264898;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+  font-size: 22px;
+  padding: 17px 16px 17px;
+  color: #264898;
+  background-color: #F7F7F7;
+  border-radius: 0 100px 0 0;
+}
+.page-content-sec .page-content h3 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  font-size: 20px;
+  padding: 5px 8px;
+  border-bottom: solid 1px #264898;
+  color: #264898;
+}
+.page-content-sec .page-content h4 {
+  display: inline-block;
+  font-size: 17px;
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+  border-bottom: solid 1px #264898;
+  color: #264898;
+  border-bottom: solid 1px #264898;
+  padding-bottom: 0.5rem;
+}
 
 /* ## h2
 ***********************************************************/
@@ -12864,10 +12964,62 @@ blockquote cite {
   /* ### IMAGE SIDE
   --------------------------------------*/
 }
+.single-product-sec .image-side {
+  position: relative;
+  padding-left: 20%;
+}
+.single-product-sec .image-side .title-template {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .single-product-sec .image-side .title span {
   writing-mode: tb;
   margin: 3rem auto 0;
   letter-spacing: 3px;
+}
+.single-product-sec .image-side {
+  /* ### PRODUCT SLIDER
+  --------------------------------------*/
+}
+.single-product-sec .image-side .product-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.single-product-sec .image-side .product-slider .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.single-product-sec .image-side .product-slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.single-product-sec .image-side .product-slider .slide.is-active {
+  opacity: 1;
+}
+.single-product-sec .image-side {
+  /* ### THUMBNAILS
+  --------------------------------------*/
+}
+.single-product-sec .image-side .thumbnails {
+  margin-top: 16px;
+}
+.single-product-sec .image-side .thumbnails .thumb {
+  aspect-ratio: 1/1;
+  opacity: 0.4;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+}
+.single-product-sec .image-side .thumbnails .thumb img {
+  height: 100%;
+  object-fit: cover;
+}
+.single-product-sec .image-side .thumbnails .thumb.is-active {
+  opacity: 1;
 }
 .single-product-sec {
   /* ### TEXT SIDE
@@ -13046,6 +13198,11 @@ blockquote cite {
 /* ##### コメント軽 */
 .contact-first-sec {
   padding-top: 17rem;
+}
+.contact-first-sec > .container {
+  position: relative;
+}
+.contact-first-sec {
   /* ### CONTACT ATTENTION
   --------------------------------------*/
 }
@@ -13077,6 +13234,15 @@ blockquote cite {
   background-position: center;
   background-image: url(../images/common/tel_blue.svg);
 }
+.contact-first-sec {
+  /* ### BTN AREA
+  --------------------------------------*/
+}
+.contact-first-sec .btn-area {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+}
 @media (max-width: 768px) {
   .contact-first-sec {
     /* ### TEL NUMBER
@@ -13087,6 +13253,19 @@ blockquote cite {
     width: 25px;
     height: 25px;
   }
+  .contact-first-sec {
+    /* ### BTN AREA
+    --------------------------------------*/
+  }
+  .contact-first-sec .btn-area {
+    position: static;
+    padding-top: 2rem;
+  }
+}
+
+.measure-guide-sec > .container {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .contact-form-sec {
@@ -13214,7 +13393,17 @@ blockquote cite {
   /**** #### テキスト ****/
 }
 .contact-form-body .wpcf7-text {
+  width: 100%;
+}
+.contact-form-body .wpcf7-text[name=first-name], .contact-form-body .wpcf7-text[name=last-name] {
   width: 100px;
+}
+.contact-form-body .wpcf7-text[name=zip-1], .contact-form-body .wpcf7-text[name=zip-2] {
+  width: 80px;
+}
+.contact-form-body .wpcf7-text.plain-input {
+  border: none;
+  pointer-events: none;
 }
 .contact-form-body {
   /**** #### メール ****/
@@ -13227,6 +13416,8 @@ blockquote cite {
 }
 .contact-form-body .wpcf7-textarea {
   width: 100%;
+  border-radius: 5px;
+  border: solid 1px #D8D8D8;
 }
 .contact-form-body {
   /**** #### 指名と電話番号 ****/
@@ -13321,6 +13512,7 @@ blockquote cite {
   margin-bottom: 4rem;
 }
 .privacy a {
+  font-size: 13px;
   color: #264898;
   border-bottom: solid 1px #264898;
 }

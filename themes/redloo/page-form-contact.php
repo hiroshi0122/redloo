@@ -24,7 +24,7 @@ get_header(); ?>
 		<div class="text-side">
 			<div class="lower-title-template blue">
 				<div class="title">
-					<h1>CONTACT</h1>
+					<h1 class="split">CONTACT</h1>
 					<span>お問合せ</span>
 				</div>
 			</div>
@@ -33,6 +33,10 @@ get_header(); ?>
 				<span>受付時間：9:00 - 20:00 （12:00-13:00除く） 休業日：日曜・祝日、夏期休暇・冬期休暇</span>
 			</div>
 			<h5 class="tel-number">03-5686-1300</h5>
+		</div>
+		<div class="btn-area gap-x-5 gap-y-1">
+			<a class="btn-black" href="/form-order">採寸・再オーダーのご相談</a>
+			<a class="btn-black" href="/form-measure">セルフ採寸フォーム</a>
 		</div>
 	</div>
 </section>

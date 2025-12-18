@@ -110,7 +110,7 @@ get_header();
             <div class="col-12 col-md-6 text-side">
                 <div class="lower-title-template">
                     <div class="title">
-                        <h1>ORDER GUIDE</h1>
+                        <h1 class="split">ORDER GUIDE</h1>
                         <span>基本仕様の選び方</span>
                     </div>
                     <h3 class="catch">基本の仕様を選ぶ・決める</h3>
@@ -141,9 +141,9 @@ get_header();
             </div>
         </div>
         <div class="radius-box bg-blue">
-            <div class="selection-list row">
+            <div class="selection-list row js-stagger">
                 <?php foreach($selection as $key => $item) : ?>
-                    <div class="selection-item col-6 col-md-3">
+                    <div class="selection-item col-6 col-md-3 js-stagger-item">
                         <span class="selection-num">0<?php echo esc_html($key + 1);?>.</span>
                         <div class="selection-img">
                             <img src="<?php bloginfo('template_url'); ?>/assets/images/order-guide/<?php echo esc_html($item['image']);?>.webp" alt="<?php echo esc_html(['text']);?>のイメージ">

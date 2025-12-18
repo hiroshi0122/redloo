@@ -3,6 +3,7 @@
 //**************************************************************
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,36 +83,34 @@ gsap.utils.toArray(".blur").forEach((target) => {
 
 
 // FADE IN UP STAGGER（順番に表示させる） ------------------------------//
-//トリガーはfadeInUp-stagger
-gsap.utils.toArray(".fadeInUp-stagger").forEach((target) => {
-  const radiusBoxes = target.querySelectorAll('.stagger');
-  gsap.set(radiusBoxes, { y: 50, autoAlpha: 0, scale: 0.9 });
+(() => {
+  gsap.utils.toArray('.js-stagger').forEach(container => {
+    const items = container.querySelectorAll('.js-stagger-item');
+    if (!items.length) return;
 
-  gsap.fromTo(
-    radiusBoxes,
-    {
+    gsap.set(items, {
       y: 50,
       autoAlpha: 0,
       scale: 0.9,
-      filter: "blur(10px)",
-    },
-    {
+      filter: 'blur(10px)',
+    });
+
+    gsap.to(items, {
       y: 0,
       autoAlpha: 1,
       scale: 1,
+      filter: 'blur(0px)',
       stagger: 0.1,
-      filter: "blur(0px)",
-      ease: "expo.inOut",
       duration: 1,
+      ease: 'expo.out',
       scrollTrigger: {
-        trigger: target,
-        start: "top 80%",
-        end: "bottom 80%",
-        toggleActions: "play none none none",
+        trigger: container,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
       },
-    }
-  );
-});
+    });
+  });
+})();
 
 
 
@@ -155,7 +154,7 @@ gsap.utils.toArray(".fadeInUp-stagger").forEach((target) => {
 // });
 
 //**********************************************************************
-// 8. MENU OPEN
+// MENU OPEN
 //**********************************************************************
 document.addEventListener('DOMContentLoaded', () => {
   const parents = document.querySelectorAll('.nav-item.has-children');
@@ -198,9 +197,13 @@ document.querySelectorAll(".marquee").forEach(marquee => {
 //**********************************************************************
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".bg-track");
-  const width = track.scrollWidth / 2; // 6枚ぶん
 
-  // 初期位置をズラしておく
+  // このページに無ければ何もしない
+  if (!track) return;
+
+  const width = track.scrollWidth / 2; // ループ用幅
+
+  // 初期位置
   gsap.set(track, { x: -width });
 
   // 無限ループ
@@ -268,19 +271,102 @@ gsap.utils.toArray('.move-x').forEach((el) => {
 
 
 //**********************************************************************
-// 一文字ずつ出る
+// 一文字ずつ出るアニメーション
 //**********************************************************************
-import SplitType from "split-type";
-const split = new SplitType('.split', { types: 'chars' });
+(() => {
+  const targets = document.querySelectorAll('.split');
+  if (!targets.length) return;
 
-gsap.from(split.chars, {
-  opacity: 0,
-  y: 20,
-  duration: 0.6,
-  stagger: 0.1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".split",
-    start: "top 85%",
+  targets.forEach(target => {
+    const split = new SplitType(target, { types: 'chars' });
+
+    gsap.from(split.chars, {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: target,
+        start: "top 85%",
+      }
+    });
+  });
+})();
+
+
+//**********************************************************************
+// 商品詳細 スライダー（完成版）
+//**********************************************************************
+(() => {
+  const slides = document.querySelectorAll('.slide');
+  const thumbs = document.querySelectorAll('.thumb');
+  const slider = document.querySelector('.slides');
+
+  if (!slides.length || !thumbs.length || !slider) return;
+
+  let currentIndex = 0;
+  let timer = null;
+
+  function initSlider() {
+    slides[0].classList.add('is-active');
+    thumbs[0].classList.add('is-active');
+    startAutoPlay();
   }
-});
+
+  function showSlide(index) {
+    if (index === currentIndex) return;
+
+    slides[currentIndex].classList.remove('is-active');
+    thumbs[currentIndex].classList.remove('is-active');
+
+    slides[index].classList.add('is-active');
+    thumbs[index].classList.add('is-active');
+
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    showSlide((currentIndex + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((currentIndex - 1 + slides.length) % slides.length);
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    timer = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoPlay() {
+    if (timer) clearInterval(timer);
+  }
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+      showSlide(i);
+      startAutoPlay();
+    });
+  });
+
+  let startX = 0;
+
+  slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    stopAutoPlay();
+  });
+
+  slider.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? nextSlide() : prevSlide();
+    }
+
+    startAutoPlay();
+  });
+
+  initSlider();
+})();

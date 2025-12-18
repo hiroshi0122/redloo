@@ -32,7 +32,7 @@ get_header(); ?>
 		<div class="text-side">
 			<div class="lower-title-template blue">
 				<div class="title">
-					<h1>BLOG</h1>
+					<h1 class="split">BLOG</h1>
 					<span>お知らせ・コラム</span>
 				</div>
 			</div>
@@ -42,11 +42,11 @@ get_header(); ?>
 
 
 <?php // POST CONTENT SECTION // *********************************************************** // ?>
-<section class="post-content-sec">
+<section class="post-content-sec fade-up">
 	<div class="container">		
 		<?php if ($query->have_posts()) : ?>
 			<?php while ($query->have_posts()) : $query->the_post(); ?>
-				<div class="post-content row gap-5 align-center">
+				<div class="post-content row gap-2 gap-md-5 align-center fadeInUp">
 					<div class="image-side col-12 col-md-3">
 						<a class="parmalink" href="<?php the_permalink(); ?>">
 							<?php if (has_post_thumbnail()) : ?>
@@ -55,7 +55,6 @@ get_header(); ?>
 						</a>
 					</div>
 					<div class="text-side col-12 col-md-9">
-						<a class="post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						<div class="d-flex align-center gap-3">
 							<div class="post-categories">
 								<?php
@@ -73,7 +72,7 @@ get_header(); ?>
 							</div>
 							<span class="date"><?php echo get_the_date('Y.n.j'); ?></span>
 						</div>	
-						
+						<a class="post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						<p><?php the_excerpt(); ?></p>
 					</div>
 				</div>

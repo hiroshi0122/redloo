@@ -3,7 +3,7 @@
 @use "sass:map";
 
 //**********************************************************************
-// # CONTENT
+// # CONTENT（ブログエディター部分）
 //**********************************************************************
 .content, .single-product-content {
     margin-bottom: 10rem;
@@ -130,7 +130,9 @@
     }
 
     // ## MOBILE // *************************************************>
-    @include media-under(sp) {
+    @include media-under(md) {
+        margin-bottom: 3rem;
+
         .wp-block-image {
             .wp-element-caption {
                 font-size: 10px;

@@ -9,6 +9,10 @@
 .contact-first-sec {
     padding-top: 17rem;
 
+    >.container {
+        position: relative;
+    }
+
     /* ### CONTACT ATTENTION
     --------------------------------------*/
     .contact-attention {
@@ -40,6 +44,15 @@
         }
     }
 
+    /* ### BTN AREA
+    --------------------------------------*/
+    .btn-area {
+        position: absolute;
+        top: 10px;
+        right: 5%;
+    }
+
+
     // ## MOBILE // *************************************************>
     @include media-under(md) {
 
@@ -52,6 +65,24 @@
                 height: 25px;
             }
         }
+
+        /* ### BTN AREA
+        --------------------------------------*/
+        .btn-area {
+            position: static;
+            padding-top: 2rem;
+        }
+    }
+}
+
+ 
+//*******************************************************************
+// # MEASURE GUIDE FORM SECTION （セルフ採寸フォーム）
+//*******************************************************************
+.measure-guide-sec {
+    >.container {
+        max-width: 1080px;
+        margin: 0 auto;
     }
 }
 
@@ -189,7 +220,20 @@
 
     /**** #### テキスト ****/
     .wpcf7-text {
-        width: 100px;
+        width: 100%;
+
+        &[name="first-name"],&[name="last-name"] {
+            width: 100px;
+        }
+
+        &[name="zip-1"],&[name="zip-2"] {
+            width: 80px;
+        }
+
+        &.plain-input {
+            border: none;
+            pointer-events: none;
+        }
     }
 
     /**** #### メール ****/
@@ -199,6 +243,8 @@
     /**** #### テキストエリア ****/
     .wpcf7-textarea {
         width: 100%;
+        border-radius: 5px;
+        border: solid 1px $border-gray
     }
 
     /**** #### 指名と電話番号 ****/
@@ -306,6 +352,7 @@
     font-size: 13px;
     margin-bottom: 4rem;
     a {
+        font-size: 13px;
         color: $blue;
         border-bottom: solid 1px $blue;
     }

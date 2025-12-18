@@ -24,7 +24,7 @@ get_header(); ?>
 		<div class="text-side">
 			<div class="lower-title-template blue">
 				<div class="title">
-					<h1>ORDER</h1>
+					<h1 class="split">ORDER</h1>
 					<span>採寸・再オーダーのご相談・ご予約</span>
 				</div>
 			</div>

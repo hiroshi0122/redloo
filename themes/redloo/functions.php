@@ -1,8 +1,18 @@
 <?php
 //**************************************************************
-// wp head cleaner
+// BODY CLASS
 //**************************************************************
+add_filter('body_class', function ($classes) {
+    global $template;
 
+    if (basename($template) === 'page.php') {
+        $classes[] = 'is-page-php';
+    } else {
+        $classes[] = 'is-custom-template';
+    }
+
+    return $classes;
+});
 
 //**************************************************************
 // Gutenbergのフロントエンド用スタイルを無効化

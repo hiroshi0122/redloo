@@ -119,7 +119,7 @@ get_header();
             <div class="col-12 col-md-6 text-side">
                 <div class="lower-title-template">
                     <div class="title">
-                        <h1>ORDER FLOW</h1>
+                        <h1 class="split">ORDER FLOW</h1>
                         <span>オーダーガイド／ご注文の流れ</span>
                     </div>
                     <h3 class="catch">ご注文からお渡しまでの流れ</h3>
@@ -146,7 +146,7 @@ get_header();
         
         <div class="order-steps">
             <?php foreach($steps as $step): ?>
-                <div class="order-step step-<?php echo $step['num']; ?>">
+                <div class="order-step step-<?php echo $step['num']; ?> blur">
                     <div class="row align-center gap-md-5 gap-lg-10">
                         <div class="col-12 col-md-4 image-side">
                             <img src="<?php bloginfo('template_url'); ?>/assets/images/order-flow/<?php echo $step['image']; ?>.webp" alt="">
@@ -214,14 +214,14 @@ get_header();
     <div class="container">
         
         <div class="title mb-5 mb-md-10 text-center">
-            <h3 class="mb-4 mb-md-5">動きやすさも、心地よさも<br>始まりは34か所の採寸</h3>
+            <h3 class="mb-4 mb-md-5 fadeInUp">動きやすさも、心地よさも<br>始まりは34か所の採寸</h3>
             <p>RedLooのフルオーダーウェットスーツは、<br class="d-sm-none">36か所の採寸から始まります。 <br>肩や腰の可動域、体型の細かな差を反映することで、<br>動きやすさと仕上がりの精度が大きく変わります。</p>
         </div>
         
         <div class="gallery-area">
-            <div class="light-box-gallery row gap-md-5">
+            <div class="light-box-gallery row gap-md-5 js-stagger">
                 <?php foreach($light_box as $ley => $value) : ?>
-                    <div class="col-4 col-md-3">
+                    <div class="col-4 col-md-3 js-stagger-item">
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/order-flow/<?php echo esc_html($value['image']); ?>.webp" data-caption="<?php echo esc_html($value['caption']); ?>">
                     </div>
                 <?php endforeach; ?>

@@ -50,19 +50,20 @@ $lead_text = get_field('lead_text');
             ]);
         ?> 
 
-       
-        <section class="page-content-sec">
-            <div class="container">
-                <div class="content">
-                    <?php the_content(); ?>
+        <main class="page-content-main">
+            <section class="page-content-sec">
+                <div class="container">
+                    <div class="page-content">
+                        <?php the_content(); ?>
+                    </div>
                 </div>
-            </div>
-            <!-- <span class="day"><?php // the_time('Y.n.j'); ?></span> -->
-        </section>
-        
+                <!-- <span class="day"><?php // the_time('Y.n.j'); ?></span> -->
+            </section>
+        </main>
 
     <?php endwhile; ?>
 <?php endif; ?>
+
 
 
 <?php // ATTENTION SECTION（ご注文の前に） // *********************************************************** // ?>

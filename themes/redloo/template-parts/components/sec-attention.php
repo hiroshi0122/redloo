@@ -2,7 +2,7 @@
 $type = $args['type'] ?? 'normal';
 ?>
 
-<section class="attention-sec attention--<?= esc_attr($type) ?> pt-0">
+<section class="attention-sec attention--<?= esc_attr($type) ?> pt-0 fade-up">
     <div class="container">
 
         <?php if ($type === 'normal'): ?>

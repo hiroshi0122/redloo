@@ -14,7 +14,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body id="<?php echo esc_attr($page_id); ?>">
+<body <?php body_class(); ?>>
 
   <header class="site-header">
     <?php get_template_part('template-parts/components/navigation-header'); ?>
