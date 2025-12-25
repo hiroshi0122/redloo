@@ -1,4 +1,4 @@
-<section class="factory-fitting-sec">
+<section class="factory-fitting-sec typography">
     <?php
     get_template_part('template-parts/components/marquee', null, [
         'text' => 'WETSUITS FACTORY IN TOKYO',
@@ -20,7 +20,7 @@
                     <div class="self-fitting">
                         <h5>SELF FITTING</h5>
                         <p>セルフ採寸でのオーダーも可能です。</p>
-                        <a class="btn-black" href="/form-self-fitting">セルフ採寸フォーム</a>
+                        <a class="btn-black" href="/form-measure">セルフ採寸フォーム</a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 image-side d-none d-md-block">

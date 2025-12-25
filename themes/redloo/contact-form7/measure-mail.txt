@@ -1,0 +1,149 @@
+>>>>>>>>>>>>>>> 管理用メール本文
+
+セルフ採寸フォームより、以下の内容で送信がありました。
+
+────────────────────
+■ お客様情報
+────────────────────
+お名前： [last-name] [first-name]
+メールアドレス： [email]
+
+────────────────────
+■ 採寸情報（34項目）
+────────────────────
+1. 身長（cm）： [m01-height]
+2. 体重（kg）： [m02-weight]
+3. 首回り（cm）： [m03-neck]
+4. A〜肩（cm）： [m04-shoulder]
+5. A〜肘（cm）： [m05-elbow]
+6. A〜手首（cm）： [m06-wrist]
+7. 手首囲（cm）： [m07-wrist-circ]
+8. 肘下囲（cm）： [m08-forearm]
+9. 肘囲（cm）： [m09-elbow-circ]
+10. 大腕囲（cm）： [m10-upperarm]
+11. 上大腕囲（cm）： [m11-upperarm-top]
+12. 腕付け根囲（cm）： [m12-arm-root]
+13. A〜へそ（cm）： [m13-navel]
+14. A〜尻（cm）： [m14-hip-pos]
+15. 総丈（cm）： [m15-total-length]
+16. 上胸囲（cm）： [m16-upper-chest]
+17. 胸囲（cm）： [m17-chest]
+18. 腹囲（cm）： [m18-waist]
+19. 下腹囲（cm）： [m19-lower-waist]
+20. 尻囲（cm）： [m20-hip]
+21. 太もも最大囲（cm）： [m21-thigh-max]
+22. 太もも中間囲（cm）： [m22-thigh-mid]
+23. ヒザ上囲（cm）： [m23-knee-upper]
+24. ヒザ下囲（cm）： [m24-knee-lower]
+25. ふくらはぎ囲（cm）： [m25-calf]
+26. 足首囲（cm）： [m26-ankle]
+27. 外乗高（cm）： [m27-outside-height]
+28. すね長い（cm）： [m28-shin]
+29. 股付根〜ヒザ中心（cm）： [m29-crotch-knee]
+30. 股下（cm）： [m30-inseam]
+31. 頭丈（cm）： [m31-head-height]
+
+────────────────────
+■ 女性のみ（該当する場合）
+────────────────────
+32. 乳下がり（cm）： [m32-bust-drop]
+33. 乳頭間（cm）： [m33-bust-width]
+34. アンダーバスト（cm）： [m34-underbust]
+
+────────────────────
+■ メッセージ
+────────────────────
+[measurement-message]
+
+
+
+
+
+
+
+
+
+
+>>>>>>>>>>>>>>> お客様用メール本文
+[last-name] [first-name] 様
+
+この度は、セルフ採寸フォームをご送信いただき
+誠にありがとうございます。
+
+下記の内容にて、採寸データを確かに受け取りました。
+内容にお間違いがないか、ご確認をお願いいたします。
+
+────────────────────
+■ お客様情報
+────────────────────
+お名前：
+[last-name] [first-name]
+
+メールアドレス：
+[email]
+
+────────────────────
+■ セルフ採寸情報（34項目）
+────────────────────
+1. 身長（cm）： [m01-height]
+2. 体重（kg）： [m02-weight]
+3. 首回り（cm）： [m03-neck]
+4. A〜肩（cm）： [m04-shoulder]
+5. A〜肘（cm）： [m05-elbow]
+6. A〜手首（cm）： [m06-wrist]
+7. 手首囲（cm）： [m07-wrist-circ]
+8. 肘下囲（cm）： [m08-forearm]
+9. 肘囲（cm）： [m09-elbow-circ]
+10. 大腕囲（cm）： [m10-upperarm]
+11. 上大腕囲（cm）： [m11-upperarm-top]
+12. 腕付け根囲（cm）： [m12-arm-root]
+13. A〜へそ（cm）： [m13-navel]
+14. A〜尻（cm）： [m14-hip-pos]
+15. 総丈（cm）： [m15-total-length]
+16. 上胸囲（cm）： [m16-upper-chest]
+17. 胸囲（cm）： [m17-chest]
+18. 腹囲（cm）： [m18-waist]
+19. 下腹囲（cm）： [m19-lower-waist]
+20. 尻囲（cm）： [m20-hip]
+21. 太もも最大囲（cm）： [m21-thigh-max]
+22. 太もも中間囲（cm）： [m22-thigh-mid]
+23. ヒザ上囲（cm）： [m23-knee-upper]
+24. ヒザ下囲（cm）： [m24-knee-lower]
+25. ふくらはぎ囲（cm）： [m25-calf]
+26. 足首囲（cm）： [m26-ankle]
+27. 外乗高（cm）： [m27-outside-height]
+28. すね長い（cm）： [m28-shin]
+29. 股付根〜ヒザ中心（cm）： [m29-crotch-knee]
+30. 股下（cm）： [m30-inseam]
+31. 頭丈（cm）： [m31-head-height]
+
+────────────────────
+■ 女性のみ（該当する場合）
+────────────────────
+32. 乳下がり（cm）： [m32-bust-drop]
+33. 乳頭間（cm）： [m33-bust-width]
+34. アンダーバスト（cm）： [m34-underbust]
+
+────────────────────
+■ メッセージ
+────────────────────
+[measurement-message]
+
+────────────────────
+今後の流れについて
+────────────────────
+内容を確認のうえ、採寸数値の確認や調整が必要な場合は、
+改めてこちらからご連絡を差し上げます。
+
+万が一、
+「数値を間違えて入力してしまった」
+「補足しておきたい点がある」
+などございましたら、このメールにそのままご返信ください。
+
+引き続き、どうぞよろしくお願いいたします。
+
+──────────────────────────────
+RedLoo（レッドロー）-WETSUITS FACTORY IN TOKYO-
+──────────────────────────────
+WEB：https://redloo.jp/
+MAIL：info@redloo.jp

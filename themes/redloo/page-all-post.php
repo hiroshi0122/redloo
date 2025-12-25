@@ -25,7 +25,7 @@ $query = new WP_Query($args);
 
 get_header(); ?>
 
-
+<main class="typography">
 <?php // ARCHIVE FIRST SECTION // *********************************************************** // ?>
 <section class="archive-first-sec pb-0">
 	<div class="container">
@@ -113,11 +113,5 @@ get_header(); ?>
 	</section>
 	<?php wp_reset_postdata(); ?>
 </section>
-
-
-
-
-<?php //** PAGINATION ****************************//?>
-
-
+</main>
 <?php get_footer();

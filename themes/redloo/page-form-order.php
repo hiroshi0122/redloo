@@ -17,7 +17,7 @@
 
 get_header(); ?>
 
-
+<main class="typography">
 <?php // CONTACT FIRST SECTION // *********************************************************** // ?>
 <section class="contact-first-sec pb-0">
 	<div class="container">
@@ -29,6 +29,10 @@ get_header(); ?>
 				</div>
 			</div>
 			<p>下記フォームより、①お客様情報、②採寸予約日（無料採寸ご希望の方のみ） ③オーダー内容をご記入ください。</p>
+		</div>
+		<div class="btn-area gap-x-5 gap-y-1">
+			<a class="btn-black" href="/form-contact">お問い合わせ</a>
+			<a class="btn-black" href="/form-measure">セルフ採寸フォーム</a>
 		</div>
 	</div>
 </section>
@@ -50,5 +54,5 @@ get_header(); ?>
 <?php get_template_part('template-parts/components/sec-factory-fitting'); ?>
 
 
-
+</main>
 <?php get_footer();

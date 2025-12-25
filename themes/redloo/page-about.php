@@ -51,6 +51,7 @@ $comapny_info = [
 get_header();
 ?>
 
+<main class="typography">
 <?php // LOWER FIRST SECTION // *********************************************************** // ?>
 <section class="lower-first-sec pb-0 about" id="lowerFirstSec">
     <div class="container-fluid p-0">
@@ -244,7 +245,7 @@ get_header();
                     <p>RedLooのウェットスーツは、足立区東保木間の工場で仕立てています。<br>無料採寸や、生地・色見本を実際に手に取りながら、一緒に仕様を決めていただけます。</p>
                 </div>
                 <div class="col-12 col-md-4">
-                    <a class="btn-black" href="/">無料採寸のお申し込み</a>
+                    <a class="btn-black" href="/form-order">無料採寸のお申し込み</a>
                 </div>
             </div>
 
@@ -311,6 +312,7 @@ get_header();
 <?php // FACTORY FITTING SECTION（無料採寸のご予約） // *********************************************************** // ?>
 <?php get_template_part('template-parts/components/sec-factory-fitting'); ?>
 
+</main>
 
 
 <?php get_footer(); ?>

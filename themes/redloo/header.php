@@ -16,6 +16,6 @@
 
 <body <?php body_class(); ?>>
 
-  <header class="site-header">
+  <header class="site-header typography">
     <?php get_template_part('template-parts/components/navigation-header'); ?>
   </header>

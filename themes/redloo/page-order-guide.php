@@ -103,8 +103,9 @@ $type = [
 get_header();
 ?>
 
+<main class="typography">
 <?php // LOWER FIRST SECTION // *********************************************************** // ?>
-<section class="lower-first-sec pb-0 about" id="lowerFirstSec">
+<section class="lower-first-sec pb-0 order-guide" id="lowerFirstSec">
     <div class="container-fluid p-0">
         <div class="row gap-x-md-10 align-center">
             <div class="col-12 col-md-6 text-side">
@@ -357,7 +358,7 @@ get_header();
             <p>カラーは基本自由にお選びいただけます。<br>※スタイルや使用箇所によっては、色や生地を指定できない部分があります。</p>
         </div>
         <div class="btn-area justify-center">
-            <a class="btn-black" href="/custom/color">カラーバリエーション</a>
+            <a class="btn-black" href="/custom-color">カラーバリエーション</a>
         </div>
     </div>
 </section>
@@ -394,7 +395,7 @@ get_header();
             <p>詳細はカスタム・オプションページにてご参考ください。</p>
         </div>
         <div class="btn-area justify-center mb-5 mb-md-10">
-            <a class="btn-black" href="/custom">カスタム・オプション</a>
+            <a class="btn-black" href="/custom-color">カスタム・オプション</a>
         </div>
         <img class="blur" src="<?php bloginfo('template_url'); ?>/assets/images/order-guide/build_your_own.svg" alt="BUILD YOUR OWN!">
     </div>
@@ -408,5 +409,5 @@ get_header();
 <?php get_template_part('template-parts/components/sec-factory-fitting'); ?>
 
 
-
+</main>
 <?php get_footer(); ?>

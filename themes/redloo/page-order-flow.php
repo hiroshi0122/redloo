@@ -34,8 +34,8 @@ $steps = [
             [ 'type' => 'text', 'value' => "「工場でのスタッフによる採寸」と、「自身で採寸を行う」２つの採寸方法をご検討ください。工場での採寸は、スタッフと一緒に生地や仕様を相談しながら採寸できます。 ご自身で測られる場合は、セルフ採寸フォームからデータをお送りください。採寸のご予約またはフォーム送信をもって、オーダーのご希望として承ります。 その後、仕様の確認とお見積りのご連絡を差し上げます。" ],
             [ 'type' => 'notice-box', 'value' => "※女性のお客様には、女性スタッフが対応いたします。安心してご予約ください。" ],
             [ 'type' => 'buttons', 'value' => [
-                ['text' => '無料採寸ご予約', 'link' => '/form-factory-fitting'],
-                ['text' => 'セルフ採寸フォーム', 'link' => '/self-measurement'],
+                ['text' => '無料採寸ご予約', 'link' => '/form-order'],
+                ['text' => 'セルフ採寸フォーム', 'link' => '/form-measure'],
             ]]
         ]
     ],
@@ -47,26 +47,26 @@ $steps = [
             [ 'type' => 'text', 'value' => "素材やカラー、ロゴ位置、仕上げなど、最終的な仕様を決める段階です。 基本仕様やオプションをもとに、ご希望のスタイルをまとめていきます。 選び方に迷う場合は、スタッフまでご相談ください。" ],
             [ 'type' => 'buttons', 'value' => [
                 ['text' => '基本使用の選び方', 'link' => '/order-guide'],
-                ['text' => 'カスタム・オプション', 'link' => '/custom'],
+                ['text' => 'カスタム・オプション', 'link' => '/custom-color'],
             ]]
         ]
     ],
     [   
-        'image' => 'step_1',
+        'image' => 'step_4',
         'num' => 4,
         'title' => 'ご注文・お支払い',
         'contents' => [
-            [ 'type' => 'text', 'value' => "仕様がまとまりましたら、お見積りをお送りします。 内容をご確認のうえ、オンライン決済（XXXXXXX）または工場でのお支払いをお選びください。 ご入金の確認後、製作に入ります。" ],
+            [ 'type' => 'text', 'value' => "仕様がまとまりましたら、お見積りをお送りします。\n内容をご確認のうえ、下記の方法でお支払いください。ご入金の確認後、製作に入ります。" ],
             [ 'type' => 'list', 'value' => [
-                "・オンライン決済（XXXXXXX）",
-                "・工場での決済（現金・カード一括）",
-                "・送料：送料：全国一律1,200円",
+                "・クレジットカード VISA、Mastercard、JCB、American Express",
+                "・PayPay",
+                "・現金（工場でのお支払いのみ）",
             ]],
-            [ 'type' => 'notice', 'value' => "※50,000円以上のお買い上げで日本全国送料無料\n※北海道・沖縄・離党は別途送料を頂きます" ],
+            [ 'type' => 'notice', 'value' => "※11,000円以上のお買い上げで送料無料\n※北海道・沖縄・離党は別途送料を頂きます" ],
         ]
     ],
     [   
-        'image' => 'step_1',
+        'image' => 'step_5',
         'num' => 5,
         'title' => '製作・お渡し',
         'contents' => [
@@ -112,8 +112,9 @@ $light_box = [
 get_header();
 ?>
 
+<main class="typography">
 <?php // LOWER FIRST SECTION // *********************************************************** // ?>
-<section class="lower-first-sec pb-0 about" id="lowerFirstSec">
+<section class="lower-first-sec pb-0 order-flow" id="lowerFirstSec">
     <div class="container-fluid p-0">
         <div class="row gap-x-md-10 align-center">
             <div class="col-12 col-md-6 text-side">
@@ -188,8 +189,8 @@ get_header();
             <div class="attention-content mb-6 mb-md-8">
                 <h4 class="transport">配送・納期について</h4>
                 <ul>
-                    <li>送料：全国一律1,200円（北海道・沖縄・離党は別途送料を頂きます）</li>
-                    <li>50,000円以上のお買い上げで。日本全国送料無料（北海道・沖縄・離党は別途送料を頂きます）</li>
+                    <li>送料：全国一律1,500円（北海道・沖縄・離党は別途送料を頂きます）</li>
+                    <li>11,000円以上のお買い上げで、日本全国送料無料（北海道・沖縄・離党は別途送料を頂きます）</li>
                     <li>採寸データー・スタイル・タイプ・各種カスタムオプション・決済を確認後、約3週間～4週間ほどで完成・発送</li>
                     <li>ハイシーズン（9月～1月）は通常より納期を多めにいただいております。その際は個別にご連絡、またはホームページでご案内いたします。</li>
                 </ul>
@@ -215,7 +216,7 @@ get_header();
         
         <div class="title mb-5 mb-md-10 text-center">
             <h3 class="mb-4 mb-md-5 fadeInUp">動きやすさも、心地よさも<br>始まりは34か所の採寸</h3>
-            <p>RedLooのフルオーダーウェットスーツは、<br class="d-sm-none">36か所の採寸から始まります。 <br>肩や腰の可動域、体型の細かな差を反映することで、<br>動きやすさと仕上がりの精度が大きく変わります。</p>
+            <p>RedLooのフルオーダーウェットスーツは、<br class="d-sm-none">34か所の採寸から始まります。 <br>肩や腰の可動域、体型の細かな差を反映することで、<br>動きやすさと仕上がりの精度が大きく変わります。</p>
         </div>
         
         <div class="gallery-area">
@@ -256,8 +257,8 @@ get_header();
                 <p>工場に来られる際は予め「欲しい商品」と<br class="d-sm-none">「お気に入りのカラー」をリストアップして<br class="d-sm-none">ご来社ください。<br>サンプルをスムーズにお見せできるので、<br class="d-sm-none">短時間（30分ほど）でお気に入りを決めることが<br class="d-sm-none">できます。</p>
                 <span class="pink">※ ご用意いただくものは上記のみで他には必要ございません。</span>
                 <div class="btn-area gap-y-1 gap-x-3 gap-md-5 justify-center">
-                    <a class="btn-black" href="/guide">基本使用の選び方</a>
-                    <a class="btn-black" href="/custom">カスタム・オプション</a>
+                    <a class="btn-black" href="/order-guide">基本使用の選び方</a>
+                    <a class="btn-black" href="/custom-color">カスタム・オプション</a>
                 </div>
             </div>
         </div>
@@ -288,4 +289,6 @@ get_header();
         <p class="caption"></p>
     </div>
 </div>
+
+</main>
 <?php get_footer(); ?>

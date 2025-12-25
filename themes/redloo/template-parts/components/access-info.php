@@ -1,8 +1,10 @@
-<div class="access-info">
+<div class="access-info typography">
     <div class="row gap-y-10 gap-md-10 mb-10 mb-md-15">
         <div class="col-12 col-md-6">
-            <ul class="labels mb-3 mb-md-5">
-                <li><span class="label">採寸のみ</span></li>
+            <ul class="labels mb-2 mb-md-3">
+                <li><span class="label">採寸</span></li>
+                <li><span class="label">サンプル見学</span></li>
+                <li><span class="label">ご相談</span></li>
             </ul>
             <div class="logo">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/tomitech_logo.webp" alt="株式会社トミテックロゴ">

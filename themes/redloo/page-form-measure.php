@@ -47,17 +47,22 @@ $light_box = [
 get_header(); ?>
 
 
+<main class="typography">
 <?php // CONTACT FIRST SECTION // *********************************************************** // ?>
 <section class="contact-first-sec pb-0">
 	<div class="container">
 		<div class="text-side">
 			<div class="lower-title-template blue">
 				<div class="title">
-					<h1 class="split">SELF MEASUREMENT</h1>
+					<h1 class="split">SELF<br>MEASUREMENT</h1>
 					<span>セルフ採寸フォーム</span>
 				</div>
 			</div>
 			<p>図を参考に、各部位を測ってご入力ください。 <br>採寸に迷う場合は、工場での採寸予約もご利用いただけます。<br>体の特徴を正確に把握することで、より良いフィット感を実現できます。 ご自宅で採寸が難しい方や、生地を直接確認したい方は、<br>工場での採寸をおすすめしています。</p>
+		</div>
+        <div class="btn-area gap-x-5 gap-y-1">
+			<a class="btn-black" href="/form-contact">お問い合わせ</a>
+			<a class="btn-black" href="/form-order">採寸・再オーダーのご相談</a>
 		</div>
 	</div>
 </section>
@@ -113,4 +118,6 @@ get_header(); ?>
         <p class="caption"></p>
     </div>
 </div>
+
+</main>
 <?php get_footer();

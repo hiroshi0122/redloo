@@ -31,7 +31,6 @@ body {
 }
 
 img {
-  width: 100%;
   height: auto;
   max-width: 100%;
   display: block;
@@ -8945,101 +8944,68 @@ html {
   font-size: 62.5%;
 }
 
-h1 {
+.typography h1 {
   font-size: clamp(3.6rem, 5vw, 8rem);
   line-height: 1.5;
   font-weight: 700;
 }
-
-h2 {
+.typography h2 {
   font-size: clamp(2.8rem, 4vw, 6.8rem);
   line-height: 1.5;
   font-weight: 700;
 }
-
-h3 {
+.typography h3 {
   font-size: clamp(2.1rem, 3vw, 3.2rem);
   line-height: 1.5;
   font-weight: 700;
 }
-
-h4 {
+.typography h4 {
   font-size: clamp(1.9rem, 2vw, 2.4rem);
   line-height: 1.5;
   font-weight: 700;
 }
-
-h5 {
+.typography h5 {
   font-size: clamp(1.8rem, 2vw, 2.4rem);
   line-height: 1.5;
 }
-
-p, a {
+.typography p,
+.typography a {
   font-size: clamp(13px, 1.2vw, 18px);
   line-height: 2;
   font-weight: 500;
 }
-
-li {
+.typography li {
   font-size: clamp(14px, 1.2vw, 18px);
   line-height: 2;
   font-weight: 500;
 }
-
-span {
+.typography span {
   font-size: clamp(11px, 1vw, 14px);
   font-weight: 700;
 }
-
-dl dt {
+.typography dl dt {
   font-size: clamp(14px, 1.2vw, 18px);
   font-weight: 700;
   line-height: 1.5;
 }
-dl dd {
+.typography dl dd {
   font-size: clamp(13px, 1vw, 18px);
   margin-inline-start: 0;
   font-weight: 500;
   line-height: 1.8;
 }
-
-table th, table td {
+.typography table th,
+.typography table td {
   font-size: clamp(14px, 1.2vw, 18px);
   line-height: 2;
   font-weight: 500;
 }
-table th {
+.typography table th {
   font-weight: 600;
   color: #264898;
 }
-table td {
+.typography table td {
   font-weight: 400;
-}
-
-.page-content-main h1, .page-content-main h2, .page-content-main h3, .page-content-main h4, .page-content-main h5 {
-  font-size: revert;
-  line-height: revert;
-  font-weight: revert;
-}
-.page-content-main p, .page-content-main a, .page-content-main li, .page-content-main span {
-  font-size: revert;
-  line-height: revert;
-  font-weight: revert;
-}
-.page-content-main dl dt, .page-content-main dl dd {
-  font-size: revert;
-  line-height: revert;
-  font-weight: revert;
-}
-.page-content-main table th, .page-content-main table td {
-  font-size: revert;
-  line-height: revert;
-  font-weight: revert;
-  color: revert;
-}
-.page-content-main img {
-  width: revert;
-  height: auto;
 }
 
 /* ## コメント中
@@ -9125,6 +9091,12 @@ section {
   background-image: url("../images/products/products.webp");
   background-position: center;
 }
+.lower-first-sec.order-guide::before {
+  background-image: url("../images/order-guide/fv_order_guide.webp");
+}
+.lower-first-sec.order-flow::before {
+  background-image: url("../images/order-flow/fv_order_flow.webp");
+}
 .lower-first-sec {
   /* ### TEXT SIDE
   --------------------------------*/
@@ -9143,6 +9115,7 @@ section {
   height: 100%;
 }
 .lower-first-sec .image-side img {
+  width: 100%;
   height: 100%;
   object-position: 50% 50%;
 }
@@ -9727,9 +9700,9 @@ footer .footer-submenu a {
   border-radius: 50px;
   position: relative;
   padding: 1rem 2rem 1rem 3rem;
-  font-size: clamp(13px, 1vw, 18px);
-  width: 100%;
-  max-width: 240px;
+  font-size: clamp(13px, 1vw, 17px) !important;
+  width: fit-content;
+  min-width: 210px;
   text-align: left;
   border: solid 2px #fff;
 }
@@ -9764,10 +9737,11 @@ footer .footer-submenu a {
   justify-content: space-between;
   background-color: #000000;
   color: #fff;
-  font-size: clamp(13px, 1vw, 17px);
+  font-size: clamp(13px, 1vw, 17px) !important;
   border-radius: 50px;
   padding: 1rem 2rem 1rem 3rem;
-  max-width: 270px;
+  width: fit-content;
+  min-width: 210px;
   text-align: left;
   border: solid 2px #fff;
 }
@@ -10123,18 +10097,18 @@ footer .footer-submenu a {
 --------------------------------------*/
 /**** #### コメント下の下 ****/
 /* ##### コメント軽 */
-.marquee {
+.typography .marquee {
   overflow: hidden;
   white-space: nowrap;
   border-top: 2px solid #000000;
   border-bottom: 2px solid #000000;
   background: #fff;
 }
-.marquee__inner {
+.typography .marquee__inner {
   display: flex;
   align-items: center;
 }
-.marquee__text {
+.typography .marquee__text {
   font-weight: 900;
   font-size: clamp(2rem, 4vw, 10rem);
   letter-spacing: 0.05em;
@@ -10142,7 +10116,7 @@ footer .footer-submenu a {
   font-family: "Climate Crisis", sans-serif;
   line-height: 1.5;
 }
-.marquee--reverse .marquee__inner {
+.typography .marquee--reverse .marquee__inner {
   flex-direction: row-reverse;
   text-align: end;
 }
@@ -10970,6 +10944,7 @@ blockquote cite {
   overflow: hidden;
 }
 .about-sec .image-side img {
+  width: 100%;
   object-fit: cover;
   object-position: 50% 40%;
 }
@@ -11396,6 +11371,7 @@ blockquote cite {
   border-radius: 5px;
 }
 .news-item .news-thumb img {
+  width: 100%;
   height: 100%;
 }
 .news-item {
@@ -11470,7 +11446,7 @@ blockquote cite {
   }
 }
 
-.news-cat {
+.typography .news-cat {
   background-color: #000000;
   border-radius: 5px;
   color: #fff;
@@ -11480,13 +11456,12 @@ blockquote cite {
   line-height: 1;
 }
 @media (max-width: 768px) {
-  .news-cat {
+  .typography .news-cat {
     border-radius: 2px;
     padding: 3px 7px;
   }
 }
-
-.news-date {
+.typography .news-date {
   color: #969696;
   font-size: clamp(12px, 1vw, 14px);
 }
@@ -11735,17 +11710,9 @@ blockquote cite {
 }
 .philosophy-sec .philosophy-content.vision {
   border-radius: 100px 0 0 0;
-  background-position: 50% 29%;
-  background-image: url("../images/about/vision.webp");
-}
-.philosophy-sec .philosophy-content.mission {
-  background-position: 50% 29%;
-  background-image: url("../images/about/mission.webp");
 }
 .philosophy-sec .philosophy-content.concept {
   border-radius: 0 0 0 100px;
-  background-position: 50% 29%;
-  background-image: url("../images/about/concept.webp");
 }
 @media (max-width: 768px) {
   .philosophy-sec > div {
@@ -12779,6 +12746,7 @@ blockquote cite {
   max-height: 780px;
 }
 .archive-products-sec .image-side img {
+  width: 100%;
   height: 100%;
   object-position: 50% 50%;
 }
@@ -12826,6 +12794,7 @@ blockquote cite {
   margin-bottom: 1.5rem;
 }
 .index-products-sec .image-area img {
+  width: 100%;
   height: 100%;
 }
 .index-products-sec {
@@ -12929,6 +12898,7 @@ blockquote cite {
   color: #264898;
   background-color: #F7F7F7;
   border-radius: 0 100px 0 0;
+  font-weight: 700;
 }
 .page-content-sec .page-content h3 {
   margin-top: 6rem;
@@ -12937,6 +12907,7 @@ blockquote cite {
   padding: 5px 8px;
   border-bottom: solid 1px #264898;
   color: #264898;
+  font-weight: 700;
 }
 .page-content-sec .page-content h4 {
   display: inline-block;
@@ -12947,6 +12918,7 @@ blockquote cite {
   color: #264898;
   border-bottom: solid 1px #264898;
   padding-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 /* ## h2
@@ -13068,13 +13040,20 @@ blockquote cite {
   -----------------------*/
 }
 .single-product-sec .text-side .postage-area {
-  display: inline-block;
   background-color: #F7F7F7;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 2rem;
   margin-bottom: 2rem;
 }
 .single-product-sec .text-side .postage-area dt {
   color: #264898;
+  font-size: clamp(14px, 1.3vw, 20px);
+  margin-bottom: 0.5rem;
+}
+.single-product-sec .text-side .postage-area dd {
+  line-height: 1.5;
+}
+.single-product-sec .text-side .postage-area small {
+  font-size: 12px;
 }
 .single-product-sec .text-side {
   /* #### EXCERPT
@@ -13274,6 +13253,13 @@ blockquote cite {
 .contact-form-sec > .container {
   max-width: 1080px;
 }
+.contact-form-sec .refound-policy {
+  background-color: #F7F7F7;
+  padding: 3%;
+}
+.contact-form-sec .refound-policy dd {
+  color: #000000;
+}
 
 .contact-form-body {
   background-color: #F7F7F7;
@@ -13420,6 +13406,15 @@ blockquote cite {
   border: solid 1px #D8D8D8;
 }
 .contact-form-body {
+  /**** #### セレクト ****/
+}
+.contact-form-body .wpcf7-select {
+  border-radius: 5px;
+  border: solid 1px #D8D8D8;
+  min-width: 80px;
+  height: 35px;
+}
+.contact-form-body {
   /**** #### 指名と電話番号 ****/
 }
 .contact-form-body .name-fields, .contact-form-body .tel-fields {
@@ -13527,6 +13522,7 @@ blockquote cite {
 
 .form-submit .btn-blue {
   margin: 0 auto;
+  cursor: pointer;
 }
 
 /* ## h2

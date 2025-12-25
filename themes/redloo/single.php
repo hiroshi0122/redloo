@@ -16,7 +16,7 @@ get_header();
 ?>
 
 
-<article>
+<article class="typography">
     <section class="single-sec first-sec">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post();?>

@@ -21,6 +21,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //**************************************************************
+// 土日を選択できないようにする
+//**************************************************************
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('input[type="date"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const day = new Date(input.value).getDay();
+      if (day === 0 || day === 6) {
+        alert('土日祝はご予約いただけません');
+        input.value = '';
+      }
+    });
+  });
+});
+
+
+//**************************************************************
 // 製品詳細ページを見ていた場合の商品名・URL取得
 //**************************************************************
 document.addEventListener('DOMContentLoaded', () => {

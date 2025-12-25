@@ -62,7 +62,7 @@
 </div>
 
 <div class="privacy">
-    個人情報の取り扱いについては<a href="/privacy-policy/">プライバシーポリシー</a>を<br class="d-sm-none">ご確認いただき、同意の上送信してください。
+    個人情報の取り扱いについては<a href="/privacy-policy/" target="_blank">プライバシーポリシー</a>を<br class="d-sm-none">ご確認いただき、同意の上送信してください。
 </div>
 
 <div class="form-submit">

@@ -122,13 +122,20 @@
         /* #### POSTAGE AREA
         -----------------------*/
         .postage-area {
-            display: inline-block;
             background-color: $bg-gray;
-            padding: 1rem 1.5rem;
+            padding: 1.5rem 2rem;
             margin-bottom: 2rem;
 
             dt {
                 color: $blue;
+                font-size: clamp(14px, 1.3vw, 20px);
+                margin-bottom: .5rem;
+            }
+            dd {
+                line-height: 1.5;
+            }
+            small {
+                font-size: 12px;
             }
         }
 

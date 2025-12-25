@@ -16,20 +16,23 @@
 get_header();
 ?>
 
+<main class="typography">
 <?php // TEXT PAGE FIRST SECTION // *********************************************************** // ?>
-<section class="first-sec text-page-first-sec">
-    <div class="container text-center">
-        <div class="main-title blur center">
-            <span>404 not found</span>
-            <h1>お探しのページは<br class="d-sm-none">見つかりません</h1>
-        </div>
-        <div class="description mb-5">
+<section class="archive-first-sec">
+    <div class="container">
+        <div class="title-template text-center mb-md-6">
+                <div class="title">
+                    <h3 class="mb-0">404 Not FOUND</h3>
+                </div>
+                <span>お探しのページは見つかりません。</span>
+            </div>
+        <div class="description mb-5 text-center">
             <p>ご覧になっていたページのリンクが無効になっているか、<br class="d-none d-md-block">ページが削除された可能性があります。</p>
         </div>
-        <div class="btn-area justify-content-center">
-            <a class="btn-view-more" href="/">TOPに戻る >>></a>
+        <div class="btn-area justify-center">
+            <a class="btn-black" href="/">TOPに戻る >>></a>
         </div>
     </div>
 </section>
-
+</main>
 <?php get_footer(); ?>

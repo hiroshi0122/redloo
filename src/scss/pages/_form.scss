@@ -96,6 +96,15 @@
     >.container {
         max-width: 1080px;
     }
+
+    .refound-policy {
+        background-color: $bg-gray;
+        padding: 3%;
+
+        dd {
+            color: $black;
+        }
+    }
 }
 
 //*******************************************************************
@@ -244,7 +253,15 @@
     .wpcf7-textarea {
         width: 100%;
         border-radius: 5px;
-        border: solid 1px $border-gray
+        border: solid 1px $border-gray;
+    }
+
+    /**** #### セレクト ****/
+    .wpcf7-select {
+        border-radius: 5px;
+        border: solid 1px $border-gray;
+        min-width: 80px;
+        height: 35px;
     }
 
     /**** #### 指名と電話番号 ****/
@@ -366,8 +383,9 @@
 }
 
 .form-submit {
-        .btn-blue {
+    .btn-blue {
         margin: 0 auto;
+        cursor: pointer;
     }
 }
 

@@ -17,7 +17,7 @@
 
 get_header(); ?>
 
-
+<main class="typography">
 <?php // CONTACT FIRST SECTION // *********************************************************** // ?>
 <section class="contact-first-sec pb-0">
 	<div class="container">
@@ -58,5 +58,5 @@ get_header(); ?>
 <?php get_template_part('template-parts/components/sec-factory-fitting'); ?>
 
 
-
+</main>
 <?php get_footer();

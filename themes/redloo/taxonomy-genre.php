@@ -31,6 +31,9 @@ $tax_slug = 'genre';
 $terms = get_terms([
     'taxonomy'   => $tax_slug,
     'hide_empty' => true,
+	'meta_key'   => 'order',
+    'orderby'    => 'meta_value_num',
+    'order'      => 'ASC',
 ]);
 
 // // 現在のタクソノミーの取得
@@ -42,7 +45,7 @@ $terms = get_terms([
 get_header(); ?>
 
 
-
+<main class="typography">
 <?php // LOWER FIRST SECTION // *********************************************************** // ?>
 <section class="pb-0 archive-products-sec" style="--genre-img: url('<?php echo wp_kses_post($genre_img); ?>');">
     <div class="container-fluid p-0">
@@ -67,7 +70,7 @@ get_header(); ?>
 				<p class="mb-3">ウェットスーツは、「スタイル」「タイプ」「生地」「厚み」の4つを基本に、<br class="d-none d-sm-block">カラーやロゴなどのカスタマイズも選べます。</p>
 				<div class="btn-area gap-y-2 gap-x-4">
 					<a class="btn-black" href="/order-guide">基本仕様の選び方</a>
-					<a class="btn-black" href="/order-guide">ご注文の流れ</a>
+					<a class="btn-black" href="/order-flow">ご注文の流れ</a>
 				</div>
             </div>
             <div class="col-12 col-md-5 image-side">
@@ -173,5 +176,8 @@ get_header(); ?>
 
 <?php // FACTORY FITTING SECTION（無料採寸のご予約） // *********************************************************** // ?>
 <?php get_template_part('template-parts/components/sec-factory-fitting'); ?>
+
+
+</main>
 
 <?php get_footer();

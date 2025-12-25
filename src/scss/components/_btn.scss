@@ -17,9 +17,9 @@
     border-radius: 50px;
     position: relative;
     padding: 1rem 2rem 1rem 3rem;
-    font-size: clamp(13px, 1vw, 18px);
-    width: 100%;
-    max-width: 240px;
+    font-size: clamp(13px, 1vw, 17px) !important;
+    width: fit-content;
+    min-width: 210px;
     text-align: left;
     border: solid 2px $white;
 
@@ -56,10 +56,11 @@
     justify-content: space-between;
     background-color: $black;
     color: $white;
-    font-size: clamp(13px, 1vw, 17px);
+    font-size: clamp(13px, 1vw, 17px) !important;
     border-radius: 50px;
     padding: 1rem 2rem 1rem 3rem;
-    max-width: 270px;
+    width: fit-content;
+    min-width: 210px;
     text-align: left;
     border: solid 2px $white;
 

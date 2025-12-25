@@ -10,7 +10,7 @@
 include 'template-parts/components/navigation.php';  // 配列を読み込み
 
 ?>
-<footer>
+<footer class="typography">
 	<div class="container p-0 mb-md-10">
 		<div class="row gap-md-10">
 			<div class="col-12 col-md-3">
@@ -97,5 +97,6 @@ include 'template-parts/components/navigation.php';  // 配列を読み込み
 
 <?php wp_footer(); ?>
 <script src="<?php bloginfo('template_url'); ?>/assets/js/animation.js"></script>
+
 </body>
 </html>

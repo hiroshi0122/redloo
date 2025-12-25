@@ -132,6 +132,7 @@
         overflow: hidden;
 
         img {
+            width: 100%;
             object-fit: cover;
             object-position: 50% 40%;
         }
@@ -624,6 +625,7 @@
         border-radius: 5px;
 
         img {
+            width: 100%;
             height: 100%;
         }
     }
@@ -694,26 +696,30 @@
     }
 }
 
-.news-cat {
-    background-color: $black;
-    border-radius: 5px;
-    color: $white;
-    padding: 5px 10px;
-    font-size: clamp(10px, 1vw, 14px);
-    display: block;
-    line-height: 1;
+.typography {
+    .news-cat {
+        background-color: $black;
+        border-radius: 5px;
+        color: $white;
+        padding: 5px 10px;
+        font-size: clamp(10px, 1vw, 14px);
+        display: block;
+        line-height: 1;
 
-    // ## MOBILE // *************************************************>
-    @include media-under(md) {
-        border-radius: 2px;
-        padding: 3px 7px;
+        // ## MOBILE // *************************************************>
+        @include media-under(md) {
+            border-radius: 2px;
+            padding: 3px 7px;
+        }
+    }
+    .news-date {
+        color: $font-gray;
+        font-size: clamp(12px, 1vw, 14px);
     }
 }
 
-.news-date {
-    color: $font-gray;
-    font-size: clamp(12px, 1vw, 14px);
-}
+
+
 
 
 /* ## ACCESS SECTION（アクセス）
