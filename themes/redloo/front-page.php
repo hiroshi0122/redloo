@@ -145,19 +145,19 @@ get_header();
             <div class="col-12 col-md-6 image-side">
                 <div class="product-images row gap-y-md-6">
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/ne_01.webp" alt="ネックエントリー">
                         <span>ネックエントリー</span>
                     </div>
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/lc_01.webp" alt="ロングチェストジップ">
                         <span>ロングチェストジップ</span>
                     </div>
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/bz_01.webp" alt="バックジップ">
                         <span>バックジップ</span>
                     </div>
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/product_1.webp" alt="ネックエントリー">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/nz_01.webp" alt="ノンジップ">
                         <span>ノンジップ</span>
                     </div>
                 </div>
@@ -206,14 +206,14 @@ get_header();
                     </dl>
                 </div>
                 <div class="col-6 col-md-4 js-stagger-item">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/custom_2.webp" alt="FIT & FORM">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/06_finish.webp" alt="FIT & FORM">
                     <dl>
                         <dt>FIT & FORM</dt>
                         <dd>動きに寄り添う、細部の調整。 手首や足首の仕上げで、着心地が変わります。</dd>
                     </dl>
                 </div>
                 <div class="col-6 col-md-4 js-stagger-item">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/custom_3.webp" alt="DETAIL & CRAFT">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/05_reinforce.webp" alt="DETAIL & CRAFT">
                     <dl>
                         <dt>DETAIL & CRAFT</dt>
                         <dd>補強、裏テープ、縫いの仕上げ。 見えない部分まで、自分仕様に。</dd>
@@ -260,7 +260,7 @@ get_header();
                             <p>工場での採寸（無料）</p>
                         </div>
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="工場での採寸">
-                        <p>スタッフが4か所を丁寧に計測。費用はかかりません。 工場に来ていただければ、実際の素材を手に取り、サンプルを試着しながら、仕上がりをイメージできます。 その場で相談できる安心感と、完成度の高さにつながります。</p>
+                        <p>スタッフが34か所を丁寧に計測。費用はかかりません。 工場に来ていただければ、実際の素材を手に取り、サンプルを試着しながら、仕上がりをイメージできます。 その場で相談できる安心感と、完成度の高さにつながります。</p>
                     </div>
                     <div class="col-12 col-md-6 measuring-card js-stagger-item">
                         <div class="title text-center">
@@ -278,21 +278,21 @@ get_header();
                 </div>
                 <div class="row gap-md-8">
                     <div class="col-4 col-md-4 three-types-card">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="スタイル">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/07_opening.webp" alt="開口部の着脱構造">
                         <div class="title text-center">
                             <h5>スタイル</h5>
                             <p>開口部の着脱構造</p>
                         </div>
                     </div>
                     <div class="col-4 col-md-4 three-types-card">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="スタイル">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/08_length.webp" alt="形・丈感">
                         <div class="title text-center">
                             <h5>タイプ</h5>
                             <p>形・丈感</p>
                         </div>
                     </div>
                     <div class="col-4 col-md-4 three-types-card">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="スタイル">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="材・厚み">
                         <div class="title text-center">
                             <h5>マテリアル</h5>
                             <p>素材・厚み</p>

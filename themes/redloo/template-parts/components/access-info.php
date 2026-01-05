@@ -52,7 +52,7 @@
         </div>
         <div class="d-flex flex-wrap align-center gap-md-10">
             <h5 class="tel">03-5686-1300</h5>
-            <h5 class="tel">090-1234-5678</h5>
+            <!-- <h5 class="tel">090-1234-5678</h5> -->
         </div>
     </div>
 </div>

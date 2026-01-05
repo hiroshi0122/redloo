@@ -294,10 +294,11 @@
                 "ネッスルジャージ（通常）"
                 "ネッスルスキン（ラバー素材・耐久性は弱）"
                 "メッシュスキン（耐久性高）"]
+
                 <p class="notes">
-                    ※エアーフレイムブースト(裏起毛)を使用する場合、カラーは黒のみとなります。<br>
-                    ※生地カラー変更などは別途有料にて承る事が可能となります。直接お問い合わせください。<br>
-                    ※スキン使用の場合は別途オプションとなります。
+                    ※ 裏起毛は黒のみ<br>
+                    ※ カラー変更は別途有料<br>
+                    ※ スキン系はオプション
                 </p>
             </div>
         </div>
@@ -312,7 +313,7 @@
             <div class="col-12 col-md-8">
                 [checkbox design-option use_label_element
                 "なし（標準）"
-                "デザイン追加（価格は別途お見積り）"]
+                "デザイン追加（別途見積）"]
             </div>
         </div>
 
@@ -322,7 +323,7 @@
             <div class="col-12 col-md-8">
                 [checkbox color-addition use_label_element
                 "２色まで（標準）"
-                "３色以上（別途お見積り）"]
+                "３色以上（別途見積）"]
             </div>
         </div>
 
@@ -332,7 +333,7 @@
             <div class="col-12 col-md-8">
                 [checkbox stitch-color use_label_element
                 "生地と同色（標準）"
-                "スティッチカラー変更(+500円〜)"]
+                "変更（＋500円〜）"]
             </div>
         </div>
 
@@ -341,26 +342,23 @@
             <div class="col-12 col-md-4"><label class="title">ロゴマーク</label></div>
             <div class="col-12 col-md-8">
                 [checkbox logo-mark use_label_element
-                "ロゴマークは2箇所まで同色（標準）"
-                "ロゴマーク追加・変更"]
+                "２箇所まで同色（標準）"
+                "追加・変更"]
+
                 <p class="notes">
-                    ※ロゴマークの追加や色変えは1箇所につき(+500円)となります。<br>
-                    ※ロゴマーク無しの場合は（+1000円）となります。<br>
-                    「オリジナルロゴマーク作成」 自分のオリジナルのロゴマークを作成して貼る事ができます。<br>文字の大きさや種類で価格に変動がございます。別途ご相談ください。
+                    ※ 1箇所追加＋500円<br>
+                    ※ ロゴ無し＋1000円
                 </p>
             </div>
         </div>
 
         <!-- 裏テープ -->
         <div class="row spec-row">
-            <div class="col-12 col-md-4"><label class="title">全身裏テープ仕上げ</label></div>
+            <div class="col-12 col-md-4"><label class="title">全身裏テープ</label></div>
             <div class="col-12 col-md-8">
                 [checkbox tape-finish use_label_element
                 "なし（標準）"
                 "あり（＋1,000円）"]
-                <p class="notes">
-                    ※裏テープをありにした場合、補強として耐久性があがりますので、ウェットスーツが長持ちします。その他にも摩擦が少なくなります。裏テープがないと糸で塗った部分に肌が擦れてしまうこともありますので、裏テープはお勧めします。
-                </p>
             </div>
         </div>
 
@@ -369,12 +367,9 @@
             <div class="col-12 col-md-4"><label class="title">ヒザPAD</label></div>
             <div class="col-12 col-md-8">
                 [checkbox knee-pad use_label_element
-                "なし(標準)"
-                "Aタイプかのこ(+1,000円)"
-                "Bタイプ強化シール(+2,000円)"]
-                <p class="notes">
-                    ※オプションは両ヒザ合わせての価格となります。<br>※ヒザはドルフィンの際などに使用する事から摩耗が多い箇所となりますので、Aタイプの「かのこ」をお勧めいたします。なし（標準）にした際は摩耗でのヒザ修理は有償となります。
-                </p>
+                "なし"
+                "Aタイプ（＋1,000円）"
+                "Bタイプ（＋2,000円）"]
             </div>
         </div>
 
@@ -383,12 +378,9 @@
             <div class="col-12 col-md-4"><label class="title">肘PAD</label></div>
             <div class="col-12 col-md-8">
                 [checkbox elbow-pad use_label_element
-                "なし(標準)"
-                "Aタイプかのこ(+4,000円)"
-                "Bタイプ強化シール(+4,000円)"]
-                <p class="notes">
-                    ※オプションは両肘合わせての価格となります。
-                </p>
+                "なし"
+                "Aタイプ（＋4,000円）"
+                "Bタイプ（＋4,000円）"]
             </div>
         </div>
 
@@ -397,16 +389,11 @@
             <div class="col-12 col-md-4"><label class="title">手首仕上げ</label></div>
             <div class="col-12 col-md-8">
                 [checkbox wrist-finish use_label_element
-                "切りっぱなし(標準)"
-                "A.すべり止め(+300円)"
-                "B.折り返し縫い(+500円)"
-                "C.折り返し＋スキン縫い(+3,000円)"
-                "D.裏スキン(+1,000円)"
-                "E.裏スキン+先絞り(1,500円)"
-                "F.二重スキン（+3000円）"]
-                <p class="notes">
-                    ※C / Dは水が入りにくくなります。<br>※E / Fは更に水が入りにくい構造となります。
-                </p>
+                "切りっぱなし"
+                "すべり止め"
+                "折り返し縫い"
+                "裏スキン"
+                "二重スキン"]
             </div>
         </div>
 
@@ -415,16 +402,11 @@
             <div class="col-12 col-md-4"><label class="title">足首仕上げ</label></div>
             <div class="col-12 col-md-8">
                 [checkbox ankle-finish use_label_element
-                "切りっぱなし(標準)"
-                "A.すべり止め(+300円)"
-                "B.折り返し縫い(+500円)"
-                "C.折り返し＋スキン縫い(+3,000円)"
-                "D.裏スキン(+1,000円)"
-                "E.裏スキン+先絞り(1,500円)"
-                "F.二重スキン（+3000円）"]
-                <p class="notes">
-                    ※C / Dは水が入りにくくなります。<br>※E / Fは更に水が入りにくい構造となります。
-                </p>
+                "切りっぱなし"
+                "すべり止め"
+                "折り返し縫い"
+                "裏スキン"
+                "二重スキン"]
             </div>
         </div>
 
@@ -445,11 +427,6 @@
         </div>
     </div>
 </div>
-
-<dl class="refound-policy">
-    <dt class="mb-2">返品・返金ポリシー</dt>
-    <dd>お客さま都合による返品は、お受けいたしておりません。<br>商品の発送には十分注意しておりますが、当方のミスによる不良品（破損など）又は、商品違いは商品到日より7日以内に事前連絡の上、着払いにてご返送ください。迅速に良品と交換させていただきます。</dd>
-</dl>
 
 <div class="privacy">
     個人情報の取り扱いについては<a href="/privacy-policy/" target="_blank">プライバシーポリシー</a>を<br class="d-sm-none">ご確認いただき、同意の上送信してください。

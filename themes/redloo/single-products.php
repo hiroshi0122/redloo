@@ -182,8 +182,8 @@ get_header();
                 <h4>※ このページはオーダー検討時の参考用です</h4>
                 <p>仕様の詳細は、採寸時またはお問い合わせフォームでもご相談いただけます。<br>仕立てに関わる仕様や、カスタムの詳細については下記よりご覧ください。</p>
                 <div class="btn-area justify-center gap-x-2">
-                    <a class="btn-black" href="">基本仕様について</a>
-                    <a class="btn-black" href="">カスタム・オプション</a>
+                    <a class="btn-black" href="/order-guide">基本仕様について</a>
+                    <a class="btn-black" href="/custom-color">カスタム・オプション</a>
                 </div>
             </div>
         </div>

@@ -50,14 +50,16 @@
                         </div>
                         <div class="d-flex flex-wrap align-center gap-x-5 gap-md-10">
                             <h5 class="tel">03-5686-1300</h5>
-                            <h5 class="tel">090-1234-5678</h5>
+                            <!-- <h5 class="tel">090-1234-5678</h5>-->
                         </div>
                     </div>
                     <div class="access-info">
                         <div class="row gap-y-10 gap-md-10">
                             <div class="col-12 col-md-6">
                                 <ul class="labels mb-3 mb-md-5">
-                                    <li><span class="label">採寸のみ</span></li>
+                                    <li><span class="label">採寸</span></li>
+                                    <li><span class="label">サンプル見学</span></li>
+                                    <li><span class="label">ご相談</span></li>
                                 </ul>
                                 <div class="logo">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/tomitech_logo.webp" alt="株式会社トミテックロゴ">
