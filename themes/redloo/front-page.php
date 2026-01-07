@@ -100,13 +100,16 @@ get_header();
                 <img class="h-100" src="<?php bloginfo('template_url'); ?>/assets/images/home/about_1.webp" alt="aboutのイメージ">
             </div>
             <div class="col-12 col-md-6 text-side bg-blue">
-                <div class="title-template white text-md-center">
+                <div class="title-template white text-md-center mb-4">
                     <div class="title">
                         <span>ご予約・注文・お問合せ</span>
                         <h2 class="split">ABOUT</h2>
                     </div>
                     <h4 class="catch">工場直販で届ける<br>フルオーダー・ウェットスーツ</h4>
                     <p>RedLooは、製造業のまち・東京都足立区の工場で生まれました。<br>積み重ねてきた製造の経験と、 受け継いだ仕立ての技術・姿勢をもとに、<br class="d-none d-md-block">直販だからこそ実現できる品質と価格でお届けしています。</p>
+                </div>
+                <div class="btn-area justify-center ">
+                    <a class="btn-black" href="/about">RedLooについて</a>
                 </div>
             </div>
         </div>
@@ -135,9 +138,13 @@ get_header();
                 </div>
 
                 <div class="other-item d-none d-md-block">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/other_product.webp" alt="その他の商品イメージ">
+                    <a href="/genre/others">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/other_product.webp" alt="その他の商品イメージ">
+                    </a>
                     <div class="title-template">
-                        <h4 class="catch">そのほかのタイプ・アイテム</h4>
+                        <a href="/genre/others">
+                            <h4 class="catch">そのほかのタイプ・アイテム</h4>
+                        </a>
                         <p>季節や用途に合わせたモデルを用意しています。 ドライスーツ、シーガル、ロングジョン、タッパー、ベストなども選べます。</p>
                     </div>
                 </div>
@@ -145,27 +152,39 @@ get_header();
             <div class="col-12 col-md-6 image-side">
                 <div class="product-images row gap-y-md-6">
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/ne_01.webp" alt="ネックエントリー">
+                        <a href="/genre/neck-entry">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/images/home/ne_01.webp" alt="ネックエントリー">
+                        </a>
                         <span>ネックエントリー</span>
                     </div>
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/lc_01.webp" alt="ロングチェストジップ">
+                        <a href="genre/long-chest-zip">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/images/home/lc_01.webp" alt="ロングチェストジップ">
+                        </a>
                         <span>ロングチェストジップ</span>
                     </div>
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/bz_01.webp" alt="バックジップ">
+                        <a href="genre/back-zip">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/images/home/bz_01.webp" alt="バックジップ">
+                        </a>
                         <span>バックジップ</span>
                     </div>
                     <div class="col-6 col-md-6 p-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/nz_01.webp" alt="ノンジップ">
+                        <a href="genre/non-zip">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/images/home/nz_01.webp" alt="ノンジップ">
+                        </a>
                         <span>ノンジップ</span>
                     </div>
                 </div>
             </div>
             <div class="other-item d-md-none col-12">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/home/other_product.webp" alt="その他の商品イメージ">
+                <a href="/genre/others">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/home/other_product.webp" alt="その他の商品イメージ">
+                </a>
                 <div class="title-template">
-                    <h4 class="catch">そのほかのタイプ・アイテム</h4>
+                    <a href="/genre/others">
+                        <h4 class="catch">そのほかのタイプ・アイテム</h4>
+                    </a>
                     <p>季節や用途に合わせたモデルを用意しています。 ドライスーツ、シーガル、ロングジョン、タッパー、ベストなども選べます。</p>
                 </div>
             </div>
@@ -332,26 +351,28 @@ get_header();
                 <?php if ($voice_query->have_posts()) :?>
                     <div class="voice-list">
                         <?php while ($voice_query->have_posts()) : $voice_query->the_post(); ?>
-                        <article class="voice-item">
-                            <div class="voice-thumb">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('medium'); ?>
-                            <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.webp" alt="no image">
-                            <?php endif; ?>
-                            </div>
+                            <a href="<?php echo get_permalink(); ?>">
+                                <article class="voice-item">
+                                    <div class="voice-thumb">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('medium'); ?>
+                                    <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.webp" alt="no image">
+                                    <?php endif; ?>
+                                    </div>
 
-                            <div class="voice-content">
-                                <div class="voice-meta">
-                                    <span class="voice-label">お客様の声</span>
-                                    <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-                                </div>
-                                <h4 class="voice-title"><?php the_title(); ?></h4>
-                                <p class="voice-excerpt">
-                                    <?php echo wp_trim_words(get_the_excerpt(), 100, '...'); ?>
-                                </p>
-                            </div>
-                        </article>
+                                    <div class="voice-content">
+                                        <div class="voice-meta">
+                                            <span class="voice-label">お客様の声</span>
+                                            <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                                        </div>
+                                        <h4 class="voice-title"><?php the_title(); ?></h4>
+                                        <p class="voice-excerpt">
+                                            <?php echo wp_trim_words(get_the_excerpt(), 100, '...'); ?>
+                                        </p>
+                                    </div>
+                                </article>
+                            </a>
                         <?php endwhile; ?>
                     </div>
 

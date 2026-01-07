@@ -55,7 +55,7 @@
                     </div>
                     <div class="access-info">
                         <div class="row gap-y-10 gap-md-10">
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-lg-6">
                                 <ul class="labels mb-3 mb-md-5">
                                     <li><span class="label">採寸</span></li>
                                     <li><span class="label">サンプル見学</span></li>
@@ -71,15 +71,18 @@
                                 </ul>
                                 <a class="btn-map" href="https://maps.app.goo.gl/uNWm6BLGQNec7UR46" target="_blank">Goole Maps</a>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-lg-6">
                                 
                                 <div class="store-name">
-                                    <ul class="labels">
+                                    <ul class="labels  mb-2 mb-md-3">
                                         <li><span class="label">採寸</span></li>
                                         <li><span class="label">サンプル見学</span></li>
                                         <li><span class="label">ご相談</span></li>
                                     </ul>
-                                    <div class="border-title">
+                                    <div class="d-flex align-center gap-2">
+                                        <div class="logo redloo">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/redloo_store_logo.webp" alt="RedLooロゴ">
+                                        </div>
                                         <h5>RedLoo (縫製工場)</h5>
                                     </div>
                                 </div>

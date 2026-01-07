@@ -10370,6 +10370,13 @@ footer .footer-submenu a {
 .factory-fitting-sec .access-info .access-info-detail span {
   font-weight: 500;
 }
+.factory-fitting-sec .access-info .store-name .logo.redloo {
+  width: 60px;
+}
+.factory-fitting-sec .access-info .store-name h5 {
+  font-weight: 700;
+  color: #264898;
+}
 
 /* ## コメント中
 ***********************************************/
@@ -10988,17 +10995,39 @@ blockquote cite {
   /* ## OTHER ITEM
   ***********************************************/
 }
-.products-sec .other-item img {
+.products-sec .other-item a {
   border-radius: 20px;
   aspect-ratio: 20/9;
+  overflow: hidden;
+  display: block;
+}
+.products-sec .other-item img {
+  height: 100%;
+  width: 100%;
+}
+.products-sec .other-item img:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  filter: brightness(1.2);
 }
 .products-sec {
   /* ## PRODUCTS IMAGES
   ***********************************************/
 }
-.products-sec .product-images img {
+.products-sec .product-images a {
+  overflow: hidden;
   border-radius: 10px;
   aspect-ratio: 3/4;
+  display: block;
+}
+.products-sec .product-images img {
+  height: 100%;
+  transition: 0.2s;
+}
+.products-sec .product-images img:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  filter: brightness(1.2);
 }
 .products-sec .product-images span {
   display: block;
@@ -12127,9 +12156,20 @@ blockquote cite {
   /* ### STYLE LIST
   --------------------------------------*/
 }
-.style-sec .style-list img {
+.style-sec .style-list .style-image {
+  display: block;
   aspect-ratio: 3/4;
   margin-bottom: 1rem;
+  overflow: hidden;
+}
+.style-sec .style-list .style-image img {
+  width: 100%;
+  height: 100%;
+}
+.style-sec .style-list .style-image:hover img {
+  transform: scale(1.1);
+  transition: 0.2s;
+  filter: brightness(1.2);
 }
 .style-sec {
   /* ### STYLE TEXT

@@ -94,6 +94,16 @@
                 font-weight: 500;
             }
         }
+
+        .store-name {
+            .logo.redloo {
+                width: 60px;
+            }
+            h5 {
+                font-weight: 700;
+                color: $blue;
+            }
+        }
     }
 }
 

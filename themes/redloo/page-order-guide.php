@@ -42,21 +42,25 @@ $style = [
         'image' => 'style_1',
         'title' => 'ネックエントリー',
         "text" => "ファスナーなし\n密閉性と動きやすさに優れます。",
+        'link' => '/genre/neck-entry',
     ],
     [
         'image' => 'style_2',
         'title' => 'ロングチェストジップ（夏／冬）',
         "text" => "前胸ファスナー\n保温性と着脱のバランス型。",
+        'link' => '/genre/long-chest-zip',
     ],
     [
         'image' => 'style_3',
         'title' => 'バックジップ',
         "text" => "背面ファスナー\n最も着脱しやすく、初めての方にも人気。",
+        'link' => '/genre/back-zip',
     ],
     [
         'image' => 'style_4',
         'title' => 'ノンジップ',
         "text" => "前かぶり構造\n軽量での春〜秋の使用に適しています。",
+        'link' => '/genre/non-zip',
     ],
 ];
 
@@ -175,9 +179,13 @@ get_header();
         <div class="style-list row gap-y-4 gap-md-5">
             <?php foreach($style as $key => $item) : ?>
                 <div class="style-item col-6 col-md-3">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/order-guide/<?php echo esc_html($item['image']);?>.webp" alt="<?php echo esc_html(['text']);?>のイメージ">
+                    <a class="style-image" href="<?php echo esc_html($item['link']);?>">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/order-guide/<?php echo esc_html($item['image']);?>.webp" alt="<?php echo esc_html(['text']);?>のイメージ">
+                    </a>
                     <div class="style-text">
-                        <p class="blue"><?php echo esc_html($item['title']);?></p>
+                        <a href="<?php echo esc_html($item['link']);?>">
+                            <p class="blue"><?php echo esc_html($item['title']);?></p>
+                        </a>
                         <span><?= nl2br( esc_html( $item['text'] ) ); ?></span>
                     </div>
                 </div>
