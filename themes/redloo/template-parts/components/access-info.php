@@ -1,13 +1,16 @@
 <div class="access-info typography">
     <div class="row gap-y-10 gap-md-10 mb-10 mb-md-15">
         <div class="col-12 col-md-6">
-            <ul class="labels mb-2 mb-md-3">
-                <li><span class="label">採寸</span></li>
-                <li><span class="label">サンプル見学</span></li>
-                <li><span class="label">ご相談</span></li>
-            </ul>
-            <div class="logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/tomitech_logo.webp" alt="株式会社トミテックロゴ">
+            <div class="store-name">
+                <ul class="labels mb-2 mb-md-3">
+                    <li><span class="label">採寸</span></li>
+                    <li><span class="label">サンプル見学</span></li>
+                    <li><span class="label">ご相談</span></li>
+                </ul>
+                <div class="logo d-flex align-center">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/tomitech_logo.webp" alt="株式会社トミテックロゴ">
+                    <h5>（Office）</h5>
+                </div>
             </div>
             <ul class="access-info-detail">
                 <li class="address">東京都足立区六町4丁目12番15号</li>
@@ -27,11 +30,11 @@
                 <div class="store-name">
                     <ul class="labels">
                         <li><span class="label">採寸</span></li>
-                        <li><span class="label">サンプル見学</span></li>
+                        <li><span class="label">サンプル・工場見学</span></li>
                         <li><span class="label">ご相談</span></li>
                     </ul>
-                    <div class="border-title">
-                        <h5>RedLoo (縫製工場)</h5>
+                    <div>
+                        <h5>RedLoo (Factory)</h5>
                     </div>
                 </div>
             </div>

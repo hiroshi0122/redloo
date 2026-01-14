@@ -769,6 +769,13 @@
 --------------------------------------*/
 .access-info {
 
+    .store-name {
+        h5 {
+            font-weight: 700;
+            color: $blue;
+        }
+    }
+
     /**** #### LABELS ****/
     .labels {
         display: flex;

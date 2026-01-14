@@ -126,8 +126,8 @@ get_header();
                         <?php if (!empty($price)) : ?>
                             <div class="price-area">
                                 <span>参考価格</span>
-                                <span class="price"><?php echo ($price); ?></span>
-                                <span>+税</span>
+                                <span class="price">¥<?php echo ($price); ?></span>
+                                <span>税込</span>
                             </div>
                         <?php endif;?>
                         <dl class="postage-area">

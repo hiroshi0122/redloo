@@ -31,10 +31,10 @@
 
         <div class="access-contents">
             <div class="row gap-0">
-                <div class="col-12 col-md-4 image-side">
+                <div class="col-12 col-lg-4 image-side">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/company_exterior.webp" alt="外観写真">
                 </div>
-                <div class="col-12 col-md-8 text-side">
+                <div class="col-12 col-lg-8 text-side">
                     <div class="d-flex flex-wrap align-end gap-x-5 gap-x-md-5 mb-5">
                         <div class="title-template">
                             <div class="title">
@@ -56,13 +56,18 @@
                     <div class="access-info">
                         <div class="row gap-y-10 gap-md-10">
                             <div class="col-12 col-lg-6">
-                                <ul class="labels mb-3 mb-md-5">
-                                    <li><span class="label">採寸</span></li>
-                                    <li><span class="label">サンプル見学</span></li>
-                                    <li><span class="label">ご相談</span></li>
-                                </ul>
-                                <div class="logo">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/tomitech_logo.webp" alt="株式会社トミテックロゴ">
+                                <div class="store-name">
+                                    <ul class="labels mb-3 mb-md-5">
+                                        <li><span class="label">採寸</span></li>
+                                        <li><span class="label">サンプル見学</span></li>
+                                        <li><span class="label">ご相談</span></li>
+                                    </ul>
+                                    
+                                    <div class="logo d-flex align-center gap-2">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/tomitech_logo.webp" alt="株式会社トミテックロゴ">
+                                        <h5>(Office)</h5>
+                                    </div>
+                                    
                                 </div>
                                 <ul class="access-info-detail">
                                     <li class="address">東京都足立区六町4丁目12番15号</li>
@@ -76,14 +81,14 @@
                                 <div class="store-name">
                                     <ul class="labels  mb-2 mb-md-3">
                                         <li><span class="label">採寸</span></li>
-                                        <li><span class="label">サンプル見学</span></li>
+                                        <li><span class="label">サンプル・工場見学</span></li>
                                         <li><span class="label">ご相談</span></li>
                                     </ul>
                                     <div class="d-flex align-center gap-2">
                                         <div class="logo redloo">
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/redloo_store_logo.webp" alt="RedLooロゴ">
                                         </div>
-                                        <h5>RedLoo (縫製工場)</h5>
+                                        <h5>RedLoo (Factory)</h5>
                                     </div>
                                 </div>
                                 
