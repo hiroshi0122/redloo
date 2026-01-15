@@ -10997,7 +10997,6 @@ blockquote cite {
 }
 .products-sec .other-item a {
   border-radius: 20px;
-  aspect-ratio: 20/9;
   overflow: hidden;
   display: block;
 }
@@ -11204,6 +11203,7 @@ blockquote cite {
 .order-sec .three-types-card img {
   border-radius: 10px;
   margin-bottom: 1rem;
+  aspect-ratio: 4/3;
 }
 .order-sec .three-types-card .title h5 {
   font-size: clamp(1.6rem, 1.2vw, 2rem);

@@ -187,7 +187,6 @@
     .other-item {
         a {
             border-radius: 20px;
-            aspect-ratio: 20/9;
             overflow: hidden;
             display: block;
         }
@@ -413,6 +412,7 @@
         img {
             border-radius: 10px;
             margin-bottom: 1rem;
+            aspect-ratio: 4/3;
         }
 
         .title {

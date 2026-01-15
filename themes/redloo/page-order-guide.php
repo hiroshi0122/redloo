@@ -190,7 +190,7 @@ get_header();
                     </div>
                 </div>
             <?php endforeach; ?>
-        </div>       
+        </div>
     </div>
 </section>
 
@@ -250,7 +250,10 @@ get_header();
                 <?php endif; ?>
 
             <?php endforeach; ?>
-        </div>   
+        </div>
+        <div class="btn-area justify-center pt-4">
+            <a class="btn-black" href="/genre/others">その他のタイプ・アイテム</a>
+        </div>
     </div>
 </section>
 
