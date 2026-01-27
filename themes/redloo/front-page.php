@@ -45,6 +45,9 @@ $slides = [
     [
         'img' => get_template_directory_uri() . '/assets/images/home/slide_3.webp',
         'alt' => 'スライダー3',
+    ], [
+        'img' => get_template_directory_uri() . '/assets/images/home/slide_4.webp',
+        'alt' => 'スライダー4',
     ], 
 ];
 
@@ -97,7 +100,7 @@ get_header();
     <div class="contaienr-fluid">
         <div class="row gap-0">
             <div class="col-12 col-md-6 image-side">
-                <img class="h-100" src="<?php bloginfo('template_url'); ?>/assets/images/home/about_1.webp" alt="aboutのイメージ">
+                <img class="h-100" src="<?php bloginfo('template_url'); ?>/assets/images/home/about.webp" alt="aboutのイメージ">
             </div>
             <div class="col-12 col-md-6 text-side bg-blue">
                 <div class="title-template white text-md-center mb-4">
@@ -311,7 +314,7 @@ get_header();
                         </div>
                     </div>
                     <div class="col-4 col-md-4 three-types-card">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/measure_1.webp" alt="材・厚み">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home/material.webp" alt="材・厚み">
                         <div class="title text-center">
                             <h5>マテリアル</h5>
                             <p>素材・厚み</p>

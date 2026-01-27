@@ -27,7 +27,7 @@ $steps = [
         ]
     ],
     [   
-        'image' => 'step_1',
+        'image' => 'step_2',
         'num' => 2,
         'title' => '採寸方法を選ぶ',
         'contents' => [
@@ -40,7 +40,7 @@ $steps = [
         ]
     ],
     [   
-        'image' => 'step_1',
+        'image' => 'step_3',
         'num' => 3,
         'title' => '仕様を確定する（細部を詰める）',
         'contents' => [

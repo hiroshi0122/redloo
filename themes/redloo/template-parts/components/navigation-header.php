@@ -13,6 +13,16 @@ include 'navigation.php';  // 配列を読み込み
 $mobile_nav = [
     'columns' => [
         [
+            'menu' => 'カスタム・オプション',
+            'link' => '/custom',
+            'children' => [
+                ['menu' => 'カラー', 'link' => '/custom-color'],
+                ['menu' => 'ロゴ', 'link' => '/custom-logo'],
+                ['menu' => '仕上げ・補強', 'link' => '/custom-finishing'],
+                ['menu' => 'デザイン', 'link' => '/custom-design'],
+            ],
+        ],
+        [
             'menu' => '製品紹介',
             'link' => '/products',
             'children' => [
@@ -39,11 +49,11 @@ $mobile_nav = [
 $mobile_nav = [
     'primary' => [
         $navigation[0], // RedLooについて
-        $navigation[3], // カスタム・オプション
         $navigation[4], // お客様の声
         $navigation[5], // お知らせ・コラム
     ],
     'columns' => [
+        $navigation[3], // カスタム・オプション
         $navigation[1], // 製品紹介
         $navigation[2], // ご利用ガイド
     ],

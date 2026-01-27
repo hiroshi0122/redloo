@@ -9392,7 +9392,7 @@ header .menu-contents {
   transition: 0.2s;
   opacity: 0;
   visibility: hidden;
-  padding: 52px 9% 6%;
+  padding: 28px 9% 6%;
   background: rgba(50, 79, 195, 0.95);
   /* #### ACTIVE
   --------------------------------*/
@@ -9409,7 +9409,7 @@ header .menu-contents {
 header .menu-contents .logo {
   display: block;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 header .menu-contents .logo img {
   width: 160px;
@@ -9441,20 +9441,27 @@ header .menu-contents .menu-list .mobile-nav-columns {
   color: #fff;
 }
 header .menu-contents .menu-list .mobile-nav-columns .nav-heading a {
+  display: block;
   font-weight: bold;
-  font-size: 17px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.3;
   padding-bottom: 1rem;
 }
 header .menu-contents .menu-list {
   /* ##### SUB MENU ****/
 }
 header .menu-contents .menu-list .sub-menu {
-  padding: 0.7rem 0 0 1rem;
-  margin-top: 0.5rem;
+  padding: 0rem 0 0 1rem;
   margin-left: 0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   border-left: solid 1px #fff;
+}
+header .menu-contents .menu-list .sub-menu a {
+  display: block;
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 0.5rem 0;
+  color: #fff;
 }
 header .menu-contents {
   /* #### HEADER SECOND NAV
@@ -9479,6 +9486,7 @@ header .menu-contents {
   --------------------------------*/
 }
 header .menu-contents .sns-icons {
+  padding-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10178,7 +10186,7 @@ footer .footer-submenu a {
   padding: 5%;
   color: #fff;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 50% 36%;
   z-index: 1;
   height: 100%;
 }
@@ -11203,7 +11211,7 @@ blockquote cite {
 .order-sec .three-types-card img {
   border-radius: 10px;
   margin-bottom: 1rem;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
 }
 .order-sec .three-types-card .title h5 {
   font-size: clamp(1.6rem, 1.2vw, 2rem);
@@ -11691,7 +11699,7 @@ blockquote cite {
   background-position: 50% 67%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../images/about/philosophy_bg.webp");
+  background-image: url("../images/about/philosophy_bg_2.jpeg");
 }
 .philosophy-sec .text-side {
   padding-left: 3%;
@@ -13169,6 +13177,12 @@ blockquote cite {
 .other-attention-sec .refound-policy dt {
   color: #264898;
   margin-bottom: 1rem;
+}
+.other-attention-sec .refound-policy dd {
+  margin-bottom: 1rem;
+}
+.other-attention-sec .refound-policy small {
+  font-size: 12px;
 }
 .other-attention-sec {
   /* ### PAGE ATTENTION

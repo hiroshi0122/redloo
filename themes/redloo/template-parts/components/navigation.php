@@ -29,6 +29,12 @@ $navigation = [
     [
         'menu' => 'カスタム・オプション',
         'link' => '/custom',
+        'children' => [
+            ['menu' => 'カラー', 'link' => '/custom-color'],
+            ['menu' => 'ロゴ', 'link' => '/custom-logo'],
+            ['menu' => '仕上げ・補強', 'link' => '/custom-finishing'],
+            ['menu' => 'デザイン', 'link' => '/custom-design'],
+        ],
     ],
     [
         'menu' => 'お客様の声',
