@@ -37,6 +37,14 @@ $navigation = [
         ],
     ],
     [
+        'menu' => 'お問い合わせ',
+        'link' => '/form-contact',
+        'children' => [
+            ['menu' => '採寸・再オーダー', 'link' => '/form-order'],
+            ['menu' => 'セルフ採寸フォーム', 'link' => '/form-measure'],
+        ],
+    ],
+    [
         'menu' => 'お客様の声',
         'link' => '/voice',
     ],

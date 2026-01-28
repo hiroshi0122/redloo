@@ -30,7 +30,7 @@ $selection = [
         'text' => '素材',
     ],
     [
-        'image' => 'thickness',
+        'image' => 'thickness_1',
         'title' => 'THICKNESS',
         'text' => '厚み',
     ],
@@ -174,7 +174,7 @@ get_header();
                 <span>スタイル</span>
                 <h3>01. STYLE</h3>
             </div>
-            <p>ファスナーの位置や構造の違いによって、着脱のしやすさや保温性が変わります。 <br>RedLooでは下記の「基本4スタイル＋その他」でご用意しています。</p>
+            <p>ファスナーの位置や構造の違いによって、着脱のしやすさや保温性が変わります。 <br>RedLooでは下記の「基本4スタイル」をご用意しています。</p>
         </div>
         <div class="style-list row gap-y-4 gap-md-5">
             <?php foreach($style as $key => $item) : ?>

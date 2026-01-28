@@ -123,7 +123,7 @@ $mobile_nav = [
             <span></span>
         </div>
 
-        <div class="menu-contents d-lg-none">
+        <div class="menu-contents d-xl-none">
             <ul class="menu-list">
                 <a class="logo" href="/">
                     <img src="<?php bloginfo('template_url'); ?>/assets/images/common/logo_w.svg" alt="RedLooロゴ">

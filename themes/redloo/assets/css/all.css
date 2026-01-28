@@ -10955,7 +10955,7 @@ blockquote cite {
 /* ## ABOUT SECTION（ABOUTセクション）
 ********************************************************************/
 .about-sec .image-side {
-  aspect-ratio: 1/1;
+  aspect-ratio: inherit;
   overflow: hidden;
 }
 .about-sec .image-side img {
@@ -10964,6 +10964,7 @@ blockquote cite {
   object-position: 50% 40%;
 }
 .about-sec .text-side {
+  padding: 10% 5%;
   place-content: center;
 }
 @media (min-width: 1400px) {
@@ -11751,9 +11752,17 @@ blockquote cite {
 }
 .philosophy-sec .philosophy-content.vision {
   border-radius: 100px 0 0 0;
+  background-position: 50% 86%;
+  background-image: url("../images/about/vision.webp");
+}
+.philosophy-sec .philosophy-content.mission {
+  background-position: 50% 11%;
+  background-image: url("../images/about/mission.webp");
 }
 .philosophy-sec .philosophy-content.concept {
   border-radius: 0 0 0 100px;
+  background-position: 50% 29%;
+  background-image: url("../images/about/concept.webp");
 }
 @media (max-width: 768px) {
   .philosophy-sec > div {
@@ -11871,6 +11880,10 @@ blockquote cite {
 
 /* ## STAFF SECTION（スタッフ紹介）
 ********************************************************************/
+.staff-sec .staff-image {
+  border-radius: 10px;
+  overflow: hidden;
+}
 .staff-sec {
   /* ### STAFF CARD
   --------------------------------------*/
@@ -12534,6 +12547,11 @@ blockquote cite {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.order-step-sec .attention-content small {
+  display: block;
+  font-size: 12px;
+  padding-top: 1rem;
 }
 @media (max-width: 768px) {
   .order-step-sec {

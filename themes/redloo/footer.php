@@ -20,55 +20,112 @@ include 'template-parts/components/navigation.php';  // 配列を読み込み
 			</div>
 			<div class="col-12 col-md-9">
 				<?php
+				// ==============================
+				// 1. フッター用「縦カラム設計図」
+				// ==============================
+				$footer_columns = [
+					// 左カラム
+					[
+						'RedLooについて',
+						'お客様の声',
+						'お知らせ・コラム',
+						'お問い合わせ',
+						'採寸・再オーダー',
+						'セルフ採寸フォーム',
+					],
+					// 製品紹介カラム
+					[
+						'製品紹介',
+						'ネックエントリー',
+						'ロングチェストジップ',
+						'バックジップ',
+						'ノンジップ',
+						'その他',
+					],
+					// ご利用ガイドカラム
+					[
+						'ご利用ガイド',
+						'基本仕様の選び方',
+						'ご利用の流れ',
+						'リペア・修理',
+						'よくあるご質問',
+					],
+					// カスタム・オプションカラム
+					[
+						'カスタム・オプション',
+						'カラー',
+						'ロゴ',
+						'仕上げ・補強',
+						'デザイン',
+					],
+				];
 
-				// 左右に分割
-				$left_nav  = array_slice($navigation, 0, 3);
-				$right_nav = array_slice($navigation, 3);
+				// ==============================
+				// 2. トップレベル判定マップ
+				// ==============================
+				$top_level = [];
+				foreach ($navigation as $item) {
+					$top_level[$item['menu']] = true;
+				}
+
+				// ==============================
+				// 3. ナビをフラット辞書化
+				// ==============================
+				$nav_map = [];
+
+				foreach ($navigation as $item) {
+					// 親
+					$nav_map[$item['menu']] = [
+						'menu' => $item['menu'],
+						'link' => $item['link'],
+						'is_parent' => true,
+					];
+
+					// 子
+					if (!empty($item['children'])) {
+						foreach ($item['children'] as $child) {
+							$nav_map[$child['menu']] = [
+								'menu' => $child['menu'],
+								'link' => $child['link'],
+								'is_parent' => false,
+							];
+						}
+					}
+				}
 				?>
 
 				<div class="footer-nav">
-					<div class="row gap-md-10">
-						<!-- 左カラム -->
-						<div class="col-12 footer-col left-side">
-							<div class="row">
-								<?php foreach ($left_nav as $item) : ?>
-									<div class="footer-menu col-6 col-lg-3">
-										<a href="<?php echo esc_url($item['link']); ?>" class="footer-menu-title">
-											<?php echo esc_html($item['menu']); ?>
-										</a>
-										<?php if (!empty($item['children'])) : ?>
+					<div class="row">
+
+						<?php foreach ($footer_columns as $column): ?>
+							<div class="footer-menu col-6 col-lg-3">
+
+								<?php foreach ($column as $label): ?>
+									<?php if (isset($nav_map[$label])):
+										$item = $nav_map[$label];
+										$is_title = !empty($top_level[$label]);
+									?>
+
+										<?php if ($is_title): ?>
+											<a href="<?php echo esc_url($item['link']); ?>" class="footer-menu-title">
+												<?php echo esc_html($item['menu']); ?>
+											</a>
+										<?php else: ?>
 											<ul class="footer-submenu">
-												<?php foreach ($item['children'] as $child) : ?>
-													<li>
-														<a href="<?php echo esc_url($child['link']); ?>">
-															<?php echo esc_html($child['menu']); ?>
-														</a>
-													</li>
-												<?php endforeach; ?>
+												<li>
+													<a href="<?php echo esc_url($item['link']); ?>">
+														<?php echo esc_html($item['menu']); ?>
+													</a>
+												</li>
 											</ul>
 										<?php endif; ?>
-									</div>
+
+									<?php endif; ?>
 								<?php endforeach; ?>
-								<div class="footer-menu col-6 col-lg-3 right-side">
-									<?php foreach ($right_nav as $item) : ?>
-										<a href="<?php echo esc_url($item['link']); ?>" class="footer-menu-title">
-											<?php echo esc_html($item['menu']); ?>
-										</a>
-										<?php if (!empty($item['children'])) : ?>
-											<ul class="footer-submenu">
-												<?php foreach ($item['children'] as $child) : ?>
-													<li>
-														<a href="<?php echo esc_url($child['link']); ?>">
-															<?php echo esc_html($child['menu']); ?>
-														</a>
-													</li>
-												<?php endforeach; ?>
-											</ul>
-										<?php endif; ?>
-									<?php endforeach; ?>
-								</div>
+
 							</div>
-						</div>
+						<?php endforeach; ?>
+
 					</div>
 				</div>
 			</div>
@@ -99,4 +156,5 @@ include 'template-parts/components/navigation.php';  // 配列を読み込み
 <script src="<?php bloginfo('template_url'); ?>/assets/js/animation.js"></script>
 
 </body>
+
 </html>

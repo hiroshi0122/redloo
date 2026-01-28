@@ -128,7 +128,7 @@
 ********************************************************************/
 .about-sec {    
     .image-side {
-        aspect-ratio: 1/1;
+        aspect-ratio: inherit;
         overflow: hidden;
 
         img {
@@ -138,6 +138,7 @@
         }
     }
     .text-side {
+        padding: 10% 5%;
         place-content: center;
     }
 

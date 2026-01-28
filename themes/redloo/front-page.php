@@ -99,13 +99,13 @@ get_header();
 <section class="about-sec p-0 fade-up" id="about-sec">
     <div class="contaienr-fluid">
         <div class="row gap-0">
-            <div class="col-12 col-md-6 image-side">
+            <div class="col-12 col-md-6 col-lg-6 image-side">
                 <img class="h-100" src="<?php bloginfo('template_url'); ?>/assets/images/home/about.webp" alt="aboutのイメージ">
             </div>
-            <div class="col-12 col-md-6 text-side bg-blue">
+            <div class="col-12 col-md-6 col-lg-6 text-side bg-blue">
                 <div class="title-template white text-md-center mb-4">
                     <div class="title">
-                        <span>ご予約・注文・お問合せ</span>
+                        <span>RedLooについて</span>
                         <h2 class="split">ABOUT</h2>
                     </div>
                     <h4 class="catch">工場直販で届ける<br>フルオーダー・ウェットスーツ</h4>

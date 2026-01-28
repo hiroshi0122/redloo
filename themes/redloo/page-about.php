@@ -59,7 +59,7 @@ get_header();
             <div class="col-12 col-md-5 text-side">
                 <div class="lower-title-template">
                     <div class="title">
-                        <h1>ABOUT</h1>
+                        <h1 class="split">ABOUT</h1>
                         <span>RedLooについて</span>
                     </div>
                     <h3 class="catch">ものづくりの町から生まれた<br>ウェットスーツブランド</h3>
@@ -81,7 +81,7 @@ get_header();
 
 
 <?php // ABOUT MSG SECTION（メッセージ） // *********************************************************** // ?>
-<section class="about-msg-sec" id="aboutMsgSec">
+<section class="about-msg-sec fade-up" id="aboutMsgSec">
     <div class="container">
         <div class="message text-center">
             <h3 class="mb-4 mb-md-8 blue">ものづくりの町から生まれた、<br>ウェットスーツブランド。</h3>
@@ -100,7 +100,7 @@ get_header();
 
 
 <?php // PHILOSOPHY SECTION（製品紹介） // *********************************************************** // ?>
-<section class="philosophy-sec" id="philosophySec">
+<section class="philosophy-sec fade-up" id="philosophySec">
     <div class="container">
         <div class="row">
             <div class="text-side col-2 col-md-4">
@@ -112,23 +112,23 @@ get_header();
                     <p class="d-none d-md-block">私たちがものづくりに向き合う上で、<br>大切にしている考えをまとめました。</p>
                 </div>
             </div>
-            <div class="image-side col-10 col-md-8">
+            <div class="image-side col-10 col-md-8 js-stagger">
                 <p class="d-md-none white mb-5">私たちがものづくりに向き合う上で、<br>大切にしている考えをまとめました。</p>
-                <div class="philosophy-content vision">
+                <div class="philosophy-content vision js-stagger-item">
                     <div>
                         <span>目指す未来</span>
                         <h3>VISION</h3>
                         <p>多くの人が着て笑顔になる製品づくり<br>愛される存在</p>
                     </div>
                 </div>
-                <div class="philosophy-content mission">
+                <div class="philosophy-content mission  js-stagger-item">
                     <div>
                         <span>私たちの使命</span>
                         <h3>MISSION</h3>
                         <p>オンリーワンのモノづくり・工場生産の付加価値</p>
                     </div>
                 </div>
-                <div class="philosophy-content concept">
+                <div class="philosophy-content concept  js-stagger-item">
                     <div>
                         <span>思想・表現</span>
                         <h3>CONCEPT</h3>
@@ -142,7 +142,7 @@ get_header();
 
 
 <?php // LOGO CONCEPT SECTION（ロゴに込める思い） // *********************************************************** // ?>
-<section class="logo-concept-sec pt-0">
+<section class="logo-concept-sec pt-0 fadeInUp">
     <div class="container">
         <div class="row align-center">
             <div class="text-side col-12 col-md-7">
@@ -171,7 +171,7 @@ get_header();
 
 
 <?php // GREETING SECTION（ご挨拶） // *********************************************************** // ?>
-<section class="greeting-sec">
+<section class="greeting-sec blur">
     <div class="container">
         <div class="image-side">
             <div class="ogashira mb-md-4">
@@ -204,18 +204,28 @@ get_header();
 <?php // STAFF SECTION（スタッフ紹介） // *********************************************************** // ?>
 <section class="staff-sec">
     <div class="container">
-        <div class="title-template">
-            <div class="title mb-7 mb-md-10">
-                <span>スタッフ紹介</span>
-                <h2>STAFF</h2>
-                <p>チームとして日々ものづくりに取り組んでいます。</p>
+        <div class="row align-center mb-md-20">
+            <div class="col-12 col-md-5 order-1 order-md-0">
+                <div class="title-template">
+                    <div class="title mb-7 mb-md-10">
+                        <span>スタッフ紹介</span>
+                        <h2>STAFF</h2>
+                        <p>チームとして日々ものづくりに取り組んでいます。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 order-0 order-md-1">
+                <div class="staff-image fadeInUp">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/about/staff_all.webp" alt="スタッフ集合写真">
+                </div>
             </div>
         </div>
+
         <div class="staff-contents">
-            <ul class="row gap-x-md-10 gap-y-md-5">
+            <ul class="row gap-x-md-10 gap-y-md-5 js-stagger">
                 <?php foreach($member as $key => $member) :?>
                     <li class="col-12 col-md-6">
-                        <div class="staff-card <?php echo esc_html($member['sex']); ?>">
+                        <div class="staff-card <?php echo esc_html($member['sex']); ?> js-stagger-item">
                             <div class="name">
                                 <h5><?php echo esc_html($member['name']); ?></h5>
                                 <span><?php echo esc_html($member['position']); ?></span>
@@ -292,12 +302,11 @@ get_header();
                     </tbody>
                 </table>
             </div>
-            <div class="col-12 col-md-7 image-side">
+            <div class="col-12 col-md-7 image-side mb-4 mb-md-0">
                 <img class="company-logo" src="<?php bloginfo('template_url'); ?>/assets/images/about/tomitech_company.webp" alt="トミテック外観">
             </div>
         </div>
-        
-        <p class="mb-4 mb-md-5">株式会社トミテックは、1959年創業の金属加工会社です。 <br>足立区で60年以上にわたり、精密プレス部品や精密金型の製作を手がけてきました。 <br>金属加工の現場で培われた「精度」と「誠実さ」を大切にする姿勢は、RedLooのウェットスーツづくりにも息づいています。ものづくりの原点を背景に、一着ごとの仕立てを行っています。</p>
+        <p class="mb-4 mb-md-5">株式会社トミテックは、1959年創業の金属加工会社です。<br>東京都足立区を拠点に、精密金属プレス加工や金型の設計・製作に長年取り組んできました。<br class="d-none d-sm-block">製品ごとに求められる「形状」「精度」「品質」「コスト」「納期」。<br class="d-none d-sm-block">そうした条件に対し、現場で培ってきた知識と経験をもとに、設計段階から最適な方法を検討し、加工まで一貫して対応しています。<br>町工場ならではの柔軟な対応力と、積み重ねてきた技術を活かし、<br class="d-none d-sm-block">図面段階から完成まで、ものづくりのパートナーとして支えていく姿勢を大切にしています。</p>
         <div class="btn-area">
             <a class="btn-black" href="https://www.tomitech.co.jp/" target="_blank" rel="noopener noreferrer">株式会社トミテック</a>
         </div>
